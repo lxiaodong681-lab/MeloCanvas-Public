@@ -1,0 +1,112 @@
+{
+	"schemaVersion": 1,
+	"id": "melocanvas.builtin.pastoral",
+	"version": "0.1.0-design",
+	"name": "森间",
+	"author": "MeloCanvas design study",
+	"minAppVersion": "0.1.0",
+	"license": "Original project artwork; see assets/art-provenance.md",
+	"status": "Design example only; not an installable archive",
+	"entry": {
+		"tokens": "inline",
+		"components": "inline"
+	},
+	"fallback": "melocanvas.builtin.modern",
+	"capabilities": [
+		"semantic-colors",
+		"icons",
+		"backgrounds",
+		"component-variants",
+		"player-frame",
+		"listening-components",
+		"creator-components",
+		"motion-presets"
+	],
+	"tokens": {
+		"surface": {
+			"base": "#f5f5e9",
+			"card": "#fffff5"
+		},
+		"text": {
+			"primary": "#2e4437",
+			"secondary": "#60705c"
+		},
+		"action": {
+			"primary": "#52794f"
+		},
+		"lyric": {
+			"active": "#52794f",
+			"inactive": "#60705c"
+		}
+	},
+	"components": {
+		"card": {
+			"variant": "leaf"
+		},
+		"button": {
+			"variant": "leaf",
+			"minTouchDp": 48
+		},
+		"input": {
+			"variant": "leaf"
+		},
+		"navigation": {
+			"discoverIcon": "flower"
+		},
+		"player": {
+			"frame": "arch"
+		},
+		"progress": {
+			"variant": "pastoral"
+		},
+		"lyric": {
+			"emphasis": "pastoral"
+		},
+		"listeningPlayer": {
+			"frame": "arch",
+			"coverFit": "contain",
+			"coverAspect": "16:9",
+			"variant": "leaf"
+		},
+		"chapterList": {
+			"variant": "leaf"
+		},
+		"speedSelector": {
+			"variant": "leaf"
+		},
+		"sleepTimer": {
+			"variant": "leaf"
+		},
+		"creatorProfile": {
+			"variant": "leaf"
+		},
+		"creatorAvatar": {
+			"frame": "arch"
+		},
+		"subscriptionSelector": {
+			"variant": "leaf"
+		},
+		"followingFeed": {
+			"variant": "leaf"
+		},
+		"creatorSupport": {
+			"variant": "leaf"
+		},
+		"seriesList": {
+			"variant": "leaf"
+		}
+	},
+	"motion": {
+		"preset": "sway",
+		"durationMs": 250,
+		"respectReducedMotion": true
+	},
+	"assets": [
+		{
+			"path": "assets/meadow.svg",
+			"role": "preview-artwork",
+			"origin": "original"
+		}
+	],
+	"previews": ["previews/pastoral-home.png", "previews/pastoral-player.png"]
+}

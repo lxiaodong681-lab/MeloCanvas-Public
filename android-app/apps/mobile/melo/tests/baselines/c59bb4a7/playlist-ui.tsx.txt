@@ -1,0 +1,1164 @@
+import React, { useState } from 'react'
+import {
+	Modal,
+	Pressable,
+	ScrollView,
+	StyleSheet,
+	TextInput,
+	View,
+} from 'react-native'
+
+import type { SearchItem, Source } from './core/model'
+import { playlistEntryId } from './core/queue'
+import { importEntryDescription, importProviderName } from './import-display'
+import {
+	playlistItemDescription,
+	playlistPlaybackCounts,
+} from './playlist-selection'
+import type { PlaylistSession, PlaylistState } from './playlist-session'
+import {
+	Artwork,
+	Button,
+	Card,
+	Icon,
+	IconButton,
+	State,
+	T,
+	shape,
+	time,
+	useTheme,
+} from './ui'
+
+interface PlaylistViewProps {
+	state: PlaylistState
+	session: PlaylistSession
+}
+
+function PlaylistCover({ uri, size }: { uri?: string | null; size: number }) {
+	const theme = useTheme()
+	return uri ? (
+		<Artwork
+			uri={uri}
+			size={size}
+			fit='contain'
+			style={shape(theme.components.card)}
+		/>
+	) : (
+		<View
+			style={[
+				shape(theme.components.card),
+				{
+					width: size,
+					height: size,
+					alignItems: 'center',
+					justifyContent: 'center',
+					backgroundColor: theme.tokens.surface.tinted,
+					borderWidth: theme.components.card === 'comic' ? 1.5 : 1,
+					borderColor: theme.tokens.border.strong,
+				},
+			]}
+		>
+			<Icon
+				name='library'
+				size={size > 70 ? 36 : 26}
+				color={theme.tokens.action.primary}
+			/>
+		</View>
+	)
+}
+
+export function PlaylistLibrarySection({ state, session }: PlaylistViewProps) {
+	const theme = useTheme()
+	return (
+		<View
+			testID='playlist-library-section'
+			style={{ marginTop: 24 }}
+		>
+			<View
+				style={[
+					styles.row,
+					{ justifyContent: 'space-between', marginBottom: 12 },
+				]}
+			>
+				<T
+					size={18}
+					weight='700'
+				>
+					我的歌单
+				</T>
+				<Pressable
+					accessibilityRole='button'
+					accessibilityLabel='新建本地歌单'
+					onPress={() => session.requestName('create')}
+					style={styles.textAction}
+				>
+					<T
+						size={12}
+						style={{ color: theme.tokens.action.primary }}
+					>
+						新建
+					</T>
+				</Pressable>
+			</View>
+			{!!state.error && !state.nameForm && (
+				<PlaylistError
+					message={state.error}
+					onRetry={session.refresh}
+				/>
+			)}
+			{!!state.notice && (
+				<Card style={{ marginBottom: 12 }}>
+					<T size={12}>{state.notice}</T>
+				</Card>
+			)}
+			{state.playlists.length
+				? state.playlists.map(({ playlist, count, pendingCount, artwork }) => (
+						<Pressable
+							key={playlist.id}
+							testID={`playlist-${playlist.id}`}
+							accessibilityRole='button'
+							accessibilityLabel={`打开歌单 ${playlist.name}，${count}个${pendingCount ? '条目' : '音源'}`}
+							onPress={() => session.open(playlist.id)}
+							style={[
+								styles.row,
+								{
+									gap: 12,
+									paddingVertical: 12,
+									borderBottomWidth: 1,
+									borderBottomColor: theme.tokens.border.subtle,
+								},
+							]}
+						>
+							<PlaylistCover
+								uri={artwork}
+								size={62}
+							/>
+							<View style={{ flex: 1, gap: 5 }}>
+								<T
+									size={14}
+									weight='600'
+									lines={2}
+								>
+									{playlist.name}
+								</T>
+								<T
+									muted
+									size={11}
+								>
+									{count} 个{pendingCount ? '条目' : '音源'} · 我 · 本地歌单
+									{pendingCount ? ` · ${pendingCount} 项待匹配` : ''}
+								</T>
+							</View>
+							<Icon
+								name='arrow'
+								size={18}
+							/>
+						</Pressable>
+					))
+				: !state.error && (
+						<Card>
+							<T weight='600'>给喜欢的声音一个位置</T>
+							<T
+								muted
+								size={12}
+								style={{ marginTop: 7, marginBottom: 14 }}
+							>
+								新建一张本地歌单，挑选想留下的音源。
+							</T>
+							<Button
+								secondary
+								onPress={() => session.requestName('create')}
+							>
+								创建第一张歌单
+							</Button>
+						</Card>
+					)}
+		</View>
+	)
+}
+
+export function PlaylistDetailPage({
+	state,
+	session,
+	onBack,
+	onSearch,
+	onPlay,
+	onReviewBilibiliPending,
+	playbackBusy,
+	currentEntryId,
+	bottomInset,
+	reducedMotion,
+}: PlaylistViewProps & {
+	onBack: () => void
+	onSearch: () => void
+	onPlay: (playlistId: string, startItemId: string) => Promise<boolean>
+	onReviewBilibiliPending?: (playlistId: string, itemId: string) => void
+	playbackBusy: boolean
+	currentEntryId: string | null
+	bottomInset: number
+	reducedMotion: boolean
+}) {
+	const theme = useTheme()
+	const c = theme.tokens
+	const [menu, setMenu] = useState(false)
+	const detail = state.detail
+	const counts = playlistPlaybackCounts(detail?.items ?? [])
+	const firstSourceId = detail?.items.find(
+		(item) => item.sourceId !== null,
+	)?.sourceId
+	const [playError, setPlayError] = useState('')
+	async function play(itemId: string) {
+		if (!detail) return
+		setPlayError('')
+		try {
+			await onPlay(detail.id, itemId)
+		} catch (error) {
+			setPlayError(
+				error instanceof Error ? error.message : '播放未完成，请重试',
+			)
+		}
+	}
+	return (
+		<View testID='playlist-detail-page'>
+			<View
+				style={[
+					styles.row,
+					{ justifyContent: 'space-between', marginBottom: 18 },
+				]}
+			>
+				<IconButton
+					name='back'
+					label='返回音乐库'
+					onPress={onBack}
+				/>
+				<T
+					size={17}
+					weight='600'
+				>
+					歌单
+				</T>
+				<Pressable
+					accessibilityRole='button'
+					accessibilityLabel='歌单更多操作'
+					disabled={!detail}
+					onPress={() => setMenu(true)}
+					style={styles.textAction}
+				>
+					<T size={12}>更多</T>
+				</Pressable>
+			</View>
+			{detail ? (
+				<>
+					<View style={[styles.row, { gap: 16 }]}>
+						<PlaylistCover
+							uri={
+								firstSourceId ? state.sources.get(firstSourceId)?.artwork : null
+							}
+							size={94}
+						/>
+						<View style={{ flex: 1 }}>
+							<T
+								muted
+								size={9}
+								style={{ letterSpacing: 1.3 }}
+							>
+								MY PLAYLIST
+							</T>
+							<T
+								size={25}
+								weight='700'
+								style={{ marginVertical: 5 }}
+							>
+								{detail.name}
+							</T>
+							<T
+								muted
+								size={11}
+							>
+								{counts.pendingCount
+									? `我 · ${detail.items.length} 项 · 可播放 ${counts.playableCount} 项 · 待匹配 ${counts.pendingCount} 项`
+									: `我 · ${detail.items.length} 个音源 · 本地歌单`}
+							</T>
+						</View>
+					</View>
+					<T
+						muted
+						size={12}
+						style={{ marginTop: 16, marginBottom: 18 }}
+					>
+						{counts.pendingCount
+							? '仅播放已匹配音源，待匹配条目仍按原顺序保留。'
+							: '保留原标题与 UP 信息，只修改本机歌单。'}
+					</T>
+					<View style={[styles.row, { gap: 10, marginBottom: 16 }]}>
+						<View style={{ flex: 1 }}>
+							<Button
+								disabled={!counts.playableCount || playbackBusy}
+								onPress={() => {
+									if (counts.firstPlayableItemId)
+										void play(counts.firstPlayableItemId)
+								}}
+							>
+								{counts.pendingCount
+									? `播放已匹配 ${counts.playableCount} 项`
+									: '播放全部'}
+							</Button>
+						</View>
+						<View style={{ flex: 1 }}>
+							<Button
+								secondary
+								onPress={() => session.openAdd()}
+							>
+								添加音源
+							</Button>
+						</View>
+					</View>
+					{!!state.error &&
+						!state.nameForm &&
+						!state.picker &&
+						!state.deleting && (
+							<PlaylistError
+								message={state.error}
+								onRetry={session.refresh}
+							/>
+						)}
+					{!!playError && (
+						<Card style={{ marginBottom: 12 }}>
+							<T
+								size={12}
+								style={{ color: c.state.error }}
+							>
+								{playError}
+							</T>
+						</Card>
+					)}
+					{(!!state.notice || state.undoAvailable) && (
+						<Card style={{ marginBottom: 12 }}>
+							<T size={12}>{state.notice || '本次移除可以撤销'}</T>
+							{state.undoAvailable && (
+								<View style={{ marginTop: 12 }}>
+									<Button
+										secondary
+										onPress={session.undoRemove}
+									>
+										撤销本次移除
+									</Button>
+								</View>
+							)}
+						</Card>
+					)}
+					<View style={[styles.row, { justifyContent: 'space-between' }]}>
+						<T
+							muted
+							size={11}
+						>
+							{state.editing
+								? `已选 ${state.selectedItemIds.length} 项`
+								: '音源列表 · 按歌单顺序'}
+						</T>
+						<Pressable
+							accessibilityRole='button'
+							accessibilityLabel={
+								state.editing ? '完成歌单管理' : '管理歌单条目'
+							}
+							onPress={() => session.setEditing(!state.editing)}
+							style={styles.textAction}
+						>
+							<T
+								size={12}
+								style={{ color: c.action.primary }}
+							>
+								{state.editing ? '完成' : '管理'}
+							</T>
+						</Pressable>
+					</View>
+					{state.editing && (
+						<View
+							style={[
+								styles.row,
+								{ justifyContent: 'space-between', marginBottom: 8 },
+							]}
+						>
+							<Pressable
+								accessibilityRole='button'
+								onPress={session.selectAll}
+								style={styles.textAction}
+							>
+								<T size={12}>全选</T>
+							</Pressable>
+							<Pressable
+								accessibilityRole='button'
+								accessibilityLabel={`移除所选${state.selectedItemIds.length}项`}
+								accessibilityState={{ disabled: !state.selectedItemIds.length }}
+								disabled={!state.selectedItemIds.length}
+								onPress={session.removeSelected}
+								style={[
+									styles.textAction,
+									{ opacity: state.selectedItemIds.length ? 1 : 0.4 },
+								]}
+							>
+								<T
+									size={12}
+									style={{ color: c.state.error }}
+								>
+									移除所选
+								</T>
+							</Pressable>
+						</View>
+					)}
+					{detail.items.length ? (
+						detail.items.map((item, index) => {
+							const source =
+								item.sourceId === null ? null : state.sources.get(item.sourceId)
+							const description = playlistItemDescription(item, source)
+							const selected = state.selectedItemIds.includes(item.itemId)
+							const active =
+								item.sourceId !== null &&
+								currentEntryId === playlistEntryId(item.itemId)
+							return (
+								<View
+									key={item.itemId}
+									testID={`playlist-item-${item.itemId}`}
+									style={{
+										paddingVertical: 11,
+										borderBottomWidth: 1,
+										borderBottomColor: c.border.subtle,
+									}}
+								>
+									<View style={[styles.row, { gap: 9 }]}>
+										<Pressable
+											accessibilityRole={state.editing ? 'checkbox' : 'button'}
+											accessibilityLabel={`${state.editing ? '选择' : item.sourceId === null ? '' : '播放'}歌单第${index + 1}项 ${description.title}${description.status ? `，${description.status}` : ''}`}
+											accessibilityState={{
+												checked: state.editing ? selected : undefined,
+												selected: active,
+												disabled: !state.editing && (!source || playbackBusy),
+											}}
+											disabled={!state.editing && (!source || playbackBusy)}
+											onPress={() =>
+												state.editing
+													? session.toggleItem(item.itemId)
+													: void play(item.itemId)
+											}
+											style={[styles.row, { flex: 1, gap: 10, minHeight: 62 }]}
+										>
+											{state.editing ? (
+												<View
+													style={{
+														width: 24,
+														height: 24,
+														alignItems: 'center',
+														justifyContent: 'center',
+														borderWidth: 1,
+														borderRadius: 5,
+														borderColor: selected
+															? c.action.primary
+															: c.border.strong,
+														backgroundColor: selected
+															? c.surface.tinted
+															: c.surface.card,
+													}}
+												>
+													{selected && (
+														<Icon
+															name='check'
+															size={18}
+															color={c.action.primary}
+														/>
+													)}
+												</View>
+											) : (
+												<T
+													muted
+													size={11}
+													style={{ minWidth: 18 }}
+												>
+													{String(index + 1).padStart(2, '0')}
+												</T>
+											)}
+											<PlaylistCover
+												uri={source?.artwork}
+												size={48}
+											/>
+											<View style={{ flex: 1, gap: 4 }}>
+												<T
+													size={14}
+													weight='600'
+													lines={2}
+													style={
+														active ? { color: c.action.primary } : undefined
+													}
+												>
+													{description.title}
+												</T>
+												<T
+													muted
+													size={11}
+													lines={1}
+												>
+													{description.subtitle}
+												</T>
+												{description.status && (
+													<T
+														muted
+														size={10}
+													>
+														{description.status}
+													</T>
+												)}
+												{source && (
+													<T
+														muted
+														size={10}
+													>
+														{time(source.duration)} · Bilibili
+													</T>
+												)}
+												{item.importOrigin && (
+													<T
+														muted
+														size={10}
+														lines={2}
+													>
+														导入自
+														{importProviderName(
+															item.importOrigin.provider,
+														)} ·{' '}
+														{
+															importEntryDescription(
+																item.importOrigin,
+																item.importOrigin.provider,
+															).title
+														}
+													</T>
+												)}
+											</View>
+											{item.sourceId === null &&
+												item.importOrigin?.provider === 'bilibili' &&
+												onReviewBilibiliPending &&
+												!state.editing && (
+													<Button
+														secondary
+														onPress={() =>
+															onReviewBilibiliPending(detail.id, item.itemId)
+														}
+													>
+														核对B站原BV并补全此待匹配项
+													</Button>
+												)}
+											{active && (
+												<Icon
+													name='play'
+													size={18}
+													color={c.action.primary}
+												/>
+											)}
+										</Pressable>
+									</View>
+									{state.editing && (
+										<View
+											style={[
+												styles.row,
+												{ justifyContent: 'flex-end', gap: 10 },
+											]}
+										>
+											<Pressable
+												accessibilityRole='button'
+												accessibilityLabel={`上移歌单第${index + 1}项`}
+												disabled={!index}
+												accessibilityState={{ disabled: !index }}
+												onPress={() => session.move(item.itemId, -1)}
+												style={[
+													styles.textAction,
+													{ opacity: index ? 1 : 0.4 },
+												]}
+											>
+												<T size={11}>上移</T>
+											</Pressable>
+											<Pressable
+												accessibilityRole='button'
+												accessibilityLabel={`下移歌单第${index + 1}项`}
+												disabled={index === detail.items.length - 1}
+												accessibilityState={{
+													disabled: index === detail.items.length - 1,
+												}}
+												onPress={() => session.move(item.itemId, 1)}
+												style={[
+													styles.textAction,
+													{
+														opacity:
+															index === detail.items.length - 1 ? 0.4 : 1,
+													},
+												]}
+											>
+												<T size={11}>下移</T>
+											</Pressable>
+										</View>
+									)}
+								</View>
+							)
+						})
+					) : (
+						<State
+							title='把第一段喜欢的声音放进来'
+							message='可以从已喜欢的音源中挑选，或去搜索更多内容。'
+						/>
+					)}
+					{!detail.items.length && (
+						<Button
+							secondary
+							onPress={onSearch}
+						>
+							去搜索音源
+						</Button>
+					)}
+				</>
+			) : (
+				<State
+					title='这张歌单暂时无法打开'
+					message={state.error || '请返回音乐库，重新选择歌单。'}
+					retry={session.refresh}
+				/>
+			)}
+			{menu && (
+				<PlaylistModal
+					title='歌单操作'
+					onClose={() => setMenu(false)}
+					bottomInset={bottomInset}
+					reducedMotion={reducedMotion}
+				>
+					<MenuAction
+						label='重命名歌单'
+						onPress={() => {
+							setMenu(false)
+							session.requestName('rename')
+						}}
+					/>
+					<MenuAction
+						label='复制为新歌单'
+						onPress={() => {
+							setMenu(false)
+							session.requestName('copy')
+						}}
+					/>
+					<MenuAction
+						label='删除歌单'
+						onPress={() => {
+							setMenu(false)
+							session.requestDelete()
+						}}
+					/>
+				</PlaylistModal>
+			)}
+		</View>
+	)
+}
+
+function PlaylistError({
+	message,
+	onRetry,
+}: {
+	message: string
+	onRetry?: () => void
+}) {
+	const theme = useTheme()
+	return (
+		<Card style={{ marginBottom: 12 }}>
+			<T
+				size={12}
+				style={{ color: theme.tokens.state.error }}
+			>
+				{message}
+			</T>
+			{onRetry && (
+				<View style={{ marginTop: 10 }}>
+					<Button
+						secondary
+						onPress={onRetry}
+					>
+						重新读取歌单
+					</Button>
+				</View>
+			)}
+		</Card>
+	)
+}
+
+function MenuAction({
+	label,
+	onPress,
+}: {
+	label: string
+	onPress: () => void
+}) {
+	return (
+		<Pressable
+			accessibilityRole='button'
+			accessibilityLabel={label}
+			onPress={onPress}
+			style={{ minHeight: 54, justifyContent: 'center' }}
+		>
+			<T>{label}</T>
+		</Pressable>
+	)
+}
+
+function PlaylistModal({
+	title,
+	onClose,
+	children,
+	bottomInset = 0,
+	reducedMotion = true,
+}: React.PropsWithChildren<{
+	title: string
+	onClose: () => void
+	bottomInset?: number
+	reducedMotion?: boolean
+}>) {
+	const theme = useTheme()
+	return (
+		<Modal
+			transparent
+			visible
+			animationType={reducedMotion ? 'none' : 'fade'}
+			onRequestClose={onClose}
+		>
+			<View
+				style={{
+					flex: 1,
+					justifyContent: 'flex-end',
+					backgroundColor: '#101b1666',
+				}}
+			>
+				<Pressable
+					accessibilityRole='button'
+					accessibilityLabel='关闭歌单面板'
+					style={StyleSheet.absoluteFill}
+					onPress={onClose}
+				/>
+				<View
+					style={{
+						backgroundColor: theme.tokens.surface.base,
+						maxHeight: '88%',
+						padding: 22,
+						paddingBottom: bottomInset + 22,
+						borderTopLeftRadius: 25,
+						borderTopRightRadius: 25,
+					}}
+				>
+					<View
+						style={[
+							styles.row,
+							{ justifyContent: 'space-between', marginBottom: 12 },
+						]}
+					>
+						<T
+							size={21}
+							weight='700'
+							style={{ flex: 1 }}
+						>
+							{title}
+						</T>
+						<IconButton
+							name='close'
+							label='关闭歌单面板'
+							onPress={onClose}
+						/>
+					</View>
+					{children}
+				</View>
+			</View>
+		</Modal>
+	)
+}
+
+export function PlaylistSourceActions({
+	item,
+	onClose,
+	onAdd,
+	onListen,
+	onCreator,
+	bottomInset,
+	reducedMotion,
+}: {
+	item: SearchItem | Source | null
+	onClose: () => void
+	onAdd: (item: SearchItem | Source) => void
+	onListen: (item: SearchItem | Source) => void
+	onCreator: (item: SearchItem | Source) => void
+	bottomInset: number
+	reducedMotion: boolean
+}) {
+	if (!item) return null
+	return (
+		<PlaylistModal
+			title='音源操作'
+			onClose={onClose}
+			bottomInset={bottomInset}
+			reducedMotion={reducedMotion}
+		>
+			<T
+				weight='600'
+				lines={3}
+			>
+				{item.originalTitle}
+			</T>
+			<T
+				muted
+				size={12}
+				style={{ marginVertical: 10 }}
+			>
+				UP · {item.uploader}
+			</T>
+			<MenuAction
+				label='查看 UP 主主页'
+				onPress={() => onCreator(item)}
+			/>
+			<MenuAction
+				label='加入本地歌单'
+				onPress={() => onAdd(item)}
+			/>
+			<MenuAction
+				label='以听视频开启'
+				onPress={() => onListen(item)}
+			/>
+		</PlaylistModal>
+	)
+}
+
+export function PlaylistDialogs({
+	state,
+	session,
+	bottomInset,
+	reducedMotion,
+	onSearch,
+}: PlaylistViewProps & {
+	bottomInset: number
+	reducedMotion: boolean
+	onSearch: () => void
+}) {
+	const theme = useTheme()
+	const c = theme.tokens
+	const field = [
+		shape(theme.components.input),
+		{
+			backgroundColor: c.surface.card,
+			borderWidth: 1,
+			borderColor: c.border.strong,
+			minHeight: 50,
+			paddingHorizontal: 14,
+			color: c.text.primary,
+			fontSize: 14,
+		},
+	]
+	if (state.nameForm)
+		return (
+			<PlaylistModal
+				title={
+					state.nameForm.kind === 'create'
+						? '新建歌单'
+						: state.nameForm.kind === 'rename'
+							? '重命名歌单'
+							: '复制为新歌单'
+				}
+				onClose={session.closeSheet}
+				bottomInset={bottomInset}
+				reducedMotion={reducedMotion}
+			>
+				<T
+					muted
+					size={12}
+					style={{ marginBottom: 9 }}
+				>
+					歌单名称
+				</T>
+				<TextInput
+					accessibilityLabel='歌单名称'
+					testID='playlist-name-input'
+					value={state.nameForm.value}
+					onChangeText={session.setName}
+					placeholder='给这段心情起个名字'
+					placeholderTextColor={c.text.secondary}
+					maxLength={40}
+					autoFocus
+					style={field}
+					onSubmitEditing={session.saveName}
+					returnKeyType='done'
+				/>
+				<View style={{ marginTop: 14 }}>
+					{!!state.error && <PlaylistError message={state.error} />}
+					<Button
+						onPress={session.saveName}
+						disabled={!state.nameForm.value.trim()}
+					>
+						{state.nameForm.kind === 'create' ? '创建歌单' : '保存歌单名称'}
+					</Button>
+				</View>
+			</PlaylistModal>
+		)
+	if (state.deleting)
+		return (
+			<PlaylistModal
+				title='删除这张歌单？'
+				onClose={session.closeSheet}
+				bottomInset={bottomInset}
+				reducedMotion={reducedMotion}
+			>
+				<T
+					size={13}
+					style={{ marginBottom: 18 }}
+				>
+					只删除本地「{state.detail?.name}
+					」及其中条目，喜欢、音源与正在播放的队列保留。
+				</T>
+				{!!state.error && <PlaylistError message={state.error} />}
+				<Button onPress={session.confirmDelete}>确认删除歌单</Button>
+			</PlaylistModal>
+		)
+	if (state.targetSources)
+		return (
+			<PlaylistModal
+				title='加入哪张歌单？'
+				onClose={session.closeSheet}
+				bottomInset={bottomInset}
+				reducedMotion={reducedMotion}
+			>
+				<ScrollView keyboardShouldPersistTaps='handled'>
+					<T
+						muted
+						size={12}
+						style={{ marginBottom: 12 }}
+					>
+						保留所选音源，加入你指定的本地歌单。
+					</T>
+					{state.playlists.map(({ playlist, count }) => (
+						<MenuAction
+							key={playlist.id}
+							label={`${playlist.name} · ${count} 项`}
+							onPress={() => session.selectTarget(playlist.id)}
+						/>
+					))}
+					{!state.playlists.length && !state.error && (
+						<T
+							muted
+							size={12}
+						>
+							还没有本地歌单，可以先新建一张。
+						</T>
+					)}
+					{!!state.error && <PlaylistError message={state.error} />}
+					<MenuAction
+						label='新建歌单并继续添加'
+						onPress={() => session.requestName('create')}
+					/>
+				</ScrollView>
+			</PlaylistModal>
+		)
+	const picker = state.picker
+	if (!picker) return null
+	const query = picker.query.trim().toLowerCase()
+	const visible = picker.sources.filter((source) =>
+		`${source.originalTitle} ${source.uploader} ${source.bvid}`
+			.toLowerCase()
+			.includes(query),
+	)
+	return (
+		<PlaylistModal
+			title={`添加到「${state.detail?.name ?? '歌单'}」`}
+			onClose={session.closeSheet}
+			bottomInset={bottomInset}
+			reducedMotion={reducedMotion}
+		>
+			<TextInput
+				accessibilityLabel='搜索待添加的音源'
+				value={picker.query}
+				onChangeText={session.setPickerQuery}
+				placeholder='搜索待添加的音源'
+				placeholderTextColor={c.text.secondary}
+				style={field}
+			/>
+			<ScrollView
+				keyboardShouldPersistTaps='handled'
+				style={{ flexShrink: 1, marginTop: 12 }}
+			>
+				<T
+					muted
+					size={11}
+					style={{ marginBottom: 6 }}
+				>
+					只添加明确勾选的音源，筛选不会清空选择。
+				</T>
+				{visible.length ? (
+					visible.map((source) => (
+						<PickerSource
+							key={source.id}
+							source={source}
+							selected={picker.selectedSourceIds.includes(source.id)}
+							onPress={() => session.toggleSource(source.id)}
+						/>
+					))
+				) : (
+					<State
+						title={
+							picker.sources.length
+								? '没有匹配的待添加音源'
+								: '先找到想留下的声音'
+						}
+						message={
+							picker.sources.length
+								? '换个关键词，已勾选的内容仍会保留。'
+								: '从搜索结果的更多菜单可以直接加入歌单，也可以先喜欢音源再回来挑选。'
+						}
+					/>
+				)}
+				{!picker.sources.length && (
+					<Button
+						secondary
+						onPress={() => {
+							session.closeSheet()
+							onSearch()
+						}}
+					>
+						去搜索音源
+					</Button>
+				)}
+			</ScrollView>
+			<T
+				muted
+				size={11}
+				style={{ marginTop: 14, marginBottom: 5 }}
+			>
+				重复音源的处理方式
+			</T>
+			{(
+				[
+					['keep-all', '保留重复条目'],
+					['skip-existing-source', '跳过歌单已有音源'],
+				] as const
+			).map(([policy, label]) => (
+				<Pressable
+					key={policy}
+					accessibilityRole='radio'
+					accessibilityLabel={label}
+					accessibilityState={{ checked: picker.duplicatePolicy === policy }}
+					onPress={() => session.setDuplicatePolicy(policy)}
+					style={[styles.row, { gap: 10, minHeight: 48 }]}
+				>
+					<View
+						style={{
+							width: 20,
+							height: 20,
+							borderRadius: 12,
+							borderWidth: 1,
+							borderColor:
+								picker.duplicatePolicy === policy
+									? c.action.primary
+									: c.border.strong,
+							alignItems: 'center',
+							justifyContent: 'center',
+						}}
+					>
+						{picker.duplicatePolicy === policy && (
+							<View
+								style={{
+									width: 10,
+									height: 10,
+									borderRadius: 6,
+									backgroundColor: c.action.primary,
+								}}
+							/>
+						)}
+					</View>
+					<T size={12}>{label}</T>
+				</Pressable>
+			))}
+			{!!state.error && <PlaylistError message={state.error} />}
+			<Button
+				disabled={!picker.selectedSourceIds.length || !picker.duplicatePolicy}
+				onPress={session.appendSelected}
+			>
+				添加所选 {picker.selectedSourceIds.length} 项
+			</Button>
+		</PlaylistModal>
+	)
+}
+
+function PickerSource({
+	source,
+	selected,
+	onPress,
+}: {
+	source: Source
+	selected: boolean
+	onPress: () => void
+}) {
+	const theme = useTheme()
+	return (
+		<Pressable
+			accessibilityRole='checkbox'
+			accessibilityLabel={`选择音源 ${source.originalTitle}`}
+			accessibilityState={{ checked: selected }}
+			onPress={onPress}
+			style={[
+				styles.row,
+				{
+					gap: 10,
+					minHeight: 76,
+					paddingVertical: 10,
+					borderBottomWidth: 1,
+					borderBottomColor: theme.tokens.border.subtle,
+				},
+			]}
+		>
+			<View
+				style={{
+					width: 24,
+					height: 24,
+					borderRadius: 5,
+					borderWidth: 1,
+					borderColor: selected
+						? theme.tokens.action.primary
+						: theme.tokens.border.strong,
+					alignItems: 'center',
+					justifyContent: 'center',
+				}}
+			>
+				{selected && (
+					<Icon
+						name='check'
+						color={theme.tokens.action.primary}
+						size={18}
+					/>
+				)}
+			</View>
+			<PlaylistCover
+				uri={source.artwork}
+				size={46}
+			/>
+			<View style={{ flex: 1 }}>
+				<T
+					size={13}
+					lines={2}
+				>
+					{source.originalTitle}
+				</T>
+				<T
+					muted
+					size={10}
+				>
+					UP · {source.uploader} · {time(source.duration)}
+				</T>
+			</View>
+		</Pressable>
+	)
+}
+
+const styles = StyleSheet.create({
+	row: { flexDirection: 'row', alignItems: 'center' },
+	textAction: {
+		minWidth: 48,
+		minHeight: 48,
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+})

@@ -1,0 +1,15 @@
+{
+  "appVersion": "0.18.0",
+  "capabilities": [
+    "semantic-colors",
+    "icons",
+    "backgrounds",
+    "component-variants",
+    "player-frame",
+    "motion-presets",
+    "dark-tokens",
+    "responsive-touch-layout-v1",
+    "package-icons-v1",
+    "custom-progress-v1"
+  ]
+}

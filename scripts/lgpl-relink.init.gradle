@@ -1,0 +1,28 @@
+// Optional local replacements for LGPL libraries. No private signing key is required.
+gradle.beforeProject { p ->
+    if (p.name == 'bbplayer-orpheus') {
+        p.afterEvaluate {
+            def replacements = [
+                meloSuperLyricAar: ['com.github.HChenX', 'SuperLyricApi', '.aar'],
+                meloJaudiotaggerJar: ['net.jthink', 'jaudiotagger', '.jar']
+            ]
+            replacements.each { property, coordinate ->
+                def value = p.findProperty(property)
+                if (value != null) {
+                    def artifact = p.file(value)
+                    if (!artifact.isFile() || !artifact.name.endsWith(coordinate[2])) {
+                        throw new GradleException("${property} must name an existing ${coordinate[2]} file")
+                    }
+                    def dependencies = p.configurations.getByName('implementation').dependencies
+                    def original = dependencies.findAll { it.group == coordinate[0] && it.name == coordinate[1] }
+                    if (original.size() != 1) throw new GradleException("Expected one ${coordinate[1]} dependency")
+                    original.each { dependencies.remove(it) }
+                    p.dependencies.add('implementation', p.files(artifact))
+                    // A local AAR has no Maven POM; retain the original 2.4 dependency.
+                    if (property == 'meloSuperLyricAar') p.dependencies.add('implementation', 'androidx.annotation:annotation:1.9.1')
+                    p.logger.lifecycle("Using local replacement for ${coordinate[0]}:${coordinate[1]}")
+                }
+            }
+        }
+    }
+}

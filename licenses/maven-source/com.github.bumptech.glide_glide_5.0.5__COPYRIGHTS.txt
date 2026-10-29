@@ -1,0 +1,30 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.github.bumptech.glide:glide:5.0.5
+Source: https://repo.maven.apache.org/maven2/com/github/bumptech/glide/glide/5.0.5/glide-5.0.5-sources.jar
+Source archive SHA-256: 7003c8649fc756fec158837fc36767298f378b294bac9bfb4d75d777f1439bac
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/bumptech/glide/load/engine/cache/DiskLruCacheWrapper.java
+/*
+ * Copyright (c) 2013. Bump Technologies Inc. All Rights Reserved.
+ */
+
+---
+
+Files: com/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream.java
+/*
+ *  Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */

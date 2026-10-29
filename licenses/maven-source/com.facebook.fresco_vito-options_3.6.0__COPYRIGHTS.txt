@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:vito-options:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/vito-options/3.6.0/vito-options-3.6.0-sources.jar
+Source archive SHA-256: 2019d11bc088a4aedffafab09344546320dd64ca5d647601097f129cb38bd7b5
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/fresco/vito/options/BorderOptions.kt, com/facebook/fresco/vito/options/DecodedImageOptions.kt, com/facebook/fresco/vito/options/EncodedImageOptions.kt, com/facebook/fresco/vito/options/ImageOptions.kt, com/facebook/fresco/vito/options/ImageOptionsDrawableFactory.kt, com/facebook/fresco/vito/options/RoundingOptions.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

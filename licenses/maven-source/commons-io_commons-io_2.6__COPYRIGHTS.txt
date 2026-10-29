@@ -1,0 +1,67 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: commons-io:commons-io:2.6
+Source: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6-sources.jar
+Source archive SHA-256: 71bc251eb4bd011b60b5ce6adc8f473de10e4851207a40c14434604b288b31bf
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: org/apache/commons/io/CopyUtils.java, org/apache/commons/io/comparator/DefaultFileComparator.java, org/apache/commons/io/comparator/NameFileComparator.java, org/apache/commons/io/TaggedIOException.java, org/apache/commons/io/monitor/FileAlterationListenerAdaptor.java, org/apache/commons/io/filefilter/FileFilterUtils.java, org/apache/commons/io/filefilter/IOFileFilter.java, org/apache/commons/io/filefilter/NameFileFilter.java, org/apache/commons/io/input/MessageDigestCalculatingInputStream.java, org/apache/commons/io/input/TeeInputStream.java, org/apache/commons/io/input/Tailer.java, org/apache/commons/io/input/XmlStreamReaderException.java, org/apache/commons/io/input/SwappedDataInputStream.java, org/apache/commons/io/Charsets.java, org/apache/commons/io/EndianUtils.java, org/apache/commons/io/output/StringBuilderWriter.java, org/apache/commons/io/output/ChunkedWriter.java, org/apache/commons/io/output/ThresholdingOutputStream.java, org/apache/commons/io/output/XmlStreamWriter.java, org/apache/commons/io/output/ClosedOutputStream.java, org/apache/commons/io/output/FileWriterWithEncoding.java, org/apache/commons/io/FileCleaningTracker.java, org/apache/commons/io/HexDump.java, org/apache/commons/io/IOExceptionWithCause.java, org/apache/commons/io/DirectoryWalker.java, org/apache/commons/io/comparator/AbstractFileComparator.java, org/apache/commons/io/comparator/ExtensionFileComparator.java, org/apache/commons/io/comparator/DirectoryFileComparator.java, org/apache/commons/io/monitor/FileAlterationMonitor.java, org/apache/commons/io/monitor/FileAlterationListener.java, org/apache/commons/io/filefilter/WildcardFilter.java, org/apache/commons/io/filefilter/OrFileFilter.java, org/apache/commons/io/filefilter/AndFileFilter.java, org/apache/commons/io/filefilter/MagicNumberFileFilter.java, org/apache/commons/io/filefilter/CanReadFileFilter.java, org/apache/commons/io/filefilter/TrueFileFilter.java, org/apache/commons/io/filefilter/WildcardFileFilter.java, org/apache/commons/io/filefilter/DelegateFileFilter.java, org/apache/commons/io/filefilter/FalseFileFilter.java, org/apache/commons/io/input/TaggedInputStream.java, org/apache/commons/io/input/ReaderInputStream.java, org/apache/commons/io/input/NullInputStream.java, org/apache/commons/io/input/BoundedInputStream.java, org/apache/commons/io/input/XmlStreamReader.java, org/apache/commons/io/input/TailerListener.java, org/apache/commons/io/input/ReversedLinesFileReader.java, org/apache/commons/io/input/BrokenInputStream.java, org/apache/commons/io/IOCase.java, org/apache/commons/io/output/DeferredFileOutputStream.java, org/apache/commons/io/output/ProxyOutputStream.java, org/apache/commons/io/output/LockableFileWriter.java, org/apache/commons/io/output/DemuxOutputStream.java, org/apache/commons/io/output/BrokenOutputStream.java, org/apache/commons/io/output/CountingOutputStream.java, org/apache/commons/io/output/CloseShieldOutputStream.java, org/apache/commons/io/output/ProxyWriter.java, org/apache/commons/io/LineIterator.java, org/apache/commons/io/IOUtils.java, org/apache/commons/io/monitor/FileEntry.java, org/apache/commons/io/filefilter/AgeFileFilter.java, org/apache/commons/io/filefilter/CanWriteFileFilter.java, org/apache/commons/io/filefilter/AbstractFileFilter.java, org/apache/commons/io/filefilter/ConditionalFileFilter.java, org/apache/commons/io/filefilter/RegexFileFilter.java, org/apache/commons/io/filefilter/NotFileFilter.java, org/apache/commons/io/filefilter/FileFileFilter.java, org/apache/commons/io/input/InfiniteCircularInputStream.java, org/apache/commons/io/input/ClosedInputStream.java, org/apache/commons/io/input/DemuxInputStream.java, org/apache/commons/io/input/ObservableInputStream.java, org/apache/commons/io/input/CountingInputStream.java, org/apache/commons/io/input/ProxyInputStream.java, org/apache/commons/io/input/ProxyReader.java, org/apache/commons/io/input/CharSequenceReader.java, org/apache/commons/io/input/AutoCloseInputStream.java, org/apache/commons/io/FileUtils.java, org/apache/commons/io/ByteOrderMark.java, org/apache/commons/io/FilenameUtils.java, org/apache/commons/io/FileDeleteStrategy.java, org/apache/commons/io/comparator/PathFileComparator.java, org/apache/commons/io/comparator/LastModifiedFileComparator.java, org/apache/commons/io/comparator/ReverseComparator.java, org/apache/commons/io/comparator/SizeFileComparator.java, org/apache/commons/io/comparator/CompositeFileComparator.java, org/apache/commons/io/ThreadMonitor.java, org/apache/commons/io/monitor/FileAlterationObserver.java, org/apache/commons/io/filefilter/EmptyFileFilter.java, org/apache/commons/io/filefilter/DirectoryFileFilter.java, org/apache/commons/io/filefilter/SuffixFileFilter.java, org/apache/commons/io/filefilter/PrefixFileFilter.java, org/apache/commons/io/filefilter/HiddenFileFilter.java, org/apache/commons/io/filefilter/SizeFileFilter.java, org/apache/commons/io/input/WindowsLineEndingInputStream.java, org/apache/commons/io/input/UnixLineEndingInputStream.java, org/apache/commons/io/input/BOMInputStream.java, org/apache/commons/io/input/NullReader.java, org/apache/commons/io/input/ClassLoaderObjectInputStream.java, org/apache/commons/io/input/CloseShieldInputStream.java, org/apache/commons/io/input/TailerListenerAdapter.java, org/apache/commons/io/input/CharSequenceInputStream.java, org/apache/commons/io/FileSystemUtils.java, org/apache/commons/io/output/TaggedOutputStream.java, org/apache/commons/io/output/AppendableOutputStream.java, org/apache/commons/io/output/WriterOutputStream.java, org/apache/commons/io/output/NullOutputStream.java, org/apache/commons/io/output/TeeOutputStream.java, org/apache/commons/io/output/NullWriter.java, org/apache/commons/io/output/ByteArrayOutputStream.java, org/apache/commons/io/output/ChunkedOutputStream.java, org/apache/commons/io/FileExistsException.java, org/apache/commons/io/FileCleaner.java, org/apache/commons/io/ByteOrderParser.java
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: org/apache/commons/io/input/BoundedReader.java
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+---
+
+Files: org/apache/commons/io/serialization/ClassNameMatcher.java, org/apache/commons/io/serialization/WildcardClassNameMatcher.java, org/apache/commons/io/serialization/ValidatingObjectInputStream.java, org/apache/commons/io/serialization/RegexpClassNameMatcher.java, org/apache/commons/io/serialization/FullClassNameMatcher.java
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */

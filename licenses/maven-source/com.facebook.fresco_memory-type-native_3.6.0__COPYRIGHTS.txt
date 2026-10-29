@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:memory-type-native:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/memory-type-native/3.6.0/memory-type-native-3.6.0-sources.jar
+Source archive SHA-256: 42a73138fe84b1643f0349636da04161d4da68e57d60e6e1ec63f50ac5b352c1
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/imagepipeline/memory/NativeMemoryChunk.java, com/facebook/imagepipeline/memory/NativeMemoryChunkPool.java
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

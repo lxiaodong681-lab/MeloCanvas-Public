@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:imagepipeline-okhttp3:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/imagepipeline-okhttp3/3.6.0/imagepipeline-okhttp3-3.6.0-sources.jar
+Source archive SHA-256: b07bca7e5b7cf5f1e50da44992ac4d310cab242d3c40c00b6de189acab3c56be
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/imagepipeline/backends/okhttp3/OkHttpImagePipelineConfigFactory.kt, com/facebook/imagepipeline/backends/okhttp3/OkHttpNetworkFetcher.kt, com/facebook/imagepipeline/backends/okhttp3/OkHttpNetworkFetcherException.kt, com/facebook/imagepipeline/backends/okhttp3/package-info.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

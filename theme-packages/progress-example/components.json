@@ -1,0 +1,34 @@
+{
+  "components": {
+    "card": {
+      "variant": "rounded"
+    },
+    "button": {
+      "variant": "rounded",
+      "minTouchDp": 48
+    },
+    "input": {
+      "variant": "rounded"
+    },
+    "navigation": {
+      "discoverIcon": "home"
+    },
+    "player": {
+      "frame": "square"
+    },
+    "progress": {
+      "variant": "modern",
+      "thumb": {
+        "light": "assets/thumb.png",
+        "sizeDp": 28
+      }
+    }
+  },
+  "decorations": {
+    "backdrop": "assets/background.png"
+  },
+  "motion": {
+    "durationMs": 0,
+    "respectReducedMotion": true
+  }
+}

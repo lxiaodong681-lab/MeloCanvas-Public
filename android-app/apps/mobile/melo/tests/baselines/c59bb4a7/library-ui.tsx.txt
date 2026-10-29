@@ -1,0 +1,246 @@
+import React, { type ReactNode } from 'react'
+import { Pressable, StyleSheet, View } from 'react-native'
+
+import type { Source } from './core/model'
+import { CreatorLibraryEntry } from './creator-ui'
+import { ImportEntry } from './import-ui'
+import { ListeningResumeList, type ListeningResume } from './listening-ui'
+import { PageTitle } from './page-title'
+import type { PlaylistSession, PlaylistState } from './playlist-session'
+import { PlaylistDetailPage, PlaylistLibrarySection } from './playlist-ui'
+import { Button, Card, Icon, IconButton, State, T, useTheme } from './ui'
+
+interface LibraryPageProps {
+	playlistState: PlaylistState
+	playlistSession: PlaylistSession
+	onPlaylistBack: () => void
+	onPlaylistSearch: () => void
+	onPlayPlaylist: (playlistId: string, startItemId: string) => Promise<boolean>
+	playbackBusy: boolean
+	currentEntryId: string | null
+	bottomInset: number
+	reducedMotion: boolean
+	listeningOpen: boolean
+	onListeningOpenChange: (open: boolean) => void
+	resumeItems: ListeningResume[]
+	onPlayListening: (source: Source) => void
+	localDataError: string
+	onFindListening: () => void
+	onFindMusic: () => void
+	onOpenFollowing: () => void
+	onOpenFollowingFeed: () => void
+	onImport: () => void
+	onOpenVideoSaves: (bucket: 'listening' | 'unclassified') => void
+	onReviewBilibiliPending: (playlistId: string, itemId: string) => void
+	likes: Source[]
+	renderLikedSource: (source: Source, index: number) => ReactNode
+}
+
+export function LibraryPage({
+	playlistState,
+	playlistSession,
+	onPlaylistBack,
+	onPlaylistSearch,
+	onPlayPlaylist,
+	playbackBusy,
+	currentEntryId,
+	bottomInset,
+	reducedMotion,
+	listeningOpen,
+	onListeningOpenChange,
+	resumeItems,
+	onPlayListening,
+	localDataError,
+	onFindListening,
+	onFindMusic,
+	onOpenFollowing,
+	onOpenFollowingFeed,
+	onImport,
+	onOpenVideoSaves,
+	onReviewBilibiliPending,
+	likes,
+	renderLikedSource,
+}: LibraryPageProps) {
+	const c = useTheme().tokens
+	return (
+		<>
+			{playlistState.currentId ? (
+				<PlaylistDetailPage
+					state={playlistState}
+					session={playlistSession}
+					onBack={onPlaylistBack}
+					onSearch={onPlaylistSearch}
+					onPlay={onPlayPlaylist}
+					onReviewBilibiliPending={onReviewBilibiliPending}
+					playbackBusy={playbackBusy}
+					currentEntryId={currentEntryId}
+					bottomInset={bottomInset}
+					reducedMotion={reducedMotion}
+				/>
+			) : listeningOpen ? (
+				<View testID='listening-library-page'>
+					<View style={[s.row, { gap: 8, marginBottom: 12 }]}>
+						<IconButton
+							name='back'
+							label='返回音乐库'
+							onPress={() => onListeningOpenChange(false)}
+						/>
+						<T
+							size={24}
+							weight='700'
+						>
+							继续收听
+						</T>
+					</View>
+					<T
+						muted
+						size={12}
+						style={{ marginBottom: 12 }}
+					>
+						每个分 P 分别记住进度，已听完的内容从头开始。
+					</T>
+					<ListeningResumeList
+						items={resumeItems}
+						onPlay={onPlayListening}
+						busy={playbackBusy}
+						error={localDataError}
+					/>
+					<View style={{ gap: 10, marginTop: 16 }}>
+						<Button
+							secondary
+							onPress={() => onOpenVideoSaves('listening')}
+						>
+							打开本地听视频收藏
+						</Button>
+						<Button
+							secondary
+							onPress={() => onOpenVideoSaves('unclassified')}
+						>
+							打开本地待分类原条目
+						</Button>
+					</View>
+					<View style={{ marginTop: 18 }}>
+						<Button
+							secondary
+							onPress={onFindListening}
+						>
+							寻找更多听视频
+						</Button>
+					</View>
+				</View>
+			) : (
+				<>
+					<PageTitle
+						title='你的音乐库'
+						subtitle='LIBRARY / 留住好声音'
+					/>
+					<View style={{ gap: 10, marginBottom: 14 }}>
+						<Button
+							secondary
+							onPress={() => onOpenVideoSaves('listening')}
+						>
+							听视频收藏 · 本地原项
+						</Button>
+						<Button
+							secondary
+							onPress={() => onOpenVideoSaves('unclassified')}
+						>
+							待分类 · 本地原项
+						</Button>
+					</View>
+					<Pressable
+						accessibilityRole='button'
+						accessibilityLabel='打开听视频继续收听'
+						onPress={() => onListeningOpenChange(true)}
+						style={{ marginBottom: 14 }}
+					>
+						<Card>
+							<View style={[s.row, { gap: 12 }]}>
+								<Icon
+									name='queue'
+									color={c.action.primary}
+								/>
+								<View style={{ flex: 1 }}>
+									<T weight='600'>听视频 · 继续收听</T>
+									<T
+										muted
+										size={11}
+									>
+										{resumeItems.length
+											? `${resumeItems.length} 个分 P 记录 · 保存在本机`
+											: '开始收听后，从这里接着听'}
+									</T>
+								</View>
+								<Icon
+									name='arrow'
+									size={18}
+								/>
+							</View>
+						</Card>
+					</Pressable>
+					<Card>
+						<View style={s.row}>
+							<Icon
+								name='heart'
+								color={c.action.primary}
+							/>
+							<View style={{ flex: 1, marginLeft: 12 }}>
+								<T
+									size={18}
+									weight='700'
+								>
+									我喜欢的
+								</T>
+								<T
+									muted
+									size={12}
+								>
+									{likes.length} 个音源 · 保存在本机
+								</T>
+							</View>
+						</View>
+					</Card>
+					<T
+						muted
+						size={11}
+						style={{ marginVertical: 18 }}
+					>
+						再次播放会重新解析音源；片段缓存不等于离线下载。
+					</T>
+					{likes.length ? (
+						likes.map(renderLikedSource)
+					) : (
+						<State
+							title='给喜欢的声音一个家'
+							message='搜索后轻点爱心，重启也会留在这里。'
+						/>
+					)}
+					<View style={{ marginTop: 18 }}>
+						<Button
+							secondary
+							onPress={onFindMusic}
+						>
+							去搜索音乐
+						</Button>
+					</View>
+					<PlaylistLibrarySection
+						state={playlistState}
+						session={playlistSession}
+					/>
+					<CreatorLibraryEntry onPress={onOpenFollowing} />
+					<Button
+						secondary
+						onPress={onOpenFollowingFeed}
+					>
+						关注更新 · 本地投稿缓存
+					</Button>
+					<ImportEntry onPress={onImport} />
+				</>
+			)}
+		</>
+	)
+}
+
+const s = StyleSheet.create({
+	row: { flexDirection: 'row', alignItems: 'center' },
+})

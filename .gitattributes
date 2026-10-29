@@ -1,0 +1,32 @@
+# Source archives must not package local evidence or historical private reports.
+# This does NOT remove data from Git commits, PR diffs or GitHub caches.
+/verification export-ignore
+/experiments export-ignore
+/artifacts export-ignore
+/test-snapshots export-ignore
+/.codex-remote-attachments export-ignore
+/design-history export-ignore
+/design-prototype/references export-ignore
+/preview export-ignore
+/docs/2026-* export-ignore
+/docs/*report* export-ignore
+/docs/continuous-development.md export-ignore
+/android-app/.agents export-ignore
+/android-app/.github export-ignore
+
+# Preserve audited license bytes and stable hashes for source-form visual assets.
+/LICENSE text eol=lf
+/android-app/LICENSE text eol=lf
+/licenses/source/** -text -whitespace
+/licenses/MPL-2.0.txt -text -whitespace
+/licenses/runtime-evidence/** -text -whitespace
+/licenses/npm/** -text -whitespace
+/licenses/npm-supplement/** -text -whitespace
+/licenses/native/** -text -whitespace
+/licenses/vendored/** -text -whitespace
+/licenses/maven-source/** -text -whitespace
+/licenses/cronet-143.0.7445.0.txt -text -whitespace
+/design-prototype/assets/*.svg text eol=lf
+/android-app/apps/mobile/melo/assets/*.svg text eol=lf
+/android-app/apps/mobile/src/assets/lottie/*.json text eol=lf
+/theme-packages/example/artwork/*.svg text eol=lf

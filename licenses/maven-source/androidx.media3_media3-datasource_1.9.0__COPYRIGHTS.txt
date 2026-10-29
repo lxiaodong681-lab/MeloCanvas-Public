@@ -1,0 +1,193 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.media3:media3-datasource:1.9.0
+Source: https://dl.google.com/dl/android/maven2/androidx/media3/media3-datasource/1.9.0/media3-datasource-1.9.0-sources.jar
+Source archive SHA-256: b3339bf413c3155d5f6821a146b3d909fd1ef53d43a072a0e27400ef4f75e7f3
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidx/media3/datasource/AesCipherDataSink.java, androidx/media3/datasource/AesCipherDataSource.java, androidx/media3/datasource/AesFlushingCipher.java, androidx/media3/datasource/AssetDataSource.java, androidx/media3/datasource/ByteArrayDataSink.java, androidx/media3/datasource/ByteArrayDataSource.java, androidx/media3/datasource/ContentDataSource.java, androidx/media3/datasource/DataSink.java, androidx/media3/datasource/DataSource.java, androidx/media3/datasource/DataSourceException.java, androidx/media3/datasource/DataSourceInputStream.java, androidx/media3/datasource/DataSpec.java, androidx/media3/datasource/DefaultDataSource.java, androidx/media3/datasource/DefaultDataSourceFactory.java, androidx/media3/datasource/DefaultHttpDataSource.java, androidx/media3/datasource/FileDataSource.java, androidx/media3/datasource/HttpDataSource.java, androidx/media3/datasource/PriorityDataSource.java, androidx/media3/datasource/RawResourceDataSource.java, androidx/media3/datasource/TeeDataSource.java, androidx/media3/datasource/TransferListener.java, androidx/media3/datasource/UdpDataSource.java, androidx/media3/datasource/cache/Cache.java, androidx/media3/datasource/cache/CacheDataSink.java, androidx/media3/datasource/cache/CacheDataSource.java, androidx/media3/datasource/cache/CacheEvictor.java, androidx/media3/datasource/cache/CacheSpan.java, androidx/media3/datasource/cache/CachedContent.java, androidx/media3/datasource/cache/CachedContentIndex.java, androidx/media3/datasource/cache/LeastRecentlyUsedCacheEvictor.java, androidx/media3/datasource/cache/NoOpCacheEvictor.java, androidx/media3/datasource/cache/ReusableBufferedOutputStream.java, androidx/media3/datasource/cache/SimpleCache.java, androidx/media3/datasource/cache/SimpleCacheSpan.java
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/datasource/BaseDataSource.java, androidx/media3/datasource/StatsDataSource.java, androidx/media3/datasource/cache/CacheFileMetadata.java, androidx/media3/datasource/cache/CacheFileMetadataIndex.java, androidx/media3/datasource/cache/CacheKeyFactory.java, androidx/media3/datasource/cache/ContentMetadata.java, androidx/media3/datasource/cache/ContentMetadataMutations.java, androidx/media3/datasource/cache/DefaultContentMetadata.java
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/datasource/BitmapUtil.java, androidx/media3/datasource/DataSourceUtil.java
+/*
+ * Copyright (C) 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/datasource/ByteArrayUploadDataProvider.java, androidx/media3/datasource/HttpEngineDataSource.java
+/*
+ * Copyright (C) 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/datasource/DataSchemeDataSource.java, androidx/media3/datasource/PriorityDataSourceFactory.java
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/datasource/DataSourceBitmapLoader.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/datasource/FileDescriptorDataSource.java, androidx/media3/datasource/MediaDataSourceAdapter.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/datasource/HttpUtil.java
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/datasource/PlaceholderDataSource.java, androidx/media3/datasource/cache/CacheWriter.java
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/datasource/ResolvingDataSource.java, androidx/media3/datasource/package-info.java, androidx/media3/datasource/cache/package-info.java
+/*
+ * Copyright (C) 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

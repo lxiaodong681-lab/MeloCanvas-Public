@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:webpsupport:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/webpsupport/3.6.0/webpsupport-3.6.0-sources.jar
+Source archive SHA-256: 3936f65239f81275b422f636242e894e3533d92ae97ab9ded3cb9c29bc42b354
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/imagepipeline/nativecode/StaticWebpNativeLoader.java, com/facebook/webpsupport/WebPImageDecoder.java, com/facebook/webpsupport/WebpBitmapFactoryImpl.java
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

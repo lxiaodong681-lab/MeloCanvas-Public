@@ -1,0 +1,112 @@
+{
+	"schemaVersion": 1,
+	"id": "melocanvas.builtin.anime",
+	"version": "0.1.0-design",
+	"name": "星轨",
+	"author": "MeloCanvas design study",
+	"minAppVersion": "0.1.0",
+	"license": "Original project artwork; see assets/art-provenance.md",
+	"status": "Design example only; not an installable archive",
+	"entry": {
+		"tokens": "inline",
+		"components": "inline"
+	},
+	"fallback": "melocanvas.builtin.modern",
+	"capabilities": [
+		"semantic-colors",
+		"icons",
+		"backgrounds",
+		"component-variants",
+		"player-frame",
+		"listening-components",
+		"creator-components",
+		"motion-presets"
+	],
+	"tokens": {
+		"surface": {
+			"base": "#f2effa",
+			"card": "#fffaff"
+		},
+		"text": {
+			"primary": "#303052",
+			"secondary": "#716782"
+		},
+		"action": {
+			"primary": "#7352ba"
+		},
+		"lyric": {
+			"active": "#7352ba",
+			"inactive": "#716782"
+		}
+	},
+	"components": {
+		"card": {
+			"variant": "comic"
+		},
+		"button": {
+			"variant": "comic",
+			"minTouchDp": 48
+		},
+		"input": {
+			"variant": "comic"
+		},
+		"navigation": {
+			"discoverIcon": "star"
+		},
+		"player": {
+			"frame": "tilted"
+		},
+		"progress": {
+			"variant": "anime"
+		},
+		"lyric": {
+			"emphasis": "anime"
+		},
+		"listeningPlayer": {
+			"frame": "tilted",
+			"coverFit": "contain",
+			"coverAspect": "16:9",
+			"variant": "comic"
+		},
+		"chapterList": {
+			"variant": "comic"
+		},
+		"speedSelector": {
+			"variant": "comic"
+		},
+		"sleepTimer": {
+			"variant": "comic"
+		},
+		"creatorProfile": {
+			"variant": "comic"
+		},
+		"creatorAvatar": {
+			"frame": "tilted"
+		},
+		"subscriptionSelector": {
+			"variant": "comic"
+		},
+		"followingFeed": {
+			"variant": "comic"
+		},
+		"creatorSupport": {
+			"variant": "comic"
+		},
+		"seriesList": {
+			"variant": "comic"
+		}
+	},
+	"motion": {
+		"preset": "bounce",
+		"durationMs": 250,
+		"respectReducedMotion": true
+	},
+	"assets": [
+		{
+			"path": "assets/orbit.svg",
+			"role": "preview-artwork",
+			"origin": "original"
+		}
+	],
+	"previews": ["previews/anime-home.png", "previews/anime-player.png"]
+}

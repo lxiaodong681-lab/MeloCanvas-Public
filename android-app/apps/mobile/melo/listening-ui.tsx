@@ -1,0 +1,902 @@
+import type { PlaybackProgress } from './playback-progress'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { Modal, Pressable, ScrollView, StyleSheet, View } from 'react-native'
+
+import type { ResumePoint } from './core/listening'
+import type { Source } from './core/model'
+import {
+	ListeningTransportControls,
+	hostPlayerHorizontalPaddingDp,
+} from './host-controls'
+import { ListeningChaptersPanel } from './listening-chapters-ui'
+import {
+	ListeningSleepTimerPanel,
+	sleepTimerLabel,
+	type ListeningSleepTimer,
+	type SetListeningSleepTimer,
+} from './listening-sleep-ui'
+import type { ListeningPart } from './listening-source'
+import { createListeningSubtitlesSession } from './listening-subtitles'
+import type { ListeningSubtitlesSession } from './listening-subtitles-session'
+import { ListeningSubtitlesPanel } from './listening-subtitles-ui'
+import { Progress } from './progress'
+import {
+	Artwork,
+	Button,
+	Card,
+	ControlRow,
+	ControlTarget,
+	Icon,
+	IconButton,
+	PlayerBackdrop,
+	State,
+	T,
+	time,
+	useTheme,
+	useThemeRendering,
+} from './ui'
+
+export interface ListeningResume {
+	source: Source
+	point: ResumePoint
+	part?: { page: number; title: string }
+}
+
+export function ListeningResumeList({
+	items,
+	onPlay,
+	busy,
+	error,
+}: {
+	items: ListeningResume[]
+	onPlay: (source: Source) => void
+	busy: boolean
+	error?: string
+}) {
+	const theme = useTheme()
+	if (error && !items.length)
+		return (
+			<State
+				mascot='error'
+				title='续听记录暂时无法读取'
+				message={error}
+			/>
+		)
+	return items.length ? (
+		<>
+			{!!error && (
+				<T
+					muted
+					size={11}
+					style={{ marginVertical: 12 }}
+				>
+					{error}
+				</T>
+			)}
+			{items.map(({ source, point, part }) => (
+				<ControlTarget
+					key={source.id}
+					minimumWidthDp={164}
+					minimumHeightDp={88}
+					testID={`resume-${source.id}`}
+					accessibilityRole='button'
+					accessibilityLabel={`${point.completed ? '从头收听' : '继续收听'} ${source.originalTitle} ${part ? `P${part.page} ${part.title}` : '已保存的分 P'}`}
+					disabled={busy}
+					onPress={() => onPlay(source)}
+					style={[
+						styles.row,
+						{
+							gap: 12,
+							paddingVertical: 13,
+							minHeight: 88,
+							borderBottomWidth: 1,
+							borderBottomColor: theme.tokens.border.subtle,
+						},
+					]}
+				>
+					<Artwork
+						uri={source.artwork}
+						fit='contain'
+						style={{ width: 104, height: 59, borderRadius: 8 }}
+					/>
+					<View style={{ flex: 1, gap: 4 }}>
+						<T
+							weight='600'
+							size={13}
+							lines={2}
+						>
+							{source.originalTitle}
+						</T>
+						<T
+							muted
+							size={10}
+							lines={1}
+						>
+							UP · {source.uploader}
+						</T>
+						<T
+							muted
+							size={10}
+							lines={1}
+						>
+							{part ? `P${part.page} · ${part.title}` : '已保存的分 P'}
+						</T>
+						<T
+							size={10}
+							style={{ color: theme.tokens.action.primary }}
+						>
+							{point.completed
+								? '已听完 · 从头收听'
+								: `${time(point.positionSeconds)} / ${point.durationSeconds ? time(point.durationSeconds) : '时长待读取'} · 接着听`}
+						</T>
+					</View>
+				</ControlTarget>
+			))}
+		</>
+	) : (
+		<State
+			mascot='video'
+			title='暂无收听记录'
+			message='开始收听后，每个分 P 的进度会留在本机。'
+		/>
+	)
+}
+
+export function ListeningHome({
+	items,
+	onPlay,
+	onSearch,
+	busy,
+	error,
+}: {
+	items: ListeningResume[]
+	onPlay: (source: Source) => void
+	onSearch: () => void
+	busy: boolean
+	error?: string
+}) {
+	return (
+		<View testID='listening-home'>
+			<View
+				style={[styles.row, { justifyContent: 'space-between', marginTop: 8 }]}
+			>
+				<T
+					size={26}
+					weight='700'
+				>
+					听视频
+				</T>
+				<IconButton
+					name='search'
+					label='搜索听视频'
+					onPress={onSearch}
+				/>
+			</View>
+			<T
+				muted
+				size={12}
+				style={{ marginTop: 7, marginBottom: 20 }}
+			>
+				收藏视频，继续收听与管理进度。
+			</T>
+			<Card>
+				<T weight='600'>听视频收藏</T>
+				<T
+					muted
+					size={12}
+					style={{ marginTop: 8, marginBottom: 16 }}
+				>
+					搜索原标题、UP 主关键词或 BV 号，保留真实视频信息与分 P。
+				</T>
+				<Button onPress={onSearch}>寻找想听的内容</Button>
+			</Card>
+			<T
+				size={18}
+				weight='700'
+				style={{ marginTop: 24, marginBottom: 4 }}
+			>
+				继续收听
+			</T>
+			<ListeningResumeList
+				items={items}
+				onPlay={onPlay}
+				busy={busy}
+				error={error}
+			/>
+		</View>
+	)
+}
+
+interface ListeningPlayerProps {
+	sleepTimer?: ListeningSleepTimer
+	onSleepTimer: SetListeningSleepTimer
+	onRefreshSleepTimer: () => Promise<unknown>
+	source: Source
+	parts: ListeningPart[]
+	partsLoading: boolean
+	partsError: string
+	progress?: PlaybackProgress
+	position: number
+	duration: number
+	speed: number
+	playing: boolean
+	buffering: boolean
+	switching: boolean
+	error: string
+	bottomInset: number
+	reducedMotion: boolean
+	canReturnMusic: boolean
+	onClose: () => void
+	onTheme: () => void
+	onSource: () => void
+	onCreator: () => void
+	onSeek: (position: number) => void | Promise<void>
+	onToggle: () => void
+	onSpeed: (speed: number) => void
+	onPart: (part: ListeningPart) => void
+	onRetryParts: () => void
+	onRetry: () => void
+	onReturnMusic: () => void
+	onCancel: () => void
+}
+
+export function ListeningPlayer(props: ListeningPlayerProps) {
+	const theme = useTheme()
+	const rendering = useThemeRendering()
+	const c = theme.tokens
+	const [sheet, setSheet] = useState<
+		'parts' | 'chapters' | 'speed' | 'sleep' | 'subtitles' | null
+	>(null)
+	const current = props.parts.find((part) => part.source.id === props.source.id)
+	const scroll = useRef<ScrollView | null>(null)
+	const [seeking, setSeeking] = useState(false)
+	const mounted = useRef(true)
+	useEffect(() => { mounted.current = true; return () => { mounted.current = false } }, [])
+	const onDragChange = useCallback((dragging: boolean) => {
+		if (!mounted.current) return
+		scroll.current?.setNativeProps({ scrollEnabled: !dragging })
+		setSeeking(dragging)
+	}, [])
+	const [subtitles, setSubtitles] = useState<ListeningSubtitlesSession | null>(
+		null,
+	)
+	useEffect(() => {
+		subtitles?.setTarget(
+			current
+				? {
+						bvid: props.source.bvid,
+						cid: props.source.cid,
+						page: current.page,
+					}
+				: null,
+		)
+	}, [subtitles, props.source.id, props.source.bvid, props.source.cid, current])
+	useEffect(() => () => subtitles?.dispose(), [subtitles])
+	const closeSheet = () => {
+		subtitles?.hide()
+		setSheet(null)
+	}
+	const openSubtitles = () => {
+		if (props.switching) return
+		const session = subtitles ?? createListeningSubtitlesSession()
+		if (!subtitles) setSubtitles(session)
+		void session.open(
+			current
+				? {
+						bvid: props.source.bvid,
+						cid: props.source.cid,
+						page: current.page,
+					}
+				: null,
+		)
+		setSheet('subtitles')
+	}
+	return (
+		<>
+			<ScrollView
+				testID='listening-player-page'
+				ref={scroll}
+				scrollEnabled={!seeking}
+				contentContainerStyle={{
+					paddingHorizontal: hostPlayerHorizontalPaddingDp,
+					paddingBottom: props.bottomInset + 28,
+				}}
+			>
+				<PlayerBackdrop />
+				<View
+					style={[
+						styles.row,
+						{ justifyContent: 'space-between', marginBottom: 16 },
+					]}
+				>
+					<IconButton
+						name='down'
+						label='收起听视频播放器'
+						onPress={props.onClose}
+					/>
+					<View style={{ alignItems: 'center', flex: 1 }}>
+						<T
+							size={13}
+							muted
+						>
+							正在收听
+						</T>
+					</View>
+					<IconButton
+						name='star'
+						label='切换主题'
+						onPress={props.onTheme}
+					/>
+				</View>
+				<ListeningCover source={props.source} />
+				<T
+					size={21}
+					weight='700'
+					lines={3}
+				>
+					{props.source.originalTitle}
+				</T>
+				<ControlRow
+					controlMinWidthsDp={[128, 64]}
+					gapDp={8}
+					style={[styles.row, { gap: 8 }]}
+				>
+					<ControlTarget
+						accessibilityRole='button'
+						accessibilityLabel={`查看 UP 主 ${props.source.uploader}`}
+						onPress={props.onCreator}
+						style={{ flex: 1, minHeight: 48, justifyContent: 'center' }}
+					>
+						<T
+							muted
+							size={12}
+							lines={1}
+						>
+							UP 主 · {props.source.uploader}
+						</T>
+					</ControlTarget>
+					<ControlTarget
+						accessibilityRole='button'
+						minimumWidthDp={68}
+						accessibilityLabel='查看听视频音源信息'
+						onPress={props.onSource}
+						style={[styles.row, { minHeight: 48, gap: 6 }]}
+					>
+						<T
+							muted
+							size={11}
+							style={
+								rendering?.controlRowLayout ? { flexShrink: 1 } : undefined
+							}
+						>
+							音源信息
+						</T>
+						<Icon
+							name='arrow'
+							size={14}
+							color={c.text.secondary}
+						/>
+					</ControlTarget>
+				</ControlRow>
+				<ControlTarget
+					accessibilityRole='button'
+					minimumWidthDp={74}
+					minimumHeightDp={58}
+					accessibilityLabel='打开真实分 P 列表'
+					onPress={() => setSheet('parts')}
+					style={{ minHeight: 58, paddingVertical: 9 }}
+				>
+					<View
+						style={[styles.row, { justifyContent: 'space-between', gap: 8 }]}
+					>
+						<View style={{ flex: 1 }}>
+							<T
+								size={13}
+								weight='600'
+								lines={1}
+							>
+								{current
+									? `P${current.page} / ${props.parts.length} · ${current.title}`
+									: '当前分 P · 信息待读取'}
+							</T>
+							<T
+								muted
+								size={10}
+								style={{ marginTop: 4 }}
+							>
+								自动记住收听进度
+							</T>
+						</View>
+						<Icon
+							name='arrow'
+							size={18}
+						/>
+					</View>
+				</ControlTarget>
+				<Progress
+					progress={props.progress}
+					key={props.source.id}
+					onDragChange={onDragChange}
+					position={props.position}
+					duration={props.duration || props.source.duration}
+					disabled={props.switching}
+					onSeek={props.onSeek}
+				/>
+				{props.error ? (
+					<Card style={{ marginBottom: 12 }}>
+						<T style={{ color: c.state.error }}>{props.error}</T>
+						<T
+							muted
+							size={11}
+							style={{ marginTop: 8 }}
+						>
+							当前分 P 与队列已保留；可重试当前音频或重新选择分 P。
+						</T>
+						<View style={{ marginTop: 12 }}>
+							<Button
+								onPress={props.onRetry}
+								disabled={props.switching}
+							>
+								重试当前音频
+							</Button>
+						</View>
+					</Card>
+				) : props.switching || props.buffering ? (
+					<T
+						muted
+						size={12}
+						style={{ textAlign: 'center', marginBottom: 12 }}
+					>
+						{props.switching ? '正在切换…' : '正在缓冲…'}
+					</T>
+				) : null}
+				<ListeningTransportControls
+					speed={props.speed}
+					playing={props.playing}
+					switching={props.switching}
+					onSpeed={() => setSheet('speed')}
+					onBackward={() => props.onSeek((props.progress?.getSnapshot().position ?? props.position) - 15)}
+					onToggle={props.onToggle}
+					onForward={() => props.onSeek((props.progress?.getSnapshot().position ?? props.position) + 15)}
+					onParts={() => setSheet('parts')}
+				/>
+				<View
+					testID='listening-chapters-entry'
+					style={{ marginTop: 12, flexDirection: 'row', gap: 12 }}
+				>
+					<View style={{ flex: 1 }}>
+						<Button
+							secondary
+							onPress={() => setSheet('chapters')}
+						>
+							当前章节与分 P
+						</Button>
+					</View>
+					<View style={{ flex: 1 }}>
+						<Button
+							secondary
+							disabled={props.switching}
+							onPress={openSubtitles}
+						>
+							视频字幕
+						</Button>
+					</View>
+				</View>
+				<View
+					testID='listening-sleep-entry'
+					style={{ marginTop: 12 }}
+				>
+					<Button
+						secondary
+						disabled={props.switching}
+						onPress={() => setSheet('sleep')}
+					>
+						{sleepTimerLabel(props.sleepTimer)}
+					</Button>
+				</View>
+				{props.canReturnMusic && (
+					<View style={{ marginTop: 12 }}>
+						<Button
+							secondary
+							disabled={props.switching}
+							onPress={props.onReturnMusic}
+						>
+							返回音乐并继续播放
+						</Button>
+					</View>
+				)}
+				{props.switching && (
+					<View style={{ marginTop: 12 }}>
+						<Button
+							secondary
+							onPress={props.onCancel}
+						>
+							取消切换
+						</Button>
+					</View>
+				)}
+				<T
+					muted
+					size={10}
+					style={{ marginTop: 22, textAlign: 'center' }}
+				>
+					进度保存在本机 · 完整保留原视频封面与标题
+				</T>
+			</ScrollView>
+			<Modal
+				transparent
+				visible={sheet !== null}
+				animationType={props.reducedMotion ? 'none' : 'fade'}
+				onRequestClose={closeSheet}
+			>
+				<View
+					style={{
+						flex: 1,
+						justifyContent: 'flex-end',
+						backgroundColor: '#101b1666',
+					}}
+				>
+					<Pressable
+						accessibilityRole='button'
+						accessibilityLabel='关闭听视频面板'
+						style={StyleSheet.absoluteFill}
+						onPress={closeSheet}
+					/>
+					<View
+						style={{
+							maxHeight: '82%',
+							height: sheet === 'subtitles' ? '82%' : undefined,
+							backgroundColor: c.surface.base,
+							borderTopLeftRadius: 25,
+							borderTopRightRadius: 25,
+							padding: 22,
+							paddingBottom: props.bottomInset + 22,
+						}}
+					>
+						<View
+							style={[
+								styles.row,
+								{ justifyContent: 'space-between', marginBottom: 12 },
+							]}
+						>
+							<T
+								size={21}
+								weight='700'
+								style={{ flex: 1, minWidth: 0 }}
+							>
+								{sheet === 'subtitles'
+									? '视频字幕'
+									: sheet === 'sleep'
+										? '定时暂停'
+										: sheet === 'speed'
+											? '收听倍速'
+											: sheet === 'chapters'
+												? '当前章节'
+												: '分 P 列表'}
+							</T>
+							<IconButton
+								name='close'
+								label={
+									sheet === 'subtitles'
+										? '关闭字幕面板'
+										: sheet === 'sleep'
+											? '关闭定时面板'
+											: sheet === 'chapters'
+												? '关闭当前章节面板'
+												: '关闭分 P 或倍速面板'
+								}
+								onPress={closeSheet}
+							/>
+						</View>
+						{(sheet === 'parts' || sheet === 'chapters') && (
+							<View
+								testID='listening-chapters-tabs'
+								style={{ flexDirection: 'row', gap: 12, marginBottom: 12 }}
+							>
+								<View style={{ flex: 1 }}>
+									<Button
+										secondary={sheet !== 'chapters'}
+										onPress={() => setSheet('chapters')}
+									>
+										当前章节
+									</Button>
+								</View>
+								<View style={{ flex: 1 }}>
+									<Button
+										secondary={sheet !== 'parts'}
+										onPress={() => setSheet('parts')}
+									>
+										分 P 列表
+									</Button>
+								</View>
+							</View>
+						)}
+						{sheet === 'subtitles' && subtitles ? (
+							<ListeningSubtitlesPanel
+								progress={props.progress}
+								session={subtitles}
+								position={props.position}
+								switching={props.switching}
+								onSeek={props.onSeek}
+							/>
+						) : (
+							<ScrollView keyboardShouldPersistTaps='handled'>
+								{sheet === 'sleep' ? (
+									<ListeningSleepTimerPanel
+										key={props.source.id}
+										sourceId={props.source.id}
+										timer={props.sleepTimer}
+										switching={props.switching}
+										onSet={props.onSleepTimer}
+										onRefresh={props.onRefreshSleepTimer}
+									/>
+								) : sheet === 'speed' ? (
+									[0.75, 1, 1.25, 1.5, 2].map((speed) => (
+										<ControlTarget
+											key={speed}
+											minimumWidthDp={props.speed === speed ? 70 : 48}
+											minimumHeightDp={54}
+											accessibilityRole='button'
+											accessibilityLabel={`设置收听倍速 ${speed} 倍`}
+											accessibilityState={{
+												selected: props.speed === speed,
+												disabled: props.switching,
+											}}
+											disabled={props.switching}
+											onPress={() => {
+												props.onSpeed(speed)
+												setSheet(null)
+											}}
+											style={[
+												styles.row,
+												{ minHeight: 54, justifyContent: 'space-between' },
+											]}
+										>
+											<T>{speed}×</T>
+											{props.speed === speed && (
+												<Icon
+													name='check'
+													color={c.action.primary}
+												/>
+											)}
+										</ControlTarget>
+									))
+								) : sheet === 'chapters' ? (
+									<ListeningChaptersPanel
+										progress={props.progress}
+										key={props.source.id}
+										source={props.source}
+										duration={props.duration}
+										position={props.position}
+										switching={props.switching}
+										onSeek={props.onSeek}
+									/>
+								) : (
+									<>
+										<T
+											muted
+											size={11}
+											style={{ marginBottom: 12 }}
+										>
+											按原视频顺序连续收听；不会接入同 UP 的其他视频。
+										</T>
+										{props.partsLoading ? (
+											<State
+												busy
+												title='正在读取真实分 P'
+											/>
+										) : props.partsError ? (
+											<State
+												title='分 P 暂时无法读取'
+												message={props.partsError}
+												retry={props.onRetryParts}
+											/>
+										) : props.parts.length ? (
+											props.parts.map((part) => (
+												<ControlTarget
+													key={part.source.id}
+													minimumWidthDp={
+														current?.source.id === part.source.id ? 142 : 108
+													}
+													minimumHeightDp={64}
+													accessibilityRole='button'
+													accessibilityLabel={`播放分 P ${part.page} ${part.title}`}
+													accessibilityState={{
+														selected: current?.source.id === part.source.id,
+														disabled: props.switching,
+													}}
+													disabled={props.switching}
+													onPress={() => {
+														props.onPart(part)
+														setSheet(null)
+													}}
+													style={[
+														styles.row,
+														{
+															gap: 12,
+															minHeight: 64,
+															paddingVertical: 12,
+															borderBottomWidth: 1,
+															borderBottomColor: c.border.subtle,
+														},
+													]}
+												>
+													<T
+														muted
+														size={12}
+													>
+														P{part.page}
+													</T>
+													<View style={{ flex: 1 }}>
+														<T
+															size={13}
+															weight={
+																current?.source.id === part.source.id
+																	? '700'
+																	: '400'
+															}
+														>
+															{part.title}
+														</T>
+														<T
+															muted
+															size={10}
+														>
+															{time(part.source.duration)}
+														</T>
+													</View>
+													{current?.source.id === part.source.id && (
+														<Icon
+															name='music'
+															color={c.action.primary}
+														/>
+													)}
+												</ControlTarget>
+											))
+										) : (
+											<State
+												title='暂无可用分 P'
+												message='可以重新读取原视频信息。'
+												retry={props.onRetryParts}
+											/>
+										)}
+									</>
+								)}
+							</ScrollView>
+						)}
+					</View>
+				</View>
+			</Modal>
+		</>
+	)
+}
+
+function ListeningCover({ source }: { source: Source }) {
+	const theme = useTheme()
+	const c = theme.tokens
+	const frame = theme.components.playerFrame
+	return (
+		<View
+			style={{
+				marginTop: 18,
+				marginBottom: 24,
+				marginHorizontal: frame === 'tilted' ? 5 : 0,
+			}}
+		>
+			{frame === 'stacked' && (
+				<View
+					pointerEvents='none'
+					style={[
+						StyleSheet.absoluteFill,
+						{
+							backgroundColor: c.surface.tinted,
+							borderColor: c.border.strong,
+							borderWidth: 1,
+							borderRadius: 12,
+							transform: [
+								{ translateX: 6 },
+								{ translateY: 7 },
+								{ rotate: '1deg' },
+							],
+						},
+					]}
+				/>
+			)}
+			{frame === 'tilted' && (
+				<View
+					pointerEvents='none'
+					style={[
+						StyleSheet.absoluteFill,
+						{
+							backgroundColor: c.surface.tinted,
+							borderColor: c.border.strong,
+							borderWidth: 1.5,
+							borderRadius: 8,
+							transform: [{ rotate: '-3deg' }],
+							boxShadow: `4px 5px 0 ${c.border.strong}`,
+						},
+					]}
+				/>
+			)}
+			<View
+				style={{
+					padding: frame === 'arch' ? 9 : frame === 'tilted' ? 5 : 0,
+					paddingTop: frame === 'arch' ? 18 : frame === 'tilted' ? 5 : 0,
+					backgroundColor: c.surface.card,
+					borderColor: c.border.strong,
+					borderWidth: frame === 'tilted' ? 1.5 : frame === 'arch' ? 1 : 0,
+					borderTopLeftRadius: frame === 'arch' ? 52 : 12,
+					borderTopRightRadius: frame === 'arch' ? 52 : 12,
+					borderBottomLeftRadius: frame === 'arch' ? 8 : 12,
+					borderBottomRightRadius: frame === 'arch' ? 28 : 12,
+					boxShadow:
+						frame === 'arch' ? `3px 6px 0 ${c.border.subtle}` : undefined,
+				}}
+			>
+				<Artwork
+					uri={source.artwork}
+					fit='contain'
+					style={{ width: '100%', aspectRatio: 16 / 9, borderRadius: 8 }}
+				/>
+			</View>
+		</View>
+	)
+}
+
+export function ListeningUnavailable({
+	title,
+	playing,
+	canReturnMusic,
+	onClose,
+	onToggle,
+	onReturnMusic,
+}: {
+	title: string
+	playing: boolean
+	canReturnMusic: boolean
+	onClose: () => void
+	onToggle: () => void
+	onReturnMusic: () => void
+}) {
+	return (
+		<ScrollView contentContainerStyle={{ padding: 27, gap: 16 }}>
+			<IconButton
+				name='down'
+				label='收起听视频播放器'
+				onPress={onClose}
+			/>
+			<T
+				size={23}
+				weight='700'
+			>
+				{title}
+			</T>
+			<State
+				mascot='error'
+				title='音源信息暂时无法读取'
+				message='当前音频仍保留，可继续控制播放；重新打开应用后会重试读取本地信息。'
+			/>
+			<View style={{ alignItems: 'center', marginBottom: 18 }}>
+				<IconButton
+					primary
+					large
+					name={playing ? 'pause' : 'play'}
+					label={playing ? '暂停收听' : '继续收听'}
+					onPress={onToggle}
+				/>
+			</View>
+			{canReturnMusic && (
+				<Button
+					secondary
+					onPress={onReturnMusic}
+				>
+					返回刚才的音乐队列并继续播放
+				</Button>
+			)}
+		</ScrollView>
+	)
+}
+
+const styles = StyleSheet.create({
+	row: { flexDirection: 'row', alignItems: 'center' },
+})

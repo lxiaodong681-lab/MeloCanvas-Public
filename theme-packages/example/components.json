@@ -1,0 +1,12 @@
+{
+  "components": {
+    "card": { "variant": "leaf" },
+    "button": { "variant": "leaf", "minTouchDp": 48 },
+    "input": { "variant": "rounded" },
+    "navigation": { "discoverIcon": "flower" },
+    "player": { "frame": "arch" },
+    "progress": { "variant": "pastoral" }
+  },
+  "decorations": { "hero": "assets/header.png" },
+  "motion": { "durationMs": 180, "respectReducedMotion": true }
+}

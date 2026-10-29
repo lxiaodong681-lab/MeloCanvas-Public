@@ -1,0 +1,347 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.squareup.okio:okio-jvm:3.16.0
+Source: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.16.0/okio-jvm-3.16.0-sources.jar
+Source archive SHA-256: 53b847af2f85c194f090e310d566ce700f3558c56c9a8c06d7362829875049c8
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: jvmMain/okio/-DeprecatedOkio.kt, jvmMain/okio/-DeprecatedUtf8.kt, jvmMain/okio/DeprecatedUpgrade.kt, jvmMain/okio/Throttler.kt, commonMain/okio/PeekSource.kt
+/*
+ * Copyright (C) 2018 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/-JvmPlatform.kt, commonMain/okio/ByteString.kt, commonMain/okio/CommonPlatform.kt, commonMain/okio/Util.kt, commonMain/okio/internal/-Utf8.kt, commonMain/okio/internal/ByteString.kt
+/*
+ * Copyright (C) 2018 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/AsyncTimeout.kt, jvmMain/okio/Buffer.kt, jvmMain/okio/BufferedSink.kt, jvmMain/okio/BufferedSource.kt, jvmMain/okio/DeflaterSink.kt, jvmMain/okio/ForwardingSink.kt, jvmMain/okio/ForwardingSource.kt, jvmMain/okio/InflaterSource.kt, jvmMain/okio/JvmOkio.kt, jvmMain/okio/RealBufferedSink.kt, jvmMain/okio/RealBufferedSource.kt, jvmMain/okio/SegmentPool.kt, jvmMain/okio/Sink.kt, jvmMain/okio/Timeout.kt, zlibMain/okio/GzipSink.kt, zlibMain/okio/GzipSource.kt, zlibMain/okio/ZlibOkio.kt, commonMain/okio/ForwardingSource.kt, commonMain/okio/Segment.kt, commonMain/okio/SegmentPool.kt
+/*
+ * Copyright (C) 2014 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/ByteString.kt
+/*
+ * Copyright 2014 Square Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/CipherSink.kt, jvmMain/okio/CipherSource.kt
+/*
+ * Copyright (C) 2020 Square, Inc. and others.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/FileSystem.kt, jvmMain/okio/JvmFileHandle.kt, jvmMain/okio/internal/ResourceFileSystem.kt, zlibMain/okio/internal/FixedLengthSource.kt, commonMain/okio/FileHandle.kt, commonMain/okio/internal/FileSystem.kt
+/*
+ * Copyright (C) 2021 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/ForwardingTimeout.kt, jvmMain/okio/SegmentedByteString.kt, commonMain/okio/SegmentedByteString.kt
+/*
+ * Copyright (C) 2015 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/HashingSink.kt, jvmMain/okio/HashingSource.kt, jvmMain/okio/Pipe.kt, commonMain/okio/Options.kt
+/*
+ * Copyright (C) 2016 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/JvmSystemFileSystem.kt, jvmMain/okio/NioSystemFileSystem.kt, jvmMain/okio/Path.kt, commonMain/okio/ExperimentalFileSystem.kt, commonMain/okio/FileMetadata.kt, commonMain/okio/FileSystem.kt, commonMain/okio/ForwardingFileSystem.kt, commonMain/okio/HashingSink.kt, commonMain/okio/HashingSource.kt, commonMain/okio/Path.kt, commonMain/okio/internal/Path.kt
+/*
+ * Copyright (C) 2020 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/NioFileSystemFileHandle.kt, jvmMain/okio/NioFileSystemWrappingFileSystem.kt
+/*
+ * Copyright (C) 2023 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/internal/-Atomic.kt, jvmMain/okio/internal/-JavaIo.kt, jvmMain/okio/internal/DefaultSocket.kt, jvmMain/okio/internal/PipeSocket.kt, commonMain/okio/Socket.kt, nonJsMain/okio/internal/ByteStringNonJs.kt
+/*
+ * Copyright (C) 2025 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/okio/internal/-ZlibJvm.kt, zlibMain/okio/Deflater.kt, zlibMain/okio/DeflaterSink.kt, zlibMain/okio/Inflater.kt, zlibMain/okio/InflaterSource.kt, zlibMain/okio/internal/-Zlib.kt, zlibMain/okio/internal/CRC32.kt
+/*
+ * Copyright (C) 2024 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: zlibMain/okio/ZipFileSystem.kt, zlibMain/okio/internal/ZipEntry.kt, zlibMain/okio/internal/ZipFiles.kt
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: commonMain/okio/Base64.kt
+/*
+ *  Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+---
+
+Files: commonMain/okio/Buffer.kt, commonMain/okio/BufferedSink.kt, commonMain/okio/BufferedSource.kt, commonMain/okio/Okio.kt, commonMain/okio/RealBufferedSink.kt, commonMain/okio/RealBufferedSource.kt, commonMain/okio/Sink.kt, commonMain/okio/Source.kt, commonMain/okio/Timeout.kt, commonMain/okio/internal/Buffer.kt
+/*
+ * Copyright (C) 2019 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: commonMain/okio/TypedOptions.kt, commonMain/okio/internal/BufferedSource.kt
+/*
+ * Copyright (C) 2024 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: commonMain/okio/Utf8.kt
+/*
+ * Copyright (C) 2017 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: commonMain/okio/internal/RealBufferedSink.kt, commonMain/okio/internal/RealBufferedSource.kt, commonMain/okio/internal/SegmentedByteString.kt
+/*
+ * Copyright (C) 2019 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

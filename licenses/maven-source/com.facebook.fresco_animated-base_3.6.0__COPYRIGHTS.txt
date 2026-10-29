@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:animated-base:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/animated-base/3.6.0/animated-base-3.6.0-sources.jar
+Source archive SHA-256: b27cfb531c1ccd7b9eb296e9171e7de50e56a812bb4f4050bbbe363deb53be4f
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/fresco/animation/factory/AnimatedFactoryV2Impl.java, com/facebook/fresco/animation/factory/DefaultBitmapAnimationDrawableFactory.java, com/facebook/imagepipeline/animated/base/AnimatedDrawableBackend.java, com/facebook/imagepipeline/animated/base/AnimatedDrawableFrameInfo.java, com/facebook/imagepipeline/animated/base/AnimatedDrawableOptions.java, com/facebook/imagepipeline/animated/base/AnimatedDrawableOptionsBuilder.java, com/facebook/imagepipeline/animated/base/AnimatedImage.java, com/facebook/imagepipeline/animated/base/AnimatedImageFrame.java, com/facebook/imagepipeline/animated/base/AnimatedImageResult.java, com/facebook/imagepipeline/animated/base/AnimatedImageResultBuilder.java, com/facebook/imagepipeline/animated/base/package-info.java, com/facebook/imagepipeline/animated/factory/AnimatedImageDecoder.java, com/facebook/imagepipeline/animated/factory/AnimatedImageFactory.java, com/facebook/imagepipeline/animated/factory/AnimatedImageFactoryImpl.java, com/facebook/imagepipeline/animated/impl/AnimatedDrawableBackendImpl.java, com/facebook/imagepipeline/animated/impl/AnimatedDrawableBackendProvider.java, com/facebook/imagepipeline/animated/impl/AnimatedFrameCache.java, com/facebook/imagepipeline/animated/impl/AnimatedImageCompositor.java, com/facebook/imagepipeline/animated/impl/package-info.java, com/facebook/imagepipeline/image/CloseableAnimatedImage.java, com/facebook/imagepipeline/image/package-info.java, com/facebook/fresco/animation/bitmap/cache/AnimationFrameCacheKey.kt, com/facebook/fresco/animation/bitmap/cache/FrescoFrameCache.kt, com/facebook/fresco/animation/bitmap/wrapper/AnimatedDrawableBackendAnimationInformation.kt, com/facebook/fresco/animation/bitmap/wrapper/AnimatedDrawableBackendFrameRenderer.kt, com/facebook/fresco/animation/drawable/animator/AnimatedDrawableValueAnimatorHelper.kt, com/facebook/imagepipeline/animated/util/AnimatedDrawableUtil.kt, com/facebook/imagepipeline/animated/util/package-info.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

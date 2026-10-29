@@ -1,0 +1,4122 @@
+{
+  "apkSha256": "88d7dd628c3ae90c2009cb0d2c169e80fd3fbddd7a891e8ebca460c926f30170",
+  "entries": [
+    {
+      "coordinate": "androidx.activity:activity:1.8.0",
+      "type": "aar",
+      "name": "activity-1.8.0.aar",
+      "sha256": "d3a676709dea04f2a8506e2ae85052fff763db526ac7f16b04de50fdd05b0720",
+      "pomSha256": "65131285f53cb042e8ffd189e705dafc9b8ae6d62435e8778ac9ab3b8e3f756f",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/activity#1.8.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.annotation:annotation-experimental:1.4.1",
+      "type": "aar",
+      "name": "annotation-experimental-1.4.1.aar",
+      "sha256": "6bd4c7c7476f8260cd3bdbb81183583e93fc9f790c27dea7dc314181cbf87aa0",
+      "pomSha256": "fe57b228417f4d7c677903dc61fb4a7cf993d603499de26d8d8113e477cc4f1b",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/annotation#1.4.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.annotation:annotation-jvm:1.9.1",
+      "type": "jar",
+      "name": "annotation-jvm-1.9.1.jar",
+      "sha256": "1e343917ebf27ba96fe4dc52b1cad7fd32b738fbc6355bb6cd5b3b305d7212d0",
+      "pomSha256": "89b99c218d60019316b50aab79816707bc21696c896a030e1b1ae038961bcb8e",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/annotation#1.9.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/annotation/annotation/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.annotation_annotation-jvm_1.9.1__META-INF__androidx__annotation__annotation__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.appcompat:appcompat-resources:1.7.1",
+      "type": "aar",
+      "name": "appcompat-resources-1.7.1.aar",
+      "sha256": "8e2db31224ca53b108c784da2b361959062716d416b210cfef3d5a3828306df0",
+      "pomSha256": "2faf922e8c3d706f29d862b3fbb3aa1347705c21c6eae18586d2bb1f7366ea01",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.7.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.appcompat:appcompat:1.7.1",
+      "type": "aar",
+      "name": "appcompat-1.7.1.aar",
+      "sha256": "2ad334a323b28046e89b738c77d184cb3dcca32a551ab048851b2fda23a3ba26",
+      "pomSha256": "1f79910cc20de198acf3867b1e93f9ed59ddb643585b2e9c28ee55518af1bc00",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.7.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.arch.core:core-common:2.2.0",
+      "type": "jar",
+      "name": "core-common-2.2.0.jar",
+      "sha256": "65308a06b1c00ee186cb9e19321383f043b993813f1522c47f4a3e3303bdba41",
+      "pomSha256": "1e17d4af8d6425be2a69f8af4d654a87e0456259a9eef1542869bcb023547e28",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/arch-core#2.2.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.arch.core:core-runtime:2.2.0",
+      "type": "aar",
+      "name": "core-runtime-2.2.0.aar",
+      "sha256": "a1be5e0caa2b07623862af6ae21b3ab0718123245184d0e30dea81b53f990a47",
+      "pomSha256": "0f953706598140d9d8735cdd5aeb1fa35933f4e2f31c0bf3eb81a053a4c8c1a5",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/arch-core#2.2.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.autofill:autofill:1.3.0",
+      "type": "aar",
+      "name": "autofill-1.3.0.aar",
+      "sha256": "b5a217cee7724ea42a382965a9b22a330b988d62cb97abe1b1af50e54370c322",
+      "pomSha256": "6292a3975ee2bbe04b958197acee6a1da0ff6d0cddbad6abbf9f4adbafb8eac9",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/autofill#1.3.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/autofill/autofill/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.autofill_autofill_1.3.0__META-INF__androidx__autofill__autofill__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.biometric:biometric:1.1.0",
+      "type": "aar",
+      "name": "biometric-1.1.0.aar",
+      "sha256": "270c7b7d99942d5ec1dd88594e4648feb33d8e31d8c3c2ab2321d49d9abdfc1f",
+      "pomSha256": "aeb69e76988f43b06c84fca25efab2e418bb98b5aabcd03fa7913bd3ed1bcaa9",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/biometric#1.1.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.cardview:cardview:1.0.0",
+      "type": "aar",
+      "name": "cardview-1.0.0.aar",
+      "sha256": "1193c04c22a3d6b5946dae9f4e8c59d6adde6a71b6bd5d87fb99d82dda1afec7",
+      "pomSha256": "e64ef4e08b58358fe27b599e6fe80a1b153db014c644beee630ab271061c3e6c",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.collection:collection-jvm:1.4.2",
+      "type": "jar",
+      "name": "collection-jvm-1.4.2.jar",
+      "sha256": "984ce9bd780055eafb8a105aca3f514686bf7b1b6272ec7c645a98ce40fc7db4",
+      "pomSha256": "adbb379e2b160f08e63e341ad04bbcc7033f6d868ec51ac11e4334642a4e39ef",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/collection#1.4.2",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.concurrent:concurrent-futures:1.2.0",
+      "type": "jar",
+      "name": "concurrent-futures-1.2.0.jar",
+      "sha256": "4810315a798690b5d3bb40c92bcd41c045fd2c36bbfc50b27cbac3d6a0eda190",
+      "pomSha256": "6be9a98d6cd75a787eeae2a1a0a3440ebe1ab4639740df9ec028094ab59b622f",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/concurrent#1.2.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.constraintlayout:constraintlayout-core:1.0.0",
+      "type": "jar",
+      "name": "constraintlayout-core-1.0.0.jar",
+      "sha256": "496c8c79664bd970c6a6be7a960a20dd157dfc5aa2f18e5b8333767ffbc59911",
+      "pomSha256": "93e01622e90b5879bb950fedb5c417c8024555fdc779481bcee21a3b5977cb8c",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "http://tools.android.com",
+      "scm": {
+        "connection": "git@github.com:androidx/constraintlayout.git",
+        "url": "https://github.com/androidx/constraintlayout"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.constraintlayout:constraintlayout:2.1.0",
+      "type": "aar",
+      "name": "constraintlayout-2.1.0.aar",
+      "sha256": "a458a7562363bd59c209a7dea847326a0e2b26b37a883dc3e29065a79a1c788b",
+      "pomSha256": "25104af5ae91efe5fe6c9178eee35f6b02e31349505738cceb4df2df8385b585",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "http://tools.android.com",
+      "scm": {
+        "connection": "git@github.com:androidx/constraintlayout.git",
+        "url": "https://github.com/androidx/constraintlayout"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.coordinatorlayout:coordinatorlayout:1.1.0",
+      "type": "aar",
+      "name": "coordinatorlayout-1.1.0.aar",
+      "sha256": "44a9e30abf56af1025c52a0af506fee9c4131aa55efda52f9fd9451211c5e8cb",
+      "pomSha256": "a67c52c9ddfaff2ffb2fd4b97cd94fa382e837ea8a5874d029e0a04fa63e5caf",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.core:core-ktx:1.17.0",
+      "type": "aar",
+      "name": "core-ktx-1.17.0.aar",
+      "sha256": "4d23190b8623b8abb3c5247a0a7727eca347062d026335c427a09e82711b15f8",
+      "pomSha256": "0233d8d0a2ce8ff383502c8c64a42fc1673016402c923795465b6444eacd9939",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/core#1.17.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/core/core-ktx/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.core_core-ktx_1.17.0__META-INF__androidx__core__core-ktx__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.core:core-viewtree:1.0.0",
+      "type": "aar",
+      "name": "core-viewtree-1.0.0.aar",
+      "sha256": "dc1b678d58ebcf2bfa1587be68ff826694ce3d221251b9ef30d4d4b36297e6de",
+      "pomSha256": "d4f2ed1176fa8c5612b80f74c952a8799142a9ed36022a1a238fde5b140580d9",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/core#1.0.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/core/core-viewtree/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.core_core-viewtree_1.0.0__META-INF__androidx__core__core-viewtree__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.core:core:1.17.0",
+      "type": "aar",
+      "name": "core-1.17.0.aar",
+      "sha256": "e1bd22bbcf5cee3a992dedb7d2d3c3b31c9f761c01e56d00ea443c8aaa981182",
+      "pomSha256": "8b63b18ff4e3474ef1e9428ed022d7994e9e69adfcdaee7e59c7e52dc3cf75b0",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/core#1.17.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/core/core/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.core_core_1.17.0__META-INF__androidx__core__core__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.core:core:1.17.0",
+      "type": "aar",
+      "name": "core-1.17.0.aar",
+      "sha256": "e1bd22bbcf5cee3a992dedb7d2d3c3b31c9f761c01e56d00ea443c8aaa981182",
+      "pomSha256": "8b63b18ff4e3474ef1e9428ed022d7994e9e69adfcdaee7e59c7e52dc3cf75b0",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/core#1.17.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/core/core/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.core_core_1.17.0__META-INF__androidx__core__core__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.cursoradapter:cursoradapter:1.0.0",
+      "type": "aar",
+      "name": "cursoradapter-1.0.0.aar",
+      "sha256": "a81c8fe78815fa47df5b749deb52727ad11f9397da58b16017f4eb2c11e28564",
+      "pomSha256": "62d95c89850af21030b19f14d5f7ecd6d8bcc9a3014c59002ec99624caac8100",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.customview:customview:1.1.0",
+      "type": "aar",
+      "name": "customview-1.1.0.aar",
+      "sha256": "01f76ab043770a97b054046f9815717b82ce0355c02967d16c61981359dc189a",
+      "pomSha256": "c814d435f73e9e6d169886d0eb96b5c5361feb48449fbbb315c908c03c588c94",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.documentfile:documentfile:1.1.0",
+      "type": "aar",
+      "name": "documentfile-1.1.0.aar",
+      "sha256": "684e0ffcb21a660c939d1bb814521f42c4bd74816f4a117291fe6a101cf3a822",
+      "pomSha256": "f3d68f5cc51f74d5415eefa617b5e6539aa89a941525762940a812e78415e4a8",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/documentfile#1.1.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/documentfile/documentfile/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.documentfile_documentfile_1.1.0__META-INF__androidx__documentfile__documentfile__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.drawerlayout:drawerlayout:1.1.1",
+      "type": "aar",
+      "name": "drawerlayout-1.1.1.aar",
+      "sha256": "2c5f0dca378eb78ca2c4403f9889c77daa3059302260f26a07fe9f63c08926fe",
+      "pomSha256": "c12fa903ba53005962a72405f37896608718f41673fc4a62312e4536132f6f45",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.dynamicanimation:dynamicanimation:1.1.0",
+      "type": "aar",
+      "name": "dynamicanimation-1.1.0.aar",
+      "sha256": "9062cc6637136a49ad17f8603c72519052ff9a569e617fc1b6db7086304da88f",
+      "pomSha256": "caecb7b379585d8e4070ebafae3974a137c6689de8077f9165935b3605784a93",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/dynamicanimation#1.1.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/dynamicanimation/dynamicanimation/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.dynamicanimation_dynamicanimation_1.1.0__META-INF__androidx__dynamicanimation__dynamicanimation__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.emoji2:emoji2-views-helper:1.3.0",
+      "type": "aar",
+      "name": "emoji2-views-helper-1.3.0.aar",
+      "sha256": "9a1351295a4f739df0efe8344adaa9afb34856c3af584d4a9afbec105a45b90b",
+      "pomSha256": "2673b0f5859d4361a4e9a30457852a6745d0c3c85b5e0412070483f3963ef526",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.3.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.emoji2:emoji2:1.3.0",
+      "type": "aar",
+      "name": "emoji2-1.3.0.aar",
+      "sha256": "2bf23818b23a996ddaa1b5fd5bb32129daff6bbb2dce15166e2fccdd2010b1a5",
+      "pomSha256": "14ebbea8234f013211965fdd08b42ee907ce0075af321018c8c2865c2e5db0eb",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.3.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.exifinterface:exifinterface:1.4.1",
+      "type": "aar",
+      "name": "exifinterface-1.4.1.aar",
+      "sha256": "17e17a6b86bb54074d3a7ecfa695ab920eaff4cf667a8371ed82e377580cfcf6",
+      "pomSha256": "944e867584e20748613cc7610bd5fa10a968cc98cb59fdfdb863e9f0201df289",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/exifinterface#1.4.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/exifinterface/exifinterface/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.exifinterface_exifinterface_1.4.1__META-INF__androidx__exifinterface__exifinterface__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.fragment:fragment:1.6.1",
+      "type": "aar",
+      "name": "fragment-1.6.1.aar",
+      "sha256": "5eeb5964a8edb25966d5cc7933fe893e3c58e245ac433d358478b20b6d09d4e3",
+      "pomSha256": "a7b2133f1605e7e98c151836ec1628c8f0648b8156b77631f2f2196e24cd3b30",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/fragment#1.6.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.fragment:fragment:1.6.1",
+      "type": "aar",
+      "name": "fragment-1.6.1.aar",
+      "sha256": "5eeb5964a8edb25966d5cc7933fe893e3c58e245ac433d358478b20b6d09d4e3",
+      "pomSha256": "a7b2133f1605e7e98c151836ec1628c8f0648b8156b77631f2f2196e24cd3b30",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/fragment#1.6.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.graphics:graphics-shapes-android:1.0.1",
+      "type": "aar",
+      "name": "graphics-shapes-release.aar",
+      "sha256": "7171269a4122feabb071768df46d10b362e47ac75fd0aa8dbcafa1f44f61b40c",
+      "pomSha256": "81de7bcc8549084d104d5af33b120f93e10d45424a15a454cfa1f24304aa4d11",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/graphics#1.0.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/graphics/graphics-shapes/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.graphics_graphics-shapes-android_1.0.1__META-INF__androidx__graphics__graphics-shapes__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.interpolator:interpolator:1.0.0",
+      "type": "aar",
+      "name": "interpolator-1.0.0.aar",
+      "sha256": "33193135a64fe21fa2c35eec6688f1a76e512606c0fc83dc1b689e37add7732a",
+      "pomSha256": "0ddc07cc39699f48ecd9ec894b5830c0f09e22e82959294edf37217224c88b7b",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-common:2.6.2",
+      "type": "jar",
+      "name": "lifecycle-common-2.6.2.jar",
+      "sha256": "f34831b6c71cd844e1d35d1be49d5e79447c5ab856346531b1e8676fda7374b1",
+      "pomSha256": "57304cdac4da289a6ecdd0738e16b1d8858f1ef8e9fabe2d65a963719fd81dba",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.2",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-livedata-core:2.6.2",
+      "type": "aar",
+      "name": "lifecycle-livedata-core-2.6.2.aar",
+      "sha256": "2256780a3cff4a1e57fbb3d442557c17dc363ab8af105bcaf5261d8e2d5db949",
+      "pomSha256": "1faf8ebf53f28b2f0ae2c2095371ae67d0ca16ac328fce7f163609a43214b5a4",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.2",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-livedata:2.6.2",
+      "type": "aar",
+      "name": "lifecycle-livedata-2.6.2.aar",
+      "sha256": "67359f609dfc2bf65da1270b23033f856064ec279f058e0a70c715f7c9003031",
+      "pomSha256": "d7c9e019cf68779387481877878f6c499d1786b85f2c0480e9264dd5097c51c0",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.2",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-process:2.6.2",
+      "type": "aar",
+      "name": "lifecycle-process-2.6.2.aar",
+      "sha256": "0f33b1bd017f965a6afb2e7bf3e3bd343c624061c1986dea8ba2469d04349437",
+      "pomSha256": "1f14396ec764b44d37c143adacee01e5b68cb5f35a21bcd9cdebd7c83ea7d2e9",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.2",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-runtime:2.6.2",
+      "type": "aar",
+      "name": "lifecycle-runtime-2.6.2.aar",
+      "sha256": "4867fd5279742fba8388821930cb2affe06d81a52814e7e41e70392ea0ef887c",
+      "pomSha256": "8175255546e2a5f510865f84ace680660954730240b1905d9175b4345beda977",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.2",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2",
+      "type": "aar",
+      "name": "lifecycle-viewmodel-savedstate-2.6.2.aar",
+      "sha256": "7bc7dcbab17636ec076f12afe4d02671265c389457b1b366b37a0e8cb91e2da0",
+      "pomSha256": "7fc854440644cf52c35894d58d946b208e42769e8517d71a5efcba17865432de",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.2",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-viewmodel:2.6.2",
+      "type": "aar",
+      "name": "lifecycle-viewmodel-2.6.2.aar",
+      "sha256": "e4ff4338999e1c6c9c724719f5d4aa7dd61bf6f545d5256a27a9d375df9f2330",
+      "pomSha256": "a9fb0b39a8360beef7bdc8f3953d4d78f3d85304fc80adac3c8eaf530d758050",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.2",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-viewmodel:2.6.2",
+      "type": "aar",
+      "name": "lifecycle-viewmodel-2.6.2.aar",
+      "sha256": "e4ff4338999e1c6c9c724719f5d4aa7dd61bf6f545d5256a27a9d375df9f2330",
+      "pomSha256": "a9fb0b39a8360beef7bdc8f3953d4d78f3d85304fc80adac3c8eaf530d758050",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.2",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.loader:loader:1.0.0",
+      "type": "aar",
+      "name": "loader-1.0.0.aar",
+      "sha256": "11f735cb3b55c458d470bed9e25254375b518b4b1bad6926783a7026db0f5025",
+      "pomSha256": "c978d550808b47434aa49a63164110a50b55b0bcc6160a93a2e37d5110df8c5e",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-common:1.9.0",
+      "type": "aar",
+      "name": "media3-common-1.9.0.aar",
+      "sha256": "714114bf8a56fe44f0f78b499ae7ea3bed52391313794c8abdc1b687700d42aa",
+      "pomSha256": "aed17d81e85da98ea766f9232f2a09fa9f1ab1433fbb824a8a4892d0e82ac0fc",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-container:1.9.0",
+      "type": "aar",
+      "name": "media3-container-1.9.0.aar",
+      "sha256": "f73cea4fe8a2bf9eb6462bfb7a547d1aaf55395d0007eed6fadb129b56927c0d",
+      "pomSha256": "0120edcd6ce534b59d9ad4f1c5d8e6683fac283fe1a99359616d21664d5a4fbe",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-database:1.9.0",
+      "type": "aar",
+      "name": "media3-database-1.9.0.aar",
+      "sha256": "de88a2ca8fd1efb1dbe7d8cd4c728fca15fafb629442514a689dea1788817637",
+      "pomSha256": "91da095561d363573dff03f2b280b61035b5f9355701f62094146f8cadcddcb7",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-datasource-okhttp:1.9.0",
+      "type": "aar",
+      "name": "media3-datasource-okhttp-1.9.0.aar",
+      "sha256": "894e02ce6fb0c22b56f96cc2f48b746089f953ae56aa306a535e0edbf6eaa202",
+      "pomSha256": "eff0055271b0b8914dbb8a8c429731409fb98541331952e6121f4698b7b15a39",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-datasource:1.9.0",
+      "type": "aar",
+      "name": "media3-datasource-1.9.0.aar",
+      "sha256": "8defec681a91380890ee8ae0c126ed24a4612fce6e13c1fb9e7909d943f78e08",
+      "pomSha256": "46b278e0d64156b6d2508a003ed0c6bc738b6bfbf9fcf42992e9561f81c5d9a1",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-decoder:1.9.0",
+      "type": "aar",
+      "name": "media3-decoder-1.9.0.aar",
+      "sha256": "2337461b4ed4ec3cd32330cd530d9b471d5d45b76410f6e0d66f1331c9a0bc08",
+      "pomSha256": "8212e1f90e37555093f9542d8c65f6714fa2af1399e05cbcb810d1a92e578e9c",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-effect:1.9.0",
+      "type": "aar",
+      "name": "media3-effect-1.9.0.aar",
+      "sha256": "1f005774fad08db2f5b0d08c58d5316d6827c2bbd62798220e2b14e6d343a17d",
+      "pomSha256": "228c0aba940196c0d9ecf25a4a1ffcb3deebba3bdbab8f4c2c95a2a4e65b8503",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-exoplayer-dash:1.9.0",
+      "type": "aar",
+      "name": "media3-exoplayer-dash-1.9.0.aar",
+      "sha256": "577b2f052416df103e0853377066081c37ac4992825bcf661cd334622b0414e9",
+      "pomSha256": "8ed6ba7c90568aea9140099552e6ffa1781333f69f029ad9666fe6f5d53aa857",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-exoplayer:1.9.0",
+      "type": "aar",
+      "name": "media3-exoplayer-1.9.0.aar",
+      "sha256": "9bd083eda563e9fd316128d8f271ae6a37809900874bbcc04d3100cb7892b4a4",
+      "pomSha256": "1511b271e2171c977314b1e48eef59f8be210d025c7c8ba09109bd86bbc6a423",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-extractor:1.9.0",
+      "type": "aar",
+      "name": "media3-extractor-1.9.0.aar",
+      "sha256": "1c3e16892326cf92c63051e412baca66523710fbe3f41ca738928cd669e15dff",
+      "pomSha256": "4a582b5a26a243f92b62333421d995c9c9fbfe5d2da0e52b29ea2d9fc1d2b9ed",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-inspector:1.9.0",
+      "type": "aar",
+      "name": "media3-inspector-1.9.0.aar",
+      "sha256": "20f247f3cf07b380567e16be6fe5746faab55f278841a6ee4b0bd0f3c98cca0c",
+      "pomSha256": "3b8087637dd94b294fb1039945e1e92f78307842d2a4e2fd93405e9d09e7ef3f",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-muxer:1.9.0",
+      "type": "aar",
+      "name": "media3-muxer-1.9.0.aar",
+      "sha256": "452b182d84cfe20d1154d999107b9aac7c218ad8ee208d35d067916a92a02031",
+      "pomSha256": "47ca0d154bf41be19dff266aef5ca76cc327460233e5db6a09cebfb81dd3b6e6",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-session:1.9.0",
+      "type": "aar",
+      "name": "media3-session-1.9.0.aar",
+      "sha256": "87565bcddefdd9017a9926e4605001ad0117668430cedcdc1595fd9c8a7f89cc",
+      "pomSha256": "99f4cf5c2b03026223150f95c05d4ff5e0377cff74d5b098ea544e9320814971",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media3:media3-transformer:1.9.0",
+      "type": "aar",
+      "name": "media3-transformer-1.9.0.aar",
+      "sha256": "2a2f75caffe2d14725a6b7525b4210fd767e170f2626c97ec9e384f0c64d0388",
+      "pomSha256": "dea2b15e0a2d8b9a4d28d072558db8c71117169c3cb9559c1e1e9de70282de81",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "scm": {
+        "connection": "scm:git:https://github.com/androidx/media.git",
+        "url": "https://github.com/androidx/media"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.media:media:1.7.0",
+      "type": "aar",
+      "name": "media-1.7.0.aar",
+      "sha256": "81a199ee87c6d3d59fb35f7dbec71b3f1d507128611099b6ac3a4b1c5a0bf1f9",
+      "pomSha256": "696656b7e3ebdeef216edb2d8bbaa0f395248864c2fc34b199fbc24f3266b8e1",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/media#1.7.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.profileinstaller:profileinstaller:1.3.1",
+      "type": "aar",
+      "name": "profileinstaller-1.3.1.aar",
+      "sha256": "d0e402ec31f24028a1dc7eb6a0a3f9d9635c1459392cd734396343b73d673948",
+      "pomSha256": "08263eb70a814a7cb26d11d3a83825f84c29f3e4b59f9134724e0e02e2bbd768",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.3.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.recyclerview:recyclerview:1.2.1",
+      "type": "aar",
+      "name": "recyclerview-1.2.1.aar",
+      "sha256": "a1ea0329ee6d938305dfd0f8ce5c48dea2aac14e5606d23e7fb60afcfb655d6e",
+      "pomSha256": "db162fcfc032cb737ba07faf2d1936c9ee362b74e0c38f31ccd2c6a2ccd79090",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.2.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.recyclerview:recyclerview:1.2.1",
+      "type": "aar",
+      "name": "recyclerview-1.2.1.aar",
+      "sha256": "a1ea0329ee6d938305dfd0f8ce5c48dea2aac14e5606d23e7fb60afcfb655d6e",
+      "pomSha256": "db162fcfc032cb737ba07faf2d1936c9ee362b74e0c38f31ccd2c6a2ccd79090",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.2.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.resourceinspection:resourceinspection-annotation:1.0.1",
+      "type": "jar",
+      "name": "resourceinspection-annotation-1.0.1.jar",
+      "sha256": "8cff870ec6fb31db48a52f4a792335b4bf8de07e03bd37823181526433ccd5cb",
+      "pomSha256": "b8eb4938ed95d7fcdaa2712ebca363e46a0f9228b8be7f23154def56846815dc",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/resourceinspection#1.0.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.savedstate:savedstate:1.2.1",
+      "type": "aar",
+      "name": "savedstate-1.2.1.aar",
+      "sha256": "21a7d4bcf6bdb94ad7b9283801529300b4fbb8808ca4f191e0cdce6fd8e4705a",
+      "pomSha256": "0d33bc285df1e12f22780f1624a6f0b38ea2a6181b0955ec6641caf620c50cbf",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/savedstate#1.2.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.startup:startup-runtime:1.1.1",
+      "type": "aar",
+      "name": "startup-runtime-1.1.1.aar",
+      "sha256": "e0a6329a371262fe4c450372b70fdaf33b769ef6917094723787cfce896b1dd3",
+      "pomSha256": "f4114b5c6859bb1bc3caf281cb6d6f25998fa7f7292c64ceaea74a93210e746b",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/startup#1.1.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
+      "type": "aar",
+      "name": "swiperefreshlayout-1.1.0.aar",
+      "sha256": "2ce7906cd1dea05aec81975db22d54382359c05a21b2527ad848bc60f6b27293",
+      "pomSha256": "0b8c55ce6910155a283ba98a6d094be6e0ef5e70a7371cd9fe9f71bf8ffd24ad",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.tracing:tracing-ktx:1.2.0",
+      "type": "aar",
+      "name": "tracing-ktx-1.2.0.aar",
+      "sha256": "c33f9cbd931e6190ca38aa09bf8a7a8a19391d4b0fb7a7605a6b59f2d42580d1",
+      "pomSha256": "8958b5a0153c1a82cb133703d3d11155898738280a354e92ca1817d7ca6f4cb7",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/tracing#1.2.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.tracing:tracing:1.2.0",
+      "type": "aar",
+      "name": "tracing-1.2.0.aar",
+      "sha256": "6faa90390d1fdbf0adb9a99bf99de67b94c6c6f35aea9510593a9d17973736a2",
+      "pomSha256": "f34bec4eb58871d31002901377108aaa1ebfe77fa6d882b8b86200b158e26ea1",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/tracing#1.2.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.transition:transition:1.6.0",
+      "type": "aar",
+      "name": "transition-1.6.0.aar",
+      "sha256": "248c45e1254d31181d2047b0b01394f09a2e539a5d9e89b773d53c62c96860f6",
+      "pomSha256": "070d7795010071edefbef94b8c9d5a2cac5cb5f3b1a2c5e558546438177c8ef8",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/transition#1.6.0",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/transition/transition/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.transition_transition_1.6.0__META-INF__androidx__transition__transition__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.vectordrawable:vectordrawable-animated:1.1.0",
+      "type": "aar",
+      "name": "vectordrawable-animated-1.1.0.aar",
+      "sha256": "76da2c502371d9c38054df5e2b248d00da87809ed058f3363eae87ce5e2403f8",
+      "pomSha256": "276a20116b705fb75b9003ee9496c56f6fd3b32375fb232472811eba60a040bd",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.vectordrawable:vectordrawable:1.1.0",
+      "type": "aar",
+      "name": "vectordrawable-1.1.0.aar",
+      "sha256": "46fd633ac01b49b7fcabc263bf098c5a8b9e9a69774d234edcca04fb02df8e26",
+      "pomSha256": "5b0e2d5b2179e54804785cbc21ce5f473b5e1ddd55a57da482e94dcd39492bb2",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.versionedparcelable:versionedparcelable:1.1.1",
+      "type": "aar",
+      "name": "versionedparcelable-1.1.1.aar",
+      "sha256": "57e8d93260d18d5b9007c9eed3c64ad159de90c8609ebfc74a347cbd514535a4",
+      "pomSha256": "5f51e65873ca612de3838fa90d2ee95b8d040efd31b9c390a19bf94d615cdb2f",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.viewpager2:viewpager2:1.0.0",
+      "type": "aar",
+      "name": "viewpager2-1.0.0.aar",
+      "sha256": "e95c0031d4cc247cd48196c6287e58d2cee54d9c79b85afea7c90920330275af",
+      "pomSha256": "4063bca7fe94fe65c98f4168f97ae10e02da0248598ad3ac21c432c7f608a17a",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.viewpager:viewpager:1.0.0",
+      "type": "aar",
+      "name": "viewpager-1.0.0.aar",
+      "sha256": "147af4e14a1984010d8f155e5e19d781f03c1d70dfed02a8e0d18428b8fc8682",
+      "pomSha256": "1f72f836339d03c6eb013f65075e76ca87075a577578eb4f95f74a3a5d253128",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "http://source.android.com"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "androidx.window:window-core-android:1.5.1",
+      "type": "aar",
+      "name": "window-core.aar",
+      "sha256": "b289ce85090f1f976569fa92bbac84011f54ba1b21f0ce883655b34c8f9f9eea",
+      "pomSha256": "462ae4100a7bc2a0f1ff61f615091fc330d6e67aa0341747270c3d714c90e0cd",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/window#1.5.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/window/window-core/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.window_window-core-android_1.5.1__META-INF__androidx__window__window-core__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "androidx.window:window:1.5.1",
+      "type": "aar",
+      "name": "window-1.5.1.aar",
+      "sha256": "3c3061966f012fc22f2e99701f683e82e732435ae2f2a1d5b2f99d82bb7b8864",
+      "pomSha256": "0a28fe17feed5c0175fbfbd6722ce78c575a1eeac09d858f08e49353f34707e0",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://developer.android.com/jetpack/androidx/releases/window#1.5.1",
+      "scm": {
+        "connection": "scm:git:https://android.googlesource.com/platform/frameworks/support",
+        "url": "https://cs.android.com/androidx/platform/frameworks/support"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/androidx/window/window/LICENSE.txt",
+          "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+          "evidenceFile": "licenses/runtime-evidence/androidx.window_window_1.5.1__META-INF__androidx__window__window__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "com.airbnb.android:lottie:6.6.0",
+      "type": "aar",
+      "name": "lottie-6.6.0.aar",
+      "sha256": "f9214d40614dfcc7c19444f70de5f9f721be641cd91e68458481ce41813c611a",
+      "pomSha256": "d6174616e1eb3c4c957b44bae882ad44d4bb7a6b0365b16bf02d1cb16c5ef31b",
+      "licenses": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/airbnb/lottie-android",
+      "scm": {
+        "connection": "scm:git@github.com:airbnb/lottie-android.git",
+        "developerConnection": "scm:git@github.com:airbnb/lottie-android.git",
+        "url": "https://github.com/airbnb/lottie-android"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.android.installreferrer:installreferrer:2.2",
+      "type": "aar",
+      "name": "installreferrer-2.2.aar",
+      "sha256": "7112e592c429949787c168c5ac62721144a73b649050684557fdbdba5dd3b66a",
+      "pomSha256": "901ee79908dbf6ca5518120039e8394c64866b55c2aeffa965f0376a39a73813",
+      "licenses": [
+        {
+          "name": "Android Software Development Kit License",
+          "url": "https://developer.android.com/studio/terms.html",
+          "distribution": "repo"
+        }
+      ],
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.caverock:androidsvg-aar:1.4",
+      "type": "aar",
+      "name": "androidsvg-aar-1.4.aar",
+      "sha256": "02a5b08a2b35d2d58eb2eaca9d84ac00fb341da725fdbd653ea3ed130437e95a",
+      "pomSha256": "a789196681aeff63a375ed4bf417c721f087729e9c90c5e4efccdbc9e97e924a",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/BigBadaboom/androidsvg",
+      "scm": {
+        "connection": "https://github.com/BigBadaboom/androidsvg.git",
+        "developerConnection": "https://github.com/BigBadaboom/androidsvg.git",
+        "url": "https://github.com/BigBadaboom/androidsvg"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fbjni:fbjni:0.7.0",
+      "type": "aar",
+      "name": "fbjni-0.7.0.aar",
+      "sha256": "7e319ae110ac5e5ef18904170aea5c3e753e915d196699d7fd39d36c8e1dfe36",
+      "pomSha256": "48b53b5dd4f70f3988e2bad97aa7bf5f9271369045cc0776ebe9e760d9703f04",
+      "licenses": [
+        {
+          "name": "APACHE-2",
+          "url": "https://github.com/facebookincubator/fbjni/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebookincubator/fbjni",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebookincubator/fbjni.git",
+        "developerConnection": "scm:git:git@github.com:facebookincubator/fbjni.git",
+        "url": "https://github.com/facebookincubator/fbjni.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:animated-base:3.6.0",
+      "type": "aar",
+      "name": "animated-base-3.6.0.aar",
+      "sha256": "8da98f1ef7af49e8885d3b72165a352ba3e19256e633f1a7a98bf9ea647275ad",
+      "pomSha256": "a27d55597194e32ab97ff4804d4d51b87feca99a58af15e1dbda4f6c04177076",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:animated-drawable:3.6.0",
+      "type": "aar",
+      "name": "animated-drawable-3.6.0.aar",
+      "sha256": "3abedaced7cd7b8fa8ed39ed8cfbf7ecc0de2a0b403e0a4f6355becc71000b79",
+      "pomSha256": "5801a42d7da9cce7c840df8c6518301096303d5256f6127073d70ba913623cb4",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:animated-gif:3.6.0",
+      "type": "aar",
+      "name": "animated-gif-3.6.0.aar",
+      "sha256": "c709bd7f0fce7802986d61026f66cbb13a2044efa0cee99ab0500f30f18a20d7",
+      "pomSha256": "a3116932fff7191492257215c6c9b814ded299239fa16a9328ae69c717c0beb0",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:drawee:3.6.0",
+      "type": "aar",
+      "name": "drawee-3.6.0.aar",
+      "sha256": "60435519cb76cee78739d928c46aada918f76cb993b75af92ab17e9d746b0277",
+      "pomSha256": "0704a56ea192d581b8de9bfc145b10d95907d08f48114ba790f95c58b48f9938",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:fbcore:3.6.0",
+      "type": "aar",
+      "name": "fbcore-3.6.0.aar",
+      "sha256": "6fd98c2b5737ee56a9c90f1c34d87d24e5d3324fd7fc2cca6d6e74b1c0b43ce9",
+      "pomSha256": "285104db948a2c7d3a180e433ec6fdda3d9e1cea2da6e39aefe023c038c903f2",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:fresco:3.6.0",
+      "type": "aar",
+      "name": "fresco-3.6.0.aar",
+      "sha256": "db82128c0b0d209b2f48afd84292c5f54b3bfe407b28fa32babfde95914b03f9",
+      "pomSha256": "500dbda70d9603b4dabd1e063c4acfb6c1131d1cc516d7a4f798baff15e2039a",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:imagepipeline-base:3.6.0",
+      "type": "aar",
+      "name": "imagepipeline-base-3.6.0.aar",
+      "sha256": "69caad07fe3700b48f3b56662504f9c1235da2e977b8eacd9df251321e9649c6",
+      "pomSha256": "02a20dfcbe35feccf128e00c9ee1e88b131ded33e7aabcff0f036b7ebcf66360",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:imagepipeline-native:3.6.0",
+      "type": "aar",
+      "name": "imagepipeline-native-3.6.0.aar",
+      "sha256": "5cbeafb0f7d91c078e256bb1af2981493f37b2a386df43593109d6abef7792d9",
+      "pomSha256": "6d579df1ddadf9da4346b885b78cdb00b6f3aa7fc340878e6ed46da556198a38",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:imagepipeline-okhttp3:3.6.0",
+      "type": "aar",
+      "name": "imagepipeline-okhttp3-3.6.0.aar",
+      "sha256": "faa01ed0394a5ec86cfe9c06e106a32179e4fb8378e7aeefde58321594ba6593",
+      "pomSha256": "e434caf6eb49d03822848c3f555e5e7f2e1f809c26d40aa44a3bc3c3b409b4e9",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:imagepipeline:3.6.0",
+      "type": "aar",
+      "name": "imagepipeline-3.6.0.aar",
+      "sha256": "57f04195e5d7273671ce467d0e23c487b3c2c8746ac6257f2a2753cc0771f69f",
+      "pomSha256": "cc6a0b2a911380f3711059edb95c7325991fea4c0238378e33b12e0fc40fb3ad",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:memory-type-ashmem:3.6.0",
+      "type": "aar",
+      "name": "memory-type-ashmem-3.6.0.aar",
+      "sha256": "0b2b1a8d7d6e5806312c4b7b46a15537e3ad12a7aa9fc3ac262465303082b946",
+      "pomSha256": "d26e89366fa0116660eb03c3654fd80e77ae65223a4dba6f67d6dc391b337fd0",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:memory-type-java:3.6.0",
+      "type": "aar",
+      "name": "memory-type-java-3.6.0.aar",
+      "sha256": "4504fdc563e699748b300f3e35279be0918c04981e7ef61f919663dbd69e683f",
+      "pomSha256": "2a99c9eb82f99ae1972a7e6b1bf3a35f0b32995db770bbd62268ec7ff8529ce3",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:memory-type-native:3.6.0",
+      "type": "aar",
+      "name": "memory-type-native-3.6.0.aar",
+      "sha256": "cdc0cce108bcab69da2b761eed389e4792f994b03b524bd826316c2932eb0cf8",
+      "pomSha256": "dea2bd1af28c1ca11d060a6fb523640b48ca0c5b7612d8c71733185499191191",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:middleware:3.6.0",
+      "type": "aar",
+      "name": "middleware-3.6.0.aar",
+      "sha256": "9661f47cb1156a0a7246819802c9b017ba5170f6ae7abedf31fd2cf662e3dc10",
+      "pomSha256": "9bfdb0b0a7842e0e94f59082be3338ec76713d1c3ea8affe2630432d88a0b617",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:nativeimagefilters:3.6.0",
+      "type": "aar",
+      "name": "nativeimagefilters-3.6.0.aar",
+      "sha256": "5044745e85fb35177e8e2b80df82c02a968a6db88affe711e4fb0038924d32bd",
+      "pomSha256": "306bb4d801bb675498cbf7798f16132beebb95a256e5c3adedb7bbc700142a48",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:nativeimagetranscoder:3.6.0",
+      "type": "aar",
+      "name": "nativeimagetranscoder-3.6.0.aar",
+      "sha256": "0d8f8559617c88763dc75e6005fc60e37bfd6bb20fe5b97a187cabefc2b11a7c",
+      "pomSha256": "166724ac8828b13931b0eff74ed75361f228f4e6dea10181e317b3b48e64988d",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:soloader:3.6.0",
+      "type": "aar",
+      "name": "soloader-3.6.0.aar",
+      "sha256": "fbbe0a37d91b86d4320d0728040c3264599a94b31a1de41f92a25e147f7f35ef",
+      "pomSha256": "836b52f07527f08afa0df9f1a67f189698d0fa6baeb18bec3fd46227f565f039",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:ui-common:3.6.0",
+      "type": "aar",
+      "name": "ui-common-3.6.0.aar",
+      "sha256": "001e310264c8bace79243d16ac03fb60bae7adfc2c4ac0c66b0006c249208ff0",
+      "pomSha256": "624d5bc7a9145305b197c5f6bae622f723c3e1c6a8f9a9dca7480aa16e41c9e1",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:ui-core:3.6.0",
+      "type": "aar",
+      "name": "ui-core-3.6.0.aar",
+      "sha256": "b515c69ba120c61ea157e2596ddf3a9226339c0e6acfc96b50bf966149b1c141",
+      "pomSha256": "2581224a239ef7a0dd9ce2c56ae3d9db65093d0d9355ae088ab42c56011f2a52",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:urimod:3.6.0",
+      "type": "aar",
+      "name": "urimod-3.6.0.aar",
+      "sha256": "54bc0886e579eb0833297492b7d89cb4c613ca95c379bacc41adfe29539a91f7",
+      "pomSha256": "0c7c42dcc9d7c5bf97c8a5a60c7723729c282fcd717604d664c364449af5290c",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:vito-options:3.6.0",
+      "type": "aar",
+      "name": "vito-options-3.6.0.aar",
+      "sha256": "56503d59c9442e841a5e96edfe7ef5093e676eb127b777dc3adb84f95b214374",
+      "pomSha256": "ce670da5094840d54ddd5438c489d90e36db0689e84554f0233260d657de799f",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:vito-renderer:3.6.0",
+      "type": "aar",
+      "name": "vito-renderer-3.6.0.aar",
+      "sha256": "0da312cab4ea101d322bb621954753fcadfc2b8fd3eb9d5ccc55f624be0e4bd8",
+      "pomSha256": "53affc5a36684da985536b998d021f3b809d631175402fd18e120d006ec9e277",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:vito-source:3.6.0",
+      "type": "aar",
+      "name": "vito-source-3.6.0.aar",
+      "sha256": "b5c3c5c087dab199ac8afe8397fa89ccf386df7b29a8db77b36125576af2e491",
+      "pomSha256": "0a35d7360eb8cccf3fe9b5bf07a96cbdb71be2e2e0eb4d0817b89305a18effc2",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.fresco:webpsupport:3.6.0",
+      "type": "aar",
+      "name": "webpsupport-3.6.0.aar",
+      "sha256": "3407ac484ef55bb3a279ed9bddc85f24a60bb777338007967193c40404fa8fcf",
+      "pomSha256": "2ce25bd22cce9cfd96fae5d418315a252f5f46470fac1c3bd79b1b7b7b0bea58",
+      "licenses": [
+        {
+          "name": "MIT",
+          "url": "https://github.com/facebook/fresco/blob/main/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/fresco",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/fresco.git",
+        "developerConnection": "scm:git:git@github.com:facebook/fresco.git",
+        "url": "https://github.com/facebook/fresco.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.hermes:hermes-android:250829098.0.17",
+      "type": "aar",
+      "name": "hermes-android-250829098.0.17-release.aar",
+      "sha256": "6fb440b29aadb5925bed1109338da61623c54c3508020bb2cecebcaaa80e53b8",
+      "pomSha256": "5a50a1c21d921099ce03be7223b0d6d0c9903a5556f2880a03b372342aa47a2f",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/facebook/hermes/blob/HEAD/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/hermes/tree/static_h",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/hermes.git",
+        "developerConnection": "scm:git:git@github.com:facebook/hermes.git",
+        "url": "https://github.com/facebook/hermes.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.infer.annotation:infer-annotation:0.18.0",
+      "type": "jar",
+      "name": "infer-annotation-0.18.0.jar",
+      "sha256": "caefba935643dc962758a760f1627a402215af034d96c0f484d63b7fddca992f",
+      "pomSha256": "d449ebd0489a1a00d03e4fc782b5345a0062f62519e1f1dd6bdb62d710e345bd",
+      "licenses": [
+        {
+          "name": "MIT license",
+          "url": "https://github.com/facebook/infer/blob/master/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "parent": "org.sonatype.oss:oss-parent:7",
+      "projectUrl": "http://fbinfer.com/",
+      "scm": {
+        "connection": "scm:git:git@github.com:facebook/infer.git",
+        "developerConnection": "scm:git:git@github.com:facebook/infer.git",
+        "url": "https://github.com/facebook/infer",
+        "tag": "infer-annotation-0.18.0"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.react:react-android:0.86.3",
+      "type": "aar",
+      "name": "react-android-0.86.3-release.aar",
+      "sha256": "59b66e453d8775a54df66a321c0d5002b98716d68c4bd9edb8e64d7110ff8d28",
+      "pomSha256": "bb7fb0de50bd2dad782f3f7747f3bc1d54a8eb19098e82fc83de430b07f355e6",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/react/react-native/blob/HEAD/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/react/react-native",
+      "scm": {
+        "connection": "scm:git:https://github.com/react/react-native.git",
+        "developerConnection": "scm:git:git@github.com:react/react-native.git",
+        "url": "https://github.com/react/react-native.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.soloader:annotation:0.12.1",
+      "type": "jar",
+      "name": "annotation-0.12.1.jar",
+      "sha256": "f6ddd55268bf1824225df7a35ec1b8b33cf98855a6c9c153d189899e5ef4a418",
+      "pomSha256": "d7737ae5a34b9bd3a846b656191ad0be50b7a9480c990668882a56234e8428e6",
+      "licenses": [
+        {
+          "name": "Apache-2",
+          "url": "https://github.com/facebook/soloader/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/soloader",
+      "scm": {
+        "url": "https://github.com/facebook/soloader.git",
+        "connection": "scm:git:https://github.com/facebook/soloader.git",
+        "developerConnection": "scm:git:git@github.com:facebook/soloader.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.soloader:nativeloader:0.12.1",
+      "type": "jar",
+      "name": "nativeloader-0.12.1.jar",
+      "sha256": "971ded86009c0ac56fb2275e128f852e7dcbc41a40cd799688f8a1aebde5195d",
+      "pomSha256": "de05d0217cb91cb552c8d04816aab408ad56eecc171d12bc2de6832b9ac2b8dc",
+      "licenses": [
+        {
+          "name": "Apache-2",
+          "url": "https://github.com/facebook/soloader/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/soloader",
+      "scm": {
+        "url": "https://github.com/facebook/soloader.git",
+        "connection": "scm:git:https://github.com/facebook/soloader.git",
+        "developerConnection": "scm:git:git@github.com:facebook/soloader.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.soloader:soloader:0.12.1",
+      "type": "aar",
+      "name": "soloader-0.12.1.aar",
+      "sha256": "5bc6e15d712f90a0a3890d22db0eef5fe89ef3fcb3ae8aa1f8f6a6d99547c892",
+      "pomSha256": "2f99e4f764d3c25099faa8d8c24d1e5a37ec250ef395467a5f2e7317b99b6e9e",
+      "licenses": [
+        {
+          "name": "Apache-2",
+          "url": "https://github.com/facebook/soloader/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/soloader",
+      "scm": {
+        "url": "https://github.com/facebook/soloader.git",
+        "connection": "scm:git:https://github.com/facebook/soloader.git",
+        "developerConnection": "scm:git:git@github.com:facebook/soloader.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.facebook.yoga:proguard-annotations:1.19.0",
+      "type": "jar",
+      "name": "proguard-annotations-1.19.0.jar",
+      "sha256": "fb65f706eea05b5640fb6b93d21d6c41f9e2b4e7a6e6d9f28ce9d2a574474995",
+      "pomSha256": "9baf87787eac54aee385e374c2d688a45190493afa5da6459202f5ab23ab4966",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/facebook/yoga/blob/master/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/facebook/yoga",
+      "scm": {
+        "connection": "scm:git:https://github.com/facebook/yoga.git",
+        "developerConnection": "scm:git:git@github.com:facebook/yoga.git",
+        "url": "https://github.com/facebook/yoga.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.HChenX:SuperLyricApi:2.4",
+      "type": "aar",
+      "name": "SuperLyricApi-2.4.aar",
+      "sha256": "87178f12c1b8c10b3ab6651bd25477b77aa205900a7ebfc48e82070a76681232",
+      "pomSha256": "47d31cf7cb0fcc74d58854c83bdbf712fdaa69e48910bbc5d62f1be00b964dca",
+      "licenses": [],
+      "binaryVerified": true,
+      "embeddedNotices": [],
+      "verifiedSourceLicense": {
+        "license": "LGPL-2.1",
+        "sourceCommit": "092adf531c8840549dd872aa795820b0161f86bb",
+        "text": "licenses/LGPL-2.1.txt"
+      }
+    },
+    {
+      "coordinate": "com.github.bumptech.glide:annotations:5.0.5",
+      "type": "jar",
+      "name": "annotations-5.0.5.jar",
+      "sha256": "fb3e596a60c182f3251170bd1e2dfe32ca1d1f0d79763408d1bf168c81d61ae1",
+      "pomSha256": "f83571d7d9912ecd9371af7ccc611aa41f0e2e36ad6cf9759a3f61339006438d",
+      "licenses": [
+        {
+          "name": "Simplified BSD License",
+          "url": "http://www.opensource.org/licenses/bsd-license",
+          "distribution": "repo"
+        },
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/bumptech/glide",
+      "scm": {
+        "connection": "scm:git@github.com:bumptech/glide.git",
+        "developerConnection": "scm:git@github.com:bumptech/glide.git",
+        "url": "https://github.com/bumptech/glide"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.bumptech.glide:avif-integration:5.0.5",
+      "type": "aar",
+      "name": "avif-integration-5.0.5.aar",
+      "sha256": "a994ea472be803f7c9fde37a98d7d149f5cd8fd53310adc8d7a7a5e97da2fea7",
+      "pomSha256": "7016cbb6098fe4e279f508ce25299c1619de25f88cc1e8337f68b4533e641cb7",
+      "licenses": [
+        {
+          "name": "Simplified BSD License",
+          "url": "http://www.opensource.org/licenses/bsd-license",
+          "distribution": "repo"
+        },
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/bumptech/glide",
+      "scm": {
+        "connection": "scm:git@github.com:bumptech/glide.git",
+        "developerConnection": "scm:git@github.com:bumptech/glide.git",
+        "url": "https://github.com/bumptech/glide"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.bumptech.glide:disklrucache:5.0.5",
+      "type": "aar",
+      "name": "disklrucache-5.0.5.aar",
+      "sha256": "509f94cbe85e3aa393c019b026ac904e2eece355a52795e355d82e3e774b2419",
+      "pomSha256": "f4c90da18417e6e7c45502784e7048166b555fc9f464fca4912bbdae26c3da7c",
+      "licenses": [
+        {
+          "name": "Simplified BSD License",
+          "url": "http://www.opensource.org/licenses/bsd-license",
+          "distribution": "repo"
+        },
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/bumptech/glide",
+      "scm": {
+        "connection": "scm:git@github.com:bumptech/glide.git",
+        "developerConnection": "scm:git@github.com:bumptech/glide.git",
+        "url": "https://github.com/bumptech/glide"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.bumptech.glide:gifdecoder:5.0.5",
+      "type": "aar",
+      "name": "gifdecoder-5.0.5.aar",
+      "sha256": "df9e4620e87b68b719ef8af3d100324a144bfc88f43518af9a013674109fe078",
+      "pomSha256": "c451250598892688f0710fe6a21377649ea606d0cc5d2d45fd75ef7ebecd3c88",
+      "licenses": [
+        {
+          "name": "Simplified BSD License",
+          "url": "http://www.opensource.org/licenses/bsd-license",
+          "distribution": "repo"
+        },
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/bumptech/glide",
+      "scm": {
+        "connection": "scm:git@github.com:bumptech/glide.git",
+        "developerConnection": "scm:git@github.com:bumptech/glide.git",
+        "url": "https://github.com/bumptech/glide"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.bumptech.glide:glide:5.0.5",
+      "type": "aar",
+      "name": "glide-5.0.5.aar",
+      "sha256": "73ed8af676087d46400f7b6b9e940e433c3f2a9fd9387b361726a4db2d6d277c",
+      "pomSha256": "be51e34d27126a47df7e45c372ae18c06540d65eafdc3d20a75fbcdfa6a0ab5d",
+      "licenses": [
+        {
+          "name": "Simplified BSD License",
+          "url": "http://www.opensource.org/licenses/bsd-license",
+          "distribution": "repo"
+        },
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/bumptech/glide",
+      "scm": {
+        "connection": "scm:git@github.com:bumptech/glide.git",
+        "developerConnection": "scm:git@github.com:bumptech/glide.git",
+        "url": "https://github.com/bumptech/glide"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.bumptech.glide:okhttp3-integration:5.0.5",
+      "type": "aar",
+      "name": "okhttp3-integration-5.0.5.aar",
+      "sha256": "1a98d943e738ce25a2ceec699d0ee3a8d76e33174b25e91538e5a8565a2d499a",
+      "pomSha256": "0ba7272b0d93ecab2063cf18846f3af0b2a69f406b5d601db76c2858a87c00de",
+      "licenses": [
+        {
+          "name": "Simplified BSD License",
+          "url": "http://www.opensource.org/licenses/bsd-license",
+          "distribution": "repo"
+        },
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/bumptech/glide",
+      "scm": {
+        "connection": "scm:git@github.com:bumptech/glide.git",
+        "developerConnection": "scm:git@github.com:bumptech/glide.git",
+        "url": "https://github.com/bumptech/glide"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.penfeizhou.android.animation:apng:3.0.5",
+      "type": "aar",
+      "name": "apng-3.0.5.aar",
+      "sha256": "3dc9019711f6205f5a11fee7ef990332572ac5f6fdffc1ddefbd28c91097668b",
+      "pomSha256": "66fe57d99c21e57f187992a8fd7ecbd12e9c3c126195766f725192cf25513951",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://github.com/penfeizhou/APNG4Android",
+      "scm": {
+        "connection": "scm:git:git@github.com:penfeizhou/APNG4Android.git",
+        "url": "https://github.com/penfeizhou/APNG4Android"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.penfeizhou.android.animation:avif:3.0.5",
+      "type": "aar",
+      "name": "avif-3.0.5.aar",
+      "sha256": "0be871370c8bc3e5ecde4a589ce821ca53528918989f9ed311338973f0b964c9",
+      "pomSha256": "4f70d792f7fa02688dda108ce1112cbc52e99f8260091f175421e0e63165b1b9",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://github.com/penfeizhou/APNG4Android",
+      "scm": {
+        "connection": "scm:git:git@github.com:penfeizhou/APNG4Android.git",
+        "url": "https://github.com/penfeizhou/APNG4Android"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.penfeizhou.android.animation:awebp:3.0.5",
+      "type": "aar",
+      "name": "awebp-3.0.5.aar",
+      "sha256": "14e1f14afb33b4115baa82a33131b351e05307fca89f8b47c7d8a8dbb68af0c7",
+      "pomSha256": "3c2628c9d0a39827121cf1bbcd3e69d03ccb3cb02c9a0f3fe180cf21d846d5ae",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://github.com/penfeizhou/APNG4Android",
+      "scm": {
+        "connection": "scm:git:git@github.com:penfeizhou/APNG4Android.git",
+        "url": "https://github.com/penfeizhou/APNG4Android"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.penfeizhou.android.animation:frameanimation:3.0.5",
+      "type": "aar",
+      "name": "frameanimation-3.0.5.aar",
+      "sha256": "17e735a6a379972340515a91d96eac5228c1fb6b47f4652aa67f99d735231b08",
+      "pomSha256": "b23bee85f983eb3c5896beeba3d3c83cd63ea5423fbb8b2d7a1560c0796ad051",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://github.com/penfeizhou/APNG4Android",
+      "scm": {
+        "connection": "scm:git:git@github.com:penfeizhou/APNG4Android.git",
+        "url": "https://github.com/penfeizhou/APNG4Android"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.penfeizhou.android.animation:gif:3.0.5",
+      "type": "aar",
+      "name": "gif-3.0.5.aar",
+      "sha256": "78c478c0fcc98a382f0a9e00bf671ce2a1d3ffb34ef817d7caeaf890ba493369",
+      "pomSha256": "baac88d1d898f35f78f1bc9827673d98cdc00669fea2fc32091f294f251c179b",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://github.com/penfeizhou/APNG4Android",
+      "scm": {
+        "connection": "scm:git:git@github.com:penfeizhou/APNG4Android.git",
+        "url": "https://github.com/penfeizhou/APNG4Android"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.github.penfeizhou.android.animation:glide-plugin:3.0.5",
+      "type": "aar",
+      "name": "glide-plugin-3.0.5.aar",
+      "sha256": "81cccbbad121366c7e2ba767b3c46f5150bfccf4b67f33caf094ef34ac4471be",
+      "pomSha256": "f95519b7606c0be14798e0a35875bf3598b22b371d0705fbb9d1d02771d24a7d",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://github.com/penfeizhou/APNG4Android",
+      "scm": {
+        "connection": "scm:git:git@github.com:penfeizhou/APNG4Android.git",
+        "url": "https://github.com/penfeizhou/APNG4Android"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.google.android.material:material:1.13.0",
+      "type": "aar",
+      "name": "material-1.13.0.aar",
+      "sha256": "6d5e1cbb67c05bcdcbbf84005787dafd354a155f59a4d3800fd45fa7eb3689f5",
+      "pomSha256": "9c1f3c4600295cc5d7f6d6886aea16d497f13f9af4675442ad271e7c2febf772",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/material-components/material-components-android",
+      "scm": {
+        "connection": "scm:git:https://github.com/material-components/material-components-android.git",
+        "url": "https://github.com/material-components/material-components-android"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.google.code.findbugs:jsr305:3.0.2",
+      "type": "jar",
+      "name": "jsr305-3.0.2.jar",
+      "sha256": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7",
+      "pomSha256": "19889dbdf1b254b2601a5ee645b8147a974644882297684c798afe5d63d78dfe",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "parent": "org.sonatype.oss:oss-parent:7",
+      "projectUrl": "http://findbugs.sourceforge.net/",
+      "scm": {
+        "connection": "scm:git:https://code.google.com/p/jsr-305/",
+        "developerConnection": "scm:git:https://code.google.com/p/jsr-305/",
+        "url": "https://code.google.com/p/jsr-305/"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.google.code.gson:gson:2.8.6",
+      "type": "jar",
+      "name": "gson-2.8.6.jar",
+      "sha256": "c8fb4839054d280b3033f800d1f5a97de2f028eb8ba2eb458ad287e536f3f25f",
+      "pomSha256": "2174415a647332d30fda04bd1cfc708a3ecc84eaf7517f596188d8244e103911",
+      "licenses": [
+        {
+          "name": "Apache 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "parent": "com.google.code.gson:gson-parent:2.8.6",
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.google.errorprone:error_prone_annotations:2.28.0",
+      "type": "jar",
+      "name": "error_prone_annotations-2.28.0.jar",
+      "sha256": "f3fc8a3a0a4020706a373b00e7f57c2512dd26d1f83d28c7d38768f8682b231e",
+      "pomSha256": "0ce909f13a568148476e5ee200f380f98c75ba08971aaf15db295eb77598ef3a",
+      "licenses": [
+        {
+          "name": "Apache 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "parent": "com.google.errorprone:error_prone_parent:2.28.0",
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.google.guava:failureaccess:1.0.2",
+      "type": "jar",
+      "name": "failureaccess-1.0.2.jar",
+      "sha256": "8a8f81cf9b359e3f6dfa691a1e776985c061ef2f223c9b2c80753e1b458e8064",
+      "pomSha256": "19ebc6f4bdb4edbb3d07b6ee994f846b54ef295582a9b5634719ffa9f31d03b2",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "parent": "com.google.guava:guava-parent:26.0-android",
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.google.guava:guava:33.3.1-android",
+      "type": "jar",
+      "name": "guava-33.3.1-android.jar",
+      "sha256": "2c3e41d1b380f2044d257947a3aa82dabf3ae4b978622745254aa18b6cf89ab0",
+      "pomSha256": "c728db6f2705ca3ea6a3cf2cf1260dbeff3a4524249a1b1b900edcfe9d72142f",
+      "licenses": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "parent": "com.google.guava:guava-parent:33.3.1-android",
+      "projectUrl": "https://github.com/google/guava",
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+      "type": "jar",
+      "name": "listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+      "sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
+      "pomSha256": "18d4b1db26153d4e55079ce1f76bb1fe05cdb862ef9954a88cbcc4ff38b8679b",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "parent": "com.google.guava:guava-parent:26.0-android",
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.google.j2objc:j2objc-annotations:3.0.0",
+      "type": "jar",
+      "name": "j2objc-annotations-3.0.0.jar",
+      "sha256": "88241573467ddca44ffd4d74aa04c2bbfd11bf7c17e0c342c94c9de7a70a7c64",
+      "pomSha256": "23b3d039e168ad89dd114698e6dd7be383f4a2c577b8877d82c73a6515e74a17",
+      "licenses": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/google/j2objc/",
+      "scm": {
+        "url": "http://github.com/google/j2objc",
+        "connection": "scm:git:git://github.com/google/j2objc.git",
+        "developerConnection": "scm:git:ssh://git@github.com/google/j2objc.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.google.protobuf:protobuf-javalite:3.22.3",
+      "type": "jar",
+      "name": "protobuf-javalite-3.22.3.jar",
+      "sha256": "9d26bebd2607fd0553cedbfc3e4a3d3f06c6e7a207d2b74c87fa6181838ed1bf",
+      "pomSha256": "8e4099ee719994af66508b36028ae44e5e4745ba1351393e80d1e4fbe52d051f",
+      "licenses": [
+        {
+          "name": "BSD-3-Clause",
+          "url": "https://opensource.org/licenses/BSD-3-Clause",
+          "distribution": "repo"
+        }
+      ],
+      "parent": "com.google.protobuf:protobuf-parent:3.22.3",
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0",
+      "type": "jar",
+      "name": "retrofit2-kotlinx-serialization-converter-1.0.0.jar",
+      "sha256": "d354b514772e2c70d13d3711b3fabfca74b65c3f397c36afcf5ca8ef5e93cd81",
+      "pomSha256": "980a2e1593f43f6ecea662a903b1e07ae0b064bdbdf95ec04023d738d0f8690e",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter/",
+      "scm": {
+        "connection": "scm:git:git://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter.git",
+        "developerConnection": "scm:git:ssh://git@github.com/JakeWharton/retrofit2-kotlinx-serialization-converter.git",
+        "url": "https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter/"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.parse.bolts:bolts-tasks:1.4.0",
+      "type": "jar",
+      "name": "bolts-tasks-1.4.0.jar",
+      "sha256": "9bc51e3eca853a9df2fbac62c2317db2c9ea619b95b5531c30440243daaccee2",
+      "pomSha256": "8cb007861162c1b9e50dd8ec07b7ce7affea8fe76e07ac408ced81cdcb8312e0",
+      "licenses": [
+        {
+          "name": "BSD License",
+          "url": "https://github.com/BoltsFramework/Bolts-Android/blob/master/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/BoltsFramework/Bolts-Android",
+      "scm": {
+        "connection": "scm:git@github.com:BoltsFramework/Bolts-Android.git",
+        "developerConnection": "scm:git@github.com:BoltsFramework/Bolts-Android.git",
+        "url": "https://github.com/BoltsFramework/Bolts-Android"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.squareup.okhttp3:okhttp-urlconnection:4.9.2",
+      "type": "jar",
+      "name": "okhttp-urlconnection-4.9.2.jar",
+      "sha256": "0e1c39aa89668f9625c9207acd4a8784dc868ad0d5a2011d9e15e0674f3b7d11",
+      "pomSha256": "5019b2b05877af6c4e0976ec2ef0656ce61760549f153f6ef6902159b2db36c4",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://square.github.io/okhttp/",
+      "scm": {
+        "connection": "scm:git:https://github.com/square/okhttp.git",
+        "developerConnection": "scm:git:ssh://git@github.com/square/okhttp.git",
+        "url": "https://github.com/square/okhttp"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.squareup.okhttp3:okhttp:4.12.0",
+      "type": "jar",
+      "name": "okhttp-4.12.0.jar",
+      "sha256": "b1050081b14bb7a3a7e55a4d3ef01b5dcfabc453b4573a4fc019767191d5f4e0",
+      "pomSha256": "7c737040a9419522e7c50cc027416a70fe7c7629e52b219935ade6b4119c7d38",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://square.github.io/okhttp/",
+      "scm": {
+        "connection": "scm:git:https://github.com/square/okhttp.git",
+        "developerConnection": "scm:git:ssh://git@github.com/square/okhttp.git",
+        "url": "https://github.com/square/okhttp"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "okhttp3/internal/publicsuffix/NOTICE",
+          "sha256": "8a9c58fbded5ea3474315e4a9824ca8b1486098a1a03e897e0b19419d5e1876a",
+          "evidenceFile": "licenses/runtime-evidence/com.squareup.okhttp3_okhttp_4.12.0__okhttp3__internal__publicsuffix__NOTICE"
+        }
+      ]
+    },
+    {
+      "coordinate": "com.squareup.okio:okio-jvm:3.16.0",
+      "type": "jar",
+      "name": "okio-jvm-3.16.0.jar",
+      "sha256": "c737c035ca675187bf11a67ddb9581954bf0d5ca9f3e048e838b3267cf32b5c3",
+      "pomSha256": "519a517a6c69e1b985e81b0d9b75d3de45a3838688e3a0948e7a5361e54738f3",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/square/okio/",
+      "scm": {
+        "connection": "scm:git:git://github.com/square/okio.git",
+        "developerConnection": "scm:git:ssh://git@github.com/square/okio.git",
+        "url": "https://github.com/square/okio/"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.squareup.retrofit2:retrofit:2.9.0",
+      "type": "jar",
+      "name": "retrofit-2.9.0.jar",
+      "sha256": "e6ea1929c46852f5bec66ab3357da383476cef4e8d1deefdbf195b79cc4d6581",
+      "pomSha256": "f7e96a31ded699ee36c4e77695c7c1868aa6b4c64bf998f9dfe0c66f25d0e493",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/square/retrofit",
+      "scm": {
+        "connection": "scm:git:git://github.com/square/retrofit.git",
+        "developerConnection": "scm:git:ssh://git@github.com/square/retrofit.git",
+        "url": "https://github.com/square/retrofit/"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.squareup.zstd:zstd-kmp-android:0.4.0",
+      "type": "aar",
+      "name": "zstd-kmp-release.aar",
+      "sha256": "2778570454ae78026df42ace7168b8a6500f2521a5d497f2ab2fc0f804247826",
+      "pomSha256": "2ee9ba9cf373e3f8a14d1aa643d2c3f4ff79872309cae4c36e0a4f239411dae4",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/square/okio-zstd/",
+      "scm": {
+        "connection": "scm:git:https://github.com/square/okio-zstd.git",
+        "developerConnection": "scm:git:ssh://git@github.com/square/okio-zstd.git",
+        "url": "https://github.com/square/okio-zstd/"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "com.squareup.zstd:zstd-kmp-okio-android:0.4.0",
+      "type": "aar",
+      "name": "zstd-kmp-okio-release.aar",
+      "sha256": "8461ece75b646bfe30f6f53a559c2eac82f745f3575d76648386182ffa7c873d",
+      "pomSha256": "42d6bbc7ce9255183568118631ed718033d078e82a5cb9af1ebe28682e23f7d9",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/square/okio-zstd/",
+      "scm": {
+        "connection": "scm:git:https://github.com/square/okio-zstd.git",
+        "developerConnection": "scm:git:ssh://git@github.com/square/okio-zstd.git",
+        "url": "https://github.com/square/okio-zstd/"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "commons-codec:commons-codec:1.10",
+      "type": "jar",
+      "name": "commons-codec-1.10.jar",
+      "sha256": "4241dfa94e711d435f29a4604a3e2de5c4aa3c165e23bd066be6fc1fc4309569",
+      "pomSha256": "bdb8db7012d112a6e3ea8fdb7c510b300d99eff0819d27dddba9c43397ea4cfb",
+      "licenses": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "parent": "org.apache.commons:commons-parent:35",
+      "projectUrl": "http://commons.apache.org/proper/commons-codec/",
+      "scm": {
+        "connection": "scm:svn:http://svn.apache.org/repos/asf/commons/proper/codec/trunk",
+        "developerConnection": "scm:svn:https://svn.apache.org/repos/asf/commons/proper/codec/trunk",
+        "url": "http://svn.apache.org/viewvc/commons/proper/codec/trunk"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/LICENSE.txt",
+          "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+          "evidenceFile": "licenses/runtime-evidence/commons-codec_commons-codec_1.10__META-INF__LICENSE.txt"
+        },
+        {
+          "entry": "META-INF/NOTICE.txt",
+          "sha256": "bcb83645cb4d1a46e551f21a53477b3f8b7518471480e1b6afe04a5f9fc3af80",
+          "evidenceFile": "licenses/runtime-evidence/commons-codec_commons-codec_1.10__META-INF__NOTICE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "commons-io:commons-io:2.6",
+      "type": "jar",
+      "name": "commons-io-2.6.jar",
+      "sha256": "f877d304660ac2a142f3865badfc971dec7ed73c747c7f8d5d2f5139ca736513",
+      "pomSha256": "0c23863893a2291f5a7afdbd8d15923b3948afd87e563fa341cdcf6eae338a60",
+      "licenses": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "parent": "org.apache.commons:commons-parent:42",
+      "projectUrl": "http://commons.apache.org/proper/commons-io/",
+      "scm": {
+        "connection": "scm:git:http://git-wip-us.apache.org/repos/asf/commons-io.git",
+        "developerConnection": "scm:git:https://git-wip-us.apache.org/repos/asf/commons-io.git",
+        "url": "https://git-wip-us.apache.org/repos/asf?p=commons-io.git",
+        "tag": "commons-io-2.6"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/LICENSE.txt",
+          "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac",
+          "evidenceFile": "licenses/runtime-evidence/commons-io_commons-io_2.6__META-INF__LICENSE.txt"
+        },
+        {
+          "entry": "META-INF/NOTICE.txt",
+          "sha256": "f738390135295a249c4fb7118469ff881ae0bd11401b410f7564a52b7e54c4d2",
+          "evidenceFile": "licenses/runtime-evidence/commons-io_commons-io_2.6__META-INF__NOTICE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "expo.modules.asset:expo.modules.asset:57.0.18",
+      "type": "aar",
+      "name": "expo.modules.asset-57.0.18.aar",
+      "sha256": "1e71ea20d2ce42ff6ab775611fd7a0bd7f6dbb02af4e8b16c31e3ea1251d3c21",
+      "pomSha256": "b077e6fc32eb306a434ea8398e01736b9d43b7e5a6fa719794c827053b85aa7d",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-asset",
+        "version": "57.0.18",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-asset__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "expo.modules.image:expo.modules.image:57.0.5",
+      "type": "aar",
+      "name": "expo.modules.image-57.0.5.aar",
+      "sha256": "ec7fdca81aee9371e9f9fd3b869086f2a23dc92028a23b1e1e77e14499ec3c50",
+      "pomSha256": "fb7a8529168ef9b68626868957edda40984bcc4a0ab0f5a2437f8793168f4a0a",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-image",
+        "version": "57.0.5",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-image__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "expo.modules.webview:expo.modules.webview:57.0.1",
+      "type": "aar",
+      "name": "expo.modules.webview-57.0.1.aar",
+      "sha256": "2d319293dab9a90216f66c1788188656d5960a77f6cb14baaceeaa4eff370b7e",
+      "pomSha256": "5407bfd2291dd5ba7ec87082fd148b3c7618fd624546d204d6655254cadaf5af",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "@expo/dom-webview",
+        "version": "57.0.1",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/@expo_dom-webview__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.application:57.0.3",
+      "type": "aar",
+      "name": "expo.modules.application-57.0.3.aar",
+      "sha256": "c0b582604c38314c7ebd70c146db0cf985c665a38141be9c5382524aadd39896",
+      "pomSha256": "ee344d461df540f7cf6591c5ed9a9c0ac04edeee5ef8c1dcc300b8c98b289a31",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-application",
+        "version": "57.0.3",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-application__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.documentpicker:57.0.2",
+      "type": "aar",
+      "name": "expo.modules.documentpicker-57.0.2.aar",
+      "sha256": "a2690b0af0d31d124e2d1a44356f7142d702c064a52343f5a48cee5c20a7cf11",
+      "pomSha256": "77ad230389c0b2266d1f50cfaddfa964e427475cd5d3a384a49f8e9641dca06a",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-document-picker",
+        "version": "57.0.2",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-document-picker__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.filesystem:57.0.7",
+      "type": "aar",
+      "name": "expo.modules.filesystem-57.0.7.aar",
+      "sha256": "3e2b67c2e0b15fd89354be1f282473e954058d89970ea7e91ec0aebb42fd5833",
+      "pomSha256": "0a6449854b323883d5da16582a5b2bee88c74a1f4ce38e68d8215071494db7a3",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-file-system",
+        "version": "57.0.7",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-file-system__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.font:57.0.4",
+      "type": "aar",
+      "name": "expo.modules.font-57.0.4.aar",
+      "sha256": "d7ea73905f045bfec5b9c40172b9b29f327d7a80a0bf05389d12966d157a1430",
+      "pomSha256": "6b862b6783e24f53ebf6887b2473b6a5c9be85c26b0f3adab82408f599afae96",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-font",
+        "version": "57.0.4",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-font__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.keepawake:57.0.2",
+      "type": "aar",
+      "name": "expo.modules.keepawake-57.0.2.aar",
+      "sha256": "7f059d9be13ca2b9658a205a61ffa8490a004c7ce83ea9ed76044058237739c4",
+      "pomSha256": "065370ebe611154e8274afebe24b50dba11807e276662b5ad6c16eb57dbe7367",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-keep-awake",
+        "version": "57.0.2",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-keep-awake__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.lineargradient:57.0.2",
+      "type": "aar",
+      "name": "expo.modules.lineargradient-57.0.2.aar",
+      "sha256": "880061f0f5565244ad63a2bb0ac0a3e09070a0fde297b89020f99d8cb67a97b4",
+      "pomSha256": "9c81e3c97b1bbc75540d29ab2604e5d07aabb5104ad5ae9eac0a000ac91bf5bf",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-linear-gradient",
+        "version": "57.0.2",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-linear-gradient__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.linking:57.0.11",
+      "type": "aar",
+      "name": "expo.modules.linking-57.0.11.aar",
+      "sha256": "871c78452f5f85ddd6fe5af6789d985ce1e8c8f152c4161dee41779ced119f01",
+      "pomSha256": "f8187e63dd819b0d7408c5f31f590b3da12b2821dd284eecb968d3228274372d",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-linking",
+        "version": "57.0.11",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-linking__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.securestore:57.0.4",
+      "type": "aar",
+      "name": "expo.modules.securestore-57.0.4.aar",
+      "sha256": "376af238662aeaffed98c5230627d28145bde0fdf934c5f157a5c50a32d9a440",
+      "pomSha256": "e2043dafa19fb71d6581060689848179f8af2ea8dbd671baa656975b3e39abd8",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-secure-store",
+        "version": "57.0.4",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-secure-store__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.sharing:57.0.22",
+      "type": "aar",
+      "name": "expo.modules.sharing-57.0.22.aar",
+      "sha256": "bdcb7b8243328e6f7dad117911a79328b0bfc7ff91e1b05c5efab7c07a2a453f",
+      "pomSha256": "16794a36572cc57aec90132e3066811f652c36b40128c3b767256aeb48280d79",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-sharing",
+        "version": "57.0.22",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-sharing__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.sqlite:57.0.3",
+      "type": "aar",
+      "name": "expo.modules.sqlite-57.0.3.aar",
+      "sha256": "df1da5f5381b01deb84c69e946436e98f69fb7a3c3f55c03b01e88061fd88e4d",
+      "pomSha256": "3af19f382afed8dd75aec53c44bf8e83edc810d919cb7603b9c70e055314bf85",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-sqlite",
+        "version": "57.0.3",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-sqlite__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "host.exp.exponent:expo.modules.systemui:57.0.4",
+      "type": "aar",
+      "name": "expo.modules.systemui-57.0.4.aar",
+      "sha256": "d4cd090dce4ae451978bdf20adf73075775b048303f7ddf83c8a6d3844ec5dd0",
+      "pomSha256": "267658c355ab57ff0371be0638ce5517bb77d979b33d1f055ab08cb3ba56f084",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "https://github.com/expo/expo/blob/main/LICENSE",
+          "distribution": "https://github.com/expo/expo/blob/main/LICENSE"
+        }
+      ],
+      "projectUrl": "https://github.com/expo/expo",
+      "scm": {
+        "connection": "https://github.com/expo/expo.git",
+        "developerConnection": "https://github.com/expo/expo.git",
+        "url": "https://github.com/expo/expo"
+      },
+      "sourcePackage": {
+        "name": "expo-system-ui",
+        "version": "57.0.4",
+        "license": "MIT"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "npm-package/LICENSE",
+          "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+          "evidenceFile": "licenses/runtime-evidence/expo-system-ui__LICENSE"
+        }
+      ]
+    },
+    {
+      "coordinate": "io.github.lukmccall.pika:pika-api:0.3.2",
+      "type": "jar",
+      "name": "pika-api-0.3.2.jar",
+      "sha256": "60d7fb7d2231daf6ce48c6616c07ec9f0fcd10ae9954ef16ddbb27f99cf9da6e",
+      "pomSha256": "002330cc5eadf2e1e3ad94e86bd44951cd4d998c59550f894f7caa08c202c8bb",
+      "licenses": [
+        {
+          "name": "The MIT License",
+          "url": "https://opensource.org/license/mit",
+          "distribution": "https://opensource.org/license/mit"
+        }
+      ],
+      "projectUrl": "https://github.com/lukmccall/pika",
+      "scm": {
+        "connection": "scm:git:git://github.com/lukmccall/pika.git",
+        "developerConnection": "scm:git:ssh://github.com/lukmccall/pika.git",
+        "url": "https://github.com/lukmccall/pika"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "io.github.zhongwuzw:annotation:2.4.0",
+      "type": "aar",
+      "name": "annotation-2.4.0.aar",
+      "sha256": "4932cba9e50f69cf3b21c69364568167297d990f33e85f48df0ccdd9f4ab6482",
+      "pomSha256": "d00ba66a077cfb9883aa7e2745282f8385001ea6c2a238e6c80000706eb96ada",
+      "licenses": [
+        {
+          "name": "BSD-3-Clause",
+          "url": "https://opensource.org/license/bsd-3-clause",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/zhongwuzw/MMKV",
+      "scm": {
+        "connection": "scm:git:git://github.com/zhongwuzw/MMKV.git",
+        "developerConnection": "scm:git:ssh://git@github.com/zhongwuzw/MMKV.git",
+        "url": "https://github.com/zhongwuzw/MMKV"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "io.github.zhongwuzw:mmkv:2.4.0",
+      "type": "aar",
+      "name": "mmkv-2.4.0.aar",
+      "sha256": "f1f40d7460d689aa3768bb51c38de917ab4cd5946928db371f1be1aaa5997e82",
+      "pomSha256": "5d7a5da83ac4035502e1d33a80a824b62e2f21279571836df27b86540f352ae2",
+      "licenses": [
+        {
+          "name": "BSD-3-Clause",
+          "url": "https://opensource.org/license/bsd-3-clause",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/zhongwuzw/MMKV",
+      "scm": {
+        "connection": "scm:git:git://github.com/zhongwuzw/MMKV.git",
+        "developerConnection": "scm:git:ssh://git@github.com/zhongwuzw/MMKV.git",
+        "url": "https://github.com/zhongwuzw/MMKV"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "javax.inject:javax.inject:1",
+      "type": "jar",
+      "name": "javax.inject-1.jar",
+      "sha256": "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff",
+      "pomSha256": "943e12b100627804638fa285805a0ab788a680266531e650921ebfe4621a8bfa",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "http://code.google.com/p/atinject/",
+      "scm": {
+        "url": "http://code.google.com/p/atinject/source/checkout"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "jp.wasabeef:glide-transformations:4.3.0",
+      "type": "aar",
+      "name": "glide-transformations-4.3.0.aar",
+      "sha256": "ce3a57e80456a2380a07b31c6156644ad491022424df38a47de1e814d746d6e3",
+      "pomSha256": "2518399829d1fd31e0749cddd992a6b406418bc74a72c3c7f1d9fb2da93f9e64",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://github.com/wasabeef/glide-transformations",
+      "scm": {
+        "connection": "https://github.com/wasabeef/glide-transformations.git",
+        "developerConnection": "https://github.com/wasabeef/glide-transformations.git",
+        "url": "https://github.com/wasabeef/glide-transformations"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "net.jthink:jaudiotagger:3.0.1",
+      "type": "jar",
+      "name": "jaudiotagger-3.0.1.jar",
+      "sha256": "68aa0fe601b05df683a843acf6f8d4793ab476f47da1ac3dab57e0b1886b0aee",
+      "pomSha256": "f2978526656d884f7b91b518c567bcad330eb3541fd9372ebaeb771bed2e5188",
+      "licenses": [
+        {
+          "name": "LGPL",
+          "url": "http://www.gnu.org/copyleft/lesser.html"
+        }
+      ],
+      "parent": "net.java:jvnet-parent:1",
+      "projectUrl": "https://bitbucket.org/ijabz/jaudiotagger",
+      "scm": {
+        "connection": "scm:git:https://bitbucket.org/ijabz/jaudiotagger.git",
+        "developerConnection": "scm:git:git@github.com:ijabz/jaudiotagger.git",
+        "url": "https://github.com/ijabz/jaudiotagger",
+        "tag": "v3.0.1"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.aomedia.avif.android:avif:1.1.1.14d8e3c4",
+      "type": "aar",
+      "name": "avif-1.1.1.14d8e3c4.aar",
+      "sha256": "d46e1e215388a6ccd9cd2e333929ba3f03671e5e72a7ab1f1f0a2a35c8bd66a5",
+      "pomSha256": "2f098a4c17f4540f50e302e8203fac3f69f5b4d63adc86841244a0a7e9f62ccc",
+      "licenses": [
+        {
+          "name": "BSD 2-Clause License",
+          "url": "https://github.com/AOMediaCodec/libavif/blob/master/LICENSE",
+          "distribution": "repo",
+          "comments": "BSD 2-Clause License"
+        }
+      ],
+      "projectUrl": "https://github.com/AOMediaCodec/libavif",
+      "scm": {
+        "connection": "scm:git@github.com:AOMediaCodec/libavif.git",
+        "developerConnection": "scm:git@github.com:AOMediaCodec/libavif.git",
+        "url": "https://github.com/AOMediaCodec/libavif"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.brotli:dec:0.1.2",
+      "type": "jar",
+      "name": "dec-0.1.2.jar",
+      "sha256": "615c0c3efef990d77831104475fba6a1f7971388691d4bad1471ad84101f6d52",
+      "pomSha256": "1d3db28e001eb9a01732d0c98be062af9af536d942897a0c937984af8b4228c0",
+      "licenses": [
+        {
+          "name": "MIT License",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "parent": "org.brotli:parent:0.1.2",
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.checkerframework:checker-qual:3.43.0",
+      "type": "jar",
+      "name": "checker-qual-3.43.0.jar",
+      "sha256": "3fbc2e98f05854c3df16df9abaa955b91b15b3ecac33623208ed6424640ef0f6",
+      "pomSha256": "9313bf53b3efd8aaca266eea8b96e307976b65c0b16510cc6f02319fbaebed43",
+      "licenses": [
+        {
+          "name": "The MIT License",
+          "url": "http://opensource.org/licenses/MIT",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://checkerframework.org/",
+      "scm": {
+        "connection": "scm:git:https://github.com/typetools/checker-framework.git",
+        "developerConnection": "scm:git:ssh://git@github.com/typetools/checker-framework.git",
+        "url": "https://github.com/typetools/checker-framework.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": [
+        {
+          "entry": "META-INF/LICENSE.txt",
+          "sha256": "e90eaa08dea089df10f2bf7f9dba63a5f6237c01562c4741e2e86773e78582d5",
+          "evidenceFile": "licenses/runtime-evidence/org.checkerframework_checker-qual_3.43.0__META-INF__LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "coordinate": "org.chromium.net:cronet-api:143.7445.0",
+      "type": "aar",
+      "name": "cronet-api-143.7445.0.aar",
+      "sha256": "8397f5b3752e3387571a0ff33e19a0db4cc14da16f4337872dcf3aa66ad9372a",
+      "pomSha256": "9e6dce46bce2a99710ffde3aef1a1eb4f5f61f189e88477a46aaf38900b76086",
+      "licenses": [
+        {
+          "name": "Chromium and built-in dependencies",
+          "url": "https://storage.cloud.google.com/chromium-cronet/android/143.0.7445.0/Release/cronet/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.chromium.net:cronet-common:143.7445.0",
+      "type": "aar",
+      "name": "cronet-common-143.7445.0.aar",
+      "sha256": "cc88d8f1eadda836b7eb95408a2ebbb0cb99454c2cd66c6da93b13f1cb4f4524",
+      "pomSha256": "4dfeeb7ecb63fb8b61cdef6cec1fbe36706a63e7f615f63e8bdb0c976527d161",
+      "licenses": [
+        {
+          "name": "Chromium and built-in dependencies",
+          "url": "https://storage.cloud.google.com/chromium-cronet/android/143.0.7445.0/Release/cronet/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.chromium.net:cronet-embedded:143.7445.0",
+      "type": "aar",
+      "name": "cronet-embedded-143.7445.0.aar",
+      "sha256": "afdd7af7568e9758e3690c3a4a228f30993ac3e4ef0f94c72bb68503c0167697",
+      "pomSha256": "5d72cd6c9a25dd320bae96eaf63aae57e9a7bef9dfb9658d0edf3152baa9695e",
+      "licenses": [
+        {
+          "name": "Chromium and built-in dependencies",
+          "url": "https://storage.cloud.google.com/chromium-cronet/android/@143.0.7445.0/Release/cronet/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.chromium.net:cronet-shared:143.7445.0",
+      "type": "aar",
+      "name": "cronet-shared-143.7445.0.aar",
+      "sha256": "4c4e615be83ca05e9b4138322ca89c92452f2340278333f44ee6aab5bff13b3d",
+      "pomSha256": "3febaf03babf2c91c2c29e811a66821ab110bf29cecd2846f9ed2f0dac438f9d",
+      "licenses": [
+        {
+          "name": "Chromium and built-in dependencies",
+          "url": "https://storage.cloud.google.com/chromium-cronet/android/143.0.7445.0/Release/cronet/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.chromium.net:httpengine-native-provider:143.7445.0",
+      "type": "aar",
+      "name": "httpengine-native-provider-143.7445.0.aar",
+      "sha256": "50d8e3f3c16b9a199b48f8df2aafa58ae115058a68a29696da888248c638ad6d",
+      "pomSha256": "3870234ff592d521ad7e58c2f15fd83334b97d836986b285b1a5d4c809be7568",
+      "licenses": [
+        {
+          "name": "Chromium and built-in dependencies",
+          "url": "https://storage.cloud.google.com/chromium-cronet/android/143.0.7445.0/Release/cronet/LICENSE",
+          "distribution": "repo"
+        }
+      ],
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-android-extensions-runtime:2.1.20",
+      "type": "jar",
+      "name": "kotlin-android-extensions-runtime-2.1.20.jar",
+      "sha256": "c9ffc2b6bfcdd8ce7ad1de77128bf0368f2cb06fdf20bd1415aa4439f10e22f5",
+      "pomSha256": "093c4983509f41ac9d0826e1a416ebb00a34d7731614ade781cebdd535804123",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://kotlinlang.org/",
+      "scm": {
+        "connection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "developerConnection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "url": "https://github.com/JetBrains/kotlin"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-annotations-jvm:1.3.72",
+      "type": "jar",
+      "name": "kotlin-annotations-jvm-1.3.72.jar",
+      "sha256": "3ee3a56dd451e33f8352e0d2803a55ca1b9156d7f8a8e0759bf8e187ff8db24a",
+      "pomSha256": "58d42ef0c4a8b216fd4c9716d18368000df64d094f74ee6488165af0bb817457",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://kotlinlang.org/",
+      "scm": {
+        "connection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "developerConnection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "url": "https://github.com/JetBrains/kotlin"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-parcelize-runtime:2.1.20",
+      "type": "jar",
+      "name": "kotlin-parcelize-runtime-2.1.20.jar",
+      "sha256": "8d5fb6f1f2eaab779997d09283c30ff7eb5741ea4b54dd3ef32d3372a55aff46",
+      "pomSha256": "4db727a898334fde377ee991e89ab3743547921f2277d42ea71061a8622d9239",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://kotlinlang.org/",
+      "scm": {
+        "connection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "developerConnection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "url": "https://github.com/JetBrains/kotlin"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-reflect:2.1.20",
+      "type": "jar",
+      "name": "kotlin-reflect-2.1.20.jar",
+      "sha256": "419778f2b7a826bad6ee2ca1e4bdebe639ab306d2904fa3ef2a308ecfaab3811",
+      "pomSha256": "5e020887aec0d89a9c168efd91aed62865553877f9303f145dbcb9d23ba60dc7",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://kotlinlang.org/",
+      "scm": {
+        "connection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "developerConnection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "url": "https://github.com/JetBrains/kotlin"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.1.20",
+      "type": "jar",
+      "name": "kotlin-stdlib-jdk7-2.1.20.jar",
+      "sha256": "5343bf795783932e5fa538b0bca05af810bb07213edb9baa770c784068f57867",
+      "pomSha256": "dcf3de1ba53393a449c789f1e515f9aa88c603a6d356a480ea42ff7d4a98b737",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://kotlinlang.org/",
+      "scm": {
+        "connection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "developerConnection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "url": "https://github.com/JetBrains/kotlin"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22",
+      "type": "jar",
+      "name": "kotlin-stdlib-jdk8-1.8.22.jar",
+      "sha256": "4198b0eaf090a4f25b6f7e5a59581f4314ba8c9f6cd1d13ee9d348e65ed8f707",
+      "pomSha256": "928f2187217476313cb816d48070bc7654aa3b9a5ae81d3fc5f8c279cc8f8d9e",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://kotlinlang.org/",
+      "scm": {
+        "connection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "developerConnection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "url": "https://github.com/JetBrains/kotlin"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib:2.2.20",
+      "type": "jar",
+      "name": "kotlin-stdlib-2.2.20.jar",
+      "sha256": "8836ccffd3585fadda9901244b20d42901d2f3cd581058d8434e2ffabcf3a3e7",
+      "pomSha256": "4a8b086e6431bcf623637f52b2ff192e1adb913838742e5c0eea70a8dee429c4",
+      "licenses": [
+        {
+          "name": "Apache-2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "https://kotlinlang.org/",
+      "scm": {
+        "connection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "developerConnection": "scm:git:https://github.com/JetBrains/kotlin.git",
+        "url": "https://github.com/JetBrains/kotlin"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2",
+      "type": "jar",
+      "name": "kotlinx-coroutines-android-1.10.2.jar",
+      "sha256": "e713f1f874244115a07571065cffa0f24f5e78300e9720fea16de3af1d75fd41",
+      "pomSha256": "b92d3672e7f9e8f4c4e2ab187c3e31fecc506496396f4a5f27ee1c957a42b319",
+      "licenses": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/Kotlin/kotlinx.coroutines",
+      "scm": {
+        "url": "https://github.com/Kotlin/kotlinx.coroutines"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2",
+      "type": "jar",
+      "name": "kotlinx-coroutines-core-jvm-1.10.2.jar",
+      "sha256": "5ca175b38df331fd64155b35cd8cae1251fa9ee369709b36d42e0a288ccce3fd",
+      "pomSha256": "658f576b96c832e7382406adb197d64d8e2e97de10e96dfa3700decfa2a60def",
+      "licenses": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/Kotlin/kotlinx.coroutines",
+      "scm": {
+        "url": "https://github.com/Kotlin/kotlinx.coroutines"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.10.2",
+      "type": "jar",
+      "name": "kotlinx-coroutines-guava-1.10.2.jar",
+      "sha256": "d54c4c9f9f2d3612afa5801daf70a7b68687f78d8936360341f1a89b535abfee",
+      "pomSha256": "126d860e3963148b36c180a04220401867b15703e71df201d4c89b3081456e3c",
+      "licenses": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/Kotlin/kotlinx.coroutines",
+      "scm": {
+        "url": "https://github.com/Kotlin/kotlinx.coroutines"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.8.1",
+      "type": "jar",
+      "name": "kotlinx-serialization-core-jvm-1.8.1.jar",
+      "sha256": "3565b6d4d789bf70683c45566944287fc1d8dc75c23d98bd87d01059cc76f2b3",
+      "pomSha256": "446655e8d43828bfbb387ce9d151a9371a3092b48b909e80606b53fc58979e28",
+      "licenses": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/Kotlin/kotlinx.serialization",
+      "scm": {
+        "url": "https://github.com/Kotlin/kotlinx.serialization"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.8.1",
+      "type": "jar",
+      "name": "kotlinx-serialization-json-jvm-1.8.1.jar",
+      "sha256": "8769e5647557e3700919c32d508f5c5dad53c5d8234cd10846354fbcff14aa24",
+      "pomSha256": "d665d6b41fe058f666a6f386ad2e49cc101ef8fd2eefefefcbc111e91ee82436",
+      "licenses": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/Kotlin/kotlinx.serialization",
+      "scm": {
+        "url": "https://github.com/Kotlin/kotlinx.serialization"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jetbrains:annotations:23.0.0",
+      "type": "jar",
+      "name": "annotations-23.0.0.jar",
+      "sha256": "7b0f19724082cbfcbc66e5abea2b9bc92cf08a1ea11e191933ed43801eb3cd05",
+      "pomSha256": "c9490f655132328df2cfbcfdf743f53fc3916d6c1d10437175a6ca6e3a67771c",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "distribution": "repo"
+        }
+      ],
+      "projectUrl": "https://github.com/JetBrains/java-annotations",
+      "scm": {
+        "url": "https://github.com/JetBrains/java-annotations",
+        "connection": "scm:git:git://github.com/JetBrains/java-annotations.git",
+        "developerConnection": "scm:git:ssh://github.com:JetBrains/java-annotations.git"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    },
+    {
+      "coordinate": "org.jspecify:jspecify:1.0.0",
+      "type": "jar",
+      "name": "jspecify-1.0.0.jar",
+      "sha256": "1fad6e6be7557781e4d33729d49ae1cdc8fdda6fe477bb0cc68ce351eafdfbab",
+      "pomSha256": "cdab929a3b95211f43d2090c5e2d0dfe8465960e378bc32b35841dab324433a6",
+      "licenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "projectUrl": "http://jspecify.org/",
+      "scm": {
+        "connection": "scm:git:git@github.com:jspecify/jspecify.git",
+        "developerConnection": "scm:git:git@github.com:jspecify/jspecify.git",
+        "url": "https://github.com/jspecify/jspecify/"
+      },
+      "binaryVerified": true,
+      "embeddedNotices": []
+    }
+  ],
+  "status": "INCOMPLETE_DISTRIBUTION_REVIEW",
+  "localProjects": [
+    ":bbplayer-native",
+    ":bbplayer-orpheus",
+    ":expo",
+    ":expo-constants",
+    ":expo-eas-client",
+    ":expo-json-utils",
+    ":expo-log-box",
+    ":expo-manifests",
+    ":expo-modules-core",
+    ":expo-structured-headers",
+    ":expo-updates-interface",
+    ":react-native-nitro-fetch",
+    ":react-native-nitro-modules",
+    ":react-native-safe-area-context",
+    ":react-native-svg",
+    ":react-native-worklets"
+  ],
+  "scope": "Reviewed unsigned APK releaseRuntimeClasspath binary hashes checked against local frozen installation/cache. POM declarations are evidence, not proof of complete transitive/native license compliance. This is not the inventory of later APK builds.",
+  "additionalEvidence": [
+    {
+      "component": "Cronet 143.0.7445.0 with built-in dependencies",
+      "source": "https://storage.googleapis.com/chromium-cronet/android/143.0.7445.0/Release/cronet/LICENSE",
+      "file": "licenses/cronet-143.0.7445.0.txt",
+      "sha256": "be9838eb10695d40d337a442d1c1921bdfe2d3df44f3827c350e810bb0670e65"
+    }
+  ],
+  "openItems": [
+    "Collect actual Metro bundle packages and linked native-source packages, rather than treating all installed development tools as APK dependencies.",
+    "Complete version-matched copyright/NOTICE for native libraries and their bundled dependencies, including Hermes/React Native/Fresco/libavif/libc++/zstd.",
+    "Review Android Install Referrer 2.2 terms and required distribution notices; its POM declares Android SDK terms, not Apache-2.0.",
+    "Verify rebuilt SuperLyricApi and jaudiotagger replacements in an actual unsigned APK; source availability alone does not prove relinking.",
+    "Bind the completed distribution materials to the final signed candidate APK; signing/device checks remain outside this audit."
+  ],
+  "auditId": "2026-10-28-pre-asset-replacements"
+}

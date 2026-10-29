@@ -1,0 +1,66 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:fbcore:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/fbcore/3.6.0/fbcore-3.6.0-sources.jar
+Source archive SHA-256: 9e40c8fffd8eac571133917fb14c1c42b44e789bf5911831b47b7217296c14fb
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/common/activitylistener/ActivityListener.java, com/facebook/common/activitylistener/ActivityListenerManager.java, com/facebook/common/activitylistener/BaseActivityListener.java, com/facebook/common/activitylistener/ListenableActivity.java, com/facebook/common/callercontext/ContextChain.java, com/facebook/common/callercontext/ImageAttribution.java, com/facebook/common/disk/DiskTrimmable.java, com/facebook/common/disk/DiskTrimmableRegistry.java, com/facebook/common/disk/NoOpDiskTrimmableRegistry.java, com/facebook/common/disk/package-info.java, com/facebook/common/executors/CallerThreadExecutor.java, com/facebook/common/executors/ConstrainedExecutorService.java, com/facebook/common/executors/DefaultSerialExecutorService.java, com/facebook/common/executors/HandlerExecutorService.java, com/facebook/common/executors/HandlerExecutorServiceImpl.java, com/facebook/common/executors/ScheduledFutureImpl.java, com/facebook/common/executors/SerialExecutorService.java, com/facebook/common/executors/StatefulRunnable.java, com/facebook/common/executors/UiThreadImmediateExecutorService.java, com/facebook/common/file/FileTree.java, com/facebook/common/file/FileTreeVisitor.java, com/facebook/common/file/FileUtils.java, com/facebook/common/internal/AndroidPredicates.java, com/facebook/common/internal/DoNotStrip.java, com/facebook/common/internal/Fn.java, com/facebook/common/internal/ImmutableList.java, com/facebook/common/internal/ImmutableMap.java, com/facebook/common/internal/ImmutableSet.java, com/facebook/common/internal/Predicate.java, com/facebook/common/internal/Suppliers.java, com/facebook/common/internal/package-info.java, com/facebook/common/lifecycle/AttachDetachListener.java, com/facebook/common/logging/FLog.java, com/facebook/common/logging/FLogDefaultLoggingDelegate.java, com/facebook/common/logging/LoggingDelegate.java, com/facebook/common/logging/package-info.java, com/facebook/common/media/MimeTypeMapWrapper.java, com/facebook/common/memory/ByteArrayPool.java, com/facebook/common/memory/DecodeBufferHelper.java, com/facebook/common/memory/MemoryTrimType.java, com/facebook/common/memory/MemoryTrimmable.java, com/facebook/common/memory/MemoryTrimmableRegistry.java, com/facebook/common/memory/NoOpMemoryTrimmableRegistry.java, com/facebook/common/memory/Pool.java, com/facebook/common/memory/PooledByteArrayBufferedInputStream.java, com/facebook/common/memory/PooledByteBuffer.java, com/facebook/common/memory/PooledByteBufferFactory.java, com/facebook/common/memory/PooledByteBufferInputStream.java, com/facebook/common/memory/PooledByteBufferOutputStream.java, com/facebook/common/memory/PooledByteStreams.java, com/facebook/common/memory/package-info.java, com/facebook/common/references/CloseableReference.java, com/facebook/common/references/DefaultCloseableReference.java, com/facebook/common/references/FinalizerCloseableReference.java, com/facebook/common/references/HasBitmap.java, com/facebook/common/references/NoOpCloseableReference.java, com/facebook/common/references/OOMSoftReference.java, com/facebook/common/references/RefCountCloseableReference.java, com/facebook/common/references/ResourceReleaser.java, com/facebook/common/references/SharedReference.java, com/facebook/common/references/package-info.java, com/facebook/common/statfs/StatFsHelper.java, com/facebook/common/streams/LimitedInputStream.java, com/facebook/common/streams/TailAppendingInputStream.java, com/facebook/common/time/AwakeTimeSinceBootClock.java, com/facebook/common/time/Clock.java, com/facebook/common/time/CurrentThreadTimeClock.java, com/facebook/common/time/MonotonicClock.java, com/facebook/common/time/MonotonicNanoClock.java, com/facebook/common/time/RealtimeSinceBootClock.java, com/facebook/common/time/SystemClock.java, com/facebook/common/util/ByteConstants.java, com/facebook/common/util/ExceptionWithNoStacktrace.java, com/facebook/common/util/HashCodeUtil.java, com/facebook/common/util/Hex.java, com/facebook/common/util/SecureHashUtil.java, com/facebook/common/util/StreamUtil.java, com/facebook/common/util/TriState.java, com/facebook/common/util/UriUtil.java, com/facebook/common/webp/BitmapCreator.java, com/facebook/common/webp/WebpBitmapFactory.java, com/facebook/common/webp/WebpSupportStatus.java, com/facebook/datasource/AbstractDataSource.java, com/facebook/datasource/BaseBooleanSubscriber.java, com/facebook/datasource/BaseDataSubscriber.java, com/facebook/datasource/DataSource.java, com/facebook/datasource/DataSources.java, com/facebook/datasource/DataSubscriber.java, com/facebook/datasource/FirstAvailableDataSourceSupplier.java, com/facebook/datasource/IncreasingQualityDataSourceSupplier.java, com/facebook/datasource/RetainingDataSourceSupplier.java, com/facebook/datasource/SimpleDataSource.java, com/facebook/datasource/package-info.java, com/facebook/widget/text/span/BetterImageSpan.java, com/facebook/common/closeables/AutoCleanupDelegate.kt, com/facebook/common/media/MediaUtils.kt, com/facebook/datasource/SuccessfulVoidDataSource.kt, com/facebook/memory/helper/HashCode.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+---
+
+Files: com/facebook/common/internal/ByteStreams.java, com/facebook/common/internal/Closeables.java, com/facebook/common/internal/CountingOutputStream.java, com/facebook/common/internal/Files.java, com/facebook/common/internal/Sets.java, com/facebook/common/internal/Supplier.java, com/facebook/common/internal/Throwables.java
+/*
+ * Copyright (C) 2007 The Guava Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: com/facebook/common/internal/Objects.java
+/*
+ * Copyright (C) 2014 The Guava Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+---
+
+Files: com/facebook/common/internal/Preconditions.java
+/*
+ * Copyright (C) 2007 The Guava Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */

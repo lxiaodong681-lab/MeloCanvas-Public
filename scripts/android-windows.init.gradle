@@ -1,0 +1,47 @@
+// Keep native paths short and separate checkouts that share a Windows toolchain.
+gradle.beforeProject { p ->
+    def checkout = p.rootDir.canonicalPath.toLowerCase(java.util.Locale.ROOT)
+    def checkoutId = java.security.MessageDigest.getInstance('SHA-256')
+        .digest(checkout.getBytes('UTF-8')).encodeHex().toString().substring(0, 8)
+    def serialCmake = [
+        '-DCMAKE_JOB_POOLS=melo_serial=1',
+        '-DCMAKE_JOB_POOL_COMPILE=melo_serial',
+        '-DCMAKE_JOB_POOL_LINK=melo_serial'
+    ]
+    p.pluginManager.withPlugin('com.android.application') {
+        p.extensions.getByName('androidComponents').finalizeDsl { android ->
+            // A build's explicit ABI selection also overrides a pre-generated ndk filter.
+            def architectures = p.findProperty('reactNativeArchitectures')
+            if (architectures != null) {
+                def requested = architectures.toString().split(',').collect { it.trim() }
+                if (requested.isEmpty() || requested.any { !(it in ['arm64-v8a', 'x86_64']) }) {
+                    throw new GradleException('MeloCanvas supports arm64-v8a and x86_64 builds')
+                }
+                android.defaultConfig.ndk.abiFilters.clear()
+                android.defaultConfig.ndk.abiFilters.addAll(requested)
+            }
+            android.defaultConfig.externalNativeBuild.cmake.arguments.addAll(serialCmake)
+        }
+    }
+    p.pluginManager.withPlugin('com.android.library') {
+        p.extensions.getByName('androidComponents').finalizeDsl { android ->
+            if (android.externalNativeBuild.cmake.path != null) {
+                // AGP also executes prefab_command.bat from build/intermediates;
+                // shortening only CMake staging still exceeds MAX_PATH in release.
+                android.defaultConfig.externalNativeBuild.cmake.arguments.addAll(serialCmake)
+                p.layout.buildDirectory.set(new File(gradle.gradleUserHomeDir.parentFile, 'build-melo/' + checkoutId + '/' + p.name))
+                if (p.name == 'react-native-nitro-modules') {
+                    // Nitro captures buildDir early; map only its old generated Java source.
+                    def originalCodegen = new File(p.projectDir, 'build/generated/source/codegen/java').canonicalFile
+                    def isolatedCodegen = new File(p.layout.buildDirectory.get().asFile, 'generated/source/codegen/java')
+                    def javaSources = android.sourceSets.getByName('main').java
+                    javaSources.setSrcDirs(javaSources.srcDirs.collect { source ->
+                        source.canonicalFile == originalCodegen ? isolatedCodegen : source
+                    })
+                }
+                android.externalNativeBuild.cmake.buildStagingDirectory =
+                    new File(gradle.gradleUserHomeDir.parentFile, 'cxx-melo/' + checkoutId + '/' + p.name)
+            }
+        }
+    }
+}

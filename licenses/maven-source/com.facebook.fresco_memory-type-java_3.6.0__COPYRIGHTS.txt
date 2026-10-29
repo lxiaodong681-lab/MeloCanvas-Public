@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:memory-type-java:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/memory-type-java/3.6.0/memory-type-java-3.6.0-sources.jar
+Source archive SHA-256: 3027029506229a477c7a8e3beb30c86f2d8d9d4c76bda730c1787442d5cd98ce
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/imagepipeline/memory/BufferMemoryChunk.java, com/facebook/imagepipeline/memory/BufferMemoryChunkPool.java
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

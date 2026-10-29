@@ -1,0 +1,21 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: org.brotli:dec:0.1.2
+Source: https://repo.maven.apache.org/maven2/org/brotli/dec/0.1.2/dec-0.1.2-sources.jar
+Source archive SHA-256: 064ac1e41f475c1fd0479b6505f44b6e3bb044b948bddc75d56a496ebb85fbc3
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: org/brotli/dec/BitReader.java, org/brotli/dec/BrotliInputStream.java, org/brotli/dec/BrotliRuntimeException.java, org/brotli/dec/Context.java, org/brotli/dec/Decode.java, org/brotli/dec/Dictionary.java, org/brotli/dec/Huffman.java, org/brotli/dec/HuffmanTreeGroup.java, org/brotli/dec/Prefix.java, org/brotli/dec/RunningState.java, org/brotli/dec/State.java, org/brotli/dec/Transform.java, org/brotli/dec/Utils.java, org/brotli/dec/WordTransformType.java
+/* Copyright 2015 Google Inc. All Rights Reserved.
+
+   Distributed under MIT license.
+   See file LICENSE for detail or copy at https://opensource.org/licenses/MIT
+*/
+
+---
+
+Files: org/brotli/dec/IntReader.java
+/* Copyright 2017 Google Inc. All Rights Reserved.
+
+   Distributed under MIT license.
+   See file LICENSE for detail or copy at https://opensource.org/licenses/MIT
+*/

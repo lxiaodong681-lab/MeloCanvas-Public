@@ -1,0 +1,461 @@
+import React from 'react'
+import {
+	Pressable,
+	ScrollView,
+	StyleSheet,
+	View,
+	useWindowDimensions,
+} from 'react-native'
+
+import type { SearchItem, Source } from './core/model'
+import {
+	MusicTransportControls,
+	hostPlayerHorizontalPaddingDp,
+} from './host-controls'
+import type { usePlayer } from './player'
+import { Progress } from './progress'
+import {
+	Artwork,
+	Button,
+	Card,
+	Icon,
+	IconButton,
+	T,
+	time,
+	useTheme,
+} from './ui'
+export function MusicPlayer({
+	player,
+	current,
+	isLiked,
+	busyBv,
+	onLike,
+	onClose,
+	onTheme,
+	onSource,
+	onQueue,
+	onNotice,
+	onNotificationSettings,
+	notifications,
+	bottomInset,
+	onFm,
+	fmMessage,
+}: {
+	player: ReturnType<typeof usePlayer>
+	current: Source | null
+	isLiked: (bvid: string) => boolean
+	busyBv: string
+	onLike: (source: Source) => void
+	onClose: () => void
+	onTheme: () => void
+	onSource: () => void
+	onQueue: () => void
+	onNotice: (message: string) => void
+	onNotificationSettings: () => void
+	notifications: boolean
+	bottomInset: number
+	onFm: () => void
+	fmMessage: string
+}) {
+	const theme = useTheme()
+	const c = theme.tokens
+	const { width } = useWindowDimensions()
+	if (!player.track) return null
+	return (
+		<ScrollView
+			testID='player-page'
+			contentContainerStyle={{
+				paddingHorizontal: hostPlayerHorizontalPaddingDp,
+				paddingBottom: bottomInset + 28,
+			}}
+		>
+			<View
+				style={[s.row, { justifyContent: 'space-between', marginBottom: 16 }]}
+			>
+				<IconButton
+					name='down'
+					label='收起播放器'
+					onPress={() => onClose()}
+				/>
+				<View style={{ alignItems: 'center', flex: 1 }}>
+					<T
+						size={9}
+						muted
+						style={s.eyebrow}
+					>
+						NOW PLAYING
+					</T>
+					<T size={12}>{player.fmContext ? '私人 FM' : '音绘 · 正在播放'}</T>
+				</View>
+				<IconButton
+					name='star'
+					label='切换主题'
+					onPress={() => onTheme()}
+				/>
+			</View>
+			<View style={{ alignItems: 'center', marginTop: 8, marginBottom: 24 }}>
+				<View
+					style={[
+						{
+							width: Math.min(width - 86, 300),
+							height: Math.min(width - 86, 300),
+							padding: theme.components.playerFrame === 'tilted' ? 6 : 0,
+							backgroundColor: c.surface.card,
+							borderWidth: theme.components.playerFrame === 'tilted' ? 1.5 : 0,
+							borderColor: c.border.strong,
+							borderRadius: theme.components.playerFrame === 'arch' ? 180 : 12,
+							borderBottomLeftRadius:
+								theme.components.playerFrame === 'arch' ? 8 : 12,
+							borderBottomRightRadius:
+								theme.components.playerFrame === 'arch' ? 8 : 12,
+							overflow: 'hidden',
+							transform:
+								theme.components.playerFrame === 'tilted'
+									? [{ rotate: '-3deg' }]
+									: [],
+							boxShadow: `8px 10px 0 ${c.border.subtle}`,
+						},
+					]}
+				>
+					<Artwork
+						uri={player.track.artwork}
+						fit='contain'
+						style={{
+							width: '100%',
+							height: '100%',
+							borderRadius: theme.components.playerFrame === 'stacked' ? 12 : 0,
+						}}
+					/>
+				</View>
+			</View>
+			<View style={s.row}>
+				<View style={{ flex: 1 }}>
+					<T
+						size={23}
+						weight='700'
+						lines={2}
+					>
+						{player.track.title || 'B 站音源'}
+					</T>
+					<T
+						muted
+						size={12}
+						style={{ marginTop: 7 }}
+					>
+						{current ? `UP · ${current.uploader}` : player.track.artist}
+					</T>
+				</View>
+				<IconButton
+					name='heart'
+					label={
+						current && isLiked(current.bvid)
+							? '取消喜欢当前音源'
+							: '喜欢当前音源'
+					}
+					active={current ? isLiked(current.bvid) : false}
+					disabled={!current || !!busyBv}
+					onPress={() => {
+						if (current) onLike(current)
+					}}
+				/>
+			</View>
+			<View style={[s.row, { marginTop: 16, justifyContent: 'space-between' }]}>
+				<Pressable
+					accessibilityRole='button'
+					accessibilityLabel='查看音源信息'
+					onPress={() => onSource()}
+					style={[s.row, { minHeight: 48, gap: 6 }]}
+				>
+					<T
+						muted
+						size={11}
+					>
+						Bilibili 音源 · 当前分 P
+					</T>
+					<Icon
+						name='arrow'
+						size={14}
+						color={c.text.secondary}
+					/>
+				</Pressable>
+				<T
+					muted
+					size={11}
+				>
+					独立音轨 · 节流优先
+				</T>
+			</View>
+			<T
+				muted
+				size={10}
+				style={{ marginTop: 6 }}
+			>
+				{current?.bvid} · 歌手 / 录音版本待核对
+			</T>
+			<Progress
+				position={player.position}
+				duration={player.duration || player.track.duration || 0}
+				onSeek={(value) => {
+					void player.seek(value)
+				}}
+			/>
+			{player.error ? (
+				<Card style={{ marginBottom: 16 }}>
+					<T style={{ color: c.state.error }}>{player.error}</T>
+					<View style={{ marginTop: 12 }}>
+						<Button onPress={player.retry}>重试音频</Button>
+					</View>
+				</Card>
+			) : player.buffering ? (
+				<T
+					muted
+					style={{ textAlign: 'center', marginBottom: 12 }}
+				>
+					正在解析 / 缓冲真实音频…
+				</T>
+			) : null}
+			<MusicTransportControls
+				playing={player.playing}
+				previousDisabled={
+					player.queue.findIndex((item) => item.id === player.track?.id) <= 0
+				}
+				nextDisabled={
+					player.queue.findIndex((item) => item.id === player.track?.id) >=
+					player.queue.length - 1
+				}
+				onOrderInfo={() => onNotice('按队列顺序播放，播完停止')}
+				onPrevious={() => {
+					void player.previous()
+				}}
+				onToggle={() => {
+					void player.toggle()
+				}}
+				onNext={() => {
+					void player.next()
+				}}
+				onQueue={() => onQueue()}
+			/>
+			{player.fmContext && (
+				<View style={{ marginTop: 12, gap: 8 }}>
+					{!!fmMessage && (
+						<T
+							size={12}
+							muted
+						>
+							{fmMessage}
+						</T>
+					)}
+					<Button
+						secondary
+						onPress={onFm}
+					>
+						管理与退出私人 FM
+					</Button>
+				</View>
+			)}
+			<View style={{ marginTop: 28, alignItems: 'center', gap: 9 }}>
+				<T
+					size={12}
+					style={{ color: c.action.primary }}
+					weight='600'
+				>
+					封面
+				</T>
+				<T
+					muted
+					size={11}
+				>
+					保留原始视频信息，喜欢仅保存在本机
+				</T>
+				<T
+					muted
+					size={10}
+				>
+					播放片段缓存不等于完整离线下载
+				</T>
+			</View>
+			{!notifications && (
+				<View style={{ marginTop: 18 }}>
+					<Button
+						secondary
+						onPress={() => {
+							onNotificationSettings()
+						}}
+					>
+						媒体通知不可用 · 前往设置
+					</Button>
+				</View>
+			)}
+		</ScrollView>
+	)
+}
+export function SongRow({
+	item,
+	liked,
+	busy,
+	active,
+	onPlay,
+	onLike,
+	onListen,
+	onMore,
+	listeningResult,
+}: {
+	item: SearchItem | Source
+	liked: boolean
+	busy: boolean
+	active: boolean
+	onPlay: () => void
+	onLike: () => void
+	onListen?: () => void
+	onMore?: () => void
+	listeningResult: boolean
+}) {
+	const t = useTheme()
+	return (
+		<View
+			style={[
+				s.row,
+				{
+					paddingVertical: 13,
+					gap: 10,
+					borderBottomWidth: 1,
+					borderBottomColor: t.tokens.border.subtle,
+				},
+			]}
+		>
+			<Pressable
+				accessibilityRole='button'
+				accessibilityLabel={`${listeningResult ? '收听' : '播放'} ${item.originalTitle}`}
+				disabled={busy}
+				onPress={listeningResult ? onListen : onPlay}
+				style={[s.row, { flex: 1, gap: 11, minHeight: 62 }]}
+			>
+				<Artwork
+					uri={item.artwork}
+					size={listeningResult ? undefined : 57}
+					fit={listeningResult ? 'contain' : 'cover'}
+					style={{
+						...(listeningResult ? { width: 104, height: 59 } : {}),
+						borderRadius: t.components.card === 'comic' ? 5 : 11,
+					}}
+				/>
+				<View style={{ flex: 1, gap: 4 }}>
+					<T
+						size={14}
+						weight='600'
+						lines={2}
+						style={active ? { color: t.tokens.action.primary } : undefined}
+					>
+						{item.originalTitle}
+					</T>
+					<T
+						muted
+						size={11}
+						lines={1}
+					>
+						{busy ? '正在读取音源…' : `UP · ${item.uploader}`}
+					</T>
+					<T
+						muted
+						size={10}
+					>
+						{time(item.duration)} · Bilibili ·{' '}
+						{'category' in item ? item.category : '版本待核对'}
+					</T>
+				</View>
+			</Pressable>
+			{listeningResult ? (
+				<View>
+					<IconButton
+						name='play'
+						label={`以听视频收听 ${item.originalTitle}`}
+						onPress={onListen ?? onPlay}
+						disabled={busy}
+					/>
+					{onMore && (
+						<RowMore
+							title={item.originalTitle}
+							onPress={onMore}
+							disabled={busy}
+						/>
+					)}
+				</View>
+			) : (
+				<View>
+					<IconButton
+						name='heart'
+						label={`${liked ? '取消喜欢' : '喜欢'} ${item.originalTitle}`}
+						active={liked}
+						disabled={busy}
+						onPress={onLike}
+					/>
+					{onMore ? (
+						<RowMore
+							title={item.originalTitle}
+							onPress={onMore}
+							disabled={busy}
+						/>
+					) : (
+						onListen && (
+							<Pressable
+								accessibilityRole='button'
+								accessibilityLabel={`以听视频开启 ${item.originalTitle}`}
+								disabled={busy}
+								onPress={onListen}
+								style={{
+									minWidth: 48,
+									minHeight: 48,
+									alignItems: 'center',
+									justifyContent: 'center',
+								}}
+							>
+								<T
+									size={10}
+									style={{ color: t.tokens.action.primary }}
+								>
+									听视频
+								</T>
+							</Pressable>
+						)
+					)}
+				</View>
+			)}
+		</View>
+	)
+}
+function RowMore({
+	title,
+	onPress,
+	disabled,
+}: {
+	title: string
+	onPress: () => void
+	disabled: boolean
+}) {
+	const theme = useTheme()
+	return (
+		<Pressable
+			accessibilityRole='button'
+			accessibilityLabel={`更多音源操作 ${title}`}
+			onPress={onPress}
+			disabled={disabled}
+			style={{
+				minWidth: 48,
+				minHeight: 48,
+				alignItems: 'center',
+				justifyContent: 'center',
+			}}
+		>
+			<T
+				size={10}
+				style={{ color: theme.tokens.action.primary }}
+			>
+				更多
+			</T>
+		</Pressable>
+	)
+}
+const s = StyleSheet.create({
+	row: { flexDirection: 'row', alignItems: 'center' },
+	eyebrow: { letterSpacing: 1.5 },
+})

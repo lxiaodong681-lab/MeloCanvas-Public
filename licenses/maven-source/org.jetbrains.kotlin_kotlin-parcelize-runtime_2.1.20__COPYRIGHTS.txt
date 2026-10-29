@@ -1,0 +1,38 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: org.jetbrains.kotlin:kotlin-parcelize-runtime:2.1.20
+Source: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-parcelize-runtime/2.1.20/kotlin-parcelize-runtime-2.1.20-sources.jar
+Source archive SHA-256: e36e2dc99f143bfc20e2d3896c2c1b974674aacd2874aeec4ee1b89f0d43145f
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: kotlinx/parcelize/DataClass.kt, kotlinx/parcelize/DirectInitializerMarker.kt, kotlinx/parcelize/Experimental.kt
+/*
+ * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ */
+
+---
+
+Files: kotlinx/parcelize/IgnoredOnParcel.kt, kotlinx/parcelize/Parceler.kt, kotlinx/parcelize/Parcelize.kt, kotlinx/parcelize/RawValue.kt, kotlinx/parcelize/TypeParceler.kt, kotlinx/parcelize/WriteWith.kt
+/*
+ * Copyright 2010-2017 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: kotlinx/parcelize/parcelableCreator.kt
+/*
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ */

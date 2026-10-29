@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:id="@+id/melo_widget_background" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" android:importantForAccessibility="no" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp">
+        <ImageView android:id="@+id/melo_widget_cover" android:layout_width="48dp" android:layout_height="48dp" android:scaleType="fitCenter" android:importantForAccessibility="no" />
+        <LinearLayout android:id="@+id/melo_widget_open" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center_vertical" android:paddingHorizontal="10dp" android:minHeight="48dp">
+            <TextView android:id="@+id/melo_widget_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" android:ellipsize="end" android:textSize="15sp" android:textStyle="bold" />
+            <TextView android:id="@+id/melo_widget_subtitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" android:ellipsize="end" android:textSize="11sp" />
+        </LinearLayout>
+        <FrameLayout android:layout_width="48dp" android:layout_height="48dp">
+            <ImageView android:id="@+id/melo_widget_play_background" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" />
+            <ImageButton android:id="@+id/melo_widget_play" android:layout_width="48dp" android:layout_height="48dp" android:background="@android:color/transparent" android:padding="12dp" android:scaleType="fitCenter" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

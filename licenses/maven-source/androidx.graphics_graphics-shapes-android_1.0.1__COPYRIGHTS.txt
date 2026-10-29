@@ -1,0 +1,60 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.graphics:graphics-shapes-android:1.0.1
+Source: https://dl.google.com/dl/android/maven2/androidx/graphics/graphics-shapes-android/1.0.1/graphics-shapes-android-1.0.1-sources.jar
+Source archive SHA-256: ae746c3a68f8631d2b8b2ac74a8a1e59352112e86380bd966d741c6d4efa61c6
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidMain/androidx/graphics/shapes/Shapes.android.kt, commonMain/androidx/graphics/shapes/FeatureMapping.kt, commonMain/androidx/graphics/shapes/Features.kt, commonMain/androidx/graphics/shapes/FloatMapping.kt, commonMain/androidx/graphics/shapes/Point.kt, commonMain/androidx/graphics/shapes/PolygonMeasure.kt
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jvmMain/androidx/graphics/shapes/Format.jvm.kt, commonMain/androidx/graphics/shapes/Format.kt
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: commonMain/androidx/graphics/shapes/CornerRounding.kt, commonMain/androidx/graphics/shapes/Cubic.kt, commonMain/androidx/graphics/shapes/Morph.kt, commonMain/androidx/graphics/shapes/RoundedPolygon.kt, commonMain/androidx/graphics/shapes/Shapes.kt, commonMain/androidx/graphics/shapes/Utils.kt
+/*
+ * Copyright 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

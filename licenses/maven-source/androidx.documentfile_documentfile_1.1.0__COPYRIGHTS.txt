@@ -1,0 +1,22 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.documentfile:documentfile:1.1.0
+Source: https://dl.google.com/dl/android/maven2/androidx/documentfile/documentfile/1.1.0/documentfile-1.1.0-sources.jar
+Source archive SHA-256: d39120d0f88be611b858b76986e16925e30cb59bf2b8c5dca6b5e12f99a19fdc
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidx/documentfile/provider/DocumentFile.java, androidx/documentfile/provider/DocumentsContractApi19.java, androidx/documentfile/provider/RawDocumentFile.java, androidx/documentfile/provider/SingleDocumentFile.java, androidx/documentfile/provider/TreeDocumentFile.java
+/*
+ * Copyright 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

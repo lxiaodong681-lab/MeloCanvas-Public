@@ -1,0 +1,60 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.biometric:biometric:1.1.0
+Source: https://dl.google.com/dl/android/maven2/androidx/biometric/biometric/1.1.0/biometric-1.1.0-sources.jar
+Source archive SHA-256: a34841717766cd97c36f708763ead26c79a9721129ffd87c57c99fea10a8f9e0
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidx/biometric/AuthenticationCallbackProvider.java, androidx/biometric/AuthenticatorUtils.java, androidx/biometric/BiometricErrorData.java, androidx/biometric/BiometricViewModel.java, androidx/biometric/CancellationSignalProvider.java, androidx/biometric/CryptoObjectUtils.java, androidx/biometric/KeyguardUtils.java, androidx/biometric/PackageUtils.java
+/*
+ * Copyright 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/biometric/BiometricFragment.java, androidx/biometric/BiometricPrompt.java, androidx/biometric/FingerprintDialogFragment.java
+/*
+ * Copyright 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/biometric/BiometricManager.java, androidx/biometric/DeviceUtils.java, androidx/biometric/ErrorUtils.java
+/*
+ * Copyright 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

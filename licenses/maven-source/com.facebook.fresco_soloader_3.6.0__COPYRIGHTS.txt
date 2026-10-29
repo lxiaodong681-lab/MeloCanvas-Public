@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:soloader:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/soloader/3.6.0/soloader-3.6.0-sources.jar
+Source archive SHA-256: bf432ddaed4fc2060e096d198d259753636fc3ef6e2e2c4d76cc9d072192de58
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/imagepipeline/nativecode/NativeCodeInitializer.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

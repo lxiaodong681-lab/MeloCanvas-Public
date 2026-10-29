@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:nativeimagetranscoder:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/nativeimagetranscoder/3.6.0/nativeimagetranscoder-3.6.0-sources.jar
+Source archive SHA-256: 1668be9000da037cfecdef3f084b4d5d6f682ea2172f7a7a836526f0bb41d3ef
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/imagepipeline/nativecode/NativeJpegTranscoder.java, com/facebook/imagepipeline/nativecode/NativeJpegTranscoderFactory.java, com/facebook/imagepipeline/nativecode/NativeJpegTranscoderSoLoader.java
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

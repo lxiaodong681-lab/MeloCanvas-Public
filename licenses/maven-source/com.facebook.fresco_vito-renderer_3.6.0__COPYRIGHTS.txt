@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:vito-renderer:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/vito-renderer/3.6.0/vito-renderer-3.6.0-sources.jar
+Source archive SHA-256: 5f97c0833b16731f5ecff0d7881c68a7636da42049345c5a9fe9e1dda48b547d
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/fresco/vito/renderer/CanvasTransformation.kt, com/facebook/fresco/vito/renderer/CanvasTransformationHandler.kt, com/facebook/fresco/vito/renderer/ImageDataModel.kt, com/facebook/fresco/vito/renderer/ImageRenderer.kt, com/facebook/fresco/vito/renderer/Shape.kt, com/facebook/fresco/vito/renderer/util/ColorUtils.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

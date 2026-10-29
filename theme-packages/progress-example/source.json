@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "format": "melocanvas-theme",
+    "schemaVersion": 1,
+    "id": "example.custom-progress",
+    "version": "1.0.0",
+    "name": "独立进度条样例",
+    "author": "MeloCanvas",
+    "minAppVersion": "0.18.0",
+    "license": "MIT",
+    "entry": {
+      "tokens": "tokens.json",
+      "components": "components.json"
+    },
+    "fallback": "melocanvas.builtin.modern",
+    "requiredCapabilities": [
+      "semantic-colors",
+      "icons",
+      "backgrounds",
+      "component-variants",
+      "player-frame",
+      "motion-presets",
+      "custom-progress-v1"
+    ],
+    "optionalCapabilities": [],
+    "previews": [
+      "previews/background.png"
+    ]
+  },
+  "images": {
+    "assets/background.png": "assets/background.png",
+    "previews/background.png": "previews/background.png",
+    "assets/thumb.png": "assets/thumb.png"
+  }
+}

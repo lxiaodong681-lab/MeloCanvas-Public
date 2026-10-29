@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.yoga:proguard-annotations:1.19.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/yoga/proguard-annotations/1.19.0/proguard-annotations-1.19.0-sources.jar
+Source archive SHA-256: 8f0410f1a0c5e5714f5790e036d0c447a96bad9ca99a42470657fbab577fb4f1
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/proguard/annotations/DoNotStrip.java, com/facebook/proguard/annotations/DoNotStripAny.java
+/*
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

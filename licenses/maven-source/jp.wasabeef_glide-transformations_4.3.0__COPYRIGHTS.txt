@@ -1,0 +1,42 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: jp.wasabeef:glide-transformations:4.3.0
+Source: https://repo.maven.apache.org/maven2/jp/wasabeef/glide-transformations/4.3.0/glide-transformations-4.3.0-sources.jar
+Source archive SHA-256: 254049b0ec947b81bc0d5c8664e45a84793f9833306aac61d72a9116383c260b
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: jp/wasabeef/glide/transformations/gpu/InvertFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/SepiaFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/ToonFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/SketchFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/VignetteFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/PixelationFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/ContrastFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/SwirlFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/KuwaharaFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/GPUFilterTransformation.java, jp/wasabeef/glide/transformations/gpu/BrightnessFilterTransformation.java, jp/wasabeef/glide/transformations/CropSquareTransformation.java, jp/wasabeef/glide/transformations/GrayscaleTransformation.java, jp/wasabeef/glide/transformations/internal/RSBlur.java, jp/wasabeef/glide/transformations/internal/Utils.java, jp/wasabeef/glide/transformations/internal/FastBlur.java, jp/wasabeef/glide/transformations/RoundedCornersTransformation.java, jp/wasabeef/glide/transformations/CropCircleTransformation.java, jp/wasabeef/glide/transformations/MaskTransformation.java, jp/wasabeef/glide/transformations/ColorFilterTransformation.java, jp/wasabeef/glide/transformations/BlurTransformation.java, jp/wasabeef/glide/transformations/CropCircleWithBorderTransformation.java, jp/wasabeef/glide/transformations/CropTransformation.java
+/**
+ * Copyright (C) 2020 Wasabeef
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: jp/wasabeef/glide/transformations/BitmapTransformation.java
+/**
+ * Copyright (C) 2020 Wasabeef
+ * Copyright 2014 Google, Inc. All rights reserved.
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

@@ -1,0 +1,781 @@
+{
+  "date": "2026-10-28",
+  "status": "LOCAL_REVIEW_ONLY",
+  "assets": [
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-hdpi/splashscreen_logo.png",
+      "size": 28463,
+      "sha256": "39f79d9e8f5b9eb3005e3a78724d6176d38793cf4ae2a3d460a1ffa99fa43ab4",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-mdpi/splashscreen_logo.png",
+      "size": 14149,
+      "sha256": "11af11327ff6c3f413feee591d6fd42cf58fe0ac40b4adbe1ef4f11fef55a953",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-nodpi/melo_splash_logo.png",
+      "size": 474186,
+      "sha256": "4a74ab3f6db1daa85e24672867a9b228bdabfcbc1d2aa5257c732dc3a3d7897d",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-xhdpi/splashscreen_logo.png",
+      "size": 45353,
+      "sha256": "bff0eec4a44b1f2f3d21a8227642d2c56079fbebe64ef022c622657fcb53e78f",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-xxhdpi/splashscreen_logo.png",
+      "size": 88187,
+      "sha256": "6bbab23a50c8c18b32a0dc87931727bce3545a8078eb264c956e6adcc7a1afb4",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-xxxhdpi/splashscreen_logo.png",
+      "size": 145619,
+      "sha256": "4a40d5931beba7bdb120d6431a3eca9256cad0f0a2f4b81f886ae235d682cd69",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp",
+      "size": 14000,
+      "sha256": "60f6b34c40039c32c690faaf85daf96fc2975aac2f09011f099b603f1473e143",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+      "size": 6885,
+      "sha256": "368056b764d0ea7bb57c5f26581d02a75eeed02fa6e21da9aee20af23226d663",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+      "size": 6693,
+      "sha256": "e7efe3ac09cec0ca85b37481d72d9998fd469164ac036756dbf2a5b1ba2699ac",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp",
+      "size": 6868,
+      "sha256": "a5f37a6bfff9aed187cd58d3c688c5929c1918d4de63db870b92153af0cf6da2",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+      "size": 3558,
+      "sha256": "2bec36b758cc5ecf15b4950a56b4e189d83e101e8c1b73c660eeb428e2d6b943",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+      "size": 3426,
+      "sha256": "60ce197a0cc5153404cb60993ebb08dd1ac9fa83005dde6a19b3b11baab97e20",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp",
+      "size": 23267,
+      "sha256": "29d893ee6918b2a77ea981fb5190f49fb00fad9daf968d875e4b25408e2f8426",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+      "size": 11659,
+      "sha256": "109bdb03f2e528ecd94b63d1220e1b7c699e830ba1ed6e637427fbefc1a9943c",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+      "size": 11325,
+      "sha256": "ba7f5613c8c127a4652a41a2a2ba698fdf21df1b983f11f5ca1a07b53213f96e",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp",
+      "size": 47326,
+      "sha256": "0966a2ef72b87bfa80d6bfc9c2f2ea526b44a2a68ceb3c8b89515f99183dee04",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+      "size": 23436,
+      "sha256": "6b063166cb197d84d96b276891f09e3b7df375ac485453726b50e04405c632e3",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+      "size": 22886,
+      "sha256": "c0cd4663f6e6cf52d61414beb924456b8e7d2088ec1ebc114953998775be6966",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp",
+      "size": 78664,
+      "sha256": "fedbcd33defd6ee268b3c826e0ca1b3e2ee351230b8e957d3f897063e77ed085",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+      "size": 39164,
+      "sha256": "d2438ef66341b830acea3838e0acc0d1e7001bb6708f6bae0babaa46f5c4faff",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "size": 38438,
+      "sha256": "2712327c7a85d240cad942d1c2c1fed0f63cd91844f6fc41ae6127f96237af82",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/assets/bootsplash/logo.png",
+      "size": 20581,
+      "sha256": "6607fec5a804c52e7b20a74a82493b94a286e2684f8f51841be67885a9368f19",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "118a14bbc4767ffb9764708b99fc9c9f0738248c4881eaf8e9f79a1ac52f8055"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/bootsplash/logo@1,5x.png",
+      "size": 40893,
+      "sha256": "630233b8c6b918c32bfdba372901d91a1c62c7cff4dd405c193ed2c879770fd9",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "04f8ab93c72729c24187a28a6361c7434656b8e32322e5c26357b5afe161536a"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/bootsplash/logo@2x.png",
+      "size": 67047,
+      "sha256": "ab161e053f988cdfb2f109369b6d361e00505fa3a5d3373602516a829fa0167f",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "2fd92500c5e03691746efeb33610b7a68bf1109151194c6fbf5781cc4a5dc85d"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/bootsplash/logo@3x.png",
+      "size": 130575,
+      "sha256": "262c6c9b3d6a54b923df4a20ebce7b9dcadb6c83866bd298341464848a31156b",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "bf3f0d1f0c91088c05743a99d0abf414cf43d03b2632fff2511064ef3a425af4"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/bootsplash/logo@4x.png",
+      "size": 205638,
+      "sha256": "1116332b0cd530e610d3145c0ea74656f74f5aaec05c05dcd4b8252662732c49",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "928288e424a9362c9f67a40a2709e51633de9041433e7bd6d3549b9793873216"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/images/adaptive-icon.png",
+      "size": 663158,
+      "sha256": "f6df2c1d4079518f183abb0d28099785627b8563346dfe2a0285e69cd9214b05",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "a23dd5a6365573234e880eeee6d9231ffad9c08ce59592b0c7d013845b1427b6"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/images/bilibili-default-avatar.jpg",
+      "size": 13839,
+      "sha256": "8bbc8739cc6fd2394a2cc96e773683011d902f332ecb59bacebdbd2d92d9e2e5",
+      "status": "replaced-project-geometry",
+      "license": "MIT",
+      "evidence": "Independent project geometry; scripts/prepare-public-assets.cjs and design-prototype/assets SVG sources. Original upstream asset excluded.",
+      "previousSha256": "d9fb5d67d034290737c9b9cd6b188e4bc7edc437226a8b409df7b66f20e4a601"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/images/icon_large.png",
+      "size": 242516,
+      "sha256": "c51a2553acfde5ae53a57e2f7115c5010b999cede3dbc3668513e52a0790b960",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "69ffcf19fb70f4b5c6a06241c5b808a3e79f8151921a69eedceeb244b1dc0c6c"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/images/icon.png",
+      "size": 663158,
+      "sha256": "f6df2c1d4079518f183abb0d28099785627b8563346dfe2a0285e69cd9214b05",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "a23dd5a6365573234e880eeee6d9231ffad9c08ce59592b0c7d013845b1427b6"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/images/media3_notification_small_icon.png",
+      "size": 5385,
+      "sha256": "9c23673e231f7e744742059aec57838a55e8ff4235a8902ba1d077890ff7e047",
+      "status": "replaced-project-geometry",
+      "license": "MIT",
+      "evidence": "Independent project geometry; scripts/prepare-public-assets.cjs and design-prototype/assets SVG sources. Original upstream asset excluded.",
+      "previousSha256": "69ffcf19fb70f4b5c6a06241c5b808a3e79f8151921a69eedceeb244b1dc0c6c"
+    },
+    {
+      "path": "android-app/apps/mobile/assets/images/splash-icon.png",
+      "size": 645335,
+      "sha256": "52efb3b3782cff5b9cab4e95ad8b3b7bfd696acc55382df47397a346fe8e564d",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "ca5790b20ab747cff79dba793e811dd5970b33c4dd999a4fec199b39716d9df2"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/botanical.svg",
+      "size": 523,
+      "sha256": "af413702676babefc09fc29434fe7b6d7084205d079a72dd8d255beb5f4e04b6",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/coast.png",
+      "size": 2620192,
+      "sha256": "11b32a11c0e9c2530bf5277445564b665b7ee2f368bddf10a0c8065458812f14",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/cosmos.png",
+      "size": 1697,
+      "sha256": "34b1937e6edddf3532ee8ae0e7e5ba577206fa8e1171bfb6d79740b3f965c832",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/icon-foreground.png",
+      "size": 378466,
+      "sha256": "b75b32415c86b6836ac8bf55e63921062604649df90e1e790d0a37294e04059a",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/icon.png",
+      "size": 474186,
+      "sha256": "4a74ab3f6db1daa85e24672867a9b228bdabfcbc1d2aa5257c732dc3a3d7897d",
+      "status": "maintainer-supplied-brand-art",
+      "license": "MIT",
+      "evidence": "Maintainer-supplied icon and platform derivatives, MIT grant 2026-10-28. See docs/mascot-assets.md; no SVG reproduction claim for the new icon."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/icon.svg",
+      "size": 377,
+      "sha256": "09c50b11a5a777daa7b32b433fe98b962a0704bfe511ea930237edfb840d2bde",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/empty.png",
+      "size": 1284921,
+      "sha256": "8487c7c02fb7b13ff74dbd08596a801acb0893647cea61f2f506315315e48543",
+      "status": "authorized-mascot-derivative",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/error.png",
+      "size": 1442056,
+      "sha256": "8ad50f6fc0c3d88effe868deea7aaa747c6d49f12c0b8e8fd2e180914e4e3fb2",
+      "status": "authorized-mascot-derivative",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/liked.png",
+      "size": 1309935,
+      "sha256": "b4af72212534afab66faf31dd048ec92e3cc856c616a31bc933ae1b647504a21",
+      "status": "authorized-mascot-derivative",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/loading.png",
+      "size": 1460870,
+      "sha256": "8e56872c4897946da56b58cd452fde7da7b0e5e4ebe045ced4eb459457bb77ac",
+      "status": "authorized-mascot-derivative",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/playing.png",
+      "size": 1349509,
+      "sha256": "0464630d43d821ff7dceffa8a467b9b58233b52461d697d0ba4f2e758a097349",
+      "status": "authorized-mascot-derivative",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/portrait-cutout.png",
+      "size": 2023825,
+      "sha256": "1862d654d3bd159684fd1a50cbc6924beb6686676161a2102ebdab4252c09bbf",
+      "status": "authorized-mascot-derivative",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/portrait.png",
+      "size": 1686012,
+      "sha256": "41e39c5d548e3ba833b337adda419fc8c89c65e2a4d7077ec7cd4587b58682bc",
+      "status": "maintainer-supplied-brand-art",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/search.png",
+      "size": 1409785,
+      "sha256": "b98fdfbb74f31d1e15cb9e577acad86337e944e55944fc1a86143ea3be64c531",
+      "status": "authorized-mascot-derivative",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/sleep.png",
+      "size": 1192512,
+      "sha256": "46bc27fb7f871063a91e8eae92c4332ea5c15d8ee8846ab47199876788cf2943",
+      "status": "authorized-mascot-derivative",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/video.png",
+      "size": 1514411,
+      "sha256": "dca3275c2b800ca6e86e64a0d17add8afa5d3a7c20cf35617e14c84a0ad72dcd",
+      "status": "authorized-mascot-derivative",
+      "license": "LicenseRef-MeloCanvas-OC",
+      "evidence": "Maintainer-owned OC declaration; limited permission only within MeloCanvas, other uses require permission. See melo/assets/mascot/LICENSE.txt and docs/mascot-assets.md."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/meadow.png",
+      "size": 37277,
+      "sha256": "6b3d68f396100106ca0021247fd9e3703bf374abebf2d3cef16e26294332d691",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/meadow.svg",
+      "size": 1318,
+      "sha256": "0b3420f469cc49066969a09200d7b117e740b194f237b1560f9bd4ceb777eb6c",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/orbit.png",
+      "size": 70528,
+      "sha256": "56a3cbfd5df89bb252249b5368a07c98d4466b33f59679d2d447507774b2bc43",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/orbit.svg",
+      "size": 1579,
+      "sha256": "f873702fd732c3bb017eaf10ff9806f8f18e135df50da10e27882e0d5bf5588c",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/starfield.svg",
+      "size": 607,
+      "sha256": "3f4a1db0c14c8ec5c5c93d7e1660fa788caea754ec4df03b4b2201702a711859",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/support/alipay.jpg",
+      "size": 133841,
+      "sha256": "33b29d202d22b0d3e887c13ac1eb9d29384000ee7ee2911a3b130904f7b98044",
+      "status": "intentional-public-support-data",
+      "license": "Maintainer supplied for project support; payment provider marks retain their rights",
+      "evidence": "Prior explicit maintainer request to display/share these support QR codes; recipient accuracy must be confirmed before release."
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/support/wechat.png",
+      "size": 142844,
+      "sha256": "5a5b2ba8f59df483d33b4f32bb9a62150aaf00085824dc4b6a3d3e06aaae10e9",
+      "status": "intentional-public-support-data",
+      "license": "Maintainer supplied for project support; payment provider marks retain their rights",
+      "evidence": "Prior explicit maintainer request to display/share these support QR codes; recipient accuracy must be confirmed before release."
+    },
+    {
+      "path": "android-app/apps/mobile/src/assets/lottie/play-pause.json",
+      "size": 4212,
+      "sha256": "e2d3ab874be747fed703726746b5e72cc5c0778f5c63da07a7aa4fcc7d9d62c1",
+      "status": "replaced-project-geometry",
+      "license": "MIT",
+      "evidence": "Independent project geometry; scripts/prepare-public-assets.cjs and design-prototype/assets SVG sources. Original upstream asset excluded.",
+      "previousSha256": "d9608f829982a603203a711761b2a738d34864c132848a3d58de8212a903ed72"
+    },
+    {
+      "path": "android-app/apps/mobile/src/assets/lottie/skip-next.json",
+      "size": 2100,
+      "sha256": "f52f14571d32c6a22dccd0295d42dbc1db429a89002966d3a86454f2791e4f58",
+      "status": "replaced-project-geometry",
+      "license": "MIT",
+      "evidence": "Independent project geometry; scripts/prepare-public-assets.cjs and design-prototype/assets SVG sources. Original upstream asset excluded.",
+      "previousSha256": "d3b9184a957c40c34a8fc0b3421372852ec050403bdfb0550a60cf480d8f1ec0"
+    },
+    {
+      "path": "android-app/apps/mobile/src/assets/lottie/skip-prev.json",
+      "size": 2100,
+      "sha256": "f4a08f7b5cc3eca5e59868c89cee66471c3d7f98588e94a9441391b9ae49f155",
+      "status": "replaced-project-geometry",
+      "license": "MIT",
+      "evidence": "Independent project geometry; scripts/prepare-public-assets.cjs and design-prototype/assets SVG sources. Original upstream asset excluded.",
+      "previousSha256": "c599e4a0a75a228d79596e743eabdda8b45eff63d72ef6da664230c79d98aad3"
+    },
+    {
+      "path": "android-app/apps/update-server/web/public/icon.png",
+      "size": 663158,
+      "sha256": "f6df2c1d4079518f183abb0d28099785627b8563346dfe2a0285e69cd9214b05",
+      "status": "derived-project-icon",
+      "license": "MIT",
+      "evidence": "Replaced from maintainer-supplied MIT MeloCanvas icon; scripts/prepare-public-assets.cjs.",
+      "previousSha256": "a23dd5a6365573234e880eeee6d9231ffad9c08ce59592b0c7d013845b1427b6"
+    },
+    {
+      "path": "android-app/packages/native/android/src/test/resources/theme-adam7.png",
+      "size": 122,
+      "sha256": "20f56dd7b7e5f87e13ffd87fbaca5dec302efbd8faabcc31f37ecca210d3a2cb",
+      "status": "replaced-project-geometry",
+      "license": "MIT",
+      "evidence": "Synthetic 9x9 decoder fixture generated by scripts/prepare-public-assets.cjs; original image excluded. ICC profile declares CC0.",
+      "previousSha256": "79ff4b82f7c2f85bef939b81629b1f416edbabc739974c0df3fde77e2a836bab"
+    },
+    {
+      "path": "android-app/packages/native/android/src/test/resources/theme-palette.png",
+      "size": 127,
+      "sha256": "06a8a4e0e2d0771c833d92da4449a28f0bccfb014c4d046b8b7aed5425722061",
+      "status": "replaced-project-geometry",
+      "license": "MIT",
+      "evidence": "Synthetic 9x9 decoder fixture generated by scripts/prepare-public-assets.cjs; original image excluded. ICC profile declares CC0.",
+      "previousSha256": "8175918ffbd145594cefe92c3624d6473a2571b8c3069d685e91a8793e58ead2"
+    },
+    {
+      "path": "android-app/packages/native/android/src/test/resources/theme-rgba-icc-text.png",
+      "size": 551,
+      "sha256": "d00f341d16c126227e379d1474dc2bff3ca2a1ce2d8510b3e56db12160431661",
+      "status": "replaced-project-geometry",
+      "license": "MIT AND CC0-1.0",
+      "evidence": "Synthetic 9x9 decoder fixture generated by scripts/prepare-public-assets.cjs; original image excluded. ICC profile declares CC0.",
+      "previousSha256": "6a02c1f5a357fecc7e39f86479139584410861976443ede68037308cb9621ee2"
+    },
+    {
+      "path": "design-prototype/assets/blue.svg",
+      "size": 818,
+      "sha256": "0505570b69d52a6844ae03b1bbf61ca6e3c0361cb96ad90049379bb7fe8f7143",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/botanical-overlay.svg",
+      "size": 482,
+      "sha256": "67415bd32acb9e7bd99e99d3772ce84e6a2eea23512115a1dd2c2a3500fdbbc8",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/botanical.svg",
+      "size": 523,
+      "sha256": "af413702676babefc09fc29434fe7b6d7084205d079a72dd8d255beb5f4e04b6",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/citrus.svg",
+      "size": 684,
+      "sha256": "2e533d92de3e19a02d6946682d4a7f3fe611e20737fb52bfa2d208f4863c7070",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/coast.png",
+      "size": 2620192,
+      "sha256": "11b32a11c0e9c2530bf5277445564b665b7ee2f368bddf10a0c8065458812f14",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/fallback-avatar.svg",
+      "size": 240,
+      "sha256": "c8649668485803ece6606f21de6e84ad40321b2d5ae73fe949d423f3c8a7b8e5",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Original geometric source created for the public snapshot on 2026-10-28; no external image or character input."
+    },
+    {
+      "path": "design-prototype/assets/listen-city.svg",
+      "size": 1142,
+      "sha256": "f393f162d7a982f017b99aa00565936673f6eeabfd67d275bb78f40e1d4bd474",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/listen-game.svg",
+      "size": 947,
+      "sha256": "c9427f65b6a8befdb75932958a29fc293be451f4a10284835b694126477e3462",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/listen-harbor.svg",
+      "size": 1023,
+      "sha256": "5066e68130b8b5688e4d3e9c85dafd2c1fe6cda29482dfbd38904431d26de4bd",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/listen-mountain.svg",
+      "size": 926,
+      "sha256": "e48cb2f55184da213a1a387879b96c7d04ea4eb29a00fff541f9168d871bf055",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/listen-night.svg",
+      "size": 867,
+      "sha256": "58309fbab9fd759ee6df713f61d274c1e7d4cf6931035a0d7d923fafad8863fc",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/meadow.svg",
+      "size": 1318,
+      "sha256": "0b3420f469cc49066969a09200d7b117e740b194f237b1560f9bd4ceb777eb6c",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/night.svg",
+      "size": 815,
+      "sha256": "60de3728450a74fcb53989ac657d2a3cd34b1b6fa2f36553c6b344e350344fa1",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/notification-note.svg",
+      "size": 160,
+      "sha256": "5fc0935a0ad8540a33c16806c976f6220ffcc7fa0a0a4d4efeb5fb7907311fd9",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Original geometric source created for the public snapshot on 2026-10-28; no external image or character input."
+    },
+    {
+      "path": "design-prototype/assets/orbit.svg",
+      "size": 1579,
+      "sha256": "f873702fd732c3bb017eaf10ff9806f8f18e135df50da10e27882e0d5bf5588c",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/rose.svg",
+      "size": 751,
+      "sha256": "bf56518bfacf2c053668a74d721d04f04ef91f6857832855b5378207120f40cc",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "design-prototype/assets/starfield.svg",
+      "size": 607,
+      "sha256": "3f4a1db0c14c8ec5c5c93d7e1660fa788caea754ec4df03b4b2201702a711859",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/cosmos-example/assets/cosmos.png",
+      "size": 1697,
+      "sha256": "34b1937e6edddf3532ee8ae0e7e5ba577206fa8e1171bfb6d79740b3f965c832",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/example/artwork/header.svg",
+      "size": 545,
+      "sha256": "7e8bd6f408ec5b9e0e8a7871e02da9ee80ce10aaec9c9ca6c9720d8859a43a0f",
+      "status": "verified-project-origin",
+      "license": "CC0-1.0 (existing grant retained)",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/example/artwork/home.svg",
+      "size": 1015,
+      "sha256": "52d5098b59e700f16986b32a4b9ab57cf2de42c726f387b59be8882bebea88e7",
+      "status": "verified-project-origin",
+      "license": "CC0-1.0 (existing grant retained)",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/example/artwork/player.svg",
+      "size": 853,
+      "sha256": "61801d24e9d091417e63b8bbb2ffe40084db0d140b28f23d8582b155bf51113c",
+      "status": "verified-project-origin",
+      "license": "CC0-1.0 (existing grant retained)",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/paper-signal.melotheme",
+      "size": 24570,
+      "sha256": "b7b3fca3153c387c9481a0c456d1bf04fc4c3663f272772959fb4351b5dfe7c5",
+      "status": "verified-project-origin",
+      "license": "CC0-1.0 (existing grant retained)",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/progress-example/assets/background.png",
+      "size": 841851,
+      "sha256": "cb8c43768db61ee9a821c91d19d2013ec49a78a66815e46cf32b42528b831a0e",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/progress-example/assets/thumb.png",
+      "size": 1121,
+      "sha256": "5f0ca3d8c1b6c8a6728663f0f5942ddaf2833cec0e802075fe359cc9f7c57fc4",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/progress-example/previews/background.png",
+      "size": 841851,
+      "sha256": "cb8c43768db61ee9a821c91d19d2013ec49a78a66815e46cf32b42528b831a0e",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/starter-examples/anime.melotheme",
+      "size": 291926,
+      "sha256": "6d234eaa7dcd5a4a3da2e77f13ee5fa14cdffcfea0f3cc91b67171ced4baf2b5",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/starter-examples/cosmos-dual.melotheme",
+      "size": 4671,
+      "sha256": "a6f0e17caec55aef36b1c2a99fc990233c91308cfb64bef8a62b6612575c5b02",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/starter-examples/modern-custom-progress.melotheme",
+      "size": 1687919,
+      "sha256": "fc397e3443c213426bff1899df178e3cc5a4e2d393d76bd4cdc89883d027a385",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/starter-examples/modern.melotheme",
+      "size": 1686524,
+      "sha256": "dddb4f16a25b94f46ee0c82e33ef8cf36006f60dd750a3bac9bc46e479fc3ede",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/starter-examples/pastoral.melotheme",
+      "size": 131925,
+      "sha256": "49efbf025319ef5ac141d0d7075a7867efe9b1191a620a5477eef8ce0f102bb1",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    },
+    {
+      "path": "theme-packages/starter-examples/progress-built.melotheme",
+      "size": 1676135,
+      "sha256": "f5420165a216ddc8f9fea15a6837e8f9099b939e701e1ac1320407133c7e92e4",
+      "status": "verified-project-origin",
+      "license": "MIT",
+      "evidence": "Project original geometry / generated artwork; maintainer MIT grant 2026-10-28. See art-provenance.md and generation sources."
+    }
+  ],
+  "excludedAssets": [
+    {
+      "path": "android-app/apps/mobile/assets/images/alipay.jpg",
+      "previousSha256": "93ddcc50f937c1fae5de5f545e893f27a28adf7afb691dd55023f75f9aedf49e",
+      "reason": "Unverified upstream payee QR excluded from the public snapshot; legacy dialog replaced with neutral upstream-support guidance."
+    },
+    {
+      "path": "android-app/apps/mobile/assets/images/wechat.png",
+      "previousSha256": "e8f32ce1e80b99c745faf04e15f4dd353adb9e6ed30d096a28c12691e1133db1",
+      "reason": "Unverified upstream payee QR excluded from the public snapshot; legacy dialog replaced with neutral upstream-support guidance."
+    }
+  ],
+  "note": "The former 20 unresolved files were replaced (18) or excluded (2), not retroactively licensed. OC remains under its separate restricted asset license. This asset ledger is not dependency-distribution clearance."
+}

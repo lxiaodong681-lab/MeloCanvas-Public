@@ -1,0 +1,134 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.media3:media3-muxer:1.9.0
+Source: https://dl.google.com/dl/android/maven2/androidx/media3/media3-muxer/1.9.0/media3-muxer-1.9.0-sources.jar
+Source archive SHA-256: b2476eb1ab7d963f5f132563000e9adbaa225df2cf8c23543373e01cce945023
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidx/media3/muxer/AacMuxer.java, androidx/media3/muxer/AacWriter.java, androidx/media3/muxer/FileOutputStreamSeekableMuxerOutput.java, androidx/media3/muxer/MediaMuxerCompat.java, androidx/media3/muxer/SeekableMuxerOutput.java, androidx/media3/muxer/WebmMuxer.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/muxer/AacWriter.java
+    // channel_configuration (2 bits) +  originality (1 bit), home (1 bit),
+    // copyrighted_stream (1 bit), copyright_start (1 bit) + frame_length (2 bits).
+
+
+---
+
+Files: androidx/media3/muxer/AnnexBToAvccConverter.java, androidx/media3/muxer/FragmentedMp4Writer.java, androidx/media3/muxer/Mp4Writer.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/muxer/AnnexBUtils.java, androidx/media3/muxer/BoxUtils.java, androidx/media3/muxer/Boxes.java, androidx/media3/muxer/MetadataCollector.java, androidx/media3/muxer/Mp4Muxer.java, androidx/media3/muxer/MuxerUtil.java, androidx/media3/muxer/Track.java, androidx/media3/muxer/package-info.java
+/*
+ * Copyright 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/muxer/Av1ConfigUtil.java, androidx/media3/muxer/EbmlUtils.java, androidx/media3/muxer/WebmConstants.java, androidx/media3/muxer/WebmElements.java, androidx/media3/muxer/WebmWriter.java
+/*
+ * Copyright (C) 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/muxer/BoxUtils.java
+/**
+   * Wraps content into a box, prefixing it with a length and a box type.
+   *
+   * <p>Use this method for box types with special characters. For example location box, which has a
+   * copyright symbol in the beginning.
+   */
+
+---
+
+Files: androidx/media3/muxer/BufferInfo.java, androidx/media3/muxer/ByteBufferAllocator.java, androidx/media3/muxer/LinearByteBufferAllocator.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/muxer/FragmentedMp4Muxer.java, androidx/media3/muxer/Muxer.java, androidx/media3/muxer/MuxerException.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

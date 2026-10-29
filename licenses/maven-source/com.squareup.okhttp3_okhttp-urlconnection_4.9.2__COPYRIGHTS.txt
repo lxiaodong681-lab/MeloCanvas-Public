@@ -1,0 +1,41 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.squareup.okhttp3:okhttp-urlconnection:4.9.2
+Source: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-urlconnection/4.9.2/okhttp-urlconnection-4.9.2-sources.jar
+Source archive SHA-256: c5787bbd9fb7aeb7edf75db9e6b5983d0b0c4e6330ccc32148b3efd83d802d92
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: okhttp3/JavaNetAuthenticator.kt
+/*
+ * Copyright (C) 2013 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/JavaNetCookieJar.kt
+/*
+ * Copyright (C) 2015 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

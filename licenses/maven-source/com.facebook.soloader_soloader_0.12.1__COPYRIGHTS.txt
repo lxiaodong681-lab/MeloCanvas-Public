@@ -1,0 +1,22 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.soloader:soloader:0.12.1
+Source: https://repo.maven.apache.org/maven2/com/facebook/soloader/soloader/0.12.1/soloader-0.12.1-sources.jar
+Source archive SHA-256: c0c2d65e34d8f01b7dd79db4e82b3e27c4333969af6918730259c4c680be401f
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: java/com/facebook/soloader/MergedSoMapping.java, java/com/facebook/soloader/DoNotOptimize.java, java/com/facebook/soloader/DoNotStripAny.java, java/com/facebook/soloader/nativeloader/NativeLoader.java, java/com/facebook/soloader/nativeloader/NativeLoaderDelegate.java, java/com/facebook/soloader/nativeloader/SystemDelegate.java, java/com/facebook/soloader/Api18TraceUtils.java, java/com/facebook/soloader/ApplicationSoSource.java, java/com/facebook/soloader/AsyncInitSoSource.java, java/com/facebook/soloader/BackupSoSource.java, java/com/facebook/soloader/DirectApkSoSource.java, java/com/facebook/soloader/DirectSplitSoSource.java, java/com/facebook/soloader/DirectorySoSource.java, java/com/facebook/soloader/Elf32.java, java/com/facebook/soloader/Elf64.java, java/com/facebook/soloader/ElfByteChannel.java, java/com/facebook/soloader/ElfFileChannel.java, java/com/facebook/soloader/ElfZipFileChannel.java, java/com/facebook/soloader/ExoSoSource.java, java/com/facebook/soloader/ExternalSoMapping.java, java/com/facebook/soloader/ExtractFromZipSoSource.java, java/com/facebook/soloader/FileLocker.java, java/com/facebook/soloader/InstrumentedSoFileLoader.java, java/com/facebook/soloader/LogUtil.java, java/com/facebook/soloader/Manifest.java, java/com/facebook/soloader/MinElf.java, java/com/facebook/soloader/NativeDeps.java, java/com/facebook/soloader/NativeDepsUnpacker.java, java/com/facebook/soloader/NativeLibrary.java, java/com/facebook/soloader/NativeLoaderToSoLoaderDelegate.java, java/com/facebook/soloader/NoBaseApkException.java, java/com/facebook/soloader/NoopSoSource.java, java/com/facebook/soloader/RecoverableSoSource.java, java/com/facebook/soloader/SoFileLoader.java, java/com/facebook/soloader/SoFileLoaderImpl.java, java/com/facebook/soloader/SoLoader.java, java/com/facebook/soloader/SoLoaderCorruptedLibFileError.java, java/com/facebook/soloader/SoLoaderCorruptedLibNameError.java, java/com/facebook/soloader/SoLoaderDSONotFoundError.java, java/com/facebook/soloader/SoLoaderULError.java, java/com/facebook/soloader/SoLoaderULErrorFactory.java, java/com/facebook/soloader/SoSource.java, java/com/facebook/soloader/SysUtil.java, java/com/facebook/soloader/SystemLoadLibraryWrapper.java, java/com/facebook/soloader/SystemLoadWrapperSoSource.java, java/com/facebook/soloader/UnpackingSoSource.java, java/com/facebook/soloader/observer/Observer.java, java/com/facebook/soloader/observer/ObserverHolder.java, java/com/facebook/soloader/recovery/BaseApkPathHistory.java, java/com/facebook/soloader/recovery/CheckBaseApkExists.java, java/com/facebook/soloader/recovery/CheckOnDiskStateDataApp.java, java/com/facebook/soloader/recovery/CheckOnDiskStateDataData.java, java/com/facebook/soloader/recovery/CompositeRecoveryStrategy.java, java/com/facebook/soloader/recovery/DefaultRecoveryStrategyFactory.java, java/com/facebook/soloader/recovery/DetectDataAppMove.java, java/com/facebook/soloader/recovery/RecoveryStrategy.java, java/com/facebook/soloader/recovery/RecoveryStrategyFactory.java, java/com/facebook/soloader/recovery/ReunpackBackupSoSources.java, java/com/facebook/soloader/recovery/ReunpackNonBackupSoSources.java, java/com/facebook/soloader/recovery/WaitForAsyncInit.java
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

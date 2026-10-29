@@ -1,0 +1,22 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.google.j2objc:j2objc-annotations:3.0.0
+Source: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0-sources.jar
+Source archive SHA-256: bd60019a0423c3a025ef6ab24fe0761f5f45ffb48a8cca74a01b678de1105d38
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/google/j2objc/annotations/AutoreleasePool.java, com/google/j2objc/annotations/Weak.java, module-info.java
+/*
+ * Copyright 2012 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

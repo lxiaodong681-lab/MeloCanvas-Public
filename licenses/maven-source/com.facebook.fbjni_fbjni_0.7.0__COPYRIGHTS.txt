@@ -1,0 +1,22 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fbjni:fbjni:0.7.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fbjni/fbjni/0.7.0/fbjni-0.7.0-sources.jar
+Source archive SHA-256: 7d81b4a8477f9b49c03a954edf6c3cabe485ccacbd91af676a9e4bcaf8ad92c7
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/jni/CppException.java, com/facebook/jni/CppSystemErrorException.java, com/facebook/jni/DestructorThread.java, com/facebook/jni/ExceptionHelper.java, com/facebook/jni/HybridClassBase.java, com/facebook/jni/HybridData.java, com/facebook/jni/IteratorHelper.java, com/facebook/jni/MapIteratorHelper.java, com/facebook/jni/NativeRunnable.java, com/facebook/jni/ThreadScopeSupport.java, com/facebook/jni/UnknownCppException.java, com/facebook/jni/annotations/DoNotStrip.java, com/facebook/jni/annotations/DoNotStripAny.java
+/*
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

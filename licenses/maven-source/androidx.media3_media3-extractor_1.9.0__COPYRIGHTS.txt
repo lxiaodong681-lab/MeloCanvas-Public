@@ -1,0 +1,354 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.media3:media3-extractor:1.9.0
+Source: https://dl.google.com/dl/android/maven2/androidx/media3/media3-extractor/1.9.0/media3-extractor-1.9.0-sources.jar
+Source archive SHA-256: afbb5074207e9115844fcabf7cc74f202dfb9331d36dee2c616c17d6c084bc24
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidx/media3/extractor/AacUtil.java, androidx/media3/extractor/ForwardingExtractorInput.java, androidx/media3/extractor/IndexSeekMap.java, androidx/media3/extractor/StartOffsetExtractorInput.java, androidx/media3/extractor/jpeg/JpegMotionPhotoExtractor.java, androidx/media3/extractor/jpeg/MotionPhotoDescription.java, androidx/media3/extractor/jpeg/XmpMotionPhotoDescriptionParser.java, androidx/media3/extractor/jpeg/package-info.java, androidx/media3/extractor/metadata/MotionPhotoMetadata.java, androidx/media3/extractor/metadata/mp4/MotionPhotoMetadata.java, androidx/media3/extractor/metadata/mp4/SlowMotionData.java, androidx/media3/extractor/metadata/mp4/SmtaMetadataEntry.java, androidx/media3/extractor/metadata/mp4/package-info.java, androidx/media3/extractor/mp4/SefReader.java, androidx/media3/extractor/ts/H263Reader.java
+/*
+ * Copyright 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/Ac3Util.java, androidx/media3/extractor/AvcConfig.java, androidx/media3/extractor/ChunkIndex.java, androidx/media3/extractor/DefaultExtractorInput.java, androidx/media3/extractor/DefaultExtractorsFactory.java, androidx/media3/extractor/DtsUtil.java, androidx/media3/extractor/DummyTrackOutput.java, androidx/media3/extractor/Extractor.java, androidx/media3/extractor/ExtractorInput.java, androidx/media3/extractor/ExtractorOutput.java, androidx/media3/extractor/ExtractorsFactory.java, androidx/media3/extractor/FlacStreamMetadata.java, androidx/media3/extractor/GaplessInfoHolder.java, androidx/media3/extractor/HevcConfig.java, androidx/media3/extractor/PositionHolder.java, androidx/media3/extractor/SeekMap.java, androidx/media3/extractor/TrackOutput.java, androidx/media3/extractor/VorbisBitArray.java, androidx/media3/extractor/VorbisUtil.java, androidx/media3/extractor/flv/AudioTagPayloadReader.java, androidx/media3/extractor/flv/FlvExtractor.java, androidx/media3/extractor/flv/ScriptTagPayloadReader.java, androidx/media3/extractor/flv/TagPayloadReader.java, androidx/media3/extractor/flv/VideoTagPayloadReader.java, androidx/media3/extractor/metadata/MetadataDecoder.java, androidx/media3/extractor/metadata/MetadataInputBuffer.java, androidx/media3/extractor/metadata/id3/ApicFrame.java, androidx/media3/extractor/metadata/id3/BinaryFrame.java, androidx/media3/extractor/metadata/id3/CommentFrame.java, androidx/media3/extractor/metadata/id3/GeobFrame.java, androidx/media3/extractor/metadata/id3/Id3Decoder.java, androidx/media3/extractor/metadata/id3/Id3Frame.java, androidx/media3/extractor/metadata/id3/PrivFrame.java, androidx/media3/extractor/metadata/id3/TextInformationFrame.java, androidx/media3/extractor/metadata/scte35/PrivateCommand.java, androidx/media3/extractor/metadata/scte35/SpliceCommand.java, androidx/media3/extractor/metadata/scte35/SpliceInfoDecoder.java, androidx/media3/extractor/metadata/scte35/SpliceInsertCommand.java, androidx/media3/extractor/metadata/scte35/SpliceNullCommand.java, androidx/media3/extractor/metadata/scte35/SpliceScheduleCommand.java, androidx/media3/extractor/metadata/scte35/TimeSignalCommand.java, androidx/media3/extractor/mkv/DefaultEbmlReader.java, androidx/media3/extractor/mkv/EbmlReader.java, androidx/media3/extractor/mkv/MatroskaExtractor.java, androidx/media3/extractor/mkv/Sniffer.java, androidx/media3/extractor/mkv/VarintReader.java, androidx/media3/extractor/mp3/ConstantBitrateSeeker.java, androidx/media3/extractor/mp3/Mp3Extractor.java, androidx/media3/extractor/mp3/VbriSeeker.java, androidx/media3/extractor/mp3/XingSeeker.java, androidx/media3/extractor/mp4/BoxParser.java, androidx/media3/extractor/mp4/DefaultSampleValues.java, androidx/media3/extractor/mp4/FixedSampleSizeRechunker.java, androidx/media3/extractor/mp4/FragmentedMp4Extractor.java, androidx/media3/extractor/mp4/MetadataUtil.java, androidx/media3/extractor/mp4/Mp4Extractor.java, androidx/media3/extractor/mp4/PsshAtomUtil.java, androidx/media3/extractor/mp4/Sniffer.java, androidx/media3/extractor/mp4/Track.java, androidx/media3/extractor/mp4/TrackEncryptionBox.java, androidx/media3/extractor/mp4/TrackFragment.java, androidx/media3/extractor/mp4/TrackSampleTable.java, androidx/media3/extractor/ogg/DefaultOggSeeker.java, androidx/media3/extractor/ogg/FlacReader.java, androidx/media3/extractor/ogg/OggExtractor.java, androidx/media3/extractor/ogg/OggPacket.java, androidx/media3/extractor/ogg/OggPageHeader.java, androidx/media3/extractor/ogg/OggSeeker.java, androidx/media3/extractor/ogg/OpusReader.java, androidx/media3/extractor/ogg/StreamReader.java, androidx/media3/extractor/ogg/VorbisReader.java, androidx/media3/extractor/text/SimpleSubtitleDecoder.java, androidx/media3/extractor/text/Subtitle.java, androidx/media3/extractor/text/SubtitleDecoder.java, androidx/media3/extractor/text/SubtitleDecoderException.java, androidx/media3/extractor/text/SubtitleInputBuffer.java, androidx/media3/extractor/text/SubtitleOutputBuffer.java, androidx/media3/extractor/text/cea/Cea608Decoder.java, androidx/media3/extractor/text/cea/Cea708Decoder.java, androidx/media3/extractor/text/cea/CeaDecoder.java, androidx/media3/extractor/text/cea/CeaSubtitle.java, androidx/media3/extractor/text/subrip/SubripParser.java, androidx/media3/extractor/text/ttml/TtmlNode.java, androidx/media3/extractor/text/ttml/TtmlParser.java, androidx/media3/extractor/text/ttml/TtmlRegion.java, androidx/media3/extractor/text/ttml/TtmlRenderUtil.java, androidx/media3/extractor/text/ttml/TtmlStyle.java, androidx/media3/extractor/text/ttml/TtmlSubtitle.java, androidx/media3/extractor/text/tx3g/Tx3gParser.java, androidx/media3/extractor/text/webvtt/Mp4WebvttParser.java, androidx/media3/extractor/text/webvtt/WebvttCssParser.java, androidx/media3/extractor/text/webvtt/WebvttCssStyle.java, androidx/media3/extractor/text/webvtt/WebvttCueInfo.java, androidx/media3/extractor/text/webvtt/WebvttCueParser.java, androidx/media3/extractor/text/webvtt/WebvttParser.java, androidx/media3/extractor/text/webvtt/WebvttParserUtil.java, androidx/media3/extractor/text/webvtt/WebvttSubtitle.java, androidx/media3/extractor/ts/Ac3Extractor.java, androidx/media3/extractor/ts/Ac3Reader.java, androidx/media3/extractor/ts/AdtsExtractor.java, androidx/media3/extractor/ts/AdtsReader.java, androidx/media3/extractor/ts/DefaultTsPayloadReaderFactory.java, androidx/media3/extractor/ts/DtsReader.java, androidx/media3/extractor/ts/ElementaryStreamReader.java, androidx/media3/extractor/ts/H262Reader.java, androidx/media3/extractor/ts/H264Reader.java, androidx/media3/extractor/ts/H265Reader.java, androidx/media3/extractor/ts/Id3Reader.java, androidx/media3/extractor/ts/MpegAudioReader.java, androidx/media3/extractor/ts/NalUnitTargetBuffer.java, androidx/media3/extractor/ts/PassthroughSectionPayloadReader.java, androidx/media3/extractor/ts/PesReader.java, androidx/media3/extractor/ts/PsExtractor.java, androidx/media3/extractor/ts/SectionPayloadReader.java, androidx/media3/extractor/ts/SectionReader.java, androidx/media3/extractor/ts/SeiReader.java, androidx/media3/extractor/ts/TsExtractor.java, androidx/media3/extractor/ts/TsPayloadReader.java, androidx/media3/extractor/wav/WavExtractor.java, androidx/media3/extractor/wav/WavFormat.java, androidx/media3/extractor/wav/WavHeaderReader.java
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/Ac4Util.java, androidx/media3/extractor/ExtractorUtil.java, androidx/media3/extractor/FlacFrameReader.java, androidx/media3/extractor/FlacMetadataReader.java, androidx/media3/extractor/FlacSeekTableSeekMap.java, androidx/media3/extractor/package-info.java, androidx/media3/extractor/amr/package-info.java, androidx/media3/extractor/flac/FlacBinarySearchSeeker.java, androidx/media3/extractor/flac/FlacConstants.java, androidx/media3/extractor/flac/FlacExtractor.java, androidx/media3/extractor/flac/package-info.java, androidx/media3/extractor/flv/package-info.java, androidx/media3/extractor/metadata/package-info.java, androidx/media3/extractor/metadata/emsg/package-info.java, androidx/media3/extractor/metadata/flac/PictureFrame.java, androidx/media3/extractor/metadata/flac/VorbisComment.java, androidx/media3/extractor/metadata/flac/package-info.java, androidx/media3/extractor/metadata/icy/package-info.java, androidx/media3/extractor/metadata/id3/package-info.java, androidx/media3/extractor/metadata/scte35/package-info.java, androidx/media3/extractor/metadata/vorbis/VorbisComment.java, androidx/media3/extractor/metadata/vorbis/package-info.java, androidx/media3/extractor/mkv/EbmlProcessor.java, androidx/media3/extractor/mkv/package-info.java, androidx/media3/extractor/mp3/Seeker.java, androidx/media3/extractor/mp3/package-info.java, androidx/media3/extractor/mp4/package-info.java, androidx/media3/extractor/ogg/package-info.java, androidx/media3/extractor/text/cea/package-info.java, androidx/media3/extractor/text/dvb/package-info.java, androidx/media3/extractor/text/pgs/package-info.java, androidx/media3/extractor/text/ssa/package-info.java, androidx/media3/extractor/text/subrip/package-info.java, androidx/media3/extractor/text/ttml/package-info.java, androidx/media3/extractor/text/tx3g/package-info.java, androidx/media3/extractor/ts/Ac4Extractor.java, androidx/media3/extractor/ts/Ac4Reader.java, androidx/media3/extractor/ts/package-info.java, androidx/media3/extractor/wav/WavSeekMap.java, androidx/media3/extractor/wav/package-info.java
+/*
+ * Copyright (C) 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/BinarySearchSeeker.java, androidx/media3/extractor/ConstantBitrateSeekMap.java, androidx/media3/extractor/DummyExtractorOutput.java, androidx/media3/extractor/Id3Peeker.java, androidx/media3/extractor/WavUtil.java, androidx/media3/extractor/amr/AmrExtractor.java, androidx/media3/extractor/metadata/icy/IcyDecoder.java, androidx/media3/extractor/metadata/icy/IcyHeaders.java, androidx/media3/extractor/metadata/icy/IcyInfo.java, androidx/media3/extractor/metadata/id3/InternalFrame.java, androidx/media3/extractor/metadata/id3/MlltFrame.java, androidx/media3/extractor/mp3/MlltSeeker.java, androidx/media3/extractor/text/pgs/PgsParser.java, androidx/media3/extractor/ts/PsBinarySearchSeeker.java, androidx/media3/extractor/ts/PsDurationReader.java, androidx/media3/extractor/ts/TsBinarySearchSeeker.java, androidx/media3/extractor/ts/TsDurationReader.java, androidx/media3/extractor/ts/TsUtil.java, androidx/media3/extractor/ts/UserDataReader.java
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/CeaUtil.java, androidx/media3/extractor/text/dvb/DvbParser.java, androidx/media3/extractor/text/ssa/SsaParser.java, androidx/media3/extractor/ts/DvbSubtitleReader.java
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/ChunkIndexMerger.java, androidx/media3/extractor/TrackAwareSeekMap.java, androidx/media3/extractor/heif/HeicMotionPhotoExtractor.java, androidx/media3/extractor/heif/HeifSniffer.java, androidx/media3/extractor/metadata/ThumbnailMetadata.java, androidx/media3/extractor/text/vobsub/package-info.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/ChunkIndexProvider.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law of agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/DiscardingTrackOutput.java, androidx/media3/extractor/ForwardingExtractor.java, androidx/media3/extractor/ForwardingExtractorOutput.java, androidx/media3/extractor/NoOpExtractorOutput.java, androidx/media3/extractor/avif/AvifExtractor.java, androidx/media3/extractor/avif/package-info.java, androidx/media3/extractor/mp4/MimeTypeResolver.java, androidx/media3/extractor/ts/MpeghReader.java, androidx/media3/extractor/ts/MpeghUtil.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/ForwardingSeekMap.java, androidx/media3/extractor/SingleSampleExtractor.java, androidx/media3/extractor/SingleSampleSeekMap.java, androidx/media3/extractor/bmp/BmpExtractor.java, androidx/media3/extractor/bmp/package-info.java, androidx/media3/extractor/heif/HeifExtractor.java, androidx/media3/extractor/heif/package-info.java, androidx/media3/extractor/jpeg/JpegExtractor.java, androidx/media3/extractor/mp4/SmtaAtomUtil.java, androidx/media3/extractor/png/PngExtractor.java, androidx/media3/extractor/png/package-info.java, androidx/media3/extractor/webp/WebpExtractor.java, androidx/media3/extractor/webp/package-info.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/ForwardingTrackOutput.java, androidx/media3/extractor/SniffFailure.java, androidx/media3/extractor/metadata/id3/Id3Util.java, androidx/media3/extractor/mp3/XingFrame.java, androidx/media3/extractor/mp4/AtomSizeTooSmallSniffFailure.java, androidx/media3/extractor/mp4/IncorrectFragmentationSniffFailure.java, androidx/media3/extractor/mp4/NoDeclaredBrandSniffFailure.java, androidx/media3/extractor/mp4/UnsupportedBrandsSniffFailure.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/MpegAudioUtil.java, androidx/media3/extractor/OpusUtil.java, androidx/media3/extractor/metadata/SimpleMetadataDecoder.java, androidx/media3/extractor/metadata/dvbsi/AppInfoTable.java, androidx/media3/extractor/metadata/dvbsi/AppInfoTableDecoder.java, androidx/media3/extractor/mp3/IndexSeeker.java
+/*
+ * Copyright (C) 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/SeekPoint.java, androidx/media3/extractor/metadata/emsg/EventMessage.java, androidx/media3/extractor/metadata/emsg/EventMessageDecoder.java, androidx/media3/extractor/metadata/emsg/EventMessageEncoder.java, androidx/media3/extractor/metadata/id3/ChapterFrame.java, androidx/media3/extractor/metadata/id3/ChapterTocFrame.java, androidx/media3/extractor/metadata/id3/UrlLinkFrame.java, androidx/media3/extractor/ts/LatmReader.java
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/StartOffsetExtractorOutput.java, androidx/media3/extractor/TrueHdSampleRechunker.java, androidx/media3/extractor/text/CueDecoder.java, androidx/media3/extractor/text/CueEncoder.java, androidx/media3/extractor/text/SubtitleExtractor.java, androidx/media3/extractor/text/package-info.java, androidx/media3/extractor/text/ttml/TextEmphasis.java
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/avi/AviChunk.java, androidx/media3/extractor/avi/AviExtractor.java, androidx/media3/extractor/avi/AviMainHeaderChunk.java, androidx/media3/extractor/avi/AviStreamHeaderChunk.java, androidx/media3/extractor/avi/ChunkReader.java, androidx/media3/extractor/avi/ListChunk.java, androidx/media3/extractor/avi/StreamFormatChunk.java, androidx/media3/extractor/avi/StreamNameChunk.java, androidx/media3/extractor/avi/package-info.java
+/*
+ * Copyright 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/metadata/dvbsi/package-info.java, androidx/media3/extractor/text/ttml/DeleteTextSpan.java
+/*
+ * Copyright (C) 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+---
+
+Files: androidx/media3/extractor/mp4/MetadataUtil.java
+
+  // Codes that start with the copyright character (omitted) and have equivalent ID3 frames.
+
+
+---
+
+Files: androidx/media3/extractor/text/CuesWithTiming.java, androidx/media3/extractor/text/CuesWithTimingSubtitle.java, androidx/media3/extractor/text/DefaultSubtitleParserFactory.java, androidx/media3/extractor/text/LegacySubtitleUtil.java, androidx/media3/extractor/text/SubtitleParser.java, androidx/media3/extractor/text/SubtitleTranscodingExtractor.java, androidx/media3/extractor/text/SubtitleTranscodingExtractorOutput.java, androidx/media3/extractor/text/SubtitleTranscodingTrackOutput.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/extractor/text/ssa/SsaDialogueFormat.java, androidx/media3/extractor/text/ssa/SsaStyle.java, androidx/media3/extractor/text/webvtt/package-info.java
+/*
+ * Copyright (C) 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+---
+
+Files: androidx/media3/extractor/text/vobsub/VobsubParser.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

@@ -1,0 +1,12 @@
+Paper Signal original geometry example
+
+All SVG source geometry, preview illustrations, token choices and component
+configuration in this example were authored specifically for MeloCanvas.
+No third-party characters, Bilibili skins, photographs, fonts or icons are bundled.
+The previews are static author illustrations, not screenshots of an installed app.
+
+To the extent possible under law, the authors dedicate this example to the public
+domain under CC0 1.0 Universal (CC0-1.0). You may copy, modify and redistribute it
+without permission. The example is supplied without warranty.
+
+License text: https://creativecommons.org/publicdomain/zero/1.0/legalcode

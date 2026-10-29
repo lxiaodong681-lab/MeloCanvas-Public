@@ -1,0 +1,174 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.constraintlayout:constraintlayout-core:1.0.0
+Source: https://dl.google.com/dl/android/maven2/androidx/constraintlayout/constraintlayout-core/1.0.0/constraintlayout-core-1.0.0-sources.jar
+Source archive SHA-256: 4263d8a8ebe1e574c60ea04b314a38fb23a77537f13d4263ee2faccfc1cb866a
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidx/constraintlayout/core/ArrayRow.java, androidx/constraintlayout/core/LinearSystem.java, androidx/constraintlayout/core/Pools.java, androidx/constraintlayout/core/SolverVariable.java, androidx/constraintlayout/core/widgets/ConstraintWidget.java, androidx/constraintlayout/core/widgets/ConstraintAnchor.java, androidx/constraintlayout/core/widgets/ConstraintWidgetContainer.java, androidx/constraintlayout/core/widgets/Guideline.java
+/*
+ * Copyright (C) 2015 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/constraintlayout/core/PriorityGoalRow.java, androidx/constraintlayout/core/motion/utils/Schlick.java, androidx/constraintlayout/core/motion/utils/VelocityMatrix.java, androidx/constraintlayout/core/motion/utils/Oscillator.java, androidx/constraintlayout/core/motion/utils/ArcCurveFit.java, androidx/constraintlayout/core/motion/utils/LinearCurveFit.java, androidx/constraintlayout/core/motion/utils/KeyCache.java, androidx/constraintlayout/core/motion/utils/MonotonicCurveFit.java, androidx/constraintlayout/core/motion/utils/HyperSpline.java, androidx/constraintlayout/core/motion/utils/Easing.java, androidx/constraintlayout/core/motion/utils/StopLogicEngine.java, androidx/constraintlayout/core/motion/utils/TimeCycleSplineSet.java, androidx/constraintlayout/core/motion/utils/SplineSet.java, androidx/constraintlayout/core/motion/utils/StepCurve.java, androidx/constraintlayout/core/motion/utils/KeyCycleOscillator.java, androidx/constraintlayout/core/motion/utils/CurveFit.java, androidx/constraintlayout/core/SolverVariableValues.java, androidx/constraintlayout/core/widgets/analyzer/WidgetGroup.java, androidx/constraintlayout/core/widgets/analyzer/Direct.java, androidx/constraintlayout/core/widgets/analyzer/Grouping.java
+/*
+ * Copyright (C) 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/constraintlayout/core/Cache.java, androidx/constraintlayout/core/ArrayLinkedVariables.java, androidx/constraintlayout/core/widgets/WidgetContainer.java, androidx/constraintlayout/core/widgets/Rectangle.java
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/constraintlayout/core/motion/parse/KeyParser.java, androidx/constraintlayout/core/motion/utils/KeyFrameArray.java, androidx/constraintlayout/core/motion/utils/SpringStopEngine.java, androidx/constraintlayout/core/motion/utils/TypedValues.java, androidx/constraintlayout/core/motion/utils/FloatRect.java, androidx/constraintlayout/core/motion/utils/Utils.java, androidx/constraintlayout/core/motion/utils/ViewState.java, androidx/constraintlayout/core/motion/utils/DifferentialInterpolator.java, androidx/constraintlayout/core/motion/utils/Rect.java, androidx/constraintlayout/core/motion/utils/TypedBundle.java, androidx/constraintlayout/core/motion/key/MotionKeyPosition.java, androidx/constraintlayout/core/motion/key/MotionKeyTimeCycle.java, androidx/constraintlayout/core/motion/key/MotionKeyAttributes.java, androidx/constraintlayout/core/motion/key/MotionConstraintSet.java, androidx/constraintlayout/core/motion/key/MotionKeyCycle.java, androidx/constraintlayout/core/motion/key/MotionKeyTrigger.java, androidx/constraintlayout/core/motion/MotionConstrainedPoint.java, androidx/constraintlayout/core/motion/MotionWidget.java, androidx/constraintlayout/core/motion/CustomVariable.java, androidx/constraintlayout/core/motion/MotionPaths.java, androidx/constraintlayout/core/motion/Motion.java, androidx/constraintlayout/core/state/Transition.java, androidx/constraintlayout/core/state/WidgetFrame.java, androidx/constraintlayout/core/state/helpers/Facade.java, androidx/constraintlayout/core/parser/CLToken.java, androidx/constraintlayout/core/parser/CLParsingException.java, androidx/constraintlayout/core/parser/CLContainer.java, androidx/constraintlayout/core/parser/CLArray.java, androidx/constraintlayout/core/parser/CLNumber.java, androidx/constraintlayout/core/parser/CLString.java, androidx/constraintlayout/core/parser/CLObject.java, androidx/constraintlayout/core/parser/CLKey.java, androidx/constraintlayout/core/parser/CLElement.java, androidx/constraintlayout/core/parser/CLParser.java
+/*
+ * Copyright (C) 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/constraintlayout/core/motion/key/MotionKey.java, androidx/constraintlayout/core/widgets/Helper.java, androidx/constraintlayout/core/widgets/Optimizer.java, androidx/constraintlayout/core/widgets/ChainHead.java, androidx/constraintlayout/core/Metrics.java
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/constraintlayout/core/motion/CustomAttribute.java, androidx/constraintlayout/core/GoalRow.java, androidx/constraintlayout/core/widgets/Chain.java, androidx/constraintlayout/core/widgets/Barrier.java
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/constraintlayout/core/state/HelperReference.java, androidx/constraintlayout/core/state/ConstraintReference.java, androidx/constraintlayout/core/state/Dimension.java, androidx/constraintlayout/core/state/State.java, androidx/constraintlayout/core/state/helpers/VerticalChainReference.java, androidx/constraintlayout/core/state/helpers/AlignVerticallyReference.java, androidx/constraintlayout/core/state/helpers/AlignHorizontallyReference.java, androidx/constraintlayout/core/state/helpers/ChainReference.java, androidx/constraintlayout/core/state/helpers/HorizontalChainReference.java, androidx/constraintlayout/core/widgets/Flow.java, androidx/constraintlayout/core/widgets/VirtualLayout.java, androidx/constraintlayout/core/widgets/analyzer/RunGroup.java, androidx/constraintlayout/core/widgets/analyzer/DimensionDependency.java, androidx/constraintlayout/core/widgets/analyzer/HelperReferences.java, androidx/constraintlayout/core/widgets/analyzer/DependencyNode.java, androidx/constraintlayout/core/widgets/analyzer/WidgetRun.java, androidx/constraintlayout/core/widgets/analyzer/GuidelineReference.java, androidx/constraintlayout/core/widgets/analyzer/BaselineDimensionDependency.java, androidx/constraintlayout/core/widgets/analyzer/BasicMeasure.java, androidx/constraintlayout/core/widgets/analyzer/VerticalWidgetRun.java, androidx/constraintlayout/core/widgets/analyzer/DependencyGraph.java, androidx/constraintlayout/core/widgets/analyzer/Dependency.java, androidx/constraintlayout/core/widgets/analyzer/HorizontalWidgetRun.java, androidx/constraintlayout/core/widgets/analyzer/ChainRun.java
+/*
+ * Copyright (C) 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/constraintlayout/core/state/Reference.java, androidx/constraintlayout/core/state/helpers/BarrierReference.java, androidx/constraintlayout/core/state/helpers/GuidelineReference.java
+/*
+ * Copyright 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/constraintlayout/core/state/RegistryCallback.java, androidx/constraintlayout/core/state/Registry.java
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

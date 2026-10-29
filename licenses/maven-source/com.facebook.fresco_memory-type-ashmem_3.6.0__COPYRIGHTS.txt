@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:memory-type-ashmem:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/memory-type-ashmem/3.6.0/memory-type-ashmem-3.6.0-sources.jar
+Source archive SHA-256: 5d2e8b65194a73d6544103c86438a952cc73d3a8e179e7364c32bf7f6d8004aa
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/imagepipeline/memory/AshmemMemoryChunk.java, com/facebook/imagepipeline/memory/AshmemMemoryChunkPool.java
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

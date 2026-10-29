@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.infer.annotation:infer-annotation:0.18.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/infer/annotation/infer-annotation/0.18.0/infer-annotation-0.18.0-sources.jar
+Source archive SHA-256: 56187cf25d47348f6e5b25456fc3d886e9fc7aeec40f431875caa459c202f275
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/infer/annotation/NoAllocation.java, com/facebook/infer/annotation/Assertions.java, com/facebook/infer/annotation/IntegritySink.java, com/facebook/infer/annotation/ThreadSafe.java, com/facebook/infer/annotation/SuppressReturnOverAnnotated.java, com/facebook/infer/annotation/Nullsafe.java, com/facebook/infer/annotation/Initializer.java, com/facebook/infer/annotation/SuppressLint.java, com/facebook/infer/annotation/Mutable.java, com/facebook/infer/annotation/PerformanceCritical.java, com/facebook/infer/annotation/SuppressNullFieldAccess.java, com/facebook/infer/annotation/PrivacySource.java, com/facebook/infer/annotation/ReturnsOwnership.java, com/facebook/infer/annotation/SuppressFieldNotNullable.java, com/facebook/infer/annotation/Functional.java, com/facebook/infer/annotation/NullsafeStrict.java, com/facebook/infer/annotation/PrivacySink.java, com/facebook/infer/annotation/SynchronizedCollection.java, com/facebook/infer/annotation/Cleanup.java, com/facebook/infer/annotation/FalseOnNull.java, com/facebook/infer/annotation/ThreadConfined.java, com/facebook/infer/annotation/Lockless.java, com/facebook/infer/annotation/SuppressNullMethodCall.java, com/facebook/infer/annotation/Present.java, com/facebook/infer/annotation/TrueOnNull.java, com/facebook/infer/annotation/SuppressViewNullability.java, com/facebook/infer/annotation/OkToExtend.java, com/facebook/infer/annotation/PropagatesNullable.java, com/facebook/infer/annotation/SuppressParameterNotNullable.java, com/facebook/infer/annotation/IgnoreAllocations.java, com/facebook/infer/annotation/Verify.java, com/facebook/infer/annotation/IntegritySource.java, com/facebook/infer/annotation/Expensive.java, com/facebook/infer/annotation/SuppressFieldNotInitialized.java, com/facebook/infer/annotation/NonBlocking.java
+/*
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:vito-source:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/vito-source/3.6.0/vito-source-3.6.0-sources.jar
+Source archive SHA-256: e6e8119569743a9ed81ee043f4742783ea5a34d7083c28d5fac19920651231e9
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/fresco/vito/source/BitmapImageSource.kt, com/facebook/fresco/vito/source/DrawableImageSource.kt, com/facebook/fresco/vito/source/EmptyImageSource.kt, com/facebook/fresco/vito/source/FirstAvailableImageSource.kt, com/facebook/fresco/vito/source/ImageSource.kt, com/facebook/fresco/vito/source/ImageSourceExtras.kt, com/facebook/fresco/vito/source/ImageSourceProvider.kt, com/facebook/fresco/vito/source/IncreasingQualityImageSource.kt, com/facebook/fresco/vito/source/SingleImageSource.kt, com/facebook/fresco/vito/source/SingleImageSourceImpl.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

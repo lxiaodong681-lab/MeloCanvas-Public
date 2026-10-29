@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "format": "melocanvas-theme",
+    "schemaVersion": 1,
+    "id": "example.cosmos-dual",
+    "version": "1.0.0",
+    "name": "宇宙 · 明暗样例",
+    "author": "MeloCanvas",
+    "minAppVersion": "0.18.0",
+    "license": "MIT",
+    "entry": {
+      "tokens": "tokens.json",
+      "components": "components.json"
+    },
+    "fallback": "melocanvas.builtin.modern",
+    "requiredCapabilities": [
+      "semantic-colors",
+      "dark-tokens",
+      "icons",
+      "backgrounds",
+      "component-variants",
+      "player-frame",
+      "motion-presets",
+      "custom-progress-v1"
+    ],
+    "optionalCapabilities": [],
+    "previews": [
+      "previews/cosmos.png"
+    ]
+  },
+  "images": {
+    "assets/cosmos.png": "assets/cosmos.png",
+    "previews/cosmos.png": "assets/cosmos.png"
+  }
+}

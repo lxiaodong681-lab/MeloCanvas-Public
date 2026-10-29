@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:nativeimagefilters:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/nativeimagefilters/3.6.0/nativeimagefilters-3.6.0-sources.jar
+Source archive SHA-256: 23354b30fff9fd0340fd5cc1c7088c0e976b26716def4251bbc4da82538a896c
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/imagepipeline/nativecode/NativeBlurFilter.java, com/facebook/imagepipeline/nativecode/NativeFiltersLoader.java, com/facebook/imagepipeline/nativecode/NativeRoundingFilter.java, com/facebook/imagepipeline/postprocessors/IterativeBoxBlurPostProcessor.java, com/facebook/imagepipeline/postprocessors/RoundAsCirclePostprocessor.java, com/facebook/imagepipeline/postprocessors/RoundedCornersPostprocessor.java
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

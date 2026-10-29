@@ -1,0 +1,212 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.media3:media3-transformer:1.9.0
+Source: https://dl.google.com/dl/android/maven2/androidx/media3/media3-transformer/1.9.0/media3-transformer-1.9.0-sources.jar
+Source archive SHA-256: e933b1bf521711424f81fa9c484ad07876ea1b5e2d5d34c6ec2f11098739e4be
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidx/media3/transformer/AssetLoader.java, androidx/media3/transformer/AudioMixer.java, androidx/media3/transformer/CapturingDecoderFactory.java, androidx/media3/transformer/CapturingEncoderFactory.java, androidx/media3/transformer/DefaultAssetLoaderFactory.java, androidx/media3/transformer/DefaultAudioMixer.java, androidx/media3/transformer/DefaultCodec.java, androidx/media3/transformer/DefaultDecoderFactory.java, androidx/media3/transformer/DefaultEncoderFactory.java, androidx/media3/transformer/DefaultMuxer.java, androidx/media3/transformer/EncoderBitrateProvider.java, androidx/media3/transformer/EncoderSelector.java, androidx/media3/transformer/EncoderUtil.java, androidx/media3/transformer/ExoAssetLoaderAudioRenderer.java, androidx/media3/transformer/ExoAssetLoaderVideoRenderer.java, androidx/media3/transformer/ExoPlayerAssetLoader.java, androidx/media3/transformer/ExportResult.java, androidx/media3/transformer/FallbackListener.java, androidx/media3/transformer/SampleConsumer.java, androidx/media3/transformer/SampleExporter.java, androidx/media3/transformer/SilentAudioGenerator.java, androidx/media3/transformer/TransformerInternal.java, androidx/media3/transformer/VideoEncoderSettings.java
+/*
+ * Copyright 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/AudioEncoderSettings.java, androidx/media3/transformer/CompositionPlayerInternal.java, androidx/media3/transformer/EditingMetricsCollector.java, androidx/media3/transformer/ExperimentalAnalyzerModeFactory.java, androidx/media3/transformer/ExperimentalFrameExtractor.java, androidx/media3/transformer/InactiveTimestampAdjustment.java, androidx/media3/transformer/NoWriteMuxer.java, androidx/media3/transformer/RawAssetLoader.java, androidx/media3/transformer/SurfaceAssetLoader.java, androidx/media3/transformer/WatchdogTimer.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/AudioGraph.java, androidx/media3/transformer/AudioGraphInput.java, androidx/media3/transformer/AudioSampleExporter.java, androidx/media3/transformer/Codec.java, androidx/media3/transformer/EncodedSampleExporter.java, androidx/media3/transformer/ExportException.java, androidx/media3/transformer/FrameworkMuxer.java, androidx/media3/transformer/SegmentSpeedProvider.java, androidx/media3/transformer/Transformer.java, androidx/media3/transformer/VideoSampleExporter.java
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/AudioGraphInputAudioSink.java, androidx/media3/transformer/Composition.java, androidx/media3/transformer/CompositionPlayer.java, androidx/media3/transformer/EditedMediaItem.java, androidx/media3/transformer/EditedMediaItemSequence.java, androidx/media3/transformer/Effects.java, androidx/media3/transformer/ImageAssetLoader.java, androidx/media3/transformer/InAppFragmentedMp4Muxer.java, androidx/media3/transformer/InAppMp4Muxer.java, androidx/media3/transformer/OnMediaItemChangedListener.java, androidx/media3/transformer/PlaybackAudioGraphWrapper.java, androidx/media3/transformer/SequenceAssetLoader.java, androidx/media3/transformer/SequenceRenderersFactory.java, androidx/media3/transformer/TextureAssetLoader.java, androidx/media3/transformer/TransformerUtil.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/BufferingVideoSink.java, androidx/media3/transformer/JsonUtil.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/CodecDbLite.java, androidx/media3/transformer/CompositionTrackSelector.java, androidx/media3/transformer/ForwardingVideoSink.java, androidx/media3/transformer/MediaProjectionAssetLoader.java, androidx/media3/transformer/SpeedChangingMediaSource.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/CompositionFrameMetadata.java, androidx/media3/transformer/FrameAggregator.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/CompositionTextureListener.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law-or-agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/CompositionVideoPacketReleaseControl.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/ExoAssetLoaderBaseRenderer.java, androidx/media3/transformer/MuxerWrapper.java, androidx/media3/transformer/ProgressHolder.java, androidx/media3/transformer/SefSlowMotionFlattener.java, androidx/media3/transformer/TransformationRequest.java, androidx/media3/transformer/TransformerMediaClock.java, androidx/media3/transformer/package-info.java
+/*
+ * Copyright 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/transformer/GraphInput.java, androidx/media3/transformer/Mp4Info.java, androidx/media3/transformer/TransmuxTranscodeHelper.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

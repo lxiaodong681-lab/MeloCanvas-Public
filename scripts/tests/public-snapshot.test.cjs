@@ -1,0 +1,34 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+const cp = require('node:child_process');
+const { safePath, exportSnapshot } = require('../export-public-snapshot.cjs');
+const { check } = require('../check-public-source.cjs');
+test('snapshot rejects traversal, Git metadata and ambiguous paths', () => {
+  for (const value of ['../x', '/x', 'C:/x', 'a\\b', '.git/config', 'a/.GIT/config', 'a//b', 'a/./b']) assert.equal(safePath(value), false);
+  assert.equal(safePath('src/app.ts'), true);
+});
+test('snapshot contains allowlisted committed bytes, no history, dirty changes or untracked evidence', t => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'melo-public-'));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const repo = path.join(root, 'repo'), out = path.join(root, 'snapshot'); fs.mkdirSync(repo);
+  const git = args => cp.execFileSync('git', args, { cwd: repo, stdio: 'pipe' });
+  git(['init', '-q']); fs.mkdirSync(path.join(repo, 'release'));
+  fs.writeFileSync(path.join(repo, 'release/public-source-files.json'), JSON.stringify(['README.md']));
+  fs.writeFileSync(path.join(repo, 'README.md'), 'reviewed');
+  git(['add', '.']); git(['-c', 'user.name=Snapshot test', '-c', 'user.email=snapshot@example.invalid', 'commit', '-qm', 'fixture']);
+  fs.writeFileSync(path.join(repo, 'README.md'), 'unreviewed edit'); fs.writeFileSync(path.join(repo, 'private.txt'), 'local evidence');
+  const result = exportSnapshot(repo, out);
+  assert.equal(result.files, 1); assert.equal(fs.readFileSync(path.join(out, 'README.md'), 'utf8'), 'reviewed');
+  assert.deepEqual(fs.readdirSync(out).sort(), ['README.md', 'SOURCE_SNAPSHOT.json']);
+  assert.deepEqual(check(out).findings, []);
+  fs.writeFileSync(path.join(out, 'README.md'), 'tampered');
+  assert.equal(check(out).findings[0].rule, 'snapshot-checksum-mismatch');
+  assert.throws(() => exportSnapshot(repo, out), /must not exist/);
+  fs.writeFileSync(path.join(repo, 'release/public-source-files.json'), JSON.stringify(['private.txt']));
+  git(['add', 'release/public-source-files.json']); git(['-c', 'user.name=Snapshot test', '-c', 'user.email=snapshot@example.invalid', 'commit', '-qm', 'invalid list']);
+  assert.throws(() => exportSnapshot(repo, path.join(root, 'bad')), /Missing or non-regular/);
+  assert.equal(fs.existsSync(path.join(root, 'bad')), false);
+});

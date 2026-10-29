@@ -1,0 +1,13 @@
+{
+  "platforms": [
+    "android"
+  ],
+  "android": {
+    "modules": [
+      "expo.modules.bbplayernative.MeloThemeFilesModule",
+      "expo.modules.bbplayernative.BBPlayerNativeModule",
+      "expo.modules.bbplayernative.BootSplashVideoViewModule",
+      "expo.modules.bbplayernative.MeloLibraryBackupModule"
+    ]
+  }
+}

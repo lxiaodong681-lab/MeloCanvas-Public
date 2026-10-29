@@ -1,0 +1,338 @@
+{
+  "date": "2026-10-28",
+  "status": "LOCAL_REVIEW_ONLY",
+  "ownerDeclaration": "OC attribution and permission management: MeloCanvas maintainer (GitHub lxiaodong681-lab). Includes AI-generated and AI-edited artwork. OC images use LicenseRef-MeloCanvas-OC: only use/distribution within MeloCanvas; other uses require permission. Code and supplied icon remain MIT.",
+  "originalStickerSheetSha256": "77ceaaa9485d46e3ec09f1d0268bb3aecae4063630823df1b206c2387730eb8d",
+  "files": [
+    {
+      "path": "android-app/apps/mobile/melo/assets/icon.png",
+      "bytes": 474186,
+      "sha256": "4a74ab3f6db1daa85e24672867a9b228bdabfcbc1d2aa5257c732dc3a3d7897d",
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Maintainer-supplied original; copied without modification"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/portrait.png",
+      "bytes": 1686012,
+      "sha256": "41e39c5d548e3ba833b337adda419fc8c89c65e2a4d7077ec7cd4587b58682bc",
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Maintainer-supplied original; copied without modification"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/playing.png",
+      "bytes": 1349509,
+      "sha256": "0464630d43d821ff7dceffa8a467b9b58233b52461d697d0ba4f2e758a097349",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Built-in imagegen edit of maintainer-supplied sticker sheet, with authorized minor changes"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/video.png",
+      "bytes": 1514411,
+      "sha256": "dca3275c2b800ca6e86e64a0d17add8afa5d3a7c20cf35617e14c84a0ad72dcd",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Built-in imagegen edit of maintainer-supplied sticker sheet, with authorized minor changes"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/loading.png",
+      "bytes": 1460870,
+      "sha256": "8e56872c4897946da56b58cd452fde7da7b0e5e4ebe045ced4eb459457bb77ac",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Built-in imagegen edit of maintainer-supplied sticker sheet, with authorized minor changes"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/empty.png",
+      "bytes": 1284921,
+      "sha256": "8487c7c02fb7b13ff74dbd08596a801acb0893647cea61f2f506315315e48543",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Built-in imagegen edit of maintainer-supplied sticker sheet, with authorized minor changes"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/search.png",
+      "bytes": 1409785,
+      "sha256": "b98fdfbb74f31d1e15cb9e577acad86337e944e55944fc1a86143ea3be64c531",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Built-in imagegen edit of maintainer-supplied sticker sheet, with authorized minor changes"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/error.png",
+      "bytes": 1442056,
+      "sha256": "8ad50f6fc0c3d88effe868deea7aaa747c6d49f12c0b8e8fd2e180914e4e3fb2",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Built-in imagegen edit of maintainer-supplied sticker sheet, with authorized minor changes"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/liked.png",
+      "bytes": 1309935,
+      "sha256": "b4af72212534afab66faf31dd048ec92e3cc856c616a31bc933ae1b647504a21",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Built-in imagegen edit of maintainer-supplied sticker sheet, with authorized minor changes"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/sleep.png",
+      "bytes": 1192512,
+      "sha256": "46bc27fb7f871063a91e8eae92c4332ea5c15d8ee8846ab47199876788cf2943",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Built-in imagegen edit of maintainer-supplied sticker sheet, with authorized minor changes"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/mascot/portrait-cutout.png",
+      "bytes": 2023825,
+      "sha256": "1862d654d3bd159684fd1a50cbc6924beb6686676161a2102ebdab4252c09bbf",
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": true,
+      "license": "LicenseRef-MeloCanvas-OC",
+      "source": "Built-in imagegen background removal from maintainer-supplied portrait; original retained"
+    },
+    {
+      "path": "android-app/apps/mobile/melo/assets/icon-foreground.png",
+      "bytes": 378466,
+      "sha256": "b75b32415c86b6836ac8bf55e63921062604649df90e1e790d0a37294e04059a",
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-hdpi/splashscreen_logo.png",
+      "bytes": 28463,
+      "sha256": "39f79d9e8f5b9eb3005e3a78724d6176d38793cf4ae2a3d460a1ffa99fa43ab4",
+      "width": 144,
+      "height": 144,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-mdpi/splashscreen_logo.png",
+      "bytes": 14149,
+      "sha256": "11af11327ff6c3f413feee591d6fd42cf58fe0ac40b4adbe1ef4f11fef55a953",
+      "width": 96,
+      "height": 96,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-nodpi/melo_splash_logo.png",
+      "bytes": 474186,
+      "sha256": "4a74ab3f6db1daa85e24672867a9b228bdabfcbc1d2aa5257c732dc3a3d7897d",
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-xhdpi/splashscreen_logo.png",
+      "bytes": 45353,
+      "sha256": "bff0eec4a44b1f2f3d21a8227642d2c56079fbebe64ef022c622657fcb53e78f",
+      "width": 192,
+      "height": 192,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-xxhdpi/splashscreen_logo.png",
+      "bytes": 88187,
+      "sha256": "6bbab23a50c8c18b32a0dc87931727bce3545a8078eb264c956e6adcc7a1afb4",
+      "width": 288,
+      "height": 288,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/drawable-xxxhdpi/splashscreen_logo.png",
+      "bytes": 145619,
+      "sha256": "4a40d5931beba7bdb120d6431a3eca9256cad0f0a2f4b81f886ae235d682cd69",
+      "width": 384,
+      "height": 384,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp",
+      "bytes": 14000,
+      "sha256": "60f6b34c40039c32c690faaf85daf96fc2975aac2f09011f099b603f1473e143",
+      "width": 162,
+      "height": 162,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+      "bytes": 6885,
+      "sha256": "368056b764d0ea7bb57c5f26581d02a75eeed02fa6e21da9aee20af23226d663",
+      "width": 72,
+      "height": 72,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+      "bytes": 6693,
+      "sha256": "e7efe3ac09cec0ca85b37481d72d9998fd469164ac036756dbf2a5b1ba2699ac",
+      "width": 72,
+      "height": 72,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp",
+      "bytes": 6868,
+      "sha256": "a5f37a6bfff9aed187cd58d3c688c5929c1918d4de63db870b92153af0cf6da2",
+      "width": 108,
+      "height": 108,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+      "bytes": 3558,
+      "sha256": "2bec36b758cc5ecf15b4950a56b4e189d83e101e8c1b73c660eeb428e2d6b943",
+      "width": 48,
+      "height": 48,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+      "bytes": 3426,
+      "sha256": "60ce197a0cc5153404cb60993ebb08dd1ac9fa83005dde6a19b3b11baab97e20",
+      "width": 48,
+      "height": 48,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp",
+      "bytes": 23267,
+      "sha256": "29d893ee6918b2a77ea981fb5190f49fb00fad9daf968d875e4b25408e2f8426",
+      "width": 216,
+      "height": 216,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+      "bytes": 11659,
+      "sha256": "109bdb03f2e528ecd94b63d1220e1b7c699e830ba1ed6e637427fbefc1a9943c",
+      "width": 96,
+      "height": 96,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+      "bytes": 11325,
+      "sha256": "ba7f5613c8c127a4652a41a2a2ba698fdf21df1b983f11f5ca1a07b53213f96e",
+      "width": 96,
+      "height": 96,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp",
+      "bytes": 47326,
+      "sha256": "0966a2ef72b87bfa80d6bfc9c2f2ea526b44a2a68ceb3c8b89515f99183dee04",
+      "width": 324,
+      "height": 324,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+      "bytes": 23436,
+      "sha256": "6b063166cb197d84d96b276891f09e3b7df375ac485453726b50e04405c632e3",
+      "width": 144,
+      "height": 144,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+      "bytes": 22886,
+      "sha256": "c0cd4663f6e6cf52d61414beb924456b8e7d2088ec1ebc114953998775be6966",
+      "width": 144,
+      "height": 144,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp",
+      "bytes": 78664,
+      "sha256": "fedbcd33defd6ee268b3c826e0ca1b3e2ee351230b8e957d3f897063e77ed085",
+      "width": 432,
+      "height": 432,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+      "bytes": 39164,
+      "sha256": "d2438ef66341b830acea3838e0acc0d1e7001bb6708f6bae0babaa46f5c4faff",
+      "width": 192,
+      "height": 192,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    },
+    {
+      "path": "android-app/apps/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "bytes": 38438,
+      "sha256": "2712327c7a85d240cad942d1c2c1fed0f63cd91844f6fc41ae6127f96237af82",
+      "width": 192,
+      "height": 192,
+      "hasAlpha": true,
+      "license": "MIT",
+      "source": "Derived from the supplied icon by scripts/prepare-brand-assets.cjs"
+    }
+  ]
+}

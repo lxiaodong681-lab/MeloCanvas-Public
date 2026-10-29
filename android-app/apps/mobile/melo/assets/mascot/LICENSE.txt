@@ -1,0 +1,16 @@
+MeloCanvas OC Limited Asset License
+SPDX-License-Identifier: LicenseRef-MeloCanvas-OC
+Version: 2026-10-28
+
+角色归属及许可管理：MeloCanvas 维护者（GitHub: lxiaodong681-lab）。
+本目录的 OC 立绘、八态贴纸及透明背景等衍生图片由维护者提供或授权整理，包含 AI 生成及 AI 辅助编辑内容。
+
+本许可适用于本目录的全部图片，覆盖 portrait.png、portrait-cutout.png 及 playing / video / loading / empty / search / error / liked / sleep.png。这些素材不适用项目根目录的 MIT 许可。
+
+允许：仅作为 MeloCanvas 音绘项目的一部分，使用和分发这些素材，包括随本项目源码、构建产物分发，以及本应用界面中的正常显示。为适配界面进行运行时缩放和裁切不需要另行许可。分发时须保留本许可及上述角色归属；应用构建可在离线许可页面保留完整说明。
+
+其他用途须事先取得维护者明确许可，包括单独分发素材包、用于其他项目或品牌、制作周边、商业素材授权、重绘或其他衍生创作。不得删除归属信息、冒称角色原作者，或暗示获得维护者的官方认可。除上述有限许可外，维护者依法享有的权利均予保留。
+
+本说明记录维护者的许可意愿和角色归属，不扩大 AI 生成内容本身的法定保护范围。许可仅涉及维护者有权授予的权利，不改变第三方已有权利，也不限制法律允许且无需授权的使用。项目代码仍按其各自许可证提供。
+
+申请其他用途许可：https://github.com/lxiaodong681-lab

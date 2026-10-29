@@ -1,0 +1,53 @@
+音绘主题制作样例
+
+modern.melotheme：原色样例，暖白与朱红。
+pastoral.melotheme：森间样例，米白与草木绿。
+anime.melotheme：星轨样例，浅紫与紫罗兰。
+modern-custom-progress.melotheme：独立进度条样例，朱红已播放轨道、蓝色滑块和原创静态圆环图片。
+
+这三份是可导入的简单样例，沿用内置配色，采用静态图片背景与简单组件布局，不是完整复制内置主题的所有外观。
+
+使用样例
+1. 将 .melotheme 文件保存到手机。
+2. 打开音绘的主题工坊，点击“从文件导入主题”（旧版本按钮叫“选择主题包”）。
+3. 选择文件，查看预览，点击“应用此主题”。成功后会保存在“已安装主题”列表。
+
+在手机制作（需包含制作入口的新版本）
+1. 在主题工坊打开“外观调整 · 壁纸与配色”。
+2. 选择基础配色。
+3. 选择 JPG、PNG 或 WebP 背景；不选则使用样例背景。
+4. 调整背景透明度（0% 完整显示，100% 只显示底色）、缩放（100–400%）、水平与垂直取景位置；松手后更新预览。可以一键重置。
+5. 点击“保存并应用外观”即可在本机使用，无需手动导出和导入。
+6. 需要分享时进入“开发者模式”，填写名称并导出主题包。开发者模式还提供完整格式说明、构建命令及 GitHub 入口。导出本身不会切换当前主题。
+7. 开发者模式可单独填写底轨、已播放部分、滑块颜色（#RRGGBB），并选择透明静态 PNG 滑块（最大 256×256 像素、256 KiB）。高级设置保存在导出的主题包中；导入预览后应用。“保存并应用外观”保持简单，只保存基础配色与壁纸。
+
+自定义进度条的可编辑源文件在 theme-packages/progress-example。
+tokens.json 的 light.progress 为 {"track":"#DDD8D1","fill":"#C3483B","thumb":"#315A86"}。
+components.json 的 components.progress 可设为 {"variant":"modern","thumb":{"light":"assets/thumb.png","sizeDp":28}}。
+sizeDp 为 16–40；图片按原色显示，不旋转和染色，读取失败回退为颜色滑块。删除 thumb 对象即可只用颜色滑块。
+在 manifest.requiredCapabilities 中声明 custom-progress-v1；有深色主题时分别提供 dark.progress 和 thumb.dark。
+构建：node scripts/theme-package.cjs build theme-packages/progress-example theme-packages/starter-examples/progress-built.melotheme
+校验：node scripts/theme-package.cjs validate theme-packages/starter-examples/progress-built.melotheme
+
+B站主题导入
+工坊中点击“从 B站导入个性主题”，登录后输入装扮或收藏集名称，点击结果下载并预览，再应用。
+适配静态背景、配色、发现/音乐库/我的图标和滑块。搜索图标保留音绘样式，多套资源取首套可用外观；不导入启动视频、SVGA 和持续动画。
+图片在导入时缩小并转为静态 PNG，播放时读取本地文件。导入后的主题也会进入已安装列表，可离线切换和撤销。
+
+在电脑修改
+.melotheme 实际是 ZIP 文件，可复制一份并改为 .zip 后解压。
+manifest.json：名称 name、作者 author、版本 version 和图片清单。
+tokens.json：light.surface 为页面底色，light.text 为文字颜色，light.action.primary 为强调色，light.lyric 为歌词颜色。
+components.json：组件样式与 decorations.backdrop 背景路径。
+assets/background.png：应用背景。
+previews/background.png：背景预览图，不是实际页面截图。
+LICENSE.txt：图片与配置的授权说明。
+
+仅修改文字和颜色后，将上述文件和目录直接压缩到 ZIP 根目录，再改扩展名为 .melotheme；不要把外层文件夹一起压进去。
+图片替换会改变字节数和 SHA-256，必须同步更新 manifest.json 的 assets 清单。新手建议直接使用手机制作入口重新选图、导出，工具会自动更新清单并校验。
+静态背景用于应用内支持背景的页面；卡片、弹层、通知保持自己的底色，不修改手机桌面或系统主题。
+
+发布和获取
+作者可在自己的 GitHub Releases、个人网站或网盘发布 .melotheme，在社区帖子中附上下载地址、预览图、兼容版本与更新说明。
+用户下载文件后从主题工坊导入。音绘不托管第三方主题文件，不将他人的主题打进 APK，也不会自动替作者发布或更新主题。
+GitHub 发布说明：https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases

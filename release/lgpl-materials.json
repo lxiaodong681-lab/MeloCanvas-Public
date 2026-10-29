@@ -1,0 +1,27 @@
+{
+  "candidate": "0.19.4 Build 35",
+  "status": "corresponding-source-inventory",
+  "superLyricApiCommit": "092adf531c8840549dd872aa795820b0161f86bb",
+  "superLyricApiArchive": "Reconstructed losslessly from all 24 upstream blobs; each Git blob hash verified. No library source edits.",
+  "jaudiotagger": "Official Maven Central published source artifact and POM; 551 Java sources. No library source edits.",
+  "files": [
+    {
+      "name": "SuperLyricApi-2.4-source.zip",
+      "source": "https://api.github.com/repos/HChenX/SuperLyricApi/git/trees/092adf531c8840549dd872aa795820b0161f86bb?recursive=1",
+      "size": 86259,
+      "sha256": "1cb480ab220c7c59bd55e3660cdc16f2fac7532534a5b660cd1ff6d53befefb3"
+    },
+    {
+      "name": "jaudiotagger-3.0.1-sources.jar",
+      "source": "https://repo.maven.apache.org/maven2/net/jthink/jaudiotagger/3.0.1/jaudiotagger-3.0.1-sources.jar",
+      "size": 1031461,
+      "sha256": "d9c79a145944e6bc37579403843c9da84cd81459e42c9877351802ee284f5858"
+    },
+    {
+      "name": "jaudiotagger-3.0.1.pom",
+      "source": "https://repo.maven.apache.org/maven2/net/jthink/jaudiotagger/3.0.1/jaudiotagger-3.0.1.pom",
+      "size": 10859,
+      "sha256": "f2978526656d884f7b91b518c567bcad330eb3541fd9372ebaeb771bed2e5188"
+    }
+  ]
+}

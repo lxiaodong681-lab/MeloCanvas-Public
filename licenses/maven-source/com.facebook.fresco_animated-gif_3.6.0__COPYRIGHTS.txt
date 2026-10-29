@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:animated-gif:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/animated-gif/3.6.0/animated-gif-3.6.0-sources.jar
+Source archive SHA-256: 0c02b147bdbd2fff490fdcb2629dfc231051375b9a91d012134ae36bdd9e2c79
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/animated/gif/GifFrame.java, com/facebook/animated/gif/GifImage.java
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

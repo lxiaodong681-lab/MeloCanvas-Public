@@ -1,0 +1,481 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.media3:media3-common:1.9.0
+Source: https://dl.google.com/dl/android/maven2/androidx/media3/media3-common/1.9.0/media3-common-1.9.0-sources.jar
+Source archive SHA-256: e41d42a084cb3de41a6a5ccf158d5b39896047bec5bb5caa740eed658c7c4905
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidx/media3/common/AdOverlayInfo.java, androidx/media3/common/AdViewProvider.java, androidx/media3/common/TrackSelectionOverride.java
+/*
+ * Copyright (C) 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/AdPlaybackState.java, androidx/media3/common/ColorInfo.java, androidx/media3/common/ErrorMessageProvider.java, androidx/media3/common/PlaybackParameters.java, androidx/media3/common/Player.java, androidx/media3/common/audio/AudioProcessor.java, androidx/media3/common/audio/SonicAudioProcessor.java, androidx/media3/common/audio/SynchronizedSonicAudioProcessor.java, androidx/media3/common/audio/ToInt16PcmAudioProcessor.java, androidx/media3/common/util/HandlerWrapper.java, androidx/media3/common/util/RepeatModeUtil.java, androidx/media3/common/util/SystemHandlerWrapper.java
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/AudioAttributes.java
+/*
+ * Copyright 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/AuxEffectInfo.java, androidx/media3/common/BasePlayer.java, androidx/media3/common/audio/AudioFocusManager.java, androidx/media3/common/util/EGLSurfaceTexture.java, androidx/media3/common/util/GlUtil.java, androidx/media3/common/util/Log.java, androidx/media3/common/util/MediaFormatUtil.java, androidx/media3/common/util/NotificationUtil.java, androidx/media3/common/util/TimedValueQueue.java
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/BundleListRetriever.java, androidx/media3/common/ForwardingPlayer.java, androidx/media3/common/HeartRating.java, androidx/media3/common/PercentageRating.java, androidx/media3/common/PlaybackException.java, androidx/media3/common/Rating.java, androidx/media3/common/StarRating.java, androidx/media3/common/ThumbRating.java, androidx/media3/common/VideoSize.java, androidx/media3/common/audio/SpeedProvider.java, androidx/media3/common/text/LanguageFeatureSpan.java, androidx/media3/common/text/TextAnnotation.java, androidx/media3/common/text/TextEmphasisSpan.java, androidx/media3/common/util/BundleCollectionUtil.java, androidx/media3/common/util/NetworkTypeObserver.java, androidx/media3/common/util/UnstableApi.java
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/C.java, androidx/media3/common/DataReader.java, androidx/media3/common/DrmInitData.java, androidx/media3/common/Format.java, androidx/media3/common/MediaLibraryInfo.java, androidx/media3/common/Metadata.java, androidx/media3/common/MimeTypes.java, androidx/media3/common/ParserException.java, androidx/media3/common/PriorityTaskManager.java, androidx/media3/common/Timeline.java, androidx/media3/common/TrackGroup.java, androidx/media3/common/text/Cue.java, androidx/media3/common/util/Assertions.java, androidx/media3/common/util/AtomicFile.java, androidx/media3/common/util/CodecSpecificDataUtil.java, androidx/media3/common/util/ColorParser.java, androidx/media3/common/util/ConditionVariable.java, androidx/media3/common/util/LibraryLoader.java, androidx/media3/common/util/LongArray.java, androidx/media3/common/util/ParsableBitArray.java, androidx/media3/common/util/ParsableByteArray.java, androidx/media3/common/util/TimestampAdjuster.java, androidx/media3/common/util/TraceUtil.java, androidx/media3/common/util/UriUtil.java, androidx/media3/common/util/Util.java, androidx/media3/common/util/XmlPullParserUtil.java
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/DebugViewProvider.java, androidx/media3/common/Effect.java, androidx/media3/common/FrameInfo.java, androidx/media3/common/GlTextureInfo.java, androidx/media3/common/SimpleBasePlayer.java, androidx/media3/common/SurfaceInfo.java, androidx/media3/common/VideoFrameProcessingException.java, androidx/media3/common/VideoFrameProcessor.java, androidx/media3/common/audio/AudioProcessingPipeline.java, androidx/media3/common/audio/AudioProcessorChain.java, androidx/media3/common/audio/ChannelMixingMatrix.java, androidx/media3/common/audio/SpeedChangingAudioProcessor.java, androidx/media3/common/audio/package-info.java
+/*
+ * Copyright 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/DeviceInfo.java, androidx/media3/common/FileTypes.java, androidx/media3/common/MediaItem.java, androidx/media3/common/MediaMetadata.java, androidx/media3/common/util/RunnableFutureTask.java
+/*
+ * Copyright 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/FlagSet.java, androidx/media3/common/Tracks.java, androidx/media3/common/text/SpanUtil.java, androidx/media3/common/util/Consumer.java, androidx/media3/common/util/ListenerSet.java, androidx/media3/common/util/WifiLockManager.java
+/*
+ * Copyright (C) 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/ForwardingSimpleBasePlayer.java, androidx/media3/common/Label.java, androidx/media3/common/OverlaySettings.java, androidx/media3/common/audio/AudioFocusRequestCompat.java, androidx/media3/common/audio/AudioManagerCompat.java, androidx/media3/common/util/SpeedProviderUtil.java, androidx/media3/common/util/TimestampConsumer.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/GlObjectsProvider.java
+/*
+ * Copyright (C) 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/IllegalSeekPositionException.java
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/OnInputFrameProcessedListener.java, androidx/media3/common/audio/AudioMixingUtil.java, androidx/media3/common/audio/ChannelMixingAudioProcessor.java, androidx/media3/common/util/ConstantRateTimestampIterator.java, androidx/media3/common/util/LongArrayQueue.java, androidx/media3/common/util/NullableType.java, androidx/media3/common/util/TimestampIterator.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/PlayerTransferState.java, androidx/media3/common/ViewProvider.java, androidx/media3/common/util/BackgroundExecutor.java, androidx/media3/common/util/BackgroundThreadStateHandler.java, androidx/media3/common/util/ExperimentalApi.java, androidx/media3/common/util/StuckPlayerDetector.java, androidx/media3/common/util/StuckPlayerException.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/StreamKey.java
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/TrackSelectionParameters.java, androidx/media3/common/package-info.java, androidx/media3/common/audio/AudioBecomingNoisyManager.java, androidx/media3/common/audio/BaseAudioProcessor.java, androidx/media3/common/text/package-info.java, androidx/media3/common/util/NonNullApi.java, androidx/media3/common/util/UnknownNull.java, androidx/media3/common/util/WakeLockManager.java, androidx/media3/common/util/package-info.java
+/*
+ * Copyright (C) 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/VideoCompositorSettings.java, androidx/media3/common/VideoGraph.java, androidx/media3/common/text/CustomSpanBundler.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/audio/DefaultGainProvider.java, androidx/media3/common/audio/GainProcessor.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/audio/Sonic.java
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2010 Bill Cox, Sonic Library
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/text/CueGroup.java, androidx/media3/common/util/GlProgram.java, androidx/media3/common/util/Size.java
+/*
+ * Copyright (C) 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/text/HorizontalTextInVerticalContextSpan.java, androidx/media3/common/text/RubySpan.java, androidx/media3/common/util/CopyOnWriteMultiset.java
+/*
+ * Copyright (C) 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+---
+
+Files: androidx/media3/common/text/VoiceSpan.java
+/*
+ * Copyright (C) 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+---
+
+Files: androidx/media3/common/util/BitmapLoader.java
+/*
+ * Copyright 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License
+ */
+
+---
+
+Files: androidx/media3/common/util/Clock.java, androidx/media3/common/util/SystemClock.java
+/*
+ * Copyright (C) 2014 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/common/util/GlRect.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

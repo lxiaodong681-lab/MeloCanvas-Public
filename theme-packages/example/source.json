@@ -1,0 +1,22 @@
+{
+  "manifest": {
+    "format": "melocanvas-theme",
+    "schemaVersion": 1,
+    "id": "example.paper-signal",
+    "version": "0.1.0",
+    "name": "纸间信号",
+    "author": "MeloCanvas original geometry example",
+    "minAppVersion": "0.4.0",
+    "license": "CC0-1.0; see LICENSE.txt",
+    "entry": { "tokens": "tokens.json", "components": "components.json" },
+    "fallback": "melocanvas.builtin.modern",
+    "requiredCapabilities": ["semantic-colors", "icons", "backgrounds", "component-variants", "player-frame", "motion-presets"],
+    "optionalCapabilities": ["widget-theme-v1"],
+    "previews": ["previews/home.png", "previews/player.png"]
+  },
+  "images": {
+    "assets/header.png": "artwork/header.svg",
+    "previews/home.png": "artwork/home.svg",
+    "previews/player.png": "artwork/player.svg"
+  }
+}

@@ -1,0 +1,364 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: androidx.media3:media3-exoplayer:1.9.0
+Source: https://dl.google.com/dl/android/maven2/androidx/media3/media3-exoplayer/1.9.0/media3-exoplayer-1.9.0-sources.jar
+Source archive SHA-256: 117b184b95b1752955a1a1fbfaa1aebf29f3575900f08acde59ecaaf14efe620
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: androidx/media3/exoplayer/AbstractConcatenatedTimeline.java, androidx/media3/exoplayer/DefaultMediaClock.java, androidx/media3/exoplayer/DefaultRenderersFactory.java, androidx/media3/exoplayer/PlaybackInfo.java, androidx/media3/exoplayer/PlayerMessage.java, androidx/media3/exoplayer/SeekParameters.java, androidx/media3/exoplayer/audio/AudioSink.java, androidx/media3/exoplayer/audio/ChannelMappingAudioProcessor.java, androidx/media3/exoplayer/audio/TrimmingAudioProcessor.java, androidx/media3/exoplayer/drm/ClearKeyUtil.java, androidx/media3/exoplayer/drm/ErrorStateDrmSession.java, androidx/media3/exoplayer/drm/LocalMediaDrmCallback.java, androidx/media3/exoplayer/drm/WidevineUtil.java, androidx/media3/exoplayer/metadata/MetadataDecoderFactory.java, androidx/media3/exoplayer/metadata/MetadataOutput.java, androidx/media3/exoplayer/offline/DownloadManager.java, androidx/media3/exoplayer/offline/DownloadRequest.java, androidx/media3/exoplayer/offline/DownloadService.java, androidx/media3/exoplayer/offline/Downloader.java, androidx/media3/exoplayer/offline/ProgressiveDownloader.java, androidx/media3/exoplayer/offline/SegmentDownloader.java, androidx/media3/exoplayer/scheduler/PlatformScheduler.java, androidx/media3/exoplayer/scheduler/Requirements.java, androidx/media3/exoplayer/scheduler/RequirementsWatcher.java, androidx/media3/exoplayer/scheduler/Scheduler.java, androidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory.java, androidx/media3/exoplayer/source/DefaultCompositeSequenceableLoaderFactory.java, androidx/media3/exoplayer/source/ForwardingTimeline.java, androidx/media3/exoplayer/source/MaskingMediaPeriod.java, androidx/media3/exoplayer/source/MediaLoadData.java, androidx/media3/exoplayer/source/MediaSourceEventListener.java, androidx/media3/exoplayer/source/ShuffleOrder.java, androidx/media3/exoplayer/source/ads/AdsLoader.java, androidx/media3/exoplayer/source/ads/AdsMediaSource.java, androidx/media3/exoplayer/source/ads/SinglePeriodAdTimeline.java, androidx/media3/exoplayer/text/TextOutput.java, androidx/media3/exoplayer/video/PlaceholderSurface.java
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/BaseRenderer.java, androidx/media3/exoplayer/DecoderCounters.java, androidx/media3/exoplayer/DefaultLoadControl.java, androidx/media3/exoplayer/ExoPlaybackException.java, androidx/media3/exoplayer/ExoPlayer.java, androidx/media3/exoplayer/ExoPlayerImpl.java, androidx/media3/exoplayer/ExoPlayerImplInternal.java, androidx/media3/exoplayer/FormatHolder.java, androidx/media3/exoplayer/LoadControl.java, androidx/media3/exoplayer/MediaClock.java, androidx/media3/exoplayer/NoSampleRenderer.java, androidx/media3/exoplayer/Renderer.java, androidx/media3/exoplayer/RendererCapabilities.java, androidx/media3/exoplayer/RenderersFactory.java, androidx/media3/exoplayer/SimpleExoPlayer.java, androidx/media3/exoplayer/StandaloneMediaClock.java, androidx/media3/exoplayer/audio/AudioCapabilities.java, androidx/media3/exoplayer/audio/AudioCapabilitiesReceiver.java, androidx/media3/exoplayer/audio/AudioRendererEventListener.java, androidx/media3/exoplayer/audio/DecoderAudioRenderer.java, androidx/media3/exoplayer/audio/DefaultAudioSink.java, androidx/media3/exoplayer/audio/MediaCodecAudioRenderer.java, androidx/media3/exoplayer/drm/DefaultDrmSession.java, androidx/media3/exoplayer/drm/DefaultDrmSessionManager.java, androidx/media3/exoplayer/drm/DrmSession.java, androidx/media3/exoplayer/drm/DrmSessionManager.java, androidx/media3/exoplayer/drm/ExoMediaDrm.java, androidx/media3/exoplayer/drm/FrameworkCryptoConfig.java, androidx/media3/exoplayer/drm/FrameworkMediaDrm.java, androidx/media3/exoplayer/drm/HttpMediaDrmCallback.java, androidx/media3/exoplayer/drm/KeysExpiredException.java, androidx/media3/exoplayer/drm/MediaDrmCallback.java, androidx/media3/exoplayer/drm/OfflineLicenseHelper.java, androidx/media3/exoplayer/drm/UnsupportedDrmException.java, androidx/media3/exoplayer/mediacodec/MediaCodecInfo.java, androidx/media3/exoplayer/mediacodec/MediaCodecRenderer.java, androidx/media3/exoplayer/mediacodec/MediaCodecSelector.java, androidx/media3/exoplayer/mediacodec/MediaCodecUtil.java, androidx/media3/exoplayer/metadata/MetadataRenderer.java, androidx/media3/exoplayer/source/BehindLiveWindowException.java, androidx/media3/exoplayer/source/ClippingMediaPeriod.java, androidx/media3/exoplayer/source/ClippingMediaSource.java, androidx/media3/exoplayer/source/CompositeSequenceableLoader.java, androidx/media3/exoplayer/source/ConcatenatingMediaSource.java, androidx/media3/exoplayer/source/LoopingMediaSource.java, androidx/media3/exoplayer/source/MediaPeriod.java, androidx/media3/exoplayer/source/MediaSource.java, androidx/media3/exoplayer/source/MergingMediaPeriod.java, androidx/media3/exoplayer/source/MergingMediaSource.java, androidx/media3/exoplayer/source/ProgressiveMediaPeriod.java, androidx/media3/exoplayer/source/ProgressiveMediaSource.java, androidx/media3/exoplayer/source/SampleStream.java, androidx/media3/exoplayer/source/SequenceableLoader.java, androidx/media3/exoplayer/source/SinglePeriodTimeline.java, androidx/media3/exoplayer/source/SingleSampleMediaPeriod.java, androidx/media3/exoplayer/source/SingleSampleMediaSource.java, androidx/media3/exoplayer/source/TrackGroupArray.java, androidx/media3/exoplayer/source/chunk/BaseMediaChunk.java, androidx/media3/exoplayer/source/chunk/BundledChunkExtractor.java, androidx/media3/exoplayer/source/chunk/Chunk.java, androidx/media3/exoplayer/source/chunk/ChunkHolder.java, androidx/media3/exoplayer/source/chunk/ChunkSampleStream.java, androidx/media3/exoplayer/source/chunk/ChunkSource.java, androidx/media3/exoplayer/source/chunk/ContainerMediaChunk.java, androidx/media3/exoplayer/source/chunk/DataChunk.java, androidx/media3/exoplayer/source/chunk/InitializationChunk.java, androidx/media3/exoplayer/source/chunk/MediaChunk.java, androidx/media3/exoplayer/source/chunk/SingleSampleMediaChunk.java, androidx/media3/exoplayer/text/SubtitleDecoderFactory.java, androidx/media3/exoplayer/text/TextRenderer.java, androidx/media3/exoplayer/trackselection/AdaptiveTrackSelection.java, androidx/media3/exoplayer/trackselection/BaseTrackSelection.java, androidx/media3/exoplayer/trackselection/DefaultTrackSelector.java, androidx/media3/exoplayer/trackselection/ExoTrackSelection.java, androidx/media3/exoplayer/trackselection/FixedTrackSelection.java, androidx/media3/exoplayer/trackselection/MappingTrackSelector.java, androidx/media3/exoplayer/trackselection/RandomTrackSelection.java, androidx/media3/exoplayer/trackselection/TrackSelection.java, androidx/media3/exoplayer/trackselection/TrackSelectionArray.java, androidx/media3/exoplayer/trackselection/TrackSelector.java, androidx/media3/exoplayer/upstream/Allocation.java, androidx/media3/exoplayer/upstream/Allocator.java, androidx/media3/exoplayer/upstream/BandwidthMeter.java, androidx/media3/exoplayer/upstream/CachedRegionTracker.java, androidx/media3/exoplayer/upstream/DefaultAllocator.java, androidx/media3/exoplayer/upstream/DefaultBandwidthMeter.java, androidx/media3/exoplayer/upstream/Loader.java, androidx/media3/exoplayer/upstream/LoaderErrorThrower.java, androidx/media3/exoplayer/upstream/ParsingLoadable.java, androidx/media3/exoplayer/upstream/SlidingPercentile.java, androidx/media3/exoplayer/util/DebugTextViewHelper.java, androidx/media3/exoplayer/util/EventLogger.java, androidx/media3/exoplayer/video/MediaCodecVideoRenderer.java, androidx/media3/exoplayer/video/VideoDecoderGLSurfaceView.java, androidx/media3/exoplayer/video/VideoDecoderOutputBufferRenderer.java, androidx/media3/exoplayer/video/VideoFrameReleaseHelper.java, androidx/media3/exoplayer/video/VideoRendererEventListener.java
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/CodecParameters.java, androidx/media3/exoplayer/CodecParametersChangeListener.java, androidx/media3/exoplayer/source/preload/PreCacheHelper.java, androidx/media3/exoplayer/source/preload/RankingDataComparator.java, androidx/media3/exoplayer/upstream/PlayerIdAwareAllocator.java, androidx/media3/exoplayer/video/Av1SampleDependencyParser.java, androidx/media3/exoplayer/video/VideoFrameReleaseEarlyTimeForecaster.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/DecoderReuseEvaluation.java, androidx/media3/exoplayer/LivePlaybackSpeedControl.java, androidx/media3/exoplayer/audio/ForwardingAudioSink.java, androidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider.java, androidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecBufferEnqueuer.java, androidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback.java, androidx/media3/exoplayer/mediacodec/BatchBuffer.java, androidx/media3/exoplayer/mediacodec/MediaCodecDecoderException.java, androidx/media3/exoplayer/source/BundledExtractorsAdapter.java, androidx/media3/exoplayer/source/ProgressiveMediaExtractor.java, androidx/media3/exoplayer/source/mediaparser/package-info.java, androidx/media3/exoplayer/video/FixedFrameRateEstimator.java, androidx/media3/exoplayer/video/MediaCodecVideoDecoderException.java
+/*
+ * Copyright (C) 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/DefaultLivePlaybackSpeedControl.java, androidx/media3/exoplayer/MediaSourceInfoHolder.java, androidx/media3/exoplayer/MetadataRetriever.java, androidx/media3/exoplayer/PlaylistTimeline.java, androidx/media3/exoplayer/StreamVolumeManager.java, androidx/media3/exoplayer/drm/MediaDrmCallbackException.java, androidx/media3/exoplayer/source/DefaultMediaSourceFactory.java, androidx/media3/exoplayer/source/MediaParserExtractorAdapter.java, androidx/media3/exoplayer/source/chunk/ChunkExtractor.java, androidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor.java, androidx/media3/exoplayer/source/mediaparser/InputReaderAdapterV30.java, androidx/media3/exoplayer/source/mediaparser/MediaParserUtil.java, androidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30.java
+/*
+ * Copyright 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/DefaultRendererCapabilitiesList.java, androidx/media3/exoplayer/ForwardingRenderer.java, androidx/media3/exoplayer/PlaybackLooperProvider.java, androidx/media3/exoplayer/RendererCapabilitiesList.java, androidx/media3/exoplayer/audio/DefaultAudioTrackProvider.java, androidx/media3/exoplayer/source/preload/PreloadException.java, androidx/media3/exoplayer/source/preload/PreloadManagerListener.java, androidx/media3/exoplayer/video/DefaultVideoSink.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/DefaultSuitableOutputChecker.java, androidx/media3/exoplayer/SuitableOutputChecker.java
+/*
+ * Copyright (C) 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/ExoTimeoutException.java, androidx/media3/exoplayer/analytics/MediaMetricsListener.java, androidx/media3/exoplayer/analytics/PlayerId.java, androidx/media3/exoplayer/drm/DrmSessionManagerProvider.java, androidx/media3/exoplayer/drm/DrmUtil.java, androidx/media3/exoplayer/mediacodec/DefaultMediaCodecAdapterFactory.java, androidx/media3/exoplayer/source/ConcatenatingMediaSource2.java, androidx/media3/exoplayer/source/SpannedData.java, androidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource.java, androidx/media3/exoplayer/source/ads/ServerSideAdInsertionUtil.java, androidx/media3/exoplayer/upstream/experimental/BandwidthEstimator.java, androidx/media3/exoplayer/upstream/experimental/BandwidthStatistic.java, androidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator.java, androidx/media3/exoplayer/upstream/experimental/ExperimentalBandwidthMeter.java, androidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageStatistic.java, androidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageTimeToFirstByteEstimator.java, androidx/media3/exoplayer/upstream/experimental/PercentileTimeToFirstByteEstimator.java, androidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic.java, androidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic.java, androidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator.java
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/LoadingInfo.java, androidx/media3/exoplayer/audio/AudioOffloadSupport.java, androidx/media3/exoplayer/audio/DefaultAudioOffloadSupportProvider.java, androidx/media3/exoplayer/image/BitmapFactoryImageDecoder.java, androidx/media3/exoplayer/image/ImageDecoder.java, androidx/media3/exoplayer/image/ImageDecoderException.java, androidx/media3/exoplayer/image/ImageOutput.java, androidx/media3/exoplayer/image/ImageOutputBuffer.java, androidx/media3/exoplayer/image/ImageRenderer.java, androidx/media3/exoplayer/mediacodec/MediaCodecBufferEnqueuer.java, androidx/media3/exoplayer/mediacodec/SynchronousMediaCodecBufferEnqueuer.java, androidx/media3/exoplayer/source/ExternalLoader.java, androidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod.java, androidx/media3/exoplayer/source/ExternallyLoadedMediaSource.java, androidx/media3/exoplayer/source/FilteringMediaSource.java, androidx/media3/exoplayer/source/TimeOffsetMediaPeriod.java, androidx/media3/exoplayer/source/TimelineWithUpdatedMediaItem.java, androidx/media3/exoplayer/upstream/CmcdConfiguration.java, androidx/media3/exoplayer/upstream/CmcdData.java, androidx/media3/exoplayer/video/PlaybackVideoGraphWrapper.java, androidx/media3/exoplayer/video/VideoFrameReleaseControl.java, androidx/media3/exoplayer/video/VideoFrameRenderControl.java, androidx/media3/exoplayer/video/VideoSink.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/MediaExtractorCompat.java, androidx/media3/exoplayer/RendererHolder.java, androidx/media3/exoplayer/audio/PcmAudioUtil.java, androidx/media3/exoplayer/image/ExternallyLoadedImageDecoder.java, androidx/media3/exoplayer/mediacodec/LoudnessCodecController.java, androidx/media3/exoplayer/mediacodec/MediaCodecPerformancePointCoverageProvider.java, androidx/media3/exoplayer/util/ReleasableExecutor.java
+/*
+ * Copyright 2024 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/MediaExtractorCompatInternal.java, androidx/media3/exoplayer/MetadataRetrieverInternal.java, androidx/media3/exoplayer/ScrubbingModeParameters.java, androidx/media3/exoplayer/audio/ForwardingAudioOutput.java, androidx/media3/exoplayer/audio/ForwardingAudioOutputProvider.java, androidx/media3/exoplayer/drm/KeyRequestInfo.java, androidx/media3/exoplayer/mediacodec/ForwardingMediaCodecAdapter.java, androidx/media3/exoplayer/offline/SegmentDownloaderFactory.java, androidx/media3/exoplayer/trackselection/ForwardingTrackSelection.java
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/MediaPeriodHolder.java, androidx/media3/exoplayer/MediaPeriodInfo.java, androidx/media3/exoplayer/MediaPeriodQueue.java, androidx/media3/exoplayer/analytics/AnalyticsCollector.java, androidx/media3/exoplayer/analytics/AnalyticsListener.java, androidx/media3/exoplayer/audio/AudioTimestampPoller.java, androidx/media3/exoplayer/audio/AudioTrackPositionTracker.java, androidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor.java, androidx/media3/exoplayer/audio/TeeAudioProcessor.java, androidx/media3/exoplayer/audio/ToFloatPcmAudioProcessor.java, androidx/media3/exoplayer/drm/DrmSessionEventListener.java, androidx/media3/exoplayer/offline/DefaultDownloaderFactory.java, androidx/media3/exoplayer/offline/Download.java, androidx/media3/exoplayer/offline/DownloadHelper.java, androidx/media3/exoplayer/offline/DownloadNotificationHelper.java, androidx/media3/exoplayer/offline/DownloaderFactory.java, androidx/media3/exoplayer/offline/FilterableManifest.java, androidx/media3/exoplayer/offline/FilteringManifestParser.java, androidx/media3/exoplayer/source/BaseMediaSource.java, androidx/media3/exoplayer/source/CompositeMediaSource.java, androidx/media3/exoplayer/source/IcyDataSource.java, androidx/media3/exoplayer/source/chunk/BaseMediaChunkIterator.java, androidx/media3/exoplayer/source/chunk/MediaChunkIterator.java, androidx/media3/exoplayer/trackselection/TrackSelectionUtil.java, androidx/media3/exoplayer/upstream/DefaultLoadErrorHandlingPolicy.java, androidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy.java, androidx/media3/exoplayer/video/VideoFrameMetadataListener.java, androidx/media3/exoplayer/video/spherical/CameraMotionListener.java, androidx/media3/exoplayer/video/spherical/CameraMotionRenderer.java, androidx/media3/exoplayer/video/spherical/FrameRotationQueue.java, androidx/media3/exoplayer/video/spherical/OrientationListener.java, androidx/media3/exoplayer/video/spherical/Projection.java, androidx/media3/exoplayer/video/spherical/ProjectionDecoder.java, androidx/media3/exoplayer/video/spherical/ProjectionRenderer.java, androidx/media3/exoplayer/video/spherical/SceneRenderer.java, androidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView.java, androidx/media3/exoplayer/video/spherical/TouchTracker.java
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/MediaSourceList.java, androidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager.java, androidx/media3/exoplayer/analytics/PlaybackSessionManager.java, androidx/media3/exoplayer/analytics/PlaybackStats.java, androidx/media3/exoplayer/analytics/PlaybackStatsListener.java, androidx/media3/exoplayer/analytics/package-info.java, androidx/media3/exoplayer/audio/package-info.java, androidx/media3/exoplayer/drm/DummyExoMediaDrm.java, androidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecAdapter.java, androidx/media3/exoplayer/mediacodec/MediaCodecAdapter.java, androidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter.java, androidx/media3/exoplayer/mediacodec/package-info.java, androidx/media3/exoplayer/offline/DefaultDownloadIndex.java, androidx/media3/exoplayer/offline/DownloadCursor.java, androidx/media3/exoplayer/offline/DownloadIndex.java, androidx/media3/exoplayer/offline/DownloadProgress.java, androidx/media3/exoplayer/offline/WritableDownloadIndex.java, androidx/media3/exoplayer/scheduler/package-info.java, androidx/media3/exoplayer/source/LoadEventInfo.java, androidx/media3/exoplayer/source/MaskingMediaSource.java, androidx/media3/exoplayer/source/MediaSourceFactory.java, androidx/media3/exoplayer/source/SampleDataQueue.java, androidx/media3/exoplayer/source/SampleQueue.java, androidx/media3/exoplayer/source/SilenceMediaSource.java, androidx/media3/exoplayer/source/package-info.java, androidx/media3/exoplayer/source/chunk/package-info.java, androidx/media3/exoplayer/trackselection/package-info.java, androidx/media3/exoplayer/util/SntpClient.java, androidx/media3/exoplayer/video/DecoderVideoRenderer.java, androidx/media3/exoplayer/video/package-info.java, androidx/media3/exoplayer/video/spherical/package-info.java
+/*
+ * Copyright (C) 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/RendererConfiguration.java, androidx/media3/exoplayer/offline/DownloadException.java, androidx/media3/exoplayer/source/EmptySampleStream.java, androidx/media3/exoplayer/source/UnrecognizedInputFormatException.java, androidx/media3/exoplayer/source/chunk/BaseMediaChunkOutput.java, androidx/media3/exoplayer/trackselection/TrackSelectorResult.java
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/package-info.java, androidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider.java, androidx/media3/exoplayer/drm/package-info.java, androidx/media3/exoplayer/metadata/package-info.java, androidx/media3/exoplayer/offline/package-info.java, androidx/media3/exoplayer/source/ads/package-info.java, androidx/media3/exoplayer/text/package-info.java, androidx/media3/exoplayer/upstream/TimeToFirstByteEstimator.java, androidx/media3/exoplayer/upstream/package-info.java, androidx/media3/exoplayer/upstream/experimental/package-info.java, androidx/media3/exoplayer/util/package-info.java
+/*
+ * Copyright (C) 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/analytics/DefaultAnalyticsCollector.java, androidx/media3/exoplayer/source/WrappingMediaSource.java
+/*
+ * Copyright (C) 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/audio/AudioOutput.java, androidx/media3/exoplayer/audio/AudioOutputProvider.java, androidx/media3/exoplayer/audio/AudioTrackAudioOutput.java, androidx/media3/exoplayer/audio/AudioTrackAudioOutputProvider.java
+/*
+ * Copyright (C) 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/audio/OggOpusAudioPacketizer.java, androidx/media3/exoplayer/image/package-info.java
+/*
+ * Copyright (C) 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: androidx/media3/exoplayer/audio/WaveformAudioBufferSink.java, androidx/media3/exoplayer/source/preload/BasePreloadManager.java, androidx/media3/exoplayer/source/preload/DefaultPreloadManager.java, androidx/media3/exoplayer/source/preload/PreloadMediaPeriod.java, androidx/media3/exoplayer/source/preload/PreloadMediaSource.java, androidx/media3/exoplayer/source/preload/TargetPreloadStatusControl.java, androidx/media3/exoplayer/source/preload/package-info.java, androidx/media3/exoplayer/text/CuesResolver.java, androidx/media3/exoplayer/text/DelegatingSubtitleDecoder.java, androidx/media3/exoplayer/text/MergingCuesResolver.java, androidx/media3/exoplayer/text/ReplacingCuesResolver.java
+/*
+ * Copyright 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

@@ -1,0 +1,290 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.squareup.okhttp3:okhttp:4.12.0
+Source: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0-sources.jar
+Source archive SHA-256: d91a769a4140e542cddbac4e67fcf279299614e8bfd53bd23b85e60c2861341c
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: okhttp3/OkHttp.kt, okhttp3/internal/connection/RealCall.kt, okhttp3/internal/cache/CacheRequest.kt, okhttp3/internal/ws/WebSocketReader.kt, okhttp3/internal/ws/WebSocketProtocol.kt, okhttp3/internal/ws/WebSocketWriter.kt, okhttp3/internal/platform/ConscryptPlatform.kt, okhttp3/internal/http2/PushObserver.kt, okhttp3/internal/http2/Header.kt, okhttp3/internal/http/RealResponseBody.kt, okhttp3/internal/http/HttpMethod.kt, okhttp3/CertificatePinner.kt, okhttp3/Credentials.kt, okhttp3/Protocol.kt, okhttp3/FormBody.kt, okhttp3/RequestBody.kt, okhttp3/Challenge.kt, okhttp3/ConnectionSpec.kt, okhttp3/Interceptor.kt, okhttp3/Callback.kt, okhttp3/MultipartBody.kt, okhttp3/TlsVersion.kt, okhttp3/Call.kt, okhttp3/CipherSuite.kt, okhttp3/ResponseBody.kt
+/*
+ * Copyright (C) 2014 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/internal.kt, okhttp3/internal/connection/Exchange.kt, okhttp3/internal/platform/BouncyCastlePlatform.kt, okhttp3/internal/platform/OpenJSSEPlatform.kt, okhttp3/internal/platform/android/AndroidCertificateChainCleaner.kt, okhttp3/internal/platform/android/AndroidSocketAdapter.kt, okhttp3/internal/platform/android/StandardAndroidSocketAdapter.kt, okhttp3/internal/platform/android/ConscryptSocketAdapter.kt, okhttp3/internal/platform/android/CloseGuard.kt, okhttp3/internal/platform/android/DeferredSocketAdapter.kt, okhttp3/internal/platform/android/BouncyCastleSocketAdapter.kt, okhttp3/internal/platform/android/SocketAdapter.kt, okhttp3/internal/platform/android/Android10SocketAdapter.kt, okhttp3/internal/platform/android/AndroidLog.kt, okhttp3/internal/concurrent/TaskQueue.kt, okhttp3/internal/concurrent/Task.kt, okhttp3/internal/concurrent/TaskLogger.kt, okhttp3/internal/concurrent/TaskRunner.kt, okhttp3/CacheControl.kt
+/*
+ * Copyright (C) 2019 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/hostnames.kt, okhttp3/internal/http1/HeadersReader.kt, okhttp3/internal/http1/Http1ExchangeCodec.kt, okhttp3/internal/http2/Http2ExchangeCodec.kt, okhttp3/internal/http/HttpHeaders.kt, okhttp3/internal/http/ExchangeCodec.kt, okhttp3/internal/Util.kt, okhttp3/Address.kt
+/*
+ * Copyright (C) 2012 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/authenticator/JavaNetAuthenticator.kt, okhttp3/internal/connection/RouteDatabase.kt, okhttp3/internal/cache/CacheStrategy.kt, okhttp3/internal/http2/Hpack.kt, okhttp3/internal/http2/ErrorCode.kt, okhttp3/internal/http2/Http2.kt, okhttp3/internal/http/RequestLine.kt, okhttp3/internal/http/StatusLine.kt, okhttp3/MediaType.kt, okhttp3/Response.kt, okhttp3/Handshake.kt, okhttp3/Route.kt, okhttp3/Dispatcher.kt, okhttp3/Request.kt
+/*
+ * Copyright (C) 2013 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/proxy/NullProxySelector.kt
+/*
+ * Copyright (C) 2018 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/tls/BasicTrustRootIndex.kt, okhttp3/internal/tls/BasicCertificateChainCleaner.kt, okhttp3/internal/tls/TrustRootIndex.kt, okhttp3/internal/ws/RealWebSocket.kt, okhttp3/internal/platform/AndroidPlatform.kt, okhttp3/internal/platform/Jdk8WithJettyBootPlatform.kt, okhttp3/internal/platform/Android10Platform.kt, okhttp3/internal/platform/Jdk9Platform.kt, okhttp3/internal/http2/StreamResetException.kt, okhttp3/internal/http2/ConnectionShutdownException.kt, okhttp3/internal/http/RetryAndFollowUpInterceptor.kt, okhttp3/internal/http/CallServerInterceptor.kt, okhttp3/internal/http/RealInterceptorChain.kt, okhttp3/internal/cache2/Relay.kt, okhttp3/internal/cache2/FileOperator.kt, okhttp3/WebSocket.kt, okhttp3/WebSocketListener.kt
+/*
+ * Copyright (C) 2016 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/tls/OkHostnameVerifier.kt, okhttp3/internal/tls/CertificateChainCleaner.kt, okhttp3/internal/connection/RealConnection.kt, okhttp3/internal/connection/ConnectInterceptor.kt, okhttp3/internal/connection/RealConnectionPool.kt, okhttp3/internal/cache/CacheInterceptor.kt, okhttp3/internal/http/BridgeInterceptor.kt, okhttp3/Headers.kt, okhttp3/Connection.kt, okhttp3/ConnectionPool.kt
+/*
+ *  Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/connection/ConnectionSpecSelector.kt, okhttp3/internal/connection/RouteException.kt, okhttp3/internal/connection/ExchangeFinder.kt, okhttp3/internal/cache/FaultHidingSink.kt, okhttp3/internal/io/FileSystem.kt, okhttp3/Cookie.kt, okhttp3/HttpUrl.kt, okhttp3/Authenticator.kt, okhttp3/CookieJar.kt
+/*
+ * Copyright (C) 2015 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/connection/RouteSelector.kt, okhttp3/internal/http2/Settings.kt, okhttp3/Dns.kt, okhttp3/OkHttpClient.kt
+/*
+ * Copyright (C) 2012 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/publicsuffix/PublicSuffixDatabase.kt, okhttp3/EventListener.kt
+/*
+ * Copyright (C) 2017 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/cache/DiskLruCache.kt, okhttp3/internal/http2/Http2Connection.kt, okhttp3/internal/http2/Http2Stream.kt, okhttp3/internal/http2/Http2Reader.kt, okhttp3/internal/http2/Http2Writer.kt, okhttp3/internal/http/dates.kt
+/*
+ * Copyright (C) 2011 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/ws/MessageDeflater.kt, okhttp3/internal/ws/MessageInflater.kt, okhttp3/internal/ws/WebSocketExtensions.kt, okhttp3/MultipartReader.kt
+/*
+ * Copyright (C) 2020 Square, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/platform/Platform.kt
+/*
+ * Copyright (C) 2012 Square, Inc.
+ * Copyright (C) 2012 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/internal/http2/Huffman.kt
+/*
+ * Copyright 2013 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+---
+
+Files: okhttp3/Cache.kt
+/*
+ * Copyright (C) 2010 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */

@@ -1,0 +1,103 @@
+import React, { type ReactNode } from 'react'
+import { Pressable, StyleSheet, View } from 'react-native'
+
+import { builtInThemes, type ThemeKey } from './core/theme'
+import { Artwork, Card, Icon, T, ThemeRendererProvider } from './ui'
+
+export function ThemeWorkshop({
+	themeKey,
+	mode,
+	onSelect,
+	disabled = false,
+	children,
+}: {
+	themeKey: ThemeKey | null
+	mode: 'music' | 'listening'
+	onSelect: (key: ThemeKey) => void
+	disabled?: boolean
+	children?: ReactNode
+}) {
+	return (
+		<>
+			<T
+				muted
+				size={12}
+				style={{ marginBottom: 18 }}
+			>
+				{mode === 'listening'
+					? '同一段声音，三种风景。切换主题会保留收听与进度。'
+					: '同一首歌，三种风景。切换主题会保留播放与喜欢。'}
+			</T>
+			{(['modern', 'pastoral', 'anime'] as const).map((key) => (
+				<Pressable
+					key={key}
+					accessibilityRole='button'
+					accessibilityLabel={`应用${key === 'modern' ? '现代' : key === 'pastoral' ? '田园' : '动漫'}主题`}
+					accessibilityState={{ selected: key === themeKey, disabled }}
+					disabled={disabled}
+					onPress={() => onSelect(key)}
+					style={{ marginBottom: 13, opacity: disabled ? 0.5 : 1 }}
+				>
+					<ThemeRendererProvider
+						theme={builtInThemes[key]}
+						adapted={null}
+						allowedImageUris={[]}
+						reducedMotion={false}
+					>
+						<Card>
+							<View style={[s.row, { gap: 14 }]}>
+								<Artwork
+									resource={builtInThemes[key].assets.hero}
+									size={64}
+									style={{ borderRadius: 8 }}
+								/>
+								<View style={{ flex: 1 }}>
+									<T
+										size={16}
+										weight='700'
+									>
+										{builtInThemes[key].name} ·{' '}
+										{key === 'modern'
+											? '现代'
+											: key === 'pastoral'
+												? '田园'
+												: '动漫'}
+									</T>
+									<T
+										muted
+										size={11}
+									>
+										{key === 'modern'
+											? '暖白 / 留白 / 叠放唱片'
+											: key === 'pastoral'
+												? '草木 / 叶形纸片 / 拱形封面'
+												: '星轨 / 漫画描边 / 倾斜相片'}
+									</T>
+								</View>
+								{themeKey === key && (
+									<Icon
+										name='check'
+										color={builtInThemes[key].tokens.action.primary}
+									/>
+								)}
+							</View>
+						</Card>
+					</ThemeRendererProvider>
+				</Pressable>
+			))}
+			{children ?? (
+				<T
+					muted
+					size={11}
+				>
+					第三方主题 ZIP
+					安装将在后续开放。当前使用版本化主题契约，不执行主题脚本。
+				</T>
+			)}
+		</>
+	)
+}
+
+const s = StyleSheet.create({
+	row: { flexDirection: 'row', alignItems: 'center' },
+})

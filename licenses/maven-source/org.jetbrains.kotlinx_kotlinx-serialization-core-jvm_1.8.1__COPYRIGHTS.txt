@@ -1,0 +1,45 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.8.1
+Source: https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-core-jvm/1.8.1/kotlinx-serialization-core-jvm-1.8.1-sources.jar
+Source archive SHA-256: d4a7221a0c2ccb47bc736340344b256506cf8a5a49882883f8f56385ae69a1bc
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: jvmMain/kotlinx/serialization/SerializersJvm.kt, commonMain/kotlinx/serialization/ContextualSerializer.kt, commonMain/kotlinx/serialization/PolymorphicSerializer.kt, commonMain/kotlinx/serialization/SealedSerializer.kt, commonMain/kotlinx/serialization/SerialFormat.kt, commonMain/kotlinx/serialization/Serializers.kt, commonMain/kotlinx/serialization/descriptors/SerialDescriptors.kt, commonMain/kotlinx/serialization/descriptors/SerialKinds.kt, commonMain/kotlinx/serialization/internal/ElementMarker.kt, commonMain/kotlinx/serialization/internal/NoOpEncoder.kt, commonMain/kotlinx/serialization/internal/ObjectSerializer.kt, commonMain/kotlinx/serialization/internal/Platform.common.kt, commonMain/kotlinx/serialization/internal/PluginGeneratedSerialDescriptor.kt, commonMain/kotlinx/serialization/internal/Primitives.kt, commonMain/kotlinx/serialization/internal/Tuples.kt, commonMain/kotlinx/serialization/internal/ValueClasses.kt, commonMain/kotlinx/serialization/modules/SerializersModule.kt, commonMain/kotlinx/serialization/modules/SerializersModuleBuilders.kt, commonMain/kotlinx/serialization/modules/SerializersModuleCollector.kt
+/*
+ * Copyright 2017-2021 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
+ */
+
+---
+
+Files: jvmMain/kotlinx/serialization/internal/Caching.kt, jvmMain/kotlinx/serialization/internal/Platform.kt, jvmMain/kotlinx/serialization/internal/SuppressAnimalSniffer.kt, commonMain/kotlinx/serialization/SerializersCache.kt, commonMain/kotlinx/serialization/internal/BuiltInSerializers.kt
+/*
+ * Copyright 2017-2022 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
+ */
+
+---
+
+Files: commonMain/kotlinx/serialization/Annotations.kt, commonMain/kotlinx/serialization/internal/NamedCompanion.kt, commonMain/kotlinx/serialization/internal/NothingSerialDescriptor.kt
+/*
+ * Copyright 2017-2023 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
+ */
+
+---
+
+Files: commonMain/kotlinx/serialization/ApiLevels.kt
+/*
+ * Copyright 2017-2024 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
+ */
+
+---
+
+Files: commonMain/kotlinx/serialization/KSerializer.kt, commonMain/kotlinx/serialization/SerializationExceptions.kt, commonMain/kotlinx/serialization/builtins/BuiltinSerializers.kt, commonMain/kotlinx/serialization/builtins/LongAsStringSerializer.kt, commonMain/kotlinx/serialization/descriptors/ContextAware.kt, commonMain/kotlinx/serialization/descriptors/SerialDescriptor.kt, commonMain/kotlinx/serialization/encoding/AbstractDecoder.kt, commonMain/kotlinx/serialization/encoding/AbstractEncoder.kt, commonMain/kotlinx/serialization/encoding/Decoding.kt, commonMain/kotlinx/serialization/encoding/Encoding.kt, commonMain/kotlinx/serialization/internal/AbstractPolymorphicSerializer.kt, commonMain/kotlinx/serialization/internal/CachedNames.kt, commonMain/kotlinx/serialization/internal/CollectionDescriptors.kt, commonMain/kotlinx/serialization/internal/CollectionSerializers.kt, commonMain/kotlinx/serialization/internal/Enums.kt, commonMain/kotlinx/serialization/internal/InlineClassDescriptor.kt, commonMain/kotlinx/serialization/internal/NullableSerializer.kt, commonMain/kotlinx/serialization/internal/PluginHelperInterfaces.kt, commonMain/kotlinx/serialization/internal/SerializationConstructorMarker.kt, commonMain/kotlinx/serialization/internal/Tagged.kt, commonMain/kotlinx/serialization/modules/PolymorphicModuleBuilder.kt
+/*
+ * Copyright 2017-2020 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
+ */
+
+---
+
+Files: commonMain/kotlinx/serialization/internal/PrimitiveArraysSerializers.kt
+/*
+ * Copyright 2017-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
+ */

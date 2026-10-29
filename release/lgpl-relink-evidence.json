@@ -1,0 +1,16 @@
+{
+  "status": "RELINK_BYTECODE_VERIFIED_NOT_DEVICE_TESTED",
+  "commit": "e1ba8e2975c9d47a2b66e956a6ad6d65517adfc2",
+  "apkSha256": "1e8304c1f70442fe726d8b104eb6a451791777c7cff8b3eaa0b4ecb17de9237b",
+  "replacements": {
+    "SuperLyricApi-rebuilt.aar": "653843a12cad383f19d27283f64c2e0ed88f503c880ec97ee5a26455595b48d3",
+    "jaudiotagger-rebuilt.jar": "f10efc21718cd7f01ac67d440d80ec2307efc2439145d0a083e0083982e34d9b"
+  },
+  "sourceArchiveSha256": "ac25b2d620c0aa5a92a8c4fc990ed2edf7b81c65c3d53682488bab606729c638",
+  "verifiedDexClasses": [
+    "org/melocanvas/relink/SuperLyricProof",
+    "org/melocanvas/relink/JaudiotaggerProof"
+  ],
+  "signed": false,
+  "installed": false
+}

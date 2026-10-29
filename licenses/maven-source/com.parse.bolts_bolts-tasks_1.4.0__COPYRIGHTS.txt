@@ -1,0 +1,29 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.parse.bolts:bolts-tasks:1.4.0
+Source: https://repo.maven.apache.org/maven2/com/parse/bolts/bolts-tasks/1.4.0/bolts-tasks-1.4.0-sources.jar
+Source archive SHA-256: dff7baabf00947f3b47875137454fbb369ee7b305586435156bf7647e6527fe2
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: bolts/AggregateException.java, bolts/Capture.java, bolts/Continuation.java, bolts/Task.java
+/*
+ *  Copyright (c) 2014, Facebook, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+---
+
+Files: bolts/AndroidExecutors.java, bolts/CancellationToken.java, bolts/CancellationTokenRegistration.java, bolts/CancellationTokenSource.java
+/*
+ *  Copyright (c) 2014, Facebook, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */

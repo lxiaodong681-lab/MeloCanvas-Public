@@ -1,0 +1,2137 @@
+import { Orpheus } from '@bbplayer/orpheus'
+import * as Application from 'expo-application'
+import Constants from 'expo-constants'
+import { LinearGradient } from 'expo-linear-gradient'
+import { openDatabaseSync } from 'expo-sqlite'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+	AccessibilityInfo,
+	AppState,
+	BackHandler,
+	Keyboard,
+	Linking,
+	Modal,
+	PermissionsAndroid,
+	Platform,
+	Pressable,
+	ScrollView,
+	StatusBar,
+	StyleSheet,
+	Switch,
+	View,
+} from 'react-native'
+import {
+	SafeAreaProvider,
+	useSafeAreaInsets,
+} from 'react-native-safe-area-context'
+
+import { sourceDetails } from './bilibili'
+import { BilibiliImportPage } from './bilibili-import-ui'
+import {
+	type BilibiliPreviewAction,
+	type PreviewPlayerIdentity,
+} from './bilibili-preview-session'
+import { CreatorPostCache } from './core/creator-post-cache'
+import { CreatorStore } from './core/creators'
+import type { Creator } from './core/creators'
+import { Library, migrate } from './core/database'
+import { FollowingFeedStore } from './core/following-feed'
+import { ImportStore } from './core/imports'
+import { ListeningLibrary } from './core/listening'
+import type { SearchItem, Source } from './core/model'
+import { PlaylistStore } from './core/playlists'
+import { RecommendationStore } from './core/recommendations'
+import { SessionStore } from './core/sessions'
+import type { ThemeKey } from './core/theme'
+import { VideoCatalog } from './core/video-catalog'
+import { VideoSaves } from './core/video-saves'
+import type { CreatorPostCandidate } from './creator-api'
+import { resolveCreatorPost, verifyCreatorPost } from './creator-post-selection'
+import { CreatorPostsRead, CreatorProfileRead } from './creator-remote-ui'
+import { creatorSearchTarget } from './creator-search-selection'
+import { CreatorOverlay } from './creator-ui'
+import { FmPage } from './fm-ui'
+import { FollowingFeedPage } from './following-feed-ui'
+import { HostPlaybackFooter, type HostTab as Tab } from './host-controls'
+import { ImportEntry, ImportPage } from './import-ui'
+import { LibraryPage } from './library-ui'
+import { ListeningLibraryPage } from './listening-library-ui'
+import {
+	ListeningHome,
+	ListeningPlayer,
+	ListeningUnavailable,
+	type ListeningResume,
+} from './listening-ui'
+import { MusicPlayer, SongRow } from './music-ui'
+import { PageTitle } from './page-title'
+import {
+	PlaybackIntent,
+	playMusicIntent,
+	type PlaybackRequest,
+} from './playback-intent'
+import { readPlaybackMetadata } from './playback-metadata'
+import { usePlayer } from './player'
+import { bindPlayerDeepLinks } from './player-deep-link'
+import { preparePlaylistPlayback } from './playlist-selection'
+import { PlaylistDialogs, PlaylistSourceActions } from './playlist-ui'
+import { RecommendationPage } from './recommendation-ui'
+import { SearchPage } from './search-ui'
+import { ThemeLayoutProbe } from './theme-layout-probe'
+import { ThemePackagePanel } from './theme-package-panel'
+import { ThemeWorkshop } from './theme-workshop'
+import { themeWorkshopBusy } from './theme-workshop-session'
+import {
+	Artwork,
+	Backdrop,
+	Button,
+	Card,
+	Icon,
+	IconButton,
+	State,
+	T,
+	ThemeRendererProvider,
+	shape,
+	time,
+} from './ui'
+import { useFm } from './use-fm'
+import { useBilibiliImports } from './useBilibiliImports'
+import { useCreators } from './useCreators'
+import { useCreatorSearch } from './useCreatorSearch'
+import { useFollowingFeed } from './useFollowingFeed'
+import { useImports } from './useImports'
+import { useListening } from './useListening'
+import { useListeningLibrary } from './useListeningLibrary'
+import { usePlaylists } from './usePlaylists'
+import { useRecommendations } from './useRecommendations'
+import { useSearch } from './useSearch'
+import { useThemeCandidateLayout } from './useThemeCandidateLayout'
+import { useThemeWorkshop } from './useThemeWorkshop'
+
+type Sheet = 'themes' | 'queue' | 'source' | null
+const appVersion =
+	Application.nativeApplicationVersion ??
+	Constants.expoConfig?.version ??
+	'版本信息暂不可用'
+
+async function resolveSource(
+	item: SearchItem | Source,
+	signal?: AbortSignal,
+): Promise<Source> {
+	if ('cid' in item) return item
+	return sourceDetails(item.bvid, signal)
+}
+async function readNativePlayerIdentity(): Promise<PreviewPlayerIdentity> {
+	const actual = await Orpheus.getPlaybackSnapshot()
+	return {
+		mode: actual.mode,
+		sourceId: actual.currentSourceId,
+		entryId: actual.currentEntryId,
+	}
+}
+
+export default function App() {
+	const [result] = useState(() => {
+		try {
+			const db = openDatabaseSync('melocanvas.db')
+			migrate(db)
+			return {
+				library: new Library(db),
+				listeningLibrary: new ListeningLibrary(db),
+				sessionStore: new SessionStore(db),
+				playlistStore: new PlaylistStore(db),
+				creatorStore: new CreatorStore(db),
+				creatorPostCache: new CreatorPostCache(db),
+				followingFeedStore: new FollowingFeedStore(db),
+				importStore: new ImportStore(db),
+				videoCatalog: new VideoCatalog(db),
+				videoSaves: new VideoSaves(db),
+				recommendationStore: new RecommendationStore(db, () => new Date()),
+				error: '',
+			}
+		} catch (error) {
+			return {
+				library: null,
+				listeningLibrary: null,
+				sessionStore: null,
+				playlistStore: null,
+				creatorStore: null,
+				creatorPostCache: null,
+				followingFeedStore: null,
+				importStore: null,
+				videoCatalog: null,
+				videoSaves: null,
+				recommendationStore: null,
+				error: error instanceof Error ? error.message : '数据库初始化失败',
+			}
+		}
+	})
+	return (
+		<SafeAreaProvider>
+			{result.library &&
+			result.listeningLibrary &&
+			result.sessionStore &&
+			result.playlistStore &&
+			result.creatorStore &&
+			result.creatorPostCache &&
+			result.followingFeedStore &&
+			result.importStore &&
+			result.videoCatalog &&
+			result.videoSaves &&
+			result.recommendationStore ? (
+				<Product
+					library={result.library}
+					listeningLibrary={result.listeningLibrary}
+					sessionStore={result.sessionStore}
+					playlistStore={result.playlistStore}
+					creatorStore={result.creatorStore}
+					creatorPostCache={result.creatorPostCache}
+					followingFeedStore={result.followingFeedStore}
+					importStore={result.importStore}
+					videoCatalog={result.videoCatalog}
+					videoSaves={result.videoSaves}
+					recommendationStore={result.recommendationStore}
+				/>
+			) : (
+				<View style={{ flex: 1, justifyContent: 'center' }}>
+					<State
+						title='本地数据暂时无法打开'
+						message={`原数据已保留，请重新打开应用或使用较新版本。\n${result.error}`}
+					/>
+				</View>
+			)}
+		</SafeAreaProvider>
+	)
+}
+
+function Product({
+	library,
+	listeningLibrary,
+	sessionStore,
+	playlistStore,
+	creatorStore,
+	creatorPostCache,
+	followingFeedStore,
+	importStore,
+	videoCatalog,
+	videoSaves,
+	recommendationStore,
+}: {
+	library: Library
+	listeningLibrary: ListeningLibrary
+	sessionStore: SessionStore
+	playlistStore: PlaylistStore
+	creatorStore: CreatorStore
+	creatorPostCache: CreatorPostCache
+	followingFeedStore: FollowingFeedStore
+	importStore: ImportStore
+	videoCatalog: VideoCatalog
+	videoSaves: VideoSaves
+	recommendationStore: RecommendationStore
+}) {
+	const insets = useSafeAreaInsets()
+	const {
+		rootRef: themeLayoutRootRef,
+		onRootLayout: onThemeRootLayout,
+		bounds: themeRootBounds,
+		gate: candidateLayoutGate,
+		request: candidateLayoutRequest,
+		preparePresentation,
+	} = useThemeCandidateLayout(insets)
+	const workshop = useThemeWorkshop(library, preparePresentation)
+	const theme = workshop.state.current.theme
+	const selection = workshop.state.current.selection
+	const themeKey = selection.kind === 'builtin' ? selection.key : null
+	const c = theme.tokens
+	const [tab, setTab] = useState<Tab>('home')
+	const [searchReturnTab, setSearchReturnTab] = useState<Tab | null>(null)
+	const playlists = usePlaylists(playlistStore, library)
+	const creators = useCreators(creatorStore, library, creatorPostCache)
+	const followingFeed = useFollowingFeed(followingFeedStore, creators.session)
+	const imports = useImports(importStore, library, playlistStore)
+	const recommendations = useRecommendations(recommendationStore)
+	const biliImports = useBilibiliImports(
+		importStore,
+		library,
+		playlistStore,
+		videoCatalog,
+		videoSaves,
+	)
+	const videoLibrary = useListeningLibrary(
+		videoSaves,
+		videoCatalog,
+		biliImports.session.gate,
+	)
+	const externalImportsVisible =
+		imports.state.route !== 'closed' && !imports.state.suspended
+	const biliImportsVisible =
+		biliImports.state.route !== 'closed' &&
+		!biliImports.state.playback.suspended
+	const videoLibraryVisible =
+		videoLibrary.state.route !== 'closed' &&
+		!videoLibrary.state.playback.suspended
+	const importsVisible =
+		externalImportsVisible || biliImportsVisible || videoLibraryVisible
+	const creatorPlayerReturn = useRef(false)
+	const [homeChannel, setHomeChannel] = useState<'music' | 'listening'>('music')
+	const [listeningLibraryOpen, setListeningLibraryOpen] = useState(false)
+	const [fullPlayer, setFullPlayerState] = useState(false)
+	const playerPresentation = useRef(0)
+	const setFullPlayer = useCallback((open: boolean) => {
+		playerPresentation.current++
+		setFullPlayerState(open)
+	}, [])
+	const [sheet, setSheet] = useState<Sheet>(null)
+	const [likes, setLikes] = useState(() => library.likes())
+	const [query, setQuery] = useState('')
+	const search = useSearch()
+	const { find: runSearch } = search
+	const [filter, setFilter] = useState<
+		'all' | 'music' | 'listening' | 'creator'
+	>('all')
+	const creatorSearch = useCreatorSearch(
+		tab === 'search' && filter === 'creator',
+	)
+	const [notice, setNotice] = useState('')
+	const [savingBv, setSavingBv] = useState('')
+	const [sourceRequestBv, setSourceRequestBv] = useState('')
+	const [addingBv, setAddingBv] = useState('')
+	const [sourceActions, setSourceActions] = useState<
+		SearchItem | Source | null
+	>(null)
+	const pendingAdd = useRef<AbortController | null>(null)
+	const pageScroll = useRef<ScrollView | null>(null)
+	const scrollOffsets = useRef(new Map<string, number>())
+	const pageKey =
+		tab === 'library'
+			? `library:${playlists.state.currentId ?? (listeningLibraryOpen ? 'listening' : 'root')}`
+			: tab === 'search' && filter === 'creator'
+				? 'search:creator'
+				: tab
+	const busyBv = sourceRequestBv || savingBv || addingBv
+	const [playbackIntent] = useState(() => new PlaybackIntent())
+	const [reduced, setReduced] = useState(
+		() => library.setting('reducedMotion') === 'true',
+	)
+	const [systemReduced, setSystemReduced] = useState(true)
+	const [notifications, setNotifications] = useState(() =>
+		Orpheus.areNotificationsEnabled(),
+	)
+	const busy = useRef(false)
+	const player = usePlayer(library, listeningLibrary, sessionStore)
+	const fm = useFm(recommendationStore, playbackIntent, player)
+	const fmPlayerReturn = useRef(false)
+	const metadata = useMemo(
+		() =>
+			readPlaybackMetadata(
+				library,
+				listeningLibrary,
+				player.track?.sourceId ?? player.track?.id,
+				player.resumePoints,
+			),
+		[
+			library,
+			listeningLibrary,
+			player.track?.sourceId,
+			player.track?.id,
+			player.resumePoints,
+		],
+	)
+	const current = metadata.current
+	const localDataError = metadata.error
+	const listening = useListening(
+		player,
+		current,
+		() => setFullPlayer(true),
+		setNotice,
+		playbackIntent,
+	)
+	const resumeItems: ListeningResume[] = metadata.items.map((item) => {
+		const part = listening.parts.find(
+			(entry) => entry.source.id === item.source.id,
+		)
+		return {
+			...item,
+			...(part ? { part: { page: part.page, title: part.title } } : {}),
+		}
+	})
+	const isLiked = (bvid: string) => likes.some((source) => source.bvid === bvid)
+	useEffect(() => {
+		void AccessibilityInfo.isReduceMotionEnabled().then(setSystemReduced)
+		const motion = AccessibilityInfo.addEventListener(
+			'reduceMotionChanged',
+			setSystemReduced,
+		)
+		const foreground = AppState.addEventListener('change', (state) => {
+			if (state === 'active')
+				setNotifications(Orpheus.areNotificationsEnabled())
+		})
+		return () => {
+			motion.remove()
+			foreground.remove()
+		}
+	}, [])
+	useEffect(() => {
+		if (!notice) return
+		const timer = setTimeout(() => setNotice(''), 4500)
+		return () => clearTimeout(timer)
+	}, [notice])
+	useEffect(() => {
+		if (tab === 'library') playlists.session.refresh()
+	}, [tab, playlists.session])
+	useEffect(
+		() => () => {
+			pendingAdd.current?.abort()
+			pendingAdd.current = null
+			setAddingBv('')
+		},
+		[tab],
+	)
+	useEffect(() => {
+		if (fullPlayer) return
+		const frame = requestAnimationFrame(() =>
+			pageScroll.current?.scrollTo({
+				y: scrollOffsets.current.get(pageKey) ?? 0,
+				animated: false,
+			}),
+		)
+		return () => cancelAnimationFrame(frame)
+	}, [pageKey, fullPlayer])
+	const openImportHub = useCallback(() => {
+		followingFeed.session.close()
+		biliImports.session.close()
+		videoLibrary.session.close()
+		imports.session.open()
+	}, [
+		biliImports.session,
+		videoLibrary.session,
+		imports.session,
+		followingFeed.session,
+	])
+	const closeFm = useCallback(() => {
+		fm.session.close()
+		if (fmPlayerReturn.current) setFullPlayer(true)
+		fmPlayerReturn.current = false
+	}, [fm.session, setFullPlayer])
+	const closePlayer = useCallback(async () => {
+		const presentation = ++playerPresentation.current,
+			isCurrentIntent = playbackIntent.captureCurrent(),
+			biliPreview = biliImports.session.preview,
+			savedPreview = videoLibrary.session.preview
+		if (
+			biliPreview.getSnapshot().suspended ||
+			savedPreview.getSnapshot().suspended
+		) {
+			const owner = biliPreview.getSnapshot().suspended
+				? biliPreview
+				: savedPreview
+			await owner.resumeCurrent(readNativePlayerIdentity)
+			if (presentation !== playerPresentation.current || !isCurrentIntent())
+				return
+			if (
+				!biliPreview.getSnapshot().suspended &&
+				!savedPreview.getSnapshot().suspended
+			)
+				setFullPlayer(false)
+			else setNotice('暂时无法核对当前播放器，请稍后再返回。')
+			return
+		}
+		if (
+			imports.state.suspended &&
+			imports.session.resumeFromPlayer(
+				player.track?.sourceId ?? player.track?.id ?? null,
+				player.track?.id ?? null,
+			)
+		) {
+			setFullPlayer(false)
+		} else if (creators.state.suspended) {
+			setFullPlayer(creatorPlayerReturn.current)
+			creators.session.resumeFromPlayer()
+		} else setFullPlayer(false)
+	}, [
+		playbackIntent,
+		biliImports.session,
+		videoLibrary.session,
+		imports.state.suspended,
+		imports.session,
+		player.track?.sourceId,
+		player.track?.id,
+		creators.state.suspended,
+		creators.session,
+		setFullPlayer,
+	])
+	useEffect(() => {
+		const handler = BackHandler.addEventListener('hardwareBackPress', () => {
+			if (sheet) {
+				if (sheet === 'themes') workshop.session.close()
+				setSheet(null)
+				return true
+			}
+			if (fullPlayer) {
+				void closePlayer()
+				return true
+			}
+			if (fm.state.open) {
+				closeFm()
+				return true
+			}
+			if (followingFeed.state.open) {
+				followingFeed.session.close()
+				return true
+			}
+			if (recommendations.state.open) {
+				recommendations.session.back()
+				return true
+			}
+			if (biliImports.state.route !== 'closed') {
+				if (
+					biliImports.state.route === 'folders' ||
+					biliImports.state.route === 'task' ||
+					biliImports.state.route === 'result'
+				)
+					openImportHub()
+				else biliImports.session.back()
+				return true
+			}
+			if (videoLibrary.state.route !== 'closed') {
+				videoLibrary.session.back()
+				return true
+			}
+			if (imports.state.route !== 'closed') {
+				imports.session.back()
+				return true
+			}
+			if (tab === 'search' && searchReturnTab) {
+				setTab(searchReturnTab)
+				setSearchReturnTab(null)
+				return true
+			}
+			if (tab === 'library' && playlists.state.currentId) {
+				if (playlists.state.editing) playlists.session.setEditing(false)
+				else playlists.session.close()
+				return true
+			}
+			if (listeningLibraryOpen) {
+				setListeningLibraryOpen(false)
+				return true
+			}
+			if (tab === 'home' && homeChannel === 'listening') {
+				setHomeChannel('music')
+				return true
+			}
+			if (tab !== 'home') {
+				setTab('home')
+				return true
+			}
+			return false
+		})
+		return () => handler.remove()
+	}, [
+		closePlayer,
+		closeFm,
+		fm.state.open,
+		followingFeed.state.open,
+		followingFeed.session,
+		openImportHub,
+		recommendations.state.open,
+		recommendations.session,
+		sheet,
+		fullPlayer,
+		tab,
+		listeningLibraryOpen,
+		homeChannel,
+		searchReturnTab,
+		playlists.state.currentId,
+		playlists.state.editing,
+		playlists.session,
+		creators.state.suspended,
+		creators.session,
+		workshop.session,
+		imports.state.route,
+		imports.state.suspended,
+		player.track?.sourceId,
+		player.track?.id,
+		imports.session,
+		biliImports.state.route,
+		biliImports.state.playback.suspended,
+		biliImports.session,
+		videoLibrary.state.route,
+		videoLibrary.state.playback.suspended,
+		videoLibrary.session,
+		player.mode,
+	])
+	useEffect(
+		() =>
+			bindPlayerDeepLinks(Linking, () => {
+				followingFeed.session.cancelPending()
+				setFullPlayer(true)
+			}),
+		[setFullPlayer, followingFeed.session],
+	)
+
+	async function find(value = query, kind = filter) {
+		Keyboard.dismiss()
+		if (kind !== 'creator') {
+			await runSearch(value)
+			return
+		}
+		try {
+			if (creatorSearchTarget(value) === 'video') {
+				creatorSearch.session.cancel()
+				setFilter('all')
+				await runSearch(value)
+			} else await creatorSearch.session.find(value)
+		} catch (error) {
+			creatorSearch.session.rejectInput(value, error)
+		}
+	}
+	function openCreator(item: SearchItem | Source) {
+		setSourceActions(null)
+		setSheet(null)
+		try {
+			creators.session.openSource(item)
+		} catch (error) {
+			setNotice(
+				error instanceof Error ? error.message : 'UP 主资料暂时无法读取',
+			)
+		}
+	}
+	useEffect(() => {
+		imports.session.observePlayer(
+			player.track?.sourceId ?? player.track?.id ?? null,
+			player.track?.id ?? null,
+		)
+	}, [
+		imports.state.suspended,
+		imports.session,
+		player.track?.sourceId,
+		player.track?.id,
+	])
+	useEffect(() => {
+		const hint = {
+			mode: player.mode,
+			sourceId: player.track?.sourceId ?? player.track?.id ?? null,
+			entryId: player.track?.id ?? null,
+		}
+		void biliImports.session.preview.observeCurrent(
+			hint,
+			readNativePlayerIdentity,
+		)
+		void videoLibrary.session.preview.observeCurrent(
+			hint,
+			readNativePlayerIdentity,
+		)
+	}, [
+		biliImports.session,
+		videoLibrary.session,
+		biliImports.state.playback.suspended,
+		videoLibrary.state.playback.suspended,
+		player.mode,
+		player.track?.sourceId,
+		player.track?.id,
+	])
+	const visitedSourceId = current?.id,
+		visitedBvid = current?.bvid
+	useEffect(() => {
+		if (player.mode !== 'listening' || !visitedSourceId || !visitedBvid) return
+		try {
+			if (videoCatalog.get(visitedBvid))
+				videoCatalog.recordVisitedPart(visitedBvid, visitedSourceId)
+		} catch (error) {
+			setNotice(
+				error instanceof Error
+					? error.message
+					: '最后访问分 P 保存失败，原进度保留',
+			)
+		}
+	}, [videoCatalog, player.mode, visitedSourceId, visitedBvid])
+	const activateBilibiliPreview: BilibiliPreviewAction = async (
+		source,
+		mode,
+		video,
+		own,
+	) => {
+		let request: PlaybackRequest | null = null
+		const ownRequest = (value: PlaybackRequest) => {
+			request = value
+			own(value)
+		}
+		const ok =
+			mode === 'music'
+				? await playMusicIntent(playbackIntent, source, {
+						resolve: async (value) => value,
+						preparation: player,
+						activate: player.playSource,
+						onPending: setSourceRequestBv,
+						onStarted: () => {},
+						onRequest: ownRequest,
+					})
+				: await listening.start(source, {
+						verifiedVideo: video,
+						onRequest: ownRequest,
+						onStarted: () => {},
+						onError: setNotice,
+					})
+		if (!ok) return null
+		const actual = await Orpheus.getPlaybackSnapshot()
+		if (!(await (request as PlaybackRequest | null)?.checkCurrent()))
+			return null
+		return {
+			mode: actual.mode,
+			sourceId: actual.currentSourceId,
+			entryId: actual.currentEntryId,
+		}
+	}
+	function playBilibiliImportPreview() {
+		const source = biliImports.session.selectedSource(),
+			video = biliImports.state.video
+		if (!source || !video) return
+		void biliImports.session.preview
+			.play(
+				source,
+				biliImports.session.kind(biliImports.state.entryId!) === 'song'
+					? 'music'
+					: 'listening',
+				video,
+				activateBilibiliPreview,
+			)
+			.then((ok) => {
+				if (ok) setFullPlayer(true)
+			})
+	}
+	function playSavedVideo() {
+		const source = videoLibrary.session.selectedSource(),
+			video = videoLibrary.state.video
+		if (!source || !video) return
+		void videoLibrary.session.preview
+			.play(source, 'listening', video, activateBilibiliPreview)
+			.then((ok) => {
+				if (ok) setFullPlayer(true)
+			})
+	}
+	function openBilibiliImport() {
+		followingFeed.session.close()
+		imports.session.close()
+		videoLibrary.session.close()
+		biliImports.session.open()
+	}
+	function openBilibiliTask(taskId: string, entryId?: string) {
+		followingFeed.session.close()
+		imports.session.close()
+		videoLibrary.session.close()
+		biliImports.session.openTask(taskId)
+		if (entryId) biliImports.session.openEntry(entryId)
+	}
+	function openVideoLibrary(bucket: 'listening' | 'unclassified') {
+		followingFeed.session.close()
+		imports.session.close()
+		biliImports.session.close()
+		setTab('library')
+		videoLibrary.session.open(bucket)
+	}
+	function openBilibiliPending(playlistId: string, itemId: string) {
+		const item = playlistStore
+			.get(playlistId)
+			?.items.find((row) => row.itemId === itemId)
+		if (!item?.importOrigin || item.importOrigin.provider !== 'bilibili') return
+		imports.session.close()
+		videoLibrary.session.close()
+		biliImports.session.openPending(
+			item.importOrigin.taskId,
+			item.importOrigin.entryId,
+			playlistId,
+			itemId,
+		)
+	}
+	function playImportPreview() {
+		void imports.session.playPreview(
+			(source, ownRequest) =>
+				playMusicIntent(playbackIntent, source, {
+					resolve: async (value) => value,
+					preparation: player,
+					activate: player.playSource,
+					onPending: setSourceRequestBv,
+					onStarted: () => {},
+					onRequest: (request) =>
+						ownRequest(() => {
+							request.cancel()
+						}, request.isCurrent),
+				}),
+			() => setFullPlayer(true),
+		)
+	}
+	function openImportedPlaylist(playlistId: string) {
+		try {
+			if (!playlistStore.get(playlistId))
+				throw new Error('本地歌单已删除，导入历史仍保留。')
+			imports.session.close()
+			biliImports.session.close()
+			videoLibrary.session.close()
+			setTab('library')
+			setListeningLibraryOpen(false)
+			playlists.session.open(playlistId)
+		} catch (error) {
+			imports.session.reportError(error)
+		}
+	}
+	function openCreatorSummary(creator: Creator) {
+		try {
+			creators.session.openSummary(creator)
+		} catch (error) {
+			setNotice(
+				error instanceof Error ? error.message : 'UP 主资料暂时无法读取',
+			)
+		}
+	}
+	function playCreatorSource(
+		source: Source | CreatorPostCandidate,
+		mode: 'music' | 'listening',
+	) {
+		const candidate = 'queryCreatorMid' in source ? source : null
+		let request: PlaybackRequest | null = null
+		const onRequest = (value: PlaybackRequest) => {
+			request = value
+		}
+		void creators.session.presentPlayback(
+			() =>
+				mode === 'music'
+					? playMusicIntent(playbackIntent, source, {
+							resolve: (item, signal) =>
+								'cid' in item
+									? resolveSource(item, signal)
+									: resolveCreatorPost(item, signal),
+							preparation: player,
+							activate: player.playSource,
+							onPending: setSourceRequestBv,
+							onStarted: () => {},
+							onRequest,
+						})
+					: listening.start(source, {
+							onStarted: () => {},
+							onRequest,
+							onError: (message) => {
+								throw new Error(message)
+							},
+							validateVideo: candidate
+								? (video) => verifyCreatorPost(candidate, video)
+								: undefined,
+						}),
+			() => {
+				creatorPlayerReturn.current = fullPlayer
+				setFullPlayer(true)
+			},
+			() => {
+				request?.cancel()
+			},
+		)
+	}
+	async function start(item: SearchItem | Source) {
+		try {
+			await playMusicIntent(playbackIntent, item, {
+				resolve: resolveSource,
+				preparation: player,
+				activate: (source, preparation) =>
+					player.playSource(source, preparation),
+				onPending: setSourceRequestBv,
+				onStarted: () => setFullPlayer(true),
+			})
+		} catch (error) {
+			setNotice(error instanceof Error ? error.message : '播放失败，请重试')
+		}
+	}
+	function openRecommendations() {
+		followingFeed.session.close()
+		fm.session.close()
+		imports.session.close()
+		biliImports.session.close()
+		videoLibrary.session.close()
+		recommendations.session.open()
+	}
+	function openFm() {
+		followingFeed.session.close()
+		imports.session.close()
+		biliImports.session.close()
+		videoLibrary.session.close()
+		recommendations.session.close()
+		fmPlayerReturn.current = fullPlayer
+		setFullPlayer(false)
+		fm.session.open()
+	}
+	function fmStarted() {
+		fmPlayerReturn.current = false
+		setFullPlayer(true)
+	}
+	function fmExited(hasReturnTrack: boolean) {
+		fmPlayerReturn.current = false
+		setFullPlayer(hasReturnTrack)
+	}
+	function leaveFm(target: 'search' | 'library') {
+		fm.session.close()
+		fmPlayerReturn.current = false
+		setTab(target)
+	}
+	function playRecommendation(sourceId: string) {
+		void recommendations.session.play(
+			sourceId,
+			(source, own) =>
+				playMusicIntent(playbackIntent, source, {
+					resolve: async (value) => value,
+					preparation: player,
+					activate: player.playSource,
+					onPending: setSourceRequestBv,
+					onStarted: () => {},
+					onRequest: (request) => own(request),
+				}),
+			() => setFullPlayer(true),
+		)
+	}
+	function openFollowingFeed() {
+		imports.session.close()
+		biliImports.session.close()
+		videoLibrary.session.close()
+		recommendations.session.close()
+		fm.session.close()
+		playlists.session.close()
+		setListeningLibraryOpen(false)
+		setTab('library')
+		followingFeed.session.open()
+	}
+	function openFollowingCreator(creator?: Creator) {
+		if (!followingFeed.session.getSnapshot().open) return
+		followingFeed.session.pauseForOverlay()
+		try {
+			if (creator) creators.session.openSummary(creator)
+			else creators.session.openFollowing()
+		} catch (error) {
+			followingFeed.session.resumeFromOverlay()
+			setNotice(
+				error instanceof Error ? error.message : 'UP 主资料暂时无法读取',
+			)
+		}
+	}
+	function playFollowingPost(bvid: string, mode: 'music' | 'listening') {
+		void followingFeed.session.play(
+			bvid,
+			mode,
+			(item, selectedMode, own) => {
+				if (selectedMode === 'music')
+					return playMusicIntent(playbackIntent, item.post, {
+						resolve: resolveCreatorPost,
+						preparation: player,
+						activate: player.playSource,
+						onPending: setSourceRequestBv,
+						onStarted: () => {},
+						onRequest: own,
+					})
+				let request: PlaybackRequest | null = null
+				return listening.start(item.post, {
+					onRequest: (value) => {
+						request = value
+						own(value)
+					},
+					onCancelled: () => {
+						request?.cancel()
+					},
+					onStarted: () => {},
+					onError: (message) => {
+						throw new Error(message)
+					},
+					validateVideo: (video) => verifyCreatorPost(item.post, video),
+				})
+			},
+			() => setFullPlayer(true),
+		)
+	}
+	async function like(item: SearchItem | Source) {
+		if (busy.current) return
+		busy.current = true
+		setSavingBv(item.bvid)
+		try {
+			const previous = likes.find((source) => source.bvid === item.bvid)
+			const source = previous ?? (await resolveSource(item))
+			library.setLiked(source, !previous)
+			setLikes(library.likes())
+			setNotice(previous ? '已取消喜欢' : '已加入本地喜欢')
+		} catch (error) {
+			setNotice(
+				`保存失败：${error instanceof Error ? error.message : '请重试'}`,
+			)
+		} finally {
+			busy.current = false
+			setSavingBv('')
+		}
+	}
+	async function addSourceToPlaylist(item: SearchItem | Source) {
+		setSourceActions(null)
+		pendingAdd.current?.abort()
+		const controller = new AbortController()
+		pendingAdd.current = controller
+		setAddingBv(item.bvid)
+		try {
+			const source = await resolveSource(item, controller.signal)
+			if (pendingAdd.current === controller && !controller.signal.aborted)
+				playlists.session.requestAddSources([source])
+		} catch (error) {
+			if (pendingAdd.current === controller && !controller.signal.aborted)
+				setNotice(
+					error instanceof Error ? error.message : '读取音源失败，请重试',
+				)
+		} finally {
+			if (pendingAdd.current === controller) {
+				pendingAdd.current = null
+				setAddingBv('')
+			}
+		}
+	}
+	async function returnToMusic() {
+		try {
+			await playbackIntent.run({
+				preparation: player,
+				prepare: async () => {},
+				activate: (_, preparation) => player.returnToMusic(preparation),
+				onSuccess: () => setFullPlayer(true),
+			})
+		} catch (error) {
+			setNotice(error instanceof Error ? error.message : '返回音乐失败，请重试')
+		}
+	}
+	async function playPlaylist(
+		playlistId: string,
+		startItemId: string,
+	): Promise<boolean> {
+		try {
+			return await playbackIntent.run({
+				preparation: player,
+				prepare: async () => {
+					return preparePlaylistPlayback(
+						playlistStore,
+						library,
+						playlistId,
+						startItemId,
+					)
+				},
+				activate: (target, preparation) =>
+					player.playPlaylist(target.entries, target.startItemId, preparation),
+				onSuccess: () => setFullPlayer(true),
+			})
+		} catch (error) {
+			setNotice(error instanceof Error ? error.message : '播放歌单失败，请重试')
+			return false
+		}
+	}
+	function switchTheme(key: ThemeKey) {
+		void workshop.session.activateBuiltin(key)
+	}
+	function closeSheet() {
+		if (sheet === 'themes') workshop.session.close()
+		setSheet(null)
+	}
+	async function notificationSettings() {
+		if (Platform.OS === 'android' && Platform.Version >= 33 && !notifications) {
+			await PermissionsAndroid.request(
+				PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS,
+			)
+			setNotifications(Orpheus.areNotificationsEnabled())
+		}
+		if (!Orpheus.areNotificationsEnabled()) await Linking.openSettings()
+		else
+			await Linking.sendIntent('android.settings.APP_NOTIFICATION_SETTINGS', [
+				{
+					key: 'android.provider.extra.APP_PACKAGE',
+					value: 'org.melocanvas.app',
+				},
+			]).catch(() => Linking.openSettings())
+	}
+	const navigateSearch = (
+		value?: string,
+		mode?: 'music' | 'listening' | 'creator',
+		returnTab?: Tab,
+	) => {
+		followingFeed.session.close()
+		setTab('search')
+		setSearchReturnTab(returnTab ?? null)
+		setListeningLibraryOpen(false)
+		if (mode) setFilter(mode)
+		if (value) {
+			setQuery(value)
+			void find(value, mode ?? filter)
+		}
+	}
+	const row = (item: SearchItem | Source, index: number) => (
+		<SongRow
+			key={`${item.bvid}-${index}`}
+			item={item}
+			active={current?.bvid === item.bvid}
+			liked={isLiked(item.bvid)}
+			busy={busyBv === item.bvid || !!listening.pendingBvid || player.switching}
+			onPlay={() => {
+				void start(item)
+			}}
+			onLike={() => {
+				void like(item)
+			}}
+			onListen={
+				tab === 'search'
+					? () => {
+							if (!busy.current) void listening.start(item)
+						}
+					: undefined
+			}
+			listeningResult={tab === 'search' && filter === 'listening'}
+			onMore={tab === 'search' ? () => setSourceActions(item) : undefined}
+		/>
+	)
+
+	return (
+		<ThemeRendererProvider
+			theme={theme}
+			adapted={workshop.state.current.adapted}
+			allowedImageUris={workshop.state.current.allowedImageUris}
+			reducedMotion={reduced || systemReduced}
+		>
+			<View
+				ref={themeLayoutRootRef}
+				onLayout={onThemeRootLayout}
+				style={{
+					flex: 1,
+					backgroundColor: c.surface.base,
+					paddingTop: insets.top,
+				}}
+				testID='melocanvas-app'
+			>
+				<ThemeLayoutProbe
+					gate={candidateLayoutGate}
+					request={candidateLayoutRequest}
+					bounds={themeRootBounds}
+					bottomInset={insets.bottom}
+					reducedMotion={reduced || systemReduced}
+				/>
+				<StatusBar
+					barStyle='dark-content'
+					backgroundColor={c.surface.base}
+				/>
+				<Backdrop />
+				{!!addingBv && (
+					<Card style={{ marginHorizontal: 22, marginBottom: 8 }}>
+						<View style={[s.row, { gap: 10 }]}>
+							<T
+								size={12}
+								style={{ flex: 1 }}
+							>
+								正在读取待加入歌单的音源…
+							</T>
+							<Button
+								secondary
+								onPress={() => {
+									pendingAdd.current?.abort()
+									pendingAdd.current = null
+									setAddingBv('')
+								}}
+							>
+								取消读取
+							</Button>
+						</View>
+					</Card>
+				)}
+				{tab !== 'library' &&
+					!!playlists.state.notice &&
+					!playlists.state.picker &&
+					!playlists.state.nameForm && (
+						<Card style={{ marginHorizontal: 22, marginBottom: 8 }}>
+							<View style={[s.row, { gap: 10 }]}>
+								<T
+									size={12}
+									style={{ flex: 1 }}
+								>
+									{playlists.state.notice}
+								</T>
+								<IconButton
+									name='close'
+									label='关闭歌单操作提示'
+									onPress={playlists.session.clearNotice}
+								/>
+							</View>
+						</Card>
+					)}
+				{!!localDataError && (
+					<Card style={{ marginHorizontal: 22, marginBottom: 8 }}>
+						<T
+							muted
+							size={11}
+						>
+							{localDataError}
+						</T>
+					</Card>
+				)}
+				{player.syncError && (
+					<Card style={{ marginHorizontal: 22, marginBottom: 8 }}>
+						<T
+							muted
+							size={11}
+						>
+							{player.syncError}
+						</T>
+					</Card>
+				)}
+				{!!player.nativePersistenceError && (
+					<Card style={{ marginHorizontal: 22, marginBottom: 8 }}>
+						<T
+							muted
+							size={11}
+						>
+							播放记录暂存失败，当前音频仍保留；稍后会重试保存。
+						</T>
+					</Card>
+				)}
+				{!fullPlayer && player.error && (
+					<Card style={{ marginHorizontal: 22, marginBottom: 8 }}>
+						<T
+							size={12}
+							style={{ color: c.state.error }}
+						>
+							{player.error}
+						</T>
+					</Card>
+				)}
+				{!!listening.pendingBvid && (
+					<Card style={{ marginHorizontal: 22, marginBottom: 8 }}>
+						<View style={[s.row, { justifyContent: 'space-between', gap: 8 }]}>
+							<T
+								muted
+								size={12}
+								style={{ flex: 1 }}
+							>
+								正在读取听视频与分 P…
+							</T>
+							<Button
+								secondary
+								onPress={() => {
+									void listening.cancel()
+								}}
+							>
+								取消
+							</Button>
+						</View>
+					</Card>
+				)}
+				{fullPlayer && current && player.mode === 'listening' ? (
+					<ListeningPlayer
+						source={current}
+						parts={listening.parts}
+						partsLoading={listening.partsLoading}
+						partsError={listening.partsError}
+						position={player.position}
+						duration={player.duration}
+						speed={player.speed}
+						playing={player.playing}
+						buffering={player.buffering}
+						switching={player.switching || !!listening.pendingBvid}
+						error={player.error}
+						bottomInset={insets.bottom}
+						reducedMotion={reduced || systemReduced}
+						canReturnMusic={player.canReturnMusic}
+						onClose={closePlayer}
+						onTheme={() => setSheet('themes')}
+						onSource={() => setSheet('source')}
+						onCreator={() => openCreator(current)}
+						onSeek={(position) => {
+							void player.seek(position)
+						}}
+						onToggle={() => {
+							void player.toggle()
+						}}
+						onSpeed={(speed) => {
+							void player.setSpeed(speed)
+						}}
+						onPart={(part) => {
+							void listening.start(part.source)
+						}}
+						onRetryParts={listening.retryParts}
+						onRetry={player.retry}
+						onReturnMusic={() => {
+							void returnToMusic()
+						}}
+						onCancel={() => {
+							void listening.cancel()
+						}}
+					/>
+				) : fullPlayer && player.track && player.mode === 'listening' ? (
+					<ListeningUnavailable
+						title={player.track.title || '正在收听'}
+						playing={player.playing}
+						canReturnMusic={player.canReturnMusic}
+						onClose={closePlayer}
+						onToggle={() => {
+							void player.toggle()
+						}}
+						onReturnMusic={() => {
+							void returnToMusic()
+						}}
+					/>
+				) : fullPlayer && player.track ? (
+					<MusicPlayer
+						player={player}
+						onFm={openFm}
+						fmMessage={fm.state.refillMessage}
+						current={current}
+						isLiked={isLiked}
+						busyBv={busyBv}
+						onLike={(source) => {
+							void like(source)
+						}}
+						onClose={closePlayer}
+						onTheme={() => setSheet('themes')}
+						onSource={() => setSheet('source')}
+						onQueue={() => setSheet('queue')}
+						onNotice={setNotice}
+						onNotificationSettings={() => {
+							void notificationSettings()
+						}}
+						notifications={notifications}
+						bottomInset={insets.bottom}
+					/>
+				) : (
+					<>
+						{externalImportsVisible && (
+							<ImportPage
+								state={imports.state}
+								session={imports.session}
+								onPreview={playImportPreview}
+								onOpenPlaylist={openImportedPlaylist}
+								onBilibili={openBilibiliImport}
+								onBilibiliTask={openBilibiliTask}
+								playbackBusy={player.switching || !!listening.pendingBvid}
+								playbackError={player.error}
+							/>
+						)}
+						{biliImportsVisible && (
+							<BilibiliImportPage
+								state={biliImports.state}
+								session={biliImports.session}
+								onHub={openImportHub}
+								onPreview={playBilibiliImportPreview}
+								onPlaylist={openImportedPlaylist}
+								onLibrary={openVideoLibrary}
+								playbackBusy={player.switching || !!listening.pendingBvid}
+								playbackError={player.error}
+							/>
+						)}
+						{videoLibraryVisible && (
+							<ListeningLibraryPage
+								state={videoLibrary.state}
+								session={videoLibrary.session}
+								onPlay={playSavedVideo}
+								onOrigin={openBilibiliTask}
+								playbackBusy={player.switching || !!listening.pendingBvid}
+								playbackError={player.error}
+							/>
+						)}
+						{fm.state.open && (
+							<FmPage
+								state={fm.state}
+								session={fm.session}
+								onClose={closeFm}
+								onStart={() => {
+									void fm.session.start(fmStarted)
+								}}
+								onExit={() => {
+									void fm.session.exit(fmExited)
+								}}
+								onPlayer={() => {
+									fm.session.close()
+									fmStarted()
+								}}
+								onResume={() => {
+									fm.session.close()
+									void returnToMusic()
+								}}
+								onSearch={() => leaveFm('search')}
+								onLibrary={() => leaveFm('library')}
+								playbackError={player.error}
+							/>
+						)}
+						{recommendations.state.open && (
+							<RecommendationPage
+								state={recommendations.state}
+								session={recommendations.session}
+								onPlay={playRecommendation}
+							/>
+						)}
+						{followingFeed.state.open && (
+							<FollowingFeedPage
+								state={followingFeed.state}
+								session={followingFeed.session}
+								onCreator={openFollowingCreator}
+								onManage={() => openFollowingCreator()}
+								onPlay={playFollowingPost}
+								onSearch={() => navigateSearch(undefined, 'creator', 'library')}
+							/>
+						)}
+						<ScrollView
+							style={
+								importsVisible ||
+								recommendations.state.open ||
+								fm.state.open ||
+								followingFeed.state.open
+									? { display: 'none' }
+									: undefined
+							}
+							key={pageKey}
+							ref={pageScroll}
+							onScroll={(event) =>
+								scrollOffsets.current.set(
+									pageKey,
+									event.nativeEvent.contentOffset.y,
+								)
+							}
+							scrollEventThrottle={100}
+							keyboardShouldPersistTaps='handled'
+							testID={`${tab}-page`}
+							contentContainerStyle={{
+								paddingHorizontal: 22,
+								paddingTop: 18,
+								paddingBottom: 24,
+							}}
+						>
+							{tab === 'home' && (
+								<>
+									<View
+										style={[
+											s.row,
+											{ justifyContent: 'space-between', marginBottom: 21 },
+										]}
+									>
+										<View>
+											<T
+												muted
+												size={11}
+											>
+												你好，今天想听点什么？
+											</T>
+											<T
+												size={28}
+												weight='700'
+												style={{ marginTop: 5 }}
+											>
+												听见，好时光
+											</T>
+										</View>
+										<Pressable
+											accessibilityRole='button'
+											accessibilityLabel='打开主题工坊'
+											onPress={() => setSheet('themes')}
+											style={{
+												width: 48,
+												height: 48,
+												borderRadius: 24,
+												alignItems: 'center',
+												justifyContent: 'center',
+												backgroundColor: c.surface.tinted,
+											}}
+										>
+											<T
+												size={27}
+												style={{
+													color: c.action.primary,
+													fontStyle: 'italic',
+													fontFamily: 'serif',
+												}}
+											>
+												m
+											</T>
+										</Pressable>
+									</View>
+									<Pressable
+										accessibilityRole='button'
+										accessibilityLabel={
+											homeChannel === 'listening'
+												? '搜索听视频或 BV 号'
+												: '搜索歌曲或 BV 号'
+										}
+										onPress={() => navigateSearch(undefined, homeChannel)}
+										style={[
+											s.row,
+											shape(theme.components.input),
+											{
+												minHeight: 48,
+												gap: 10,
+												paddingHorizontal: 14,
+												borderWidth: 1,
+												borderColor: c.border.subtle,
+												backgroundColor: c.surface.card,
+											},
+										]}
+									>
+										<Icon
+											name='search'
+											color={c.text.secondary}
+											size={19}
+										/>
+										<T
+											muted
+											size={12}
+										>
+											{homeChannel === 'listening'
+												? '搜索视频、UP 主或 BV 号'
+												: '搜索歌曲、关键词或 BV 号'}
+										</T>
+									</Pressable>
+									<View
+										style={[s.row, { marginTop: 8, marginBottom: 1, gap: 24 }]}
+									>
+										<Pressable
+											accessibilityRole='tab'
+											accessibilityLabel='发现音乐'
+											accessibilityState={{ selected: homeChannel === 'music' }}
+											onPress={() => setHomeChannel('music')}
+											style={{ minHeight: 48, justifyContent: 'center' }}
+										>
+											<T
+												size={13}
+												weight={homeChannel === 'music' ? '700' : '400'}
+												muted={homeChannel !== 'music'}
+											>
+												为你发现
+											</T>
+										</Pressable>
+										<Pressable
+											accessibilityRole='button'
+											onPress={() => navigateSearch(undefined, 'music')}
+											style={{ minHeight: 48, justifyContent: 'center' }}
+										>
+											<T
+												muted
+												size={13}
+											>
+												从搜索开始
+											</T>
+										</Pressable>
+										<Pressable
+											accessibilityRole='tab'
+											accessibilityLabel='发现听视频'
+											accessibilityState={{
+												selected: homeChannel === 'listening',
+											}}
+											onPress={() => setHomeChannel('listening')}
+											style={{ minHeight: 48, justifyContent: 'center' }}
+										>
+											<T
+												size={13}
+												weight={homeChannel === 'listening' ? '700' : '400'}
+												muted={homeChannel !== 'listening'}
+											>
+												听视频
+											</T>
+										</Pressable>
+									</View>
+									{homeChannel === 'listening' ? (
+										<ListeningHome
+											items={resumeItems.slice(0, 3)}
+											onPlay={(source) => {
+												void listening.start(source)
+											}}
+											onSearch={() => navigateSearch(undefined, 'listening')}
+											busy={!!listening.pendingBvid || player.switching}
+											error={localDataError}
+										/>
+									) : (
+										<>
+											<Pressable
+												accessibilityRole='button'
+												accessibilityLabel='开始寻找真实音乐'
+												onPress={() => navigateSearch()}
+												style={[
+													shape(theme.components.card),
+													{ height: 214, overflow: 'hidden' },
+												]}
+											>
+												<Artwork
+													resource={theme.assets.hero}
+													style={StyleSheet.absoluteFill}
+												/>
+												<LinearGradient
+													colors={['#101b1600', '#101b16c9']}
+													style={StyleSheet.absoluteFill}
+												/>
+												<View
+													style={{
+														flex: 1,
+														padding: 23,
+														justifyContent: 'space-between',
+													}}
+												>
+													<T
+														size={9}
+														style={{
+															color: c.text.inverse,
+															letterSpacing: 1.2,
+														}}
+													>
+														MELOCANVAS / 给耳朵的一封信
+													</T>
+													<View>
+														<T
+															size={29}
+															weight='700'
+															style={{ color: c.text.inverse, lineHeight: 38 }}
+														>
+															把日子{'\n'}调成慢速
+														</T>
+														<View
+															style={[
+																s.row,
+																{
+																	justifyContent: 'space-between',
+																	marginTop: 8,
+																},
+															]}
+														>
+															<T
+																size={11}
+																style={{ color: c.text.inverse }}
+															>
+																找到喜欢的声音，再留给自己。
+															</T>
+															<Icon
+																name='arrow'
+																color={c.text.inverse}
+															/>
+														</View>
+													</View>
+												</View>
+											</Pressable>
+											<View style={[s.row, { gap: 12, marginTop: 19 }]}>
+												<Pressable
+													accessibilityRole='button'
+													accessibilityLabel='打开每日推荐'
+													onPress={openRecommendations}
+													style={{ flex: 1, minHeight: 96 }}
+												>
+													<Card>
+														<T
+															size={13}
+															weight='700'
+														>
+															每日推荐
+														</T>
+														<T
+															muted
+															size={11}
+															style={{ marginTop: 6 }}
+														>
+															继续听熟悉的音乐 · 仅本机候选
+														</T>
+													</Card>
+												</Pressable>
+												<Pressable
+													accessibilityRole='button'
+													accessibilityLabel='打开私人 FM'
+													onPress={openFm}
+													style={{ flex: 1, minHeight: 96 }}
+												>
+													<Card>
+														<T
+															size={13}
+															weight='700'
+														>
+															私人 FM
+														</T>
+														<T
+															muted
+															size={11}
+															style={{ marginTop: 6 }}
+														>
+															仅本机候选 · 确认后开播
+														</T>
+													</Card>
+												</Pressable>
+											</View>
+											<T
+												size={18}
+												weight='700'
+												style={{ marginTop: 25, marginBottom: 13 }}
+											>
+												从一首喜欢开始
+											</T>
+											<T
+												muted
+												size={12}
+												style={{ marginBottom: 13 }}
+											>
+												游客即可搜索，原标题帮你分辨不同演绎。
+											</T>
+											<View style={[s.row, { flexWrap: 'wrap', gap: 8 }]}>
+												{['周杰伦 晴天', 'ヨルシカ ただ君に晴れ', '纯音乐'].map(
+													(value) => (
+														<Button
+															key={value}
+															secondary
+															onPress={() => navigateSearch(value)}
+														>
+															{value}
+														</Button>
+													),
+												)}
+											</View>
+											{likes.length > 0 && (
+												<>
+													<T
+														size={18}
+														weight='700'
+														style={{ marginTop: 25 }}
+													>
+														留在音乐库
+													</T>
+													{likes.slice(0, 2).map(row)}
+												</>
+											)}
+										</>
+									)}
+								</>
+							)}
+							{tab === 'search' && (
+								<SearchPage
+									query={query}
+									filter={filter}
+									search={search}
+									creatorSearch={creatorSearch}
+									onQueryChange={setQuery}
+									onFilterChange={setFilter}
+									onSubmit={find}
+									onOpenCreator={openCreatorSummary}
+									renderRow={row}
+								/>
+							)}
+							{tab === 'library' && (
+								<LibraryPage
+									playlistState={playlists.state}
+									playlistSession={playlists.session}
+									onPlaylistBack={() => {
+										if (playlists.state.editing)
+											playlists.session.setEditing(false)
+										else playlists.session.close()
+									}}
+									onPlaylistSearch={() =>
+										navigateSearch(undefined, 'music', 'library')
+									}
+									onPlayPlaylist={playPlaylist}
+									playbackBusy={player.switching || !!listening.pendingBvid}
+									currentEntryId={player.track?.id ?? null}
+									bottomInset={insets.bottom}
+									reducedMotion={reduced || systemReduced}
+									listeningOpen={listeningLibraryOpen}
+									onListeningOpenChange={setListeningLibraryOpen}
+									resumeItems={resumeItems}
+									onPlayListening={(source) => {
+										void listening.start(source)
+									}}
+									localDataError={localDataError}
+									onFindListening={() => navigateSearch(undefined, 'listening')}
+									onFindMusic={() => navigateSearch(undefined, 'music')}
+									onOpenFollowing={creators.session.openFollowing}
+									onOpenFollowingFeed={openFollowingFeed}
+									onImport={openImportHub}
+									onOpenVideoSaves={openVideoLibrary}
+									onReviewBilibiliPending={openBilibiliPending}
+									likes={likes}
+									renderLikedSource={row}
+								/>
+							)}
+							{tab === 'profile' && (
+								<>
+									<PageTitle
+										title='我的音绘'
+										subtitle='YOUR CANVAS / 游客'
+									/>
+									<Card>
+										<View style={[s.row, { gap: 14 }]}>
+											<Icon
+												name='user'
+												size={32}
+												color={c.action.primary}
+											/>
+											<View>
+												<T
+													size={18}
+													weight='700'
+												>
+													自在听歌，无需登录
+												</T>
+												<T
+													muted
+													size={12}
+												>
+													收藏、主题与播放记录保存在本机
+												</T>
+											</View>
+										</View>
+									</Card>
+									<View style={{ marginTop: 23, gap: 15 }}>
+										<ImportEntry onPress={openImportHub} />
+										<Button
+											secondary
+											onPress={() => setSheet('themes')}
+										>
+											主题工坊 · {theme.name}
+										</Button>
+										<Card>
+											<View
+												style={[s.row, { justifyContent: 'space-between' }]}
+											>
+												<T>减少动态效果</T>
+												<Switch
+													accessibilityLabel='减少动态效果'
+													value={reduced}
+													trackColor={{
+														true: c.action.primary,
+														false: c.border.strong,
+													}}
+													onValueChange={(value) => {
+														try {
+															library.setSetting('reducedMotion', String(value))
+															setReduced(value)
+														} catch {
+															setNotice('设置保存失败')
+														}
+													}}
+												/>
+											</View>
+											<T
+												muted
+												size={11}
+											>
+												同时遵循系统无障碍设置
+											</T>
+										</Card>
+										<Card>
+											<T weight='600'>系统媒体控制</T>
+											<T
+												muted
+												size={12}
+												style={{ marginTop: 8 }}
+											>
+												{notifications
+													? '应用通知已允许。媒体卡片的显示与布局由系统决定。'
+													: '应用通知当前不可用。可开启媒体通知，方便后台控制。'}
+											</T>
+											<View style={{ marginTop: 12 }}>
+												<Button
+													secondary
+													onPress={() => {
+														void notificationSettings()
+													}}
+												>
+													查看通知设置
+												</Button>
+											</View>
+										</Card>
+										<T
+											muted
+											size={12}
+										>
+											推荐通知默认关闭，本版本不发送推荐通知。
+										</T>
+										<T
+											muted
+											size={11}
+										>
+											MeloCanvas {appVersion} · 内部体验版{'\n'}基于 BBPlayer /
+											Orpheus · MIT{'\n'}主动导入网易云 / QQ
+											时读取对应平台目录；查找候选时将当前查询词发往
+											B站。本地库与审核不上传音绘服务器，不启用上游遥测或远程更新。
+										</T>
+									</View>
+								</>
+							)}
+						</ScrollView>
+						<HostPlaybackFooter
+							mini={
+								player.track
+									? {
+											mode: player.mode,
+											title: player.track.title,
+											artist: player.track.artist,
+											artwork: player.track.artwork,
+											playing: player.playing,
+											buffering: player.buffering,
+											error: player.error,
+											position: player.position,
+											duration: player.duration,
+											onOpen: () => {
+												followingFeed.session.cancelPending()
+												setFullPlayer(true)
+											},
+											onToggle: () => {
+												void player.toggle()
+											},
+											onQueue: () => setSheet('queue'),
+										}
+									: null
+							}
+							tab={tab}
+							bottomInset={insets.bottom}
+							onNavigate={(destination) => {
+								imports.session.close()
+								biliImports.session.close()
+								videoLibrary.session.close()
+								recommendations.session.close()
+								fm.session.close()
+								followingFeed.session.close()
+								setListeningLibraryOpen(false)
+								setTab(destination)
+							}}
+						/>
+					</>
+				)}
+				<PlaylistSourceActions
+					item={sourceActions}
+					onClose={() => setSourceActions(null)}
+					onCreator={openCreator}
+					onAdd={(item) => {
+						void addSourceToPlaylist(item)
+					}}
+					onListen={(item) => {
+						setSourceActions(null)
+						void listening.start(item)
+					}}
+					bottomInset={insets.bottom}
+					reducedMotion={reduced || systemReduced}
+				/>
+				<CreatorOverlay
+					remoteProfile={
+						creators.remoteReady &&
+						creators.remoteState.mid === creators.state.creator?.mid ? (
+							<CreatorProfileRead
+								state={creators.remoteState}
+								session={creators.remote}
+							/>
+						) : undefined
+					}
+					remotePosts={
+						creators.remoteReady &&
+						creators.remoteState.mid === creators.state.creator?.mid ? (
+							<CreatorPostsRead
+								state={creators.remoteState}
+								session={creators.remote}
+								playbackBusy={creators.state.playbackBusy}
+								onPlay={playCreatorSource}
+							/>
+						) : undefined
+					}
+					state={creators.state}
+					session={creators.session}
+					playbackError={player.error}
+					onPlay={playCreatorSource}
+					onOpenSpace={(url) => Linking.openURL(url)}
+					topInset={insets.top}
+					bottomInset={insets.bottom}
+					reducedMotion={reduced || systemReduced}
+				/>
+				<PlaylistDialogs
+					state={playlists.state}
+					session={playlists.session}
+					bottomInset={insets.bottom}
+					reducedMotion={reduced || systemReduced}
+					onSearch={() => navigateSearch(undefined, 'music', 'library')}
+				/>
+				<Modal
+					visible={sheet !== null}
+					transparent
+					animationType={reduced || systemReduced ? 'none' : 'fade'}
+					onRequestClose={closeSheet}
+				>
+					<View
+						style={{
+							flex: 1,
+							justifyContent: 'flex-end',
+							backgroundColor: '#101b1666',
+						}}
+					>
+						<Pressable
+							accessibilityRole='button'
+							accessibilityLabel='关闭浮层'
+							style={StyleSheet.absoluteFill}
+							onPress={closeSheet}
+						/>
+						<View
+							style={{
+								backgroundColor: c.surface.base,
+								borderTopLeftRadius: 25,
+								borderTopRightRadius: 25,
+								padding: 22,
+								paddingBottom: insets.bottom + 22,
+								maxHeight: '88%',
+							}}
+						>
+							<View
+								style={[
+									s.row,
+									{ justifyContent: 'space-between', marginBottom: 12 },
+								]}
+							>
+								<T
+									size={21}
+									weight='700'
+								>
+									{sheet === 'themes'
+										? '给音乐，换一种心情'
+										: sheet === 'source'
+											? '音源信息'
+											: `${player.mode === 'listening' ? '分 P 队列' : '当前队列'} · ${player.queue.length}`}
+								</T>
+								<IconButton
+									name='close'
+									label='关闭面板'
+									onPress={closeSheet}
+								/>
+							</View>
+							<ScrollView keyboardShouldPersistTaps='handled'>
+								{sheet === 'source' ? (
+									<View style={{ gap: 12 }}>
+										<T
+											size={18}
+											weight='600'
+										>
+											{current?.originalTitle || player.track?.title}
+										</T>
+										<T>上传者：{current?.uploader}</T>
+										{current && (
+											<Button
+												secondary
+												onPress={() => openCreator(current)}
+											>
+												查看 UP 主主页
+											</Button>
+										)}
+										{player.mode === 'music' && (
+											<T muted>歌手与录音版本：尚未核对</T>
+										)}
+										<T muted>来源：Bilibili · {current?.bvid}</T>
+										<T muted>
+											CID：{current?.cid} · 时长 {time(current?.duration ?? 0)}
+										</T>
+										<T muted>
+											{player.mode === 'listening'
+												? '保留原视频与分 P 信息。使用独立音轨收听，不下载视频流。'
+												: '保留原始视频信息。标题与 UP 主不等于经过确认的歌曲版本或表演者。'}
+										</T>
+									</View>
+								) : sheet === 'themes' ? (
+									<ThemeWorkshop
+										themeKey={themeKey}
+										mode={player.mode}
+										onSelect={switchTheme}
+										disabled={
+											themeWorkshopBusy(workshop.state) ||
+											!!workshop.state.installer?.readOnly ||
+											!workshop.state.installer
+										}
+									>
+										<ThemePackagePanel
+											state={workshop.state}
+											session={workshop.session}
+											reducedMotion={reduced || systemReduced}
+										/>
+									</ThemeWorkshop>
+								) : (
+									player.queue.map((item, index) => (
+										<Pressable
+											key={item.id}
+											accessibilityRole='button'
+											accessibilityState={{
+												selected: item.id === player.track?.id,
+											}}
+											accessibilityLabel={
+												player.mode === 'listening'
+													? `分 P ${index + 1} ${listening.parts.find((part) => part.source.id === item.id)?.title ?? '信息待读取'}`
+													: `队列第${index + 1}项 ${item.title}`
+											}
+											onPress={() => {
+												void player.select(index).then((success) => {
+													if (success) setSheet(null)
+												})
+											}}
+											style={[
+												s.row,
+												{
+													gap: 12,
+													paddingVertical: 12,
+													borderBottomWidth: 1,
+													borderBottomColor: c.border.subtle,
+												},
+											]}
+										>
+											<T
+												muted
+												size={12}
+											>
+												{String(index + 1).padStart(2, '0')}
+											</T>
+											<Artwork
+												uri={item.artwork}
+												size={44}
+												fit={player.mode === 'listening' ? 'contain' : 'cover'}
+												style={{ borderRadius: 6 }}
+											/>
+											<View style={{ flex: 1 }}>
+												<T
+													size={13}
+													weight={item.id === player.track?.id ? '700' : '400'}
+													lines={2}
+												>
+													{player.mode === 'listening'
+														? (listening.parts.find(
+																(part) => part.source.id === item.id,
+															)?.title ?? '分 P 信息待读取')
+														: item.title}
+												</T>
+												<T
+													muted
+													size={10}
+													lines={1}
+												>
+													{item.artist}
+												</T>
+											</View>
+											{item.id === player.track?.id && (
+												<Icon
+													name='music'
+													color={c.action.primary}
+												/>
+											)}
+										</Pressable>
+									))
+								)}
+							</ScrollView>
+						</View>
+					</View>
+				</Modal>
+				{!!notice && (
+					<View
+						pointerEvents='none'
+						accessibilityLiveRegion='polite'
+						style={{
+							position: 'absolute',
+							bottom: fullPlayer ? insets.bottom + 24 : insets.bottom + 135,
+							left: 24,
+							right: 24,
+							borderRadius: 13,
+							padding: 14,
+							backgroundColor: c.text.primary,
+						}}
+					>
+						<T
+							size={12}
+							style={{ color: c.surface.base, textAlign: 'center' }}
+						>
+							{notice}
+						</T>
+					</View>
+				)}
+			</View>
+		</ThemeRendererProvider>
+	)
+}
+
+const s = StyleSheet.create({
+	row: { flexDirection: 'row', alignItems: 'center' },
+})

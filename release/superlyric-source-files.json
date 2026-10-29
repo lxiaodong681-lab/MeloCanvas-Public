@@ -1,0 +1,122 @@
+[
+  {
+    "path": ".gitignore",
+    "sha256": "c39bd96a1f69d7b5a7a8d6d0cfc865e2479e8c2d458298aa430f669f62ba2d3e",
+    "gitBlob": "1984538176767bec5cac0e9216a8aca58cbe7efe"
+  },
+  {
+    "path": "LICENSE",
+    "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331",
+    "gitBlob": "8000a6faacf471c537530805ab29523c7732e11a"
+  },
+  {
+    "path": "README.md",
+    "sha256": "d81d394c9d4be7676ae9a7cbeb23bd7aee31456ee702d7ddcea4d38a16a85400",
+    "gitBlob": "f61adc08d2a3910e8408ef7976b4bf4f51b77cbd"
+  },
+  {
+    "path": "api/.gitignore",
+    "sha256": "5c3174b74edc6f2b9e0743594b8bd3c7f31e4f4405758cc9872b3fe1de1d28b4",
+    "gitBlob": "42afabfd2abebf31384ca7797186a27a4b7dbee8"
+  },
+  {
+    "path": "api/build.gradle",
+    "sha256": "731619ef2402b3b5d2becae62ad1dc52fa52965888e66b5223c6a2eaf961f75f",
+    "gitBlob": "2d3bc5a1794b37950f5665c6db1cf8749660aa10"
+  },
+  {
+    "path": "api/proguard-rules.pro",
+    "sha256": "0590a4692ce0beb186df37277d1b3ce3714c1d5b4a6bf5527fe808736b35d1bb",
+    "gitBlob": "f749b99ff6d07ccb6971385618e71ffaebc1abc0"
+  },
+  {
+    "path": "api/src/main/AndroidManifest.xml",
+    "sha256": "ee0e979558c94adff8b94f0f18b6f8735aa295a0eb29f3281c90aeb92b04ef17",
+    "gitBlob": "fa57d87f40a603204632351b361b47f81d021119"
+  },
+  {
+    "path": "api/src/main/aidl/com/hchen/superlyricapi/ISuperLyric.aidl",
+    "sha256": "e9a2e127f15433e79dd849fce337dfb6026f76024d86c9e069f410cb66210ac0",
+    "gitBlob": "5dac8c3ff6022de55ae3670df1faa2daaf8e34d6"
+  },
+  {
+    "path": "api/src/main/java/com/hchen/superlyricapi/SuperLyricData.java",
+    "sha256": "c06c7cdae4669a5adf06f31beb57ae21b1b7b3f2574bb1d384c68a04738815dd",
+    "gitBlob": "0656ed8caf2c5faf25e807d6d8b13fd334be4064"
+  },
+  {
+    "path": "api/src/main/java/com/hchen/superlyricapi/SuperLyricPush.java",
+    "sha256": "f5e53f7d3f7020a82f60e92f57bc34b0d3c44c2910ea602df5c6131d406b6871",
+    "gitBlob": "9dd8813a39c0f5939689eaafd8915dcf9b8c5550"
+  },
+  {
+    "path": "api/src/main/java/com/hchen/superlyricapi/SuperLyricTool.java",
+    "sha256": "5906c34cea80677365572be20b132636dfe9afb317a50256558c4218f18d3657",
+    "gitBlob": "4b47378edb3cf81817cbce5f03af95aa0e7bc49e"
+  },
+  {
+    "path": "app/.gitignore",
+    "sha256": "5c3174b74edc6f2b9e0743594b8bd3c7f31e4f4405758cc9872b3fe1de1d28b4",
+    "gitBlob": "42afabfd2abebf31384ca7797186a27a4b7dbee8"
+  },
+  {
+    "path": "app/build.gradle",
+    "sha256": "dad967661b2e3368c7e7ca54a223260d315350ef5fe801e649551b0a3c1e172e",
+    "gitBlob": "a58fb6b23b108e4ca2f9b0bf890495cdedaf5dc9"
+  },
+  {
+    "path": "app/proguard-rules.pro",
+    "sha256": "56fd960cf225f6ca40f982b13a5dbb0d8bc3dfde13ff76422825c6070d0a1890",
+    "gitBlob": "481bb434814107eb79d7a30b676d344b0df2f8ce"
+  },
+  {
+    "path": "app/src/main/AndroidManifest.xml",
+    "sha256": "5914f2b83a2cca6d4107caf84ac1ab300c5c38e7152f4242be83985a977382c9",
+    "gitBlob": "69fc412909c0d4b2a847fff255d2a66c61b19a60"
+  },
+  {
+    "path": "build.gradle",
+    "sha256": "e53478501136f6af053f206fec2b48a999205360fc325a85744ac605ad068099",
+    "gitBlob": "41b070ae069b8b817330c4b53622e3e657b50fc0"
+  },
+  {
+    "path": "gradle.properties",
+    "sha256": "41a9783e6d8fba6d52cf787adab4b02b9d0593169e30590c51aa9be2eebe8182",
+    "gitBlob": "4387edc225e5dd29788b0c5e26f7c3dbd57a1e4a"
+  },
+  {
+    "path": "gradle/libs.versions.toml",
+    "sha256": "0400ac37cc7b54442ea8cbde4fec0526fc80bcef5168841f5e5db31e575a6de6",
+    "gitBlob": "fd83d67ffb02b9e5672a571b9ce7a2386938dcb8"
+  },
+  {
+    "path": "gradle/wrapper/gradle-wrapper.jar",
+    "sha256": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+    "gitBlob": "e708b1c023ec8b20f512888fe07c5bd3ff77bb8f"
+  },
+  {
+    "path": "gradle/wrapper/gradle-wrapper.properties",
+    "sha256": "e6963e87e73b0f4ab5bb3e159a10d2b6eff781d24e72e8dd7ff18c8911dcc1a6",
+    "gitBlob": "31492dfb0d3a6ca613ac3c9bd4e7238b7c5f69b8"
+  },
+  {
+    "path": "gradlew",
+    "sha256": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+    "gitBlob": "4f906e0c811fc9e230eb44819f509cd0627f2600"
+  },
+  {
+    "path": "gradlew.bat",
+    "sha256": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+    "gitBlob": "107acd32c4e687021ef32db511e8a206129b88ec"
+  },
+  {
+    "path": "jitpack.yml",
+    "sha256": "9de4ee3977177edd2107f4fb536cde509f98f83a15681dd5aab00b0226b0a531",
+    "gitBlob": "40331e077ebada8ffd5d2aa01037a86f0dc28a42"
+  },
+  {
+    "path": "settings.gradle",
+    "sha256": "b65c8142b3d15d4c2720a1fed46cd871cebb2dc34b168eac5b214d727a4e1125",
+    "gitBlob": "c72a3e55db102e29d5216c08398917a9959aa076"
+  }
+]

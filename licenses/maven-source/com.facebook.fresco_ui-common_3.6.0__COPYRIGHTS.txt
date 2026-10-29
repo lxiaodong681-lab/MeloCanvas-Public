@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:ui-common:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/ui-common/3.6.0/ui-common-3.6.0-sources.jar
+Source archive SHA-256: 287af26159559a12fbfa63542619e1c5fd2e1383089cd0da4e93022f77f612ad
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/fresco/ui/common/BaseControllerListener2.kt, com/facebook/fresco/ui/common/ControllerListener2.kt, com/facebook/fresco/ui/common/DimensionsInfo.kt, com/facebook/fresco/ui/common/ForwardingControllerListener2.kt, com/facebook/fresco/ui/common/ImageLoadStatus.kt, com/facebook/fresco/ui/common/ImagePerfData.kt, com/facebook/fresco/ui/common/ImagePerfDataListener.kt, com/facebook/fresco/ui/common/ImagePerfDataNotifier.kt, com/facebook/fresco/ui/common/ImagePerfLoggingState.kt, com/facebook/fresco/ui/common/ImagePerfNotifier.kt, com/facebook/fresco/ui/common/ImagePerfNotifierHolder.kt, com/facebook/fresco/ui/common/ImagePerfState.kt, com/facebook/fresco/ui/common/ImageRenderingInfra.kt, com/facebook/fresco/ui/common/LegacyOnFadeListener.kt, com/facebook/fresco/ui/common/MultiUriHelper.kt, com/facebook/fresco/ui/common/NoOpImagePerfNotifier.kt, com/facebook/fresco/ui/common/OnDrawControllerListener.kt, com/facebook/fresco/ui/common/OnFadeListener.kt, com/facebook/fresco/ui/common/SimpleImagePerfNotifier.kt, com/facebook/fresco/ui/common/VisibilityAware.kt, com/facebook/fresco/ui/common/VisibilityState.kt, com/facebook/fresco/ui/common/VitoUtils.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

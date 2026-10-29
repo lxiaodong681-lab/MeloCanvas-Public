@@ -1,0 +1,112 @@
+{
+	"schemaVersion": 1,
+	"id": "melocanvas.builtin.modern",
+	"version": "0.1.0-design",
+	"name": "原色",
+	"author": "MeloCanvas design study",
+	"minAppVersion": "0.1.0",
+	"license": "Original project artwork; see assets/art-provenance.md",
+	"status": "Design example only; not an installable archive",
+	"entry": {
+		"tokens": "inline",
+		"components": "inline"
+	},
+	"fallback": "melocanvas.builtin.modern",
+	"capabilities": [
+		"semantic-colors",
+		"icons",
+		"backgrounds",
+		"component-variants",
+		"player-frame",
+		"listening-components",
+		"creator-components",
+		"motion-presets"
+	],
+	"tokens": {
+		"surface": {
+			"base": "#faf8f5",
+			"card": "#fffdf9"
+		},
+		"text": {
+			"primary": "#292925",
+			"secondary": "#716f68"
+		},
+		"action": {
+			"primary": "#cb483a"
+		},
+		"lyric": {
+			"active": "#cb483a",
+			"inactive": "#716f68"
+		}
+	},
+	"components": {
+		"card": {
+			"variant": "rounded"
+		},
+		"button": {
+			"variant": "rounded",
+			"minTouchDp": 48
+		},
+		"input": {
+			"variant": "rounded"
+		},
+		"navigation": {
+			"discoverIcon": "home"
+		},
+		"player": {
+			"frame": "square"
+		},
+		"progress": {
+			"variant": "modern"
+		},
+		"lyric": {
+			"emphasis": "modern"
+		},
+		"listeningPlayer": {
+			"frame": "square",
+			"coverFit": "contain",
+			"coverAspect": "16:9",
+			"variant": "rounded"
+		},
+		"chapterList": {
+			"variant": "rounded"
+		},
+		"speedSelector": {
+			"variant": "rounded"
+		},
+		"sleepTimer": {
+			"variant": "rounded"
+		},
+		"creatorProfile": {
+			"variant": "rounded"
+		},
+		"creatorAvatar": {
+			"frame": "square"
+		},
+		"subscriptionSelector": {
+			"variant": "rounded"
+		},
+		"followingFeed": {
+			"variant": "rounded"
+		},
+		"creatorSupport": {
+			"variant": "rounded"
+		},
+		"seriesList": {
+			"variant": "rounded"
+		}
+	},
+	"motion": {
+		"preset": "rotate",
+		"durationMs": 180,
+		"respectReducedMotion": true
+	},
+	"assets": [
+		{
+			"path": "assets/coast.png",
+			"role": "preview-artwork",
+			"origin": "original"
+		}
+	],
+	"previews": ["previews/modern-home.png", "previews/modern-player.png"]
+}

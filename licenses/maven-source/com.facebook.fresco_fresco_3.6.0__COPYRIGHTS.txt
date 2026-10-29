@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:fresco:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/fresco/3.6.0/fresco-3.6.0-sources.jar
+Source archive SHA-256: eef570e594e547db723305f62546a4c9802e7edce1ab69d1ead78aef65895d21
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/drawee/backends/pipeline/DefaultDrawableFactory.java, com/facebook/drawee/backends/pipeline/DraweeConfig.java, com/facebook/drawee/backends/pipeline/Fresco.java, com/facebook/drawee/backends/pipeline/PipelineDraweeController.java, com/facebook/drawee/backends/pipeline/PipelineDraweeControllerBuilder.java, com/facebook/drawee/backends/pipeline/PipelineDraweeControllerBuilderSupplier.java, com/facebook/drawee/backends/pipeline/PipelineDraweeControllerFactory.java, com/facebook/drawee/backends/pipeline/package-info.java, com/facebook/drawee/backends/pipeline/info/ForwardingImageOriginListener.java, com/facebook/drawee/backends/pipeline/info/ForwardingImagePerfDataListener.java, com/facebook/drawee/backends/pipeline/info/ImageOriginListener.java, com/facebook/drawee/backends/pipeline/info/ImageOriginRequestListener.java, com/facebook/drawee/backends/pipeline/info/ImageOriginUtils.java, com/facebook/drawee/backends/pipeline/info/ImagePerfMonitor.java, com/facebook/drawee/backends/pipeline/info/internal/ImagePerfRequestListener.java, com/facebook/drawee/backends/pipeline/info/internal/ImagePerfStateManager.java, com/facebook/drawee/backends/pipeline/info/ImageOrigin.kt, com/facebook/drawee/backends/pipeline/info/ImagePerfExtra.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

@@ -1,0 +1,30 @@
+{
+  "components": {
+    "card": {
+      "variant": "rounded"
+    },
+    "button": {
+      "variant": "rounded",
+      "minTouchDp": 48
+    },
+    "input": {
+      "variant": "rounded"
+    },
+    "navigation": {
+      "discoverIcon": "star"
+    },
+    "player": {
+      "frame": "square"
+    },
+    "progress": {
+      "variant": "modern"
+    }
+  },
+  "decorations": {
+    "hero": "assets/cosmos.png"
+  },
+  "motion": {
+    "durationMs": 0,
+    "respectReducedMotion": true
+  }
+}

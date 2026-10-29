@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:middleware:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/middleware/3.6.0/middleware-3.6.0-sources.jar
+Source archive SHA-256: ae66bb55e4c0dd8ae374f30e13d210ec1072808955e6d49ca216d521508c0cfa
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/fresco/middleware/HasExtraData.kt, com/facebook/fresco/middleware/MiddlewareUtils.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

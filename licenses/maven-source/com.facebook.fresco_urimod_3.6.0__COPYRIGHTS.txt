@@ -1,0 +1,13 @@
+Verbatim copyright/license comment blocks from the published source attachment.
+Component: com.facebook.fresco:urimod:3.6.0
+Source: https://repo.maven.apache.org/maven2/com/facebook/fresco/urimod/3.6.0/urimod-3.6.0-sources.jar
+Source archive SHA-256: fb4dbd9dc896ad74db4616414ad175e04588f11463152db934f50d2b304e6389
+This is an inclusive source attribution inventory, not a claim that every source file is linked.
+
+Files: com/facebook/fresco/urimod/Dimensions.kt, com/facebook/fresco/urimod/NopUriModifier.kt, com/facebook/fresco/urimod/UriModifier.kt, com/facebook/fresco/urimod/UriModifierInterface.kt
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

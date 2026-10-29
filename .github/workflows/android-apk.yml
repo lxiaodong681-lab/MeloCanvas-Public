@@ -1,0 +1,340 @@
+name: Android ARM64 Release APK
+run-name: Android ARM64 — ${{ inputs.source_ref || github.head_ref || github.ref_name }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: 'Source branch, tag or commit (default: latest main)'
+        required: true
+        default: main
+        type: string
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/android-apk.yml'
+      - '.node-version'
+      - 'android-app/**'
+      - 'scripts/android-ci*'
+      - 'scripts/tests/android-ci.test.cjs'
+      - 'scripts/fix-worklets-lint.cjs'
+      - 'scripts/release-dependencies.init.gradle'
+      - 'scripts/tests/release-dependencies.test.cjs'
+      - 'scripts/*lgpl*'
+      - 'scripts/collect-bundle-licenses.cjs'
+      - 'scripts/verify-distribution-licenses.cjs'
+      - 'scripts/generate-open-source-notices.cjs'
+      - 'release/dependency-licenses.json'
+      - 'licenses/**'
+      - 'scripts/tests/*licenses.test.cjs'
+      - 'scripts/tests/lgpl-relink.test.cjs'
+      - 'release/*source-files.json'
+      - 'release/lgpl-materials.json'
+      - 'scripts/lib/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-apk-${{ github.event_name }}-${{ github.event.pull_request.number || inputs.source_ref || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  CI: '1'
+  EXPO_NO_TELEMETRY: '1'
+  SENTRY_DISABLE_AUTO_UPLOAD: 'true'
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.source_ref || github.event.pull_request.head.sha || github.sha }}
+          # Regression fixtures are self-contained; private Git history is unnecessary.
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Initialize logs and record source
+        run: |
+          mkdir -p verification/android-ci/logs
+          git log -1 --format='%H %s' | tee verification/android-ci/logs/source.txt
+
+      - name: Require original signing material for installable builds
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          MELO_KEYSTORE_BASE64: ${{ secrets.MELO_KEYSTORE_BASE64 }}
+          MELO_KEYSTORE_PASSWORD: ${{ secrets.MELO_KEYSTORE_PASSWORD }}
+          MELO_SIGNING_CERT_SHA256: ${{ secrets.MELO_SIGNING_CERT_SHA256 }}
+        run: |
+          missing=0
+          for name in MELO_KEYSTORE_BASE64 MELO_KEYSTORE_PASSWORD MELO_SIGNING_CERT_SHA256; do
+            if [[ -z "${!name}" ]]; then
+              echo "::error::Missing repository secret: $name (see docs/android-build.md)"
+              missing=1
+            fi
+          done
+          exit "$missing"
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: android-app/package.json
+          run_install: false
+
+      - name: Cache pnpm store
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+          cache-dependency-path: android-app/pnpm-lock.yaml
+
+      - name: Install frozen workspace dependencies
+        working-directory: android-app
+        run: pnpm install --frozen-lockfile --ignore-scripts 2>&1 | tee ../verification/android-ci/logs/install.txt
+
+      - name: Resolve source version and Android toolchain
+        id: metadata
+        run: node scripts/android-ci.cjs metadata
+
+      - name: Reserve disk space for native builds and diagnostics
+        env:
+          NDK_VERSION: ${{ steps.metadata.outputs.ndk }}
+        run: |
+          # Only unused software on this disposable ubuntu-24.04 hosted runner.
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/swift /opt/hostedtoolcache/CodeQL
+          for directory in /usr/local/lib/android/sdk/ndk/*; do
+            if [[ -d "$directory" && "${directory##*/}" != "$NDK_VERSION" ]]; then
+              sudo rm -rf -- "$directory"
+            fi
+          done
+          df -h "$GITHUB_WORKSPACE" | tee verification/android-ci/logs/disk-before-build.txt
+          available=$(df --output=avail -BG "$GITHUB_WORKSPACE" | tail -n 1 | tr -dc '0-9')
+          if (( available < 25 )); then
+            echo '::error::Native Release/Debug checks need at least 25 GiB free disk space.'
+            exit 1
+          fi
+
+      - name: Type check
+        working-directory: android-app
+        run: pnpm type-check 2>&1 | tee ../verification/android-ci/logs/type-check.txt
+
+      - name: Lint
+        working-directory: android-app
+        run: pnpm lint 2>&1 | tee ../verification/android-ci/logs/lint.txt
+
+      - name: Mobile and build regression tests
+        run: node scripts/android-ci.cjs test 2>&1 | tee verification/android-ci/logs/tests.txt
+
+      - name: Distribution evidence regression tests
+        run: node --test scripts/tests/public-assets.test.cjs scripts/tests/lgpl-relink.test.cjs scripts/tests/bundle-licenses.test.cjs scripts/tests/distribution-licenses.test.cjs
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v3
+        with:
+          # The action default includes the retired SDK 'tools' package.
+          packages: platform-tools
+          log-accepted-android-sdk-licenses: false
+
+      - name: Cache versioned NDK and CMake
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.ANDROID_HOME }}/ndk/${{ steps.metadata.outputs.ndk }}
+            ${{ env.ANDROID_HOME }}/cmake/${{ steps.metadata.outputs.cmake }}
+          key: android-native-${{ runner.os }}-${{ runner.arch }}-${{ steps.metadata.outputs.ndk }}-${{ steps.metadata.outputs.cmake }}
+
+      - name: Install project Android SDK, NDK and CMake
+        env:
+          COMPILE_SDK: ${{ steps.metadata.outputs.compileSdk }}
+          BUILD_TOOLS: ${{ steps.metadata.outputs.buildTools }}
+          NDK_VERSION: ${{ steps.metadata.outputs.ndk }}
+          CMAKE_VERSION: ${{ steps.metadata.outputs.cmake }}
+        run: |
+          sdkmanager "platforms;android-$COMPILE_SDK" "build-tools;$BUILD_TOOLS" "ndk;$NDK_VERSION" "cmake;$CMAKE_VERSION" 2>&1 | tee verification/android-ci/logs/sdk.txt
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: ${{ github.event_name == 'pull_request' }}
+          cache-disabled: false
+          # Signing happens after Gradle, with keys confined to RUNNER_TEMP.
+          gradle-home-cache-excludes: |
+            **/configuration-cache
+
+      - name: Regression test dependency inventory selection
+        env:
+          MELO_TEST_GRADLE: ${{ github.workspace }}/android-app/apps/mobile/android/gradlew
+        run: node --test scripts/tests/release-dependencies.test.cjs
+
+      - name: Build ARM64 Release and run native JVM regressions and lint
+        env:
+          NODE_ENV: production
+          ABI_FILTERS: arm64-v8a
+          CMAKE_BUILD_PARALLEL_LEVEL: '2'
+        run: |
+          node scripts/fix-worklets-lint.cjs
+          cd android-app/apps/mobile/android
+          bash ./gradlew :app:assembleRelease :bbplayer-native:build :bbplayer-orpheus:build \
+            -PmeloUnsignedRelease=true -PreactNativeArchitectures=arm64-v8a \
+            --init-script "$GITHUB_WORKSPACE/scripts/android-ci.init.gradle" \
+            '-Dorg.gradle.jvmargs=-Xmx3g -XX:MaxMetaspaceSize=1g -Dfile.encoding=UTF-8' \
+            '-Pkotlin.daemon.jvmargs=-Xmx1g' -Porg.gradle.parallel=false \
+            --no-daemon --max-workers=2 --console=plain --stacktrace \
+            2>&1 | tee "$GITHUB_WORKSPACE/verification/android-ci/logs/gradle.txt"
+
+      - name: Record resolved release dependencies for distribution review
+        env:
+          NODE_ENV: production
+          ABI_FILTERS: arm64-v8a
+        run: |
+          mkdir -p verification/android-ci/dependencies
+          cd android-app/apps/mobile/android
+          bash ./gradlew :app:meloReleaseDependencyInventory \
+            -PmeloUnsignedRelease=true -PreactNativeArchitectures=arm64-v8a \
+            --init-script "$GITHUB_WORKSPACE/scripts/android-ci.init.gradle" \
+            --init-script "$GITHUB_WORKSPACE/scripts/release-dependencies.init.gradle" \
+            "-PmeloDependencyReport=$GITHUB_WORKSPACE/verification/android-ci/dependencies/runtime-artifacts.json" \
+            --no-daemon --max-workers=2 --console=plain
+
+      - name: Collect licenses from the actual Metro bundle
+        run: node scripts/collect-bundle-licenses.cjs
+
+      - name: Verify actual dependency license coverage
+        run: node scripts/verify-distribution-licenses.cjs --actual
+
+      - name: Retain dependency inventory in private CI
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-dependency-inventory
+          path: verification/android-ci/dependencies/
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Verify unsigned Release APK
+        id: unsigned
+        run: node scripts/android-ci.cjs verify-unsigned 2>&1 | tee verification/android-ci/logs/verify-unsigned.txt
+
+      - name: Sign with the original internal certificate and verify installable APK
+        if: github.event_name == 'workflow_dispatch'
+        id: signed
+        env:
+          MELO_KEYSTORE_BASE64: ${{ secrets.MELO_KEYSTORE_BASE64 }}
+          MELO_KEYSTORE_PASSWORD: ${{ secrets.MELO_KEYSTORE_PASSWORD }}
+          MELO_SIGNING_CERT_SHA256: ${{ secrets.MELO_SIGNING_CERT_SHA256 }}
+        run: node scripts/android-ci.cjs sign 2>&1 | tee verification/android-ci/logs/sign-and-verify.txt
+
+      - name: Upload installable APK, SHA-256 and verification report
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.signed.outputs.artifact }}
+          path: verification/android-ci/release/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
+
+      - name: Upload unsigned PR build for inspection only (cannot install)
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.unsigned.outputs.artifact }}
+          path: verification/android-ci/unsigned/
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+      - name: Set up JDK 21 for the pinned SuperLyricApi source
+        if: github.event_name == 'pull_request'
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Rebuild pinned LGPL libraries with verification classes
+        if: github.event_name == 'pull_request'
+        run: |
+          sdkmanager 'platforms;android-35'
+          node scripts/verify-lgpl-relink.cjs prepare 2>&1 | tee verification/android-ci/logs/lgpl-source-build.txt
+
+      - name: Verify replacement libraries reach the unsigned APK
+        if: github.event_name == 'pull_request'
+        env:
+          NODE_ENV: production
+          ABI_FILTERS: arm64-v8a
+          CMAKE_BUILD_PARALLEL_LEVEL: '2'
+        run: |
+          export JAVA_HOME="$JAVA_HOME_17_X64"
+          cd android-app/apps/mobile/android
+          bash ./gradlew :app:assembleRelease :app:meloReleaseDependencyInventory \
+            -PmeloUnsignedRelease=true -PreactNativeArchitectures=arm64-v8a \
+            --init-script "$GITHUB_WORKSPACE/scripts/android-ci.init.gradle" \
+            --init-script "$GITHUB_WORKSPACE/scripts/lgpl-relink.init.gradle" \
+            --init-script "$GITHUB_WORKSPACE/scripts/release-dependencies.init.gradle" \
+            "-PmeloSuperLyricAar=$GITHUB_WORKSPACE/verification/android-ci/lgpl-relink/SuperLyricApi-rebuilt.aar" \
+            "-PmeloJaudiotaggerJar=$GITHUB_WORKSPACE/verification/android-ci/lgpl-relink/jaudiotagger-rebuilt.jar" \
+            "-PmeloDependencyReport=$GITHUB_WORKSPACE/verification/android-ci/lgpl-relink/runtime-artifacts.json" \
+            '-Dorg.gradle.jvmargs=-Xmx3g -XX:MaxMetaspaceSize=1g -Dfile.encoding=UTF-8' \
+            '-Pkotlin.daemon.jvmargs=-Xmx1g' -Porg.gradle.parallel=false \
+            --no-daemon --max-workers=2 --console=plain --stacktrace \
+            2>&1 | tee "$GITHUB_WORKSPACE/verification/android-ci/logs/lgpl-relink.txt"
+          cd "$GITHUB_WORKSPACE"
+          node scripts/verify-lgpl-relink.cjs verify
+
+      - name: Retain LGPL rebuild proof in private CI
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lgpl-relink-verification
+          path: |
+            verification/android-ci/lgpl-relink/relink-verification.json
+            verification/android-ci/lgpl-relink/runtime-artifacts.json
+            verification/android-ci/lgpl-relink/verification-sources.zip
+            verification/android-ci/lgpl-relink/MODIFICATIONS.txt
+            verification/android-ci/lgpl-relink/LGPL-2.1.txt
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Build summary
+        if: always()
+        env:
+          BUILD_STATUS: ${{ job.status }}
+          SOURCE_SHA: ${{ steps.metadata.outputs.commit }}
+          APP_VERSION: ${{ steps.metadata.outputs.version }}
+          VERSION_CODE: ${{ steps.metadata.outputs.versionCode }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          {
+            echo "## Android ARM64 APK — $BUILD_STATUS"
+            echo "Source: $SOURCE_SHA; version: $APP_VERSION ($VERSION_CODE)."
+            if [[ "$EVENT_NAME" == workflow_dispatch ]]; then
+              echo 'On success, download the release artifact below and unzip it to get the installable APK, SHA-256 and verification JSON.'
+            else
+              echo '**PR validation only: UNSIGNED APK cannot be installed. Use Run workflow after configuring the original signing secrets.**'
+            fi
+            echo 'Logs and native test/lint reports are retained in android-build-diagnostics. See docs/android-build.md.'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Preserve diagnostics even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-build-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            verification/android-ci/logs/
+            verification/android-ci/metadata.json
+            android-app/**/build/reports/
+            android-app/**/build/test-results/
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,0 +1,568 @@
+{
+  "tabs": {
+    "revision": "1bbcaa2ea50b61f5daa6ccb8fe9669188c982864",
+    "files": [
+      {
+        "path": ".gitignore",
+        "localBlob": "0e1b04e90ed9c5168680dfc24058445d486b9d0b",
+        "upstreamBlob": null,
+        "status": "local-only"
+      },
+      {
+        "path": "README.md",
+        "localBlob": "236b1b52287e1f366dc93f681bd172f92efc3ab4",
+        "upstreamBlob": "236b1b52287e1f366dc93f681bd172f92efc3ab4",
+        "status": "identical"
+      },
+      {
+        "path": "android/build.gradle",
+        "localBlob": "f0892bd06536c07dbda4d27750521a23c900f4ef",
+        "upstreamBlob": "f0892bd06536c07dbda4d27750521a23c900f4ef",
+        "status": "identical"
+      },
+      {
+        "path": "android/gradle.properties",
+        "localBlob": "3e4ea1b777b65119386a9243844f82da75620063",
+        "upstreamBlob": "3e4ea1b777b65119386a9243844f82da75620063",
+        "status": "identical"
+      },
+      {
+        "path": "android/src/main/AndroidManifest.xml",
+        "localBlob": "942f6c29a16122235439adca94df90514734b9aa",
+        "upstreamBlob": "942f6c29a16122235439adca94df90514734b9aa",
+        "status": "identical"
+      },
+      {
+        "path": "android/src/main/AndroidManifestNew.xml",
+        "localBlob": "a2f47b6057db70071e9080281db29d78ac165e66",
+        "upstreamBlob": "a2f47b6057db70071e9080281db29d78ac165e66",
+        "status": "identical"
+      },
+      {
+        "path": "android/src/main/java/com/rcttabview/ImageSource.kt",
+        "localBlob": "cacea746e5b6dae87b196005daeb3f7451696a5f",
+        "upstreamBlob": "cacea746e5b6dae87b196005daeb3f7451696a5f",
+        "status": "identical"
+      },
+      {
+        "path": "android/src/main/java/com/rcttabview/RCTTabView.kt",
+        "localBlob": "933402635a17a322cee02d746a85a92a2ed79f7e",
+        "upstreamBlob": "3c3d4bdbe2b070f8cc177f6175429fdcdf2d2304",
+        "status": "modified"
+      },
+      {
+        "path": "android/src/main/java/com/rcttabview/RCTTabViewManager.kt",
+        "localBlob": "0fe313ebcabd249452019fa21bce9f1e671ef6bd",
+        "upstreamBlob": "7f59721662a91b0f343422647ccd75eefa096414",
+        "status": "modified"
+      },
+      {
+        "path": "android/src/main/java/com/rcttabview/RCTTabViewPackage.kt",
+        "localBlob": "54492e1b5e7d2b7234f26f45f8a535803e6d2566",
+        "upstreamBlob": "54492e1b5e7d2b7234f26f45f8a535803e6d2566",
+        "status": "identical"
+      },
+      {
+        "path": "android/src/main/java/com/rcttabview/Utils.kt",
+        "localBlob": "52144e09c6ab3c1a1c390f37d49dc9c4866a00b7",
+        "upstreamBlob": "52144e09c6ab3c1a1c390f37d49dc9c4866a00b7",
+        "status": "identical"
+      },
+      {
+        "path": "android/src/main/java/com/rcttabview/events/OnNativeLayoutEvent.kt",
+        "localBlob": "8391ac8aabddc25e3b81027023d626aceb2e74be",
+        "upstreamBlob": "8391ac8aabddc25e3b81027023d626aceb2e74be",
+        "status": "identical"
+      },
+      {
+        "path": "android/src/main/java/com/rcttabview/events/OnTabBarMeasuredEvent.kt",
+        "localBlob": "6c1354d6ffe7eb93b431e08bcb0275782e895735",
+        "upstreamBlob": "6c1354d6ffe7eb93b431e08bcb0275782e895735",
+        "status": "identical"
+      },
+      {
+        "path": "android/src/main/java/com/rcttabview/events/PageSelectedEvent.kt",
+        "localBlob": "ca63ced217acb71f0b8a30ebcb631023256af8fa",
+        "upstreamBlob": "ca63ced217acb71f0b8a30ebcb631023256af8fa",
+        "status": "identical"
+      },
+      {
+        "path": "android/src/main/java/com/rcttabview/events/TabLongPressedEvent.kt",
+        "localBlob": "bd4d8d47ed49f0e917069c39f18c3c484850d5d2",
+        "upstreamBlob": "bd4d8d47ed49f0e917069c39f18c3c484850d5d2",
+        "status": "identical"
+      },
+      {
+        "path": "app.plugin.js",
+        "localBlob": "90ea936ae8997ecfab021a261a4f917d29208a1a",
+        "upstreamBlob": "87edf84c41cb6888d2befb541072073befac6b1a",
+        "status": "modified"
+      },
+      {
+        "path": "babel.config.js",
+        "localBlob": "2036f3a554be90e3ac688db7c7bfb662f82470a2",
+        "upstreamBlob": "0c05fd696389968ad8a50e36eb460b0578ad5a2c",
+        "status": "modified"
+      },
+      {
+        "path": "common/cpp/react/renderer/components/RNCTabView/RNCTabViewComponentDescriptor.h",
+        "localBlob": "3bd5d35dc114722eb2e12cd39bbe73b4c1b05da8",
+        "upstreamBlob": "3bd5d35dc114722eb2e12cd39bbe73b4c1b05da8",
+        "status": "identical"
+      },
+      {
+        "path": "common/cpp/react/renderer/components/RNCTabView/RNCTabViewShadowNode.cpp",
+        "localBlob": "dcdcaf26be2f89bc652b75c10cc72ab124eacf3a",
+        "upstreamBlob": "dcdcaf26be2f89bc652b75c10cc72ab124eacf3a",
+        "status": "identical"
+      },
+      {
+        "path": "common/cpp/react/renderer/components/RNCTabView/RNCTabViewShadowNode.h",
+        "localBlob": "43e37fa89bd1d91b05116916b9d214061b49b655",
+        "upstreamBlob": "43e37fa89bd1d91b05116916b9d214061b49b655",
+        "status": "identical"
+      },
+      {
+        "path": "common/cpp/react/renderer/components/RNCTabView/RNCTabViewState.cpp",
+        "localBlob": "e4a536d1dbf4a7d17cb33483bc6cc4647369fd13",
+        "upstreamBlob": "e4a536d1dbf4a7d17cb33483bc6cc4647369fd13",
+        "status": "identical"
+      },
+      {
+        "path": "common/cpp/react/renderer/components/RNCTabView/RNCTabViewState.h",
+        "localBlob": "cb4e2d0ca1cb5db0d4e5337c01f80106502b8ef1",
+        "upstreamBlob": "cb4e2d0ca1cb5db0d4e5337c01f80106502b8ef1",
+        "status": "identical"
+      },
+      {
+        "path": "ios/BottomAccessoryProvider.swift",
+        "localBlob": "e6571f9160f35a7848e45063bbe4692c617f54ce",
+        "upstreamBlob": "e6571f9160f35a7848e45063bbe4692c617f54ce",
+        "status": "identical"
+      },
+      {
+        "path": "ios/Extensions.swift",
+        "localBlob": "fed3dd23867be0ab6d650881c5a4d1197301dc82",
+        "upstreamBlob": "fed3dd23867be0ab6d650881c5a4d1197301dc82",
+        "status": "identical"
+      },
+      {
+        "path": "ios/PlatformAliases.swift",
+        "localBlob": "dc8818d1d22cd4cd137d9c16abd4b42b54369603",
+        "upstreamBlob": "dc8818d1d22cd4cd137d9c16abd4b42b54369603",
+        "status": "identical"
+      },
+      {
+        "path": "ios/RCTBottomAccessoryComponentView.h",
+        "localBlob": "a7122759dd7e6c54821918c738e7b778942a8716",
+        "upstreamBlob": "a7122759dd7e6c54821918c738e7b778942a8716",
+        "status": "identical"
+      },
+      {
+        "path": "ios/RCTBottomAccessoryComponentView.mm",
+        "localBlob": "62d9595610385e537c6c5b9cc431dfb363f6eb21",
+        "upstreamBlob": "62d9595610385e537c6c5b9cc431dfb363f6eb21",
+        "status": "identical"
+      },
+      {
+        "path": "ios/RCTTabViewComponentView.h",
+        "localBlob": "0530a172b34abde50585e68dd52b79fc8659c974",
+        "upstreamBlob": "0530a172b34abde50585e68dd52b79fc8659c974",
+        "status": "identical"
+      },
+      {
+        "path": "ios/RCTTabViewComponentView.mm",
+        "localBlob": "09ab604b92006f095ec637d3cbe7907b3eb9f39e",
+        "upstreamBlob": "09ab604b92006f095ec637d3cbe7907b3eb9f39e",
+        "status": "identical"
+      },
+      {
+        "path": "ios/RepresentableView.swift",
+        "localBlob": "09adaca401c716dd6c47590ffc7fe5646de2e50b",
+        "upstreamBlob": "09adaca401c716dd6c47590ffc7fe5646de2e50b",
+        "status": "identical"
+      },
+      {
+        "path": "ios/SVG/CoreSVG.h",
+        "localBlob": "3b5ac542c9f47d3022392e18d54011efed9da0de",
+        "upstreamBlob": "3b5ac542c9f47d3022392e18d54011efed9da0de",
+        "status": "identical"
+      },
+      {
+        "path": "ios/SVG/CoreSVG.mm",
+        "localBlob": "44a554d8eab8c4e8077aeb24ae684dc9468417cf",
+        "upstreamBlob": "44a554d8eab8c4e8077aeb24ae684dc9468417cf",
+        "status": "identical"
+      },
+      {
+        "path": "ios/SVG/SvgDecoder.h",
+        "localBlob": "5e7fde1d0696bd14ee396ae2e53e4aa1e49e37f0",
+        "upstreamBlob": "5e7fde1d0696bd14ee396ae2e53e4aa1e49e37f0",
+        "status": "identical"
+      },
+      {
+        "path": "ios/SVG/SvgDecoder.mm",
+        "localBlob": "1bbddd04c0f3486f58f110a0edb87ddb77af8cb2",
+        "upstreamBlob": "1bbddd04c0f3486f58f110a0edb87ddb77af8cb2",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabAppearModifier.swift",
+        "localBlob": "4d8aa04d377391ec1590197fbffcc1bcc4493db5",
+        "upstreamBlob": "4d8aa04d377391ec1590197fbffcc1bcc4493db5",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabBarFontSize.swift",
+        "localBlob": "dec5c0ae3f7ff643b2e3313b191bf702be107e8e",
+        "upstreamBlob": "dec5c0ae3f7ff643b2e3313b191bf702be107e8e",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabItem.swift",
+        "localBlob": "3992f27d10f09ef450273017254ca2a2b8272f6f",
+        "upstreamBlob": "3992f27d10f09ef450273017254ca2a2b8272f6f",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabItemEventModifier.swift",
+        "localBlob": "674e602d5b959b1c12362efdd3d7800e6917aa4f",
+        "upstreamBlob": "674e602d5b959b1c12362efdd3d7800e6917aa4f",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabView/AnyTabView.swift",
+        "localBlob": "168565a5dc41ae77e6c34a642bd5e7707ade2725",
+        "upstreamBlob": "168565a5dc41ae77e6c34a642bd5e7707ade2725",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabView/LegacyTabView.swift",
+        "localBlob": "188ddfdeef97b0505983ed19feb723b93fcd4c40",
+        "upstreamBlob": "188ddfdeef97b0505983ed19feb723b93fcd4c40",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabView/NewTabView.swift",
+        "localBlob": "2f18f210a37062fbf044aa26dae16b8a33773382",
+        "upstreamBlob": "2f18f210a37062fbf044aa26dae16b8a33773382",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabViewImpl.swift",
+        "localBlob": "68053e1f17cbdd489f1712aac82f58e24ff4d892",
+        "upstreamBlob": "68053e1f17cbdd489f1712aac82f58e24ff4d892",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabViewProps.swift",
+        "localBlob": "dd4c3c883720d265126b9dd544c9389a3ed8cbdd",
+        "upstreamBlob": "dd4c3c883720d265126b9dd544c9389a3ed8cbdd",
+        "status": "identical"
+      },
+      {
+        "path": "ios/TabViewProvider.swift",
+        "localBlob": "e5663453ad1c54461a85b4a54ac85f3ffc52e032",
+        "upstreamBlob": "e5663453ad1c54461a85b4a54ac85f3ffc52e032",
+        "status": "identical"
+      },
+      {
+        "path": "ios/react-native-bottom-tabs-Bridging-Header.h",
+        "localBlob": "b4a33181fa4a8bf92371eb1c353718cf2526f304",
+        "upstreamBlob": "b4a33181fa4a8bf92371eb1c353718cf2526f304",
+        "status": "identical"
+      },
+      {
+        "path": "package.json",
+        "localBlob": "84da1da5002c306f44b2130bb0c45a20a7e8f951",
+        "upstreamBlob": "683e719f887c4c71ce87a9b51ff1759f90f52e86",
+        "status": "modified"
+      },
+      {
+        "path": "react-native-bottom-tabs.podspec",
+        "localBlob": "15fddf33771ac23211d1bd669f84c10efff2b15b",
+        "upstreamBlob": "15fddf33771ac23211d1bd669f84c10efff2b15b",
+        "status": "identical"
+      },
+      {
+        "path": "src/BottomAccessoryView.tsx",
+        "localBlob": "4bbbd65bb3e07af7fe76974c3a188bea477d7109",
+        "upstreamBlob": "281d11956e525e73840cdadc9229ab68a9dc0cb5",
+        "status": "modified"
+      },
+      {
+        "path": "src/BottomAccessoryViewNativeComponent.ts",
+        "localBlob": "243391b2a3d56efb25b54f13a70ba5510e235eec",
+        "upstreamBlob": "08cdb0545543976cf344699401a1ac5acd538cd2",
+        "status": "modified"
+      },
+      {
+        "path": "src/DelayedFreeze.tsx",
+        "localBlob": "f10b1f7c2083a128921daddca1be8c7af82fac9c",
+        "upstreamBlob": "3e49daf65cfcccc5a54dc7852484cde39e6b5056",
+        "status": "modified"
+      },
+      {
+        "path": "src/NativeSVGDecoder.ts",
+        "localBlob": "fd2d7ad09775d8f52e2564bedcd4b4b6c2971565",
+        "upstreamBlob": "dad9f8f7c77a8d69dc692bc58ece423b3afb2cef",
+        "status": "modified"
+      },
+      {
+        "path": "src/SceneMap.tsx",
+        "localBlob": "6830373c525fc25ca0c7972eec6e8183e7ec86d3",
+        "upstreamBlob": "7d236f340dca9634f15ed273a1a16e71a1529073",
+        "status": "modified"
+      },
+      {
+        "path": "src/TabView.tsx",
+        "localBlob": "88212a5de7aafb4aaaa041e2e4e8a0dc8fc0e0e7",
+        "upstreamBlob": "0acfb8425cae82c1d9da2db25fcb0a7ddbeab4c8",
+        "status": "modified"
+      },
+      {
+        "path": "src/TabViewNativeComponent.ts",
+        "localBlob": "02a66d899376015c7643f3d82d6f785b913183b3",
+        "upstreamBlob": "50ecf7c4a58ffa79ee532069ddd1cc480f2eb877",
+        "status": "modified"
+      },
+      {
+        "path": "src/__tests__/index.test.tsx",
+        "localBlob": "d41123fcbe4b0bf16abee991f34af89de9d63f73",
+        "upstreamBlob": "bf84291a5e2311f526f8f765ba3fde6b040147d7",
+        "status": "modified"
+      },
+      {
+        "path": "src/expo.ts",
+        "localBlob": "9053523ec3bfb7db8b3e12c2ccdd294005b50e6f",
+        "upstreamBlob": "d3375070d42de6d8140dbcffb45c74a111f89d25",
+        "status": "modified"
+      },
+      {
+        "path": "src/index.tsx",
+        "localBlob": "bfd8b839cfad66187a701b7a3e8703890df1cae1",
+        "upstreamBlob": "19544834bfbbb95f344ff34bd9eea640452c926a",
+        "status": "modified"
+      },
+      {
+        "path": "src/types.ts",
+        "localBlob": "91b0a51e61bb0749f6b5949e846afc63b7b3a59d",
+        "upstreamBlob": "3f4eda80045ca96031457e8f4866fec044c0cf20",
+        "status": "modified"
+      },
+      {
+        "path": "src/utils/BottomTabBarHeightContext.ts",
+        "localBlob": "11bef8a016556904442520e6bd786447dfe40b13",
+        "upstreamBlob": "15c1c7a804ccc32f891842670fb6fd2740a86e58",
+        "status": "modified"
+      },
+      {
+        "path": "src/utils/useBottomTabBarHeight.ts",
+        "localBlob": "e9ccff13d83af2e15b1351a98b4565bfad088ebc",
+        "upstreamBlob": "90eb6b5c8c6a2e757ab8c50df72d7dc4514c8aa0",
+        "status": "modified"
+      },
+      {
+        "path": "tsconfig.build.json",
+        "localBlob": "d855fffbed12ec06584cf9c6a5f785b8a9f5d546",
+        "upstreamBlob": "543a78763b6be3e510dbb60d2c01418fb5c7c659",
+        "status": "modified"
+      },
+      {
+        "path": "tsconfig.json",
+        "localBlob": "a8d7bb3e460e0227450451fdff67c16b04cb8c07",
+        "upstreamBlob": "1003d56819ebdc79d9624baf35f59a7ca26a1665",
+        "status": "modified"
+      }
+    ]
+  },
+  "publishedSources": [
+    {
+      "artifact": "org.brotli_dec_0.1.2",
+      "revision": "c931e576d2a7ae3dba9a7fc369895e3d31bb3f8b",
+      "files": [
+        {
+          "path": "org/brotli/dec/BitReader.java",
+          "blob": "a3bb53dcaca3a5179804e096c69e0dfe528e383c",
+          "upstreamBlob": "13ab9c462d1af969c7c6fe6476d262d291e55159",
+          "status": "different-or-not-found"
+        },
+        {
+          "path": "org/brotli/dec/BrotliInputStream.java",
+          "blob": "a886b5db99b04fc98a1947c58d221bccad03509b",
+          "upstreamBlob": "9117d9b85f3d17d6113bee0819580b747eca6c1f",
+          "status": "different-or-not-found"
+        },
+        {
+          "path": "org/brotli/dec/BrotliRuntimeException.java",
+          "blob": "1844907220d30ee356a39e576fc29e8f3688e73b",
+          "upstreamBlob": "8e0d4a44d12e94f531cf88dc25166909768249db",
+          "status": "different-or-not-found"
+        },
+        {
+          "path": "org/brotli/dec/Context.java",
+          "blob": "a604f7c23d648680a6897ef36974cea064ab7653",
+          "upstreamBlob": "a604f7c23d648680a6897ef36974cea064ab7653",
+          "status": "identical"
+        },
+        {
+          "path": "org/brotli/dec/Decode.java",
+          "blob": "c988760d7667a55c8ea177eaf0a37d9eafbdc20c",
+          "upstreamBlob": "d7d3bf0f399c3e458b8238175b2ba82ac40af13a",
+          "status": "different-or-not-found"
+        },
+        {
+          "path": "org/brotli/dec/Dictionary.java",
+          "blob": "45f9d921f7604aef2411974c4c570ecf6add54d0",
+          "upstreamBlob": "a7f13ce53f56c084f62f6137d2126e54183a6cab",
+          "status": "different-or-not-found"
+        },
+        {
+          "path": "org/brotli/dec/Huffman.java",
+          "blob": "e6aceef9b0d2198ef5f2f36832ec77f4b24ef209",
+          "upstreamBlob": "e6aceef9b0d2198ef5f2f36832ec77f4b24ef209",
+          "status": "identical"
+        },
+        {
+          "path": "org/brotli/dec/HuffmanTreeGroup.java",
+          "blob": "3b1c82fc483f8e0273a5dd03bc449882b2962d4d",
+          "upstreamBlob": "3b1c82fc483f8e0273a5dd03bc449882b2962d4d",
+          "status": "identical"
+        },
+        {
+          "path": "org/brotli/dec/IntReader.java",
+          "blob": "952bf52ded43207aa64201191e7e1c0529ff5780",
+          "upstreamBlob": null,
+          "status": "different-or-not-found"
+        },
+        {
+          "path": "org/brotli/dec/Prefix.java",
+          "blob": "6ca0758b1643d07397b58376f823b68e45209a8b",
+          "upstreamBlob": "6ca0758b1643d07397b58376f823b68e45209a8b",
+          "status": "identical"
+        },
+        {
+          "path": "org/brotli/dec/RunningState.java",
+          "blob": "692267f9dbf8d2da53700bd87155cb5eccc354ae",
+          "upstreamBlob": "4fe22be73d4dea737f832fa15d5b459a7f5a24a4",
+          "status": "different-or-not-found"
+        },
+        {
+          "path": "org/brotli/dec/State.java",
+          "blob": "c4646a876d58f3c95d1f9dd7d94949d7cc65b308",
+          "upstreamBlob": "3da3358b0f8a1c3c64849ba0c5854010b6868a48",
+          "status": "different-or-not-found"
+        },
+        {
+          "path": "org/brotli/dec/Transform.java",
+          "blob": "59a8450fde91ed53d15f889e39e35dc02ba669fd",
+          "upstreamBlob": "ecfef452e67f92143e38b922fbece20d5e97b091",
+          "status": "different-or-not-found"
+        },
+        {
+          "path": "org/brotli/dec/Utils.java",
+          "blob": "b2eb2e8091d19393e50caeda7ede9d63350dbb69",
+          "upstreamBlob": "b2eb2e8091d19393e50caeda7ede9d63350dbb69",
+          "status": "identical"
+        },
+        {
+          "path": "org/brotli/dec/WordTransformType.java",
+          "blob": "ed67b5133d39730d22e76a87c00ee70c56fddf21",
+          "upstreamBlob": "357b9781b026443fe71ba851c4b1ea945001147d",
+          "status": "different-or-not-found"
+        }
+      ]
+    },
+    {
+      "artifact": "io.github.zhongwuzw_mmkv_2.4.0",
+      "revision": "b471cfaac7ab35412bd05fee745299e325bb3351",
+      "files": [
+        {
+          "path": "com/tencent/mmkv/MMKV.java",
+          "blob": "595f31f896c904fae706875b2a97c8b3afbd32cf",
+          "upstreamBlob": "595f31f896c904fae706875b2a97c8b3afbd32cf",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/MMKVConfig.java",
+          "blob": "1e304cc0faa8d5284b3c16bab50e09f1fe2862d9",
+          "upstreamBlob": "1e304cc0faa8d5284b3c16bab50e09f1fe2862d9",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/MMKVContentChangeNotification.java",
+          "blob": "af896be7c29371738d35f56e128dfea9226ce592",
+          "upstreamBlob": "af896be7c29371738d35f56e128dfea9226ce592",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/MMKVContentProvider.java",
+          "blob": "85d168898d23a96473332653eb2d8ef1f72ad747",
+          "upstreamBlob": "85d168898d23a96473332653eb2d8ef1f72ad747",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/MMKVHandler.java",
+          "blob": "13bc5d41989f6b9b480bc0b2a27f69329cde60e8",
+          "upstreamBlob": "13bc5d41989f6b9b480bc0b2a27f69329cde60e8",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/MMKVLogLevel.java",
+          "blob": "6a126932ec134a9135c6f358f0701d1dbf34f4d8",
+          "upstreamBlob": "6a126932ec134a9135c6f358f0701d1dbf34f4d8",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/MMKVProcessUtil.java",
+          "blob": "9b130e19366e803d305b1095dd6a401e1caee4e7",
+          "upstreamBlob": "9b130e19366e803d305b1095dd6a401e1caee4e7",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/MMKVRecoverStrategic.java",
+          "blob": "2a47883f919fe1370f2c0c5601befeaf632da7de",
+          "upstreamBlob": "2a47883f919fe1370f2c0c5601befeaf632da7de",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/NameSpace.java",
+          "blob": "665d8131483954ee3f37b6b225abf6e60967e1a7",
+          "upstreamBlob": "665d8131483954ee3f37b6b225abf6e60967e1a7",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/NativeBuffer.java",
+          "blob": "452f4efdc4dc960b11120c4e243daf3f4c6e8378",
+          "upstreamBlob": "452f4efdc4dc960b11120c4e243daf3f4c6e8378",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/ParcelableMMKV.java",
+          "blob": "f6e89f2c90f81f0c4b168bd56c96520bb9ec6f63",
+          "upstreamBlob": "f6e89f2c90f81f0c4b168bd56c96520bb9ec6f63",
+          "status": "identical"
+        },
+        {
+          "path": "com/tencent/mmkv/BuildConfig.java",
+          "blob": "df13f40903580aaac1671d4b564362705e3a5e8d",
+          "upstreamBlob": null,
+          "status": "different-or-not-found"
+        }
+      ]
+    }
+  ],
+  "scope": "Source/license provenance; modified ports remain explicitly identified. Exact original ancestry is not asserted for ports.",
+  "lyricon": {
+    "upstreamRevision": "c93da0eef8b7aee015d2670b48e9e262fcf72cd1",
+    "modelTree": "f5b42e1b83d6770585baaa0faf50c23fc5d39f59",
+    "status": "Exact upstream model subtree; headers retained; no NOTICE in this fixed upstream tree",
+    "license": "licenses/vendored/lyricon-Apache-2.0.txt"
+  },
+  "netease": {
+    "directSource": "https://github.com/bbplayer-app/BBPlayer/tree/e0ad9bae2ef7b55a21ed49636043b167e40ed008",
+    "reviewedUpstream": "https://github.com/nooblong/NeteaseCloudMusicApiBackup/tree/ed28a571a6965f7164fd81b5c4b41098dbe624d4",
+    "licenseBlob": "638a26fdf3bce974b2a5dfeb0786b2db62c662cf",
+    "status": "Adapted TypeScript ports; crypto and utils match the direct BBPlayer source; request has MeloCanvas changes. The MIT text and Binaryify attribution are retained; no claim of byte-identical original JavaScript."
+  }
+}

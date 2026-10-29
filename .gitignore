@@ -1,0 +1,67 @@
+# Local dependencies and test caches
+node_modules/
+.pnpm-store/
+test-results/
+playwright-report/
+*.log
+
+# Local credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+.codex/
+.aws/
+
+# Operating system files
+Thumbs.db
+.DS_Store
+
+# Phase 2 local toolchains, dependency checkout, signing material and buffers
+experiments/phase2/vendor/
+experiments/phase2/android/build/
+experiments/phase2/focus-android/build/
+__pycache__/
+experiments/phase2/private/
+experiments/phase2/artifacts/bbplayer-orpheus-debug.apk
+experiments/phase2/artifacts/bbplayer-orpheus-arm64-debug.apk
+experiments/phase2/artifacts/bbplayer-orpheus-arm64-notifications-debug.apk
+experiments/phase2/artifacts/bbplayer-orpheus-x86-*.apk
+*.apk.idsig
+*.keystore
+*.jks
+
+# Formal Android local outputs and dependencies
+artifacts/*.apk
+artifacts/*.zip
+artifacts/private/
+android-app/apps/mobile/android/.gradle/
+android-app/apps/mobile/android/.kotlin/
+android-app/apps/mobile/android/app/.cxx/
+android-app/apps/mobile/android/local.properties
+android-app/apps/mobile/ios/
+android-app/**/build/
+android-app/**/.cxx/
+android-app/**/.gradle/
+android-app/**/.expo/
+*.tsbuildinfo
+verification/device-helper/
+.worktrees/
+
+# Private development evidence is not a public source artifact.
+/verification/
+/experiments/phase2/results/
+/experiments/phase2/artifacts/
+/artifacts/
+/test-snapshots/
+/.codex-remote-attachments/
+/design-prototype/references/bbplayer/
+/android-app/assets/screenshots/
+/android-app/apps/mobile/assets/config/google-services/
+/android-app/opencode.json
+*.apk
+*.aab
+*.p12
+*.pfx
+*.mobileprovision
+/android-app/packages/splash/src/__tests__/fixtures/687506.json
+/android-app/packages/splash/src/__tests__/fixtures/bilibili--BV1Zu411x7mc.json
