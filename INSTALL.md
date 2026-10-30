@@ -1,15 +1,21 @@
-# 安装 0.19.4 Build 35 公开 Beta
+# 下载与安装音绘
 
-发行渠道为 [MeloCanvas-Public Releases](https://github.com/lxiaodong681-lab/MeloCanvas-Public/releases)。仅安装随完整源码、依赖材料、SHA-256 和签名证书摘要一起提供的正式 Beta APK；若目标条目或附件尚不可用，请等待材料齐备。验证范围见 [版本说明](docs/public-beta-status.md)。
+## [⬇ 一键下载安卓 APK](https://github.com/lxiaodong681-lab/MeloCanvas-Public/releases/download/v0.19.4-beta.1/MeloCanvas-0.19.4-Build35-arm64-v8a.apk)
+
+**音绘 0.19.4 Beta 1 · Build 35 · 68.6 MB**，适用于 **Android 8.0 及以上的 ARM64 设备**。点击链接下载 `.apk`，下载完成后在手机中打开，按系统提示安装即可。首次使用需要联网和 B 站账号。
+
+暂不提供 iOS、Windows、macOS、Linux 安装版，也没有可日常听歌的网页版。32 位安卓设备不支持此 APK；x86_64 仅用于开发模拟器。
+
+完整发行附件见 [本版 Release](https://github.com/lxiaodong681-lab/MeloCanvas-Public/releases/tag/v0.19.4-beta.1)。**`Source code`、`source.zip`、LGPL 与依赖材料都不是安装包**，普通用户下载上面的 APK 即可。验证范围见 [版本说明](docs/public-beta-status.md)。
 
 Build 35 接续维护者验收的 Build 34，修正发行地址与版本说明，补充首次通知说明和锁屏帮助。先备份，再以相同签名覆盖旧版，不要将未签名 CI 包或 LGPL 验证副本安装为日常使用版。
 
 ## 下载与核验
 
 1. 设备应为 Android 8.0（API 26）及以上的 ARM64 手机。32 位 ARM 不支持；x86_64 仅是开发模拟器构建。实际机型兼容性仍需测试。
-2. 打开上述 Releases，选择明确标为 **0.19.4 / Build 35 / 公开 Beta** 的预发布条目。不要使用旧 `internal` 条目、第三方转存包、源码 ZIP 或标有 unsigned 的 CI 产物。
+2. 点击本页顶部的 APK 下载链接，或在本版 Release 的附件区选择 **音绘安卓安装包**（文件名以 `.apk` 结尾）。不要使用旧 `internal` 条目、第三方转存包、源码 ZIP 或标有 unsigned 的 CI 产物。
 3. 发行说明同时提供源码标识、APK 文件名、架构、SHA-256、签名证书 SHA-256 和已知问题。**仅看版本号无法确认安装包身份**，应核对同一条目中的摘要。
-4. 下载后核对 SHA-256。Windows 可执行 `Get-FileHash -Algorithm SHA256 -LiteralPath '<APK 文件路径>'`；Linux 可用 `sha256sum '<APK 文件路径>'`，macOS 可用 `shasum -a 256 '<APK 文件路径>'`。结果应与同一发行条目一致。需要核对签名时，用 Android SDK 的 `apksigner verify --print-certs '<APK 文件路径>'` 对照证书摘要。
+4. 下载后可对照 [SHA256SUMS.txt](https://github.com/lxiaodong681-lab/MeloCanvas-Public/releases/download/v0.19.4-beta.1/SHA256SUMS.txt) 核对完整性。Windows 可执行 `Get-FileHash -Algorithm SHA256 -LiteralPath '<APK 文件路径>'`；Linux 可用 `sha256sum '<APK 文件路径>'`，macOS 可用 `shasum -a 256 '<APK 文件路径>'`。本版 APK SHA-256 为 `7bf714bdbe5c618d5e7ab2e7a9d1a9898d6b6836b5844ef3beaf2e13623195ab`。需要核对签名时，用 Android SDK 的 `apksigner verify --print-certs '<APK 文件路径>'` 对照证书摘要。
 
 ## 安装与首次使用
 
@@ -31,7 +37,7 @@ Build 35 接续维护者验收的 Build 34，修正发行地址与版本说明�
 
 先导出重要音乐库资料，确认文件已保存在应用外且能够读取。升级要求 **同一包名和签名证书**；签名不一致时不能保数据覆盖安装。版本号相同也不证明内容相同，应核对源码提交和 APK 摘要。
 
-不要先卸载旧版，也不要把旧 APK 的验收结论套到新包。候选需要完成 ARM64 真机首次安装、同签名保数据覆盖、登录恢复、播放 / 离线、备份恢复等针对性验收后才能公开。降级可能不兼容数据库；需要回退时优先保留旧包和备份并说明问题，避免在唯一数据副本上试错。
+不要先卸载旧版。Build 35 延续 Build 34 的签名和播放功能，修正发行信息并增加通知引导；新增引导尚未完成真机复测。升级后请确认登录、音乐库与播放正常；不同设备上的首次安装、覆盖升级和备份恢复仍需测试反馈。降级可能不兼容数据库；需要回退时优先保留旧包和备份并说明问题，避免在唯一数据副本上试错。
 
 ## 测试边界与反馈
 

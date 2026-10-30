@@ -1,8 +1,8 @@
 {
   "version": "0.19.4",
   "build": 35,
-  "status": "LOCAL_REVIEW_ONLY",
-  "snapshotId": "3bf0b651978a1b8da8e1aeb5f22ed88d8e934ef4841c259aeaf43ef2dfbe1c9a",
+  "status": "PUBLIC_SOURCE_WITH_DOCUMENTATION_UPDATES",
+  "snapshotId": "fcd1df7fbfb34bc5a1149b7bece5f1cbac853307a328a4dbbe67d4476a8f4a72",
   "files": [
     {
       "path": ".gitattributes",
@@ -32,7 +32,7 @@
     {
       "path": "INSTALL.md",
       "mode": "100644",
-      "sha256": "95f003677b7c9cd0586824e97c9842287ca1b7cb6249bd492ac755c04a7f4be9"
+      "sha256": "a59b1d886a7ac9ccf91626cb3539b250bf9ea1f434609156c4a52aecd1c15d24"
     },
     {
       "path": "LICENSE",
@@ -47,7 +47,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "sha256": "a439467a55b6d5e717900ecde15b5a83147ada65f30b39e21eca8f96f9b119db"
+      "sha256": "7841b06da5f70fc9a4dcba7cd5d06f832382d86e86cd28b9ca9d7ea8c6b3c19b"
     },
     {
       "path": "SECURITY.md",
@@ -10124,5 +10124,12 @@
       "mode": "100644",
       "sha256": "b953acb2f3665499a58e3e4a52ae08088c3cdf129ae63a4054ff9c5096d0a924"
     }
-  ]
+  ],
+  "releaseTag": "v0.19.4-beta.1",
+  "releaseSourceSnapshotId": "3bf0b651978a1b8da8e1aeb5f22ed88d8e934ef4841c259aeaf43ef2dfbe1c9a",
+  "documentationUpdates": [
+    "INSTALL.md",
+    "README.md"
+  ],
+  "note": "This main-branch inventory includes documentation changes after Build 35. The release tag and source ZIP retain the original build source snapshot."
 }
